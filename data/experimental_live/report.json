@@ -1,0 +1,314 @@
+{
+  "generated_at": "2026-11-24T21:33:59.205989+00:00",
+  "station": "St Louis Lambert International Airport",
+  "predictions": [
+    {
+      "date": "2026-11-25",
+      "lead_offset_days": 1,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-26",
+      "lead_offset_days": 1,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-27",
+      "lead_offset_days": 1,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-28",
+      "lead_offset_days": 1,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-29",
+      "lead_offset_days": 1,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-25",
+      "lead_offset_days": 3,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "experimental",
+      "raw_snow_inches": {
+        "GEM": 1.4881889763779526,
+        "ICON": 0.0
+      },
+      "raw_features": {
+        "GEM": [
+          1.4881889763779526,
+          -0.4,
+          1.6,
+          0.21259842519685043,
+          1026.85
+        ],
+        "ICON": [
+          0.0,
+          -1.7,
+          6.5,
+          0.10629921259842522,
+          1028.3041666666666
+        ]
+      },
+      "rf_snow_inches": 2.179,
+      "equal_blend_inches": 0.744,
+      "training_snow_days": 6,
+      "test_snow_days": 4,
+      "heldout_mae": 0.1008
+    },
+    {
+      "date": "2026-11-26",
+      "lead_offset_days": 3,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "experimental",
+      "raw_snow_inches": {
+        "GEM": 1.8464566929133859,
+        "ICON": 4.106299212598425
+      },
+      "raw_features": {
+        "GEM": [
+          1.8464566929133859,
+          0.1,
+          2.4,
+          0.33070866141732286,
+          1015.8791666666666
+        ],
+        "ICON": [
+          4.106299212598425,
+          0.3,
+          2.9,
+          1.311023622047244,
+          1014.2583333333333
+        ]
+      },
+      "rf_snow_inches": 2.502,
+      "equal_blend_inches": 2.976,
+      "training_snow_days": 6,
+      "test_snow_days": 4,
+      "heldout_mae": 0.1008
+    },
+    {
+      "date": "2026-11-27",
+      "lead_offset_days": 3,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-28",
+      "lead_offset_days": 3,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-29",
+      "lead_offset_days": 3,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-25",
+      "lead_offset_days": 5,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "experimental",
+      "raw_snow_inches": {
+        "GEM": 0.0,
+        "ICON": 2.3976377952755903
+      },
+      "raw_features": {
+        "GEM": [
+          0.0,
+          -6.3,
+          7.9,
+          0.0,
+          1028.5166666666667
+        ],
+        "ICON": [
+          2.3976377952755903,
+          -1.8,
+          7.3,
+          0.3425196850393701,
+          1028.15
+        ]
+      },
+      "rf_snow_inches": 0.646,
+      "equal_blend_inches": 1.199,
+      "training_snow_days": 6,
+      "test_snow_days": 4,
+      "heldout_mae": 0.1261
+    },
+    {
+      "date": "2026-11-26",
+      "lead_offset_days": 5,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "experimental",
+      "raw_snow_inches": {
+        "GEM": 0.0,
+        "ICON": 0.0
+      },
+      "raw_features": {
+        "GEM": [
+          0.0,
+          -7.6,
+          4.3,
+          0.0,
+          1025.1041666666667
+        ],
+        "ICON": [
+          0.0,
+          -1.1,
+          8.5,
+          0.0,
+          1022.7166666666667
+        ]
+      },
+      "rf_snow_inches": 0.0,
+      "equal_blend_inches": 0.0,
+      "training_snow_days": 6,
+      "test_snow_days": 4,
+      "heldout_mae": 0.1261
+    },
+    {
+      "date": "2026-11-27",
+      "lead_offset_days": 5,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "experimental",
+      "raw_snow_inches": {
+        "GEM": 0.0,
+        "ICON": 0.0
+      },
+      "raw_features": {
+        "GEM": [
+          0.0,
+          -5.2,
+          6.3,
+          0.0,
+          1018.5583333333333
+        ],
+        "ICON": [
+          0.0,
+          -1.2,
+          10.7,
+          0.0,
+          1016.5041666666666
+        ]
+      },
+      "rf_snow_inches": 0.0,
+      "equal_blend_inches": 0.0,
+      "training_snow_days": 6,
+      "test_snow_days": 4,
+      "heldout_mae": 0.1261
+    },
+    {
+      "date": "2026-11-28",
+      "lead_offset_days": 5,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "experimental",
+      "raw_snow_inches": {
+        "GEM": 0.0,
+        "ICON": 0.0
+      },
+      "raw_features": {
+        "GEM": [
+          0.0,
+          -0.3,
+          13.7,
+          0.0,
+          1011.825
+        ],
+        "ICON": [
+          0.0,
+          3.1,
+          13.0,
+          0.011811023622047246,
+          1010.0125
+        ]
+      },
+      "rf_snow_inches": 0.0,
+      "equal_blend_inches": 0.0,
+      "training_snow_days": 6,
+      "test_snow_days": 4,
+      "heldout_mae": 0.1261
+    },
+    {
+      "date": "2026-11-29",
+      "lead_offset_days": 5,
+      "station": "USW00013994",
+      "model_names": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Experimental shadow-mode output only, not operational guidance.",
+    "Fixed hourly lead-offset forecasts may be older than the newest model runs; no Wentzville calibration.",
+    "Only six significant training snowfall days and four held-out snowfall days.",
+    "Random forest cannot extrapolate reliably beyond training snowfall extremes; not validated to outperform raw guidance.",
+    "Observation reporting alignment is unresolved. Refer to NWS forecasts for decisions."
+  ]
+}
