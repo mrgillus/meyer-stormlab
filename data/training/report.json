@@ -1,0 +1,461 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-24T19:06:58.309935+00:00",
+  "station": "USW00013994",
+  "station_name": "St Louis Lambert International Airport",
+  "train_period": "Jan\u2013Mar 2024 and Oct 2024\u2013Mar 2025",
+  "test_period": "Oct 2025\u2013Mar 2026",
+  "observed_days": 455,
+  "method": "Fixed hourly lead-offset guidance aggregated to local days; experimental random forest; no tuning on holdout.",
+  "limitations": [
+    "Station reporting day may differ from local calendar day.",
+    "Daily totals use hourly lead offsets, not a forecast issued at a single time.",
+    "Only one station and few winters; no calibrated probabilities, regional forecast or operational model yet.",
+    "Snowfall variables may include assumed snow-to-liquid ratios; trace treated as zero."
+  ],
+  "errors": [],
+  "results": [
+    {
+      "lead": 1,
+      "status": "evaluated",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "train_days": 254,
+      "test_days": 182,
+      "train_snow_days": 6,
+      "test_snow_days": 4,
+      "test_days_available": 182,
+      "metrics": {
+        "StormLab RF": {
+          "mae": 0.0678,
+          "rmse": 0.3823,
+          "bias": -0.0292,
+          "snow_day_mae": 2.1855,
+          "hits_1in": 4,
+          "misses_1in": 0,
+          "false_alarms_1in": 1,
+          "n": 182
+        },
+        "Equal blend": {
+          "mae": 0.0672,
+          "rmse": 0.4276,
+          "bias": -0.048,
+          "snow_day_mae": 2.6009,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "No snow": {
+          "mae": 0.1021,
+          "rmse": 0.7096,
+          "bias": -0.1021,
+          "snow_day_mae": 4.6161,
+          "hits_1in": 0,
+          "misses_1in": 4,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "GEM": {
+          "mae": 0.0612,
+          "rmse": 0.3774,
+          "bias": -0.0376,
+          "snow_day_mae": 2.2392,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "ICON": {
+          "mae": 0.0732,
+          "rmse": 0.4936,
+          "bias": -0.0583,
+          "snow_day_mae": 2.9626,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        }
+      },
+      "events": [
+        {
+          "date": "2025-11-29",
+          "actual": 6.42,
+          "predictions": {
+            "StormLab RF": 2.62,
+            "Equal blend": 3.11,
+            "No snow": 0,
+            "GEM": 4.38,
+            "ICON": 1.85
+          }
+        },
+        {
+          "date": "2025-12-01",
+          "actual": 3.82,
+          "predictions": {
+            "StormLab RF": 1.93,
+            "Equal blend": 0.83,
+            "No snow": 0,
+            "GEM": 0.91,
+            "ICON": 0.74
+          }
+        },
+        {
+          "date": "2026-01-24",
+          "actual": 5.12,
+          "predictions": {
+            "StormLab RF": 2.58,
+            "Equal blend": 1.54,
+            "No snow": 0,
+            "GEM": 1.57,
+            "ICON": 1.52
+          }
+        },
+        {
+          "date": "2026-01-25",
+          "actual": 3.11,
+          "predictions": {
+            "StormLab RF": 2.59,
+            "Equal blend": 2.58,
+            "No snow": 0,
+            "GEM": 2.65,
+            "ICON": 2.51
+          }
+        },
+        {
+          "date": "2026-03-01",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.07,
+            "Equal blend": 0.37,
+            "No snow": 0,
+            "GEM": 0.0,
+            "ICON": 0.74
+          }
+        }
+      ]
+    },
+    {
+      "lead": 3,
+      "status": "evaluated",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "train_days": 252,
+      "test_days": 182,
+      "train_snow_days": 6,
+      "test_snow_days": 4,
+      "test_days_available": 182,
+      "metrics": {
+        "StormLab RF": {
+          "mae": 0.1008,
+          "rmse": 0.4916,
+          "bias": -0.0154,
+          "snow_day_mae": 2.6173,
+          "hits_1in": 4,
+          "misses_1in": 0,
+          "false_alarms_1in": 3,
+          "n": 182
+        },
+        "Equal blend": {
+          "mae": 0.0704,
+          "rmse": 0.4378,
+          "bias": -0.0377,
+          "snow_day_mae": 2.4754,
+          "hits_1in": 2,
+          "misses_1in": 2,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "No snow": {
+          "mae": 0.1021,
+          "rmse": 0.7096,
+          "bias": -0.1021,
+          "snow_day_mae": 4.6161,
+          "hits_1in": 0,
+          "misses_1in": 4,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "GEM": {
+          "mae": 0.0748,
+          "rmse": 0.4435,
+          "bias": -0.0367,
+          "snow_day_mae": 2.5079,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "ICON": {
+          "mae": 0.0684,
+          "rmse": 0.4395,
+          "bias": -0.0387,
+          "snow_day_mae": 2.5512,
+          "hits_1in": 2,
+          "misses_1in": 2,
+          "false_alarms_1in": 0,
+          "n": 182
+        }
+      },
+      "events": [
+        {
+          "date": "2025-11-29",
+          "actual": 6.42,
+          "predictions": {
+            "StormLab RF": 1.91,
+            "Equal blend": 4.23,
+            "No snow": 0,
+            "GEM": 4.13,
+            "ICON": 4.33
+          }
+        },
+        {
+          "date": "2025-12-01",
+          "actual": 3.82,
+          "predictions": {
+            "StormLab RF": 1.12,
+            "Equal blend": 0.56,
+            "No snow": 0,
+            "GEM": 0.25,
+            "ICON": 0.88
+          }
+        },
+        {
+          "date": "2026-01-24",
+          "actual": 5.12,
+          "predictions": {
+            "StormLab RF": 2.47,
+            "Equal blend": 0.84,
+            "No snow": 0,
+            "GEM": 1.16,
+            "ICON": 0.52
+          }
+        },
+        {
+          "date": "2026-01-25",
+          "actual": 3.11,
+          "predictions": {
+            "StormLab RF": 2.5,
+            "Equal blend": 3.29,
+            "No snow": 0,
+            "GEM": 2.89,
+            "ICON": 3.69
+          }
+        },
+        {
+          "date": "2026-03-01",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.5,
+            "Equal blend": 0.43,
+            "No snow": 0,
+            "GEM": 0.66,
+            "ICON": 0.19
+          }
+        },
+        {
+          "date": "2026-03-02",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.8,
+            "Equal blend": 0.73,
+            "No snow": 0,
+            "GEM": 0.99,
+            "ICON": 0.47
+          }
+        },
+        {
+          "date": "2026-03-16",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.48,
+            "Equal blend": 0.55,
+            "No snow": 0,
+            "GEM": 0.58,
+            "ICON": 0.52
+          }
+        }
+      ]
+    },
+    {
+      "lead": 5,
+      "status": "evaluated",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "train_days": 250,
+      "test_days": 182,
+      "train_snow_days": 6,
+      "test_snow_days": 4,
+      "test_days_available": 182,
+      "metrics": {
+        "StormLab RF": {
+          "mae": 0.1261,
+          "rmse": 0.5691,
+          "bias": -0.0114,
+          "snow_day_mae": 3.1159,
+          "hits_1in": 4,
+          "misses_1in": 0,
+          "false_alarms_1in": 4,
+          "n": 182
+        },
+        "Equal blend": {
+          "mae": 0.0914,
+          "rmse": 0.4392,
+          "bias": -0.0242,
+          "snow_day_mae": 2.6009,
+          "hits_1in": 2,
+          "misses_1in": 2,
+          "false_alarms_1in": 2,
+          "n": 182
+        },
+        "No snow": {
+          "mae": 0.1021,
+          "rmse": 0.7096,
+          "bias": -0.1021,
+          "snow_day_mae": 4.6161,
+          "hits_1in": 0,
+          "misses_1in": 4,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "GEM": {
+          "mae": 0.0921,
+          "rmse": 0.4191,
+          "bias": -0.0058,
+          "snow_day_mae": 2.1978,
+          "hits_1in": 2,
+          "misses_1in": 2,
+          "false_alarms_1in": 3,
+          "n": 182
+        },
+        "ICON": {
+          "mae": 0.0907,
+          "rmse": 0.5249,
+          "bias": -0.0426,
+          "snow_day_mae": 3.0039,
+          "hits_1in": 1,
+          "misses_1in": 3,
+          "false_alarms_1in": 1,
+          "n": 182
+        }
+      },
+      "events": [
+        {
+          "date": "2025-11-29",
+          "actual": 6.42,
+          "predictions": {
+            "StormLab RF": 1.26,
+            "Equal blend": 5.32,
+            "No snow": 0,
+            "GEM": 5.04,
+            "ICON": 5.59
+          }
+        },
+        {
+          "date": "2025-12-01",
+          "actual": 3.82,
+          "predictions": {
+            "StormLab RF": 1.34,
+            "Equal blend": 0.29,
+            "No snow": 0,
+            "GEM": 0.58,
+            "ICON": 0.0
+          }
+        },
+        {
+          "date": "2025-12-02",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.79,
+            "Equal blend": 0.88,
+            "No snow": 0,
+            "GEM": 1.57,
+            "ICON": 0.19
+          }
+        },
+        {
+          "date": "2025-12-05",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.78,
+            "Equal blend": 0.91,
+            "No snow": 0,
+            "GEM": 1.74,
+            "ICON": 0.08
+          }
+        },
+        {
+          "date": "2025-12-11",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.48,
+            "Equal blend": 1.03,
+            "No snow": 0,
+            "GEM": 2.07,
+            "ICON": 0.0
+          }
+        },
+        {
+          "date": "2026-01-23",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 1.59,
+            "Equal blend": 0.43,
+            "No snow": 0,
+            "GEM": 0.74,
+            "ICON": 0.11
+          }
+        },
+        {
+          "date": "2026-01-24",
+          "actual": 5.12,
+          "predictions": {
+            "StormLab RF": 1.81,
+            "Equal blend": 1.82,
+            "No snow": 0,
+            "GEM": 3.22,
+            "ICON": 0.41
+          }
+        },
+        {
+          "date": "2026-01-25",
+          "actual": 3.11,
+          "predictions": {
+            "StormLab RF": 1.59,
+            "Equal blend": 0.63,
+            "No snow": 0,
+            "GEM": 0.83,
+            "ICON": 0.44
+          }
+        },
+        {
+          "date": "2026-03-01",
+          "actual": 0.0,
+          "predictions": {
+            "StormLab RF": 0.65,
+            "Equal blend": 1.12,
+            "No snow": 0,
+            "GEM": 0.0,
+            "ICON": 2.23
+          }
+        }
+      ]
+    },
+    {
+      "lead": 7,
+      "status": "insufficient_data",
+      "models": [
+        "GEM"
+      ],
+      "train_days": 248,
+      "test_days": 182,
+      "train_snow_days": 6
+    }
+  ]
+}
