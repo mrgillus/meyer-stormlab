@@ -2,66 +2,125 @@ name: Expand GEFS historical archive
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 0,6,12,18 * * *'
+    - cron: '17 * * * *'
   push:
     branches: [main]
     paths:
       - '.github/workflows/gefs-batch.yml'
+      - 'scripts/gefs_parallel.py'
       - 'scripts/gefs_batch.py'
-      - 'scripts/observation_timing.py'
+      - 'scripts/regional_archive.py'
       - 'scripts/analog_diagnostic.py'
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: stormlab-gefs-batch
   cancel-in-progress: false
 jobs:
-  batch:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 8
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+      base: ${{ steps.base.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install and check extraction code
+      - run: pip install requests
+      - id: plan
         run: |
-          pip install 'eccodes>=2.40,<3' requests
-          python -m py_compile scripts/gefs_batch.py scripts/observation_timing.py scripts/regional_archive.py
-      - name: Audit observation reporting times once
-        run: |
-          if [ ! -s data/gefs_archive/observation_timing.json ]; then
-            python scripts/observation_timing.py
-          fi
-      - name: Extract next bounded batch
-        run: python scripts/gefs_batch.py
-      - name: Evaluate historical pattern similarity
-        run: python scripts/analog_diagnostic.py
-      - name: Publish archive checkpoints
+          python -m py_compile scripts/gefs_parallel.py scripts/gefs_batch.py scripts/regional_archive.py
+          python scripts/gefs_parallel.py plan
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gefs-plan-${{ github.run_id }}-${{ github.run_attempt }}
+          path: batch-plan.json
+          retention-days: 2
+  extract:
+    needs: plan
+    if: needs.plan.outputs.has_work == 'true'
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.base }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'eccodes>=2.40,<3' requests
+      - name: Compile independent historical dates
+        env:
+          BATCH_DATES: ${{ matrix.dates }}
+          BATCH_WORKER: ${{ matrix.worker }}
+        run: python scripts/gefs_parallel.py worker
+      - name: Preserve completed checkpoints even on partial failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gefs-worker-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.worker }}
+          path: batch-output/
+          retention-days: 2
+          if-no-files-found: warn
+  publish:
+    needs: [plan, extract]
+    if: always() && !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - uses: actions/download-artifact@v4
+        with:
+          name: gefs-plan-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: gefs-worker-${{ github.run_id }}-${{ github.run_attempt }}-*
+          path: worker-artifacts
+      - name: Validate, combine and publish checkpoints
+        env:
+          BATCH_BASE: ${{ needs.plan.outputs.base }}
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/gefs_archive/
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Checkpoint GEFS historical archive"
-          for attempt in 1 2 3; do
+          for attempt in 1 2 3 4 5; do
             git fetch origin main
-            git rebase origin/main
+            git reset --hard origin/main
+            if ! git diff --quiet "$BATCH_BASE" HEAD -- scripts/regional_archive.py scripts/gefs_batch.py scripts/gefs_parallel.py data/gefs_archive/manifest.json; then
+              echo "::error::Extraction code or manifest changed. Refusing to mix datasets."
+              exit 1
+            fi
+            python scripts/gefs_parallel.py publish
+            # Research diagnostics must never block archive persistence.
+            if ! python scripts/analog_diagnostic.py; then
+              echo "::warning::Analog diagnostic failed; preserving archive checkpoints."
+            fi
+            git add data/gefs_archive/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Checkpoint parallel GEFS historical archive"
             if git push origin HEAD:main; then exit 0; fi
             sleep $((attempt * 5))
           done
           exit 1
-      - name: Preserve diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: archive-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            data/gefs_archive/progress.json
-            data/gefs_archive/observation_timing.json
-          if-no-files-found: ignore
-          retention-days: 7
