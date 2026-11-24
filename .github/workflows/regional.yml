@@ -1,0 +1,60 @@
+name: Regional historical archive pilot
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/regional.yml'
+      - 'scripts/regional_archive.py'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-regional
+  cancel-in-progress: false
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install GRIB reader
+        run: pip install 'eccodes>=2.40,<3' requests
+      - name: Extract historical regional observations and pilot forecast fields
+        run: python scripts/regional_archive.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: regional-archive-${{ github.run_id }}-${{ github.run_attempt }}
+          path: data/regional/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Publish separate regional dataset
+        shell: bash
+        run: |
+          set -euo pipefail
+          staging=$(mktemp -d)
+          trap 'rm -rf "$staging"' EXIT
+          cp -a data/regional/. "$staging/"
+          source=$(git hash-object scripts/regional_archive.py)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ "$(git hash-object scripts/regional_archive.py)" != "$source" ]; then
+              echo "::error::Source changed; rerun latest workflow. Dataset preserved as artifact."
+              exit 1
+            fi
+            mkdir -p data/regional
+            cp -a "$staging/." data/regional/
+            git add -A -- data/regional/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish regional observation archive and GEFS pilot"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
