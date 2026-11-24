@@ -13,6 +13,8 @@ on:
       - 'scripts/analog_diagnostic.py'
 permissions:
   contents: read
+env:
+  STORMLAB_ARCHIVE_WORKERS: '16'
 concurrency:
   group: stormlab-gefs-batch
   cancel-in-progress: false
@@ -37,7 +39,7 @@ jobs:
       - id: plan
         run: |
           python -m py_compile scripts/gefs_parallel.py scripts/gefs_batch.py scripts/regional_archive.py
-          python scripts/gefs_parallel.py plan
+          python -c 'import os,sys; sys.path.insert(0,"scripts"); import gefs_parallel as g; g.WORKERS=int(os.environ["STORMLAB_ARCHIVE_WORKERS"]); g.plan()'
       - uses: actions/upload-artifact@v4
         with:
           name: gefs-plan-${{ github.run_id }}-${{ github.run_attempt }}
@@ -48,7 +50,7 @@ jobs:
     if: needs.plan.outputs.has_work == 'true'
     strategy:
       fail-fast: false
-      max-parallel: 8
+      max-parallel: 16
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     runs-on: ubuntu-latest
     timeout-minutes: 50
@@ -112,7 +114,7 @@ jobs:
               echo "::error::Extraction code or manifest changed. Refusing to mix datasets."
               exit 1
             fi
-            python scripts/gefs_parallel.py publish
+            python -c 'import os,sys; sys.path.insert(0,"scripts"); import gefs_parallel as g; g.WORKERS=int(os.environ["STORMLAB_ARCHIVE_WORKERS"]); g.publish()'
             # Research diagnostics must never block archive persistence.
             if ! python scripts/analog_diagnostic.py; then
               echo "::warning::Analog diagnostic failed; preserving archive checkpoints."
