@@ -1,0 +1,358 @@
+{
+  "generated_at": "2026-11-24T20:53:30.802387+00:00",
+  "stations": [
+    {
+      "id": "USW00013994",
+      "name": "ST LOUIS LAMBERT INTL AP",
+      "expected_days": 3645,
+      "matched": 3645,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 3645
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00237397",
+      "name": "ST CHARLES ELM PT",
+      "expected_days": 1407,
+      "matched": 1407,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1407
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USW00013802",
+      "name": "BELLEVILLE SIU RSCH",
+      "expected_days": 672,
+      "matched": 672,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 672
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00114489",
+      "name": "JERSEYVILLE 2 SW",
+      "expected_days": 2278,
+      "matched": 2278,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 2278
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00232591",
+      "name": "ELSBERRY 1 S",
+      "expected_days": 1793,
+      "matched": 1793,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1793
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00232220",
+      "name": "DE SOTO",
+      "expected_days": 911,
+      "matched": 911,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 911
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00238725",
+      "name": "WARRENTON 1 N",
+      "expected_days": 1918,
+      "matched": 1918,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1918
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00115917",
+      "name": "MT OLIVE 1 E",
+      "expected_days": 689,
+      "matched": 689,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 689
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00117157",
+      "name": "RED BUD 2 S",
+      "expected_days": 867,
+      "matched": 867,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 867
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00230856",
+      "name": "BOWLING GREEN 1 E",
+      "expected_days": 1207,
+      "matched": 1207,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1207
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00237300",
+      "name": "ROSEBUD",
+      "expected_days": 1112,
+      "matched": 1112,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1112
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00113693",
+      "name": "GREENVILLE",
+      "expected_days": 1118,
+      "matched": 1118,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1118
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00114108",
+      "name": "HILLSBORO",
+      "expected_days": 1051,
+      "matched": 1051,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1051
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00114447",
+      "name": "JACKSONVILLE 2",
+      "expected_days": 1773,
+      "matched": 1773,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1773
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00232809",
+      "name": "FARMINGTON",
+      "expected_days": 2361,
+      "matched": 2361,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 2361
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00116011",
+      "name": "NASHVILLE 1 E",
+      "expected_days": 2248,
+      "matched": 2248,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 2248
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00116837",
+      "name": "PITTSFIELD #2",
+      "expected_days": 1568,
+      "matched": 1568,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1568
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00236826",
+      "name": "POTOSI 4 SW",
+      "expected_days": 1178,
+      "matched": 1178,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1178
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00233079",
+      "name": "FULTON",
+      "expected_days": 793,
+      "matched": 793,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 793
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USW00093822",
+      "name": "SPRINGFIELD ABRAHAM LINCOLN CA",
+      "expected_days": 3645,
+      "matched": 3645,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 3645
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00114629",
+      "name": "KASKASKIA RVR NAVIGATION LOCK",
+      "expected_days": 1990,
+      "matched": 1990,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1990
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00235541",
+      "name": "MEXICO",
+      "expected_days": 285,
+      "matched": 285,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 285
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00233043",
+      "name": "FREEDOM",
+      "expected_days": 865,
+      "matched": 865,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 865
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00237578",
+      "name": "SAVERTON L&D 22",
+      "expected_days": 1686,
+      "matched": 1686,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1686
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00231101",
+      "name": "BUNKER 4N",
+      "expected_days": 137,
+      "matched": 137,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 137
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00117636",
+      "name": "SALEM",
+      "expected_days": 1690,
+      "matched": 1690,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 1690
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00118491",
+      "name": "TAYLORVILLE 2SE",
+      "expected_days": 801,
+      "matched": 801,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 801
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00112483",
+      "name": "DU QUOIN 4 SE",
+      "expected_days": 295,
+      "matched": 295,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 295
+      },
+      "clock_known": 0
+    },
+    {
+      "id": "USC00110500",
+      "name": "BEECHER CITY",
+      "expected_days": 517,
+      "matched": 517,
+      "value_mismatches": 0,
+      "missing_rows": 0,
+      "clock_counts": {
+        "unknown": 517
+      },
+      "clock_known": 0
+    }
+  ],
+  "errors": [],
+  "matched": 40500,
+  "clock_known": 0,
+  "value_mismatches": 0,
+  "note": "Reported clocks are preserved verbatim. Local time convention, end-of-day labeling and source-specific reporting windows must be established before UTC joins; no inferred timestamps or training labels are issued."
+}
