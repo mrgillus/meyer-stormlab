@@ -1,0 +1,2000 @@
+{
+  "generated_at": "2026-11-24T21:04:42.299612+00:00",
+  "stations": [
+    {
+      "station": "USW00013994",
+      "name": "ST LOUIS LAMBERT INTL AP",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        }
+      ]
+    },
+    {
+      "station": "USC00237397",
+      "name": "ST CHARLES ELM PT",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USW00013802",
+      "name": "BELLEVILLE SIU RSCH",
+      "matches": 2,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        }
+      ]
+    },
+    {
+      "station": "USC00114489",
+      "name": "JERSEYVILLE 2 SW",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        }
+      ]
+    },
+    {
+      "station": "USC00232591",
+      "name": "ELSBERRY 1 S",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "1630"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "1630"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "1630"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "1630"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "1630"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "1630"
+        }
+      ]
+    },
+    {
+      "station": "USC00232220",
+      "name": "DE SOTO",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        }
+      ]
+    },
+    {
+      "station": "USC00238725",
+      "name": "WARRENTON 1 N",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00115917",
+      "name": "MT OLIVE 1 E",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00117157",
+      "name": "RED BUD 2 S",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00230856",
+      "name": "BOWLING GREEN 1 E",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        }
+      ]
+    },
+    {
+      "station": "USC00237300",
+      "name": "ROSEBUD",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00113693",
+      "name": "GREENVILLE",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00114108",
+      "name": "HILLSBORO",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "1600"
+        }
+      ]
+    },
+    {
+      "station": "USC00114447",
+      "name": "JACKSONVILLE 2",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00232809",
+      "name": "FARMINGTON",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        }
+      ]
+    },
+    {
+      "station": "USC00116011",
+      "name": "NASHVILLE 1 E",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "1800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "1800"
+        }
+      ]
+    },
+    {
+      "station": "USC00116837",
+      "name": "PITTSFIELD #2",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00236826",
+      "name": "POTOSI 4 SW",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        }
+      ]
+    },
+    {
+      "station": "USC00233079",
+      "name": "FULTON",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USW00093822",
+      "name": "SPRINGFIELD ABRAHAM LINCOLN CA",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "1200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "1200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        }
+      ]
+    },
+    {
+      "station": "USC00114629",
+      "name": "KASKASKIA RVR NAVIGATION LOCK",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "2400"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00235541",
+      "name": "MEXICO",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "0500"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        }
+      ]
+    },
+    {
+      "station": "USC00233043",
+      "name": "FREEDOM",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00237578",
+      "name": "SAVERTON L&D 22",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00231101",
+      "name": "BUNKER 4N",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        },
+        {
+          "field": "observationTime",
+          "value": "0600"
+        }
+      ]
+    },
+    {
+      "station": "USC00117636",
+      "name": "SALEM",
+      "matches": 2,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00118491",
+      "name": "TAYLORVILLE 2SE",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        },
+        {
+          "field": "observationTime",
+          "value": "0700"
+        }
+      ]
+    },
+    {
+      "station": "USC00112483",
+      "name": "DU QUOIN 4 SE",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        },
+        {
+          "field": "observationTime",
+          "value": "2200"
+        }
+      ]
+    },
+    {
+      "station": "USC00110500",
+      "name": "BEECHER CITY",
+      "matches": 1,
+      "timing_candidates": [
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        },
+        {
+          "field": "observationTime",
+          "value": "0800"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "matched_stations": 27,
+  "timing_candidates": 29,
+  "note": "HOMR metadata candidates only; snowfall element, effective dates, and time zone need independent verification. No inferred reporting windows are used for training."
+}
