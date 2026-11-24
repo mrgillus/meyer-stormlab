@@ -1,14 +1,132 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-24T21:20:02.407303+00:00",
+  "generated_at": "2026-11-24T21:51:11.841842+00:00",
   "total_initializations": 3925,
-  "attempted_initializations": 15,
-  "core_complete": 15,
-  "extended_complete": 12,
-  "feature_rows": 1710,
+  "attempted_initializations": 207,
+  "core_complete": 207,
+  "extended_complete": 181,
+  "feature_rows": 24060,
   "point_count": 39,
   "member_count": 5,
-  "max_dates_per_run": 12,
+  "max_dates_per_run": 192,
+  "workers": 16,
+  "planned_this_run": 192,
+  "received_this_run": 192,
+  "new_this_run": 192,
+  "worker_timings": [
+    {
+      "worker": "3",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 896,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "10",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 1000,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "6",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 908,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "5",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 758,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "14",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 937,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "0",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 805,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "7",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 1145,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "1",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 777,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "9",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 610,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "4",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 1034,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "13",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 1094,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "2",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 899,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "11",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 1022,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "8",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 923,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "15",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 924,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "12",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 957,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    }
+  ],
   "core_leads": [
     24,
     72,
@@ -16,129 +134,129 @@
   ],
   "extended_lead": 336,
   "errors": {
-    "not_found": 90
+    "not_found": 780
   },
   "exhausted_core": 0,
   "by_year": [
     {
       "year": "2000",
       "total": 197,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 11,
+      "core_complete": 11
     },
     {
       "year": "2001",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 11,
+      "core_complete": 11
     },
     {
       "year": "2002",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 11,
+      "core_complete": 11
     },
     {
       "year": "2003",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 11,
+      "core_complete": 11
     },
     {
       "year": "2004",
       "total": 197,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 11,
+      "core_complete": 11
     },
     {
       "year": "2005",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 11,
+      "core_complete": 11
     },
     {
       "year": "2006",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 11,
+      "core_complete": 11
     },
     {
       "year": "2007",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2008",
       "total": 197,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2009",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2010",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2011",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2012",
       "total": 197,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2013",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2014",
       "total": 196,
-      "attempted": 1,
-      "core_complete": 1
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2015",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2016",
       "total": 197,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2017",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2018",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 10,
+      "core_complete": 10
     },
     {
       "year": "2019",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 10,
+      "core_complete": 10
     }
   ],
   "training_ready": false,
@@ -146,5 +264,5 @@
     "Observation windows must be verified and aligned before joining labels.",
     "Independent winter-season validation and adequate event counts are required."
   ],
-  "note": "14-day availability is tracked separately; missing files are not zeros. Incomplete core shards are retried up to three times."
+  "note": "Parallel checkpoint compilation. Missing extended forecasts are not zeros. Core retries limited to three attempts."
 }

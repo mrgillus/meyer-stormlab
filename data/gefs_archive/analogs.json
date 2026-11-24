@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-11-24T21:51:13.096186+00:00",
+  "query_initialization": "20191211",
+  "complete_initializations": 207,
+  "results": [
+    {
+      "lead_hours": 24,
+      "candidates": 104,
+      "status": "pattern_matches",
+      "matches": [
+        {
+          "init": "20041227",
+          "distance": 0.6535
+        },
+        {
+          "init": "20031206",
+          "distance": 0.7647
+        },
+        {
+          "init": "20141120",
+          "distance": 0.8155
+        },
+        {
+          "init": "20181211",
+          "distance": 0.8238
+        },
+        {
+          "init": "20081123",
+          "distance": 0.8564
+        },
+        {
+          "init": "20020125",
+          "distance": 0.8659
+        },
+        {
+          "init": "20080121",
+          "distance": 0.8734
+        },
+        {
+          "init": "20171111",
+          "distance": 0.8905
+        },
+        {
+          "init": "20010120",
+          "distance": 0.8982
+        },
+        {
+          "init": "20071219",
+          "distance": 0.9135
+        }
+      ]
+    },
+    {
+      "lead_hours": 72,
+      "candidates": 104,
+      "status": "pattern_matches",
+      "matches": [
+        {
+          "init": "20071219",
+          "distance": 0.9295
+        },
+        {
+          "init": "20011129",
+          "distance": 1.0754
+        },
+        {
+          "init": "20080110",
+          "distance": 1.0768
+        },
+        {
+          "init": "20121206",
+          "distance": 1.1015
+        },
+        {
+          "init": "20101113",
+          "distance": 1.131
+        },
+        {
+          "init": "20141028",
+          "distance": 1.1573
+        },
+        {
+          "init": "20160111",
+          "distance": 1.1684
+        },
+        {
+          "init": "20171213",
+          "distance": 1.1809
+        },
+        {
+          "init": "20150118",
+          "distance": 1.1888
+        },
+        {
+          "init": "20061222",
+          "distance": 1.1902
+        }
+      ]
+    },
+    {
+      "lead_hours": 168,
+      "candidates": 104,
+      "status": "pattern_matches",
+      "matches": [
+        {
+          "init": "20160110",
+          "distance": 1.1385
+        },
+        {
+          "init": "20081123",
+          "distance": 1.2156
+        },
+        {
+          "init": "20131120",
+          "distance": 1.2586
+        },
+        {
+          "init": "20120122",
+          "distance": 1.2749
+        },
+        {
+          "init": "20171213",
+          "distance": 1.3378
+        },
+        {
+          "init": "20091219",
+          "distance": 1.391
+        },
+        {
+          "init": "20091226",
+          "distance": 1.3926
+        },
+        {
+          "init": "20071031",
+          "distance": 1.4369
+        },
+        {
+          "init": "20051214",
+          "distance": 1.4415
+        },
+        {
+          "init": "20080110",
+          "distance": 1.452
+        }
+      ]
+    }
+  ],
+  "note": "Pattern similarity only; not a snowfall prediction. Uses earlier winter seasons and candidate-only scaling; labels remain blocked pending observation timing alignment."
+}
