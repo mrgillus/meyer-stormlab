@@ -1,0 +1,64 @@
+name: Expand GEFS historical archive
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 0,6,12,18 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/gefs-batch.yml'
+      - 'scripts/gefs_batch.py'
+      - 'scripts/observation_timing.py'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-gefs-batch
+  cancel-in-progress: false
+jobs:
+  batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install and check extraction code
+        run: |
+          pip install 'eccodes>=2.40,<3' requests
+          python -m py_compile scripts/gefs_batch.py scripts/observation_timing.py scripts/regional_archive.py
+      - name: Audit observation reporting times once
+        run: |
+          if [ ! -s data/gefs_archive/observation_timing.json ]; then
+            python scripts/observation_timing.py
+          fi
+      - name: Extract next bounded batch
+        run: python scripts/gefs_batch.py
+      - name: Publish archive checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/gefs_archive/
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Checkpoint GEFS historical archive"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
+      - name: Preserve diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: archive-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/gefs_archive/progress.json
+            data/gefs_archive/observation_timing.json
+          if-no-files-found: ignore
+          retention-days: 7
