@@ -9,6 +9,7 @@ on:
       - '.github/workflows/gefs-batch.yml'
       - 'scripts/gefs_batch.py'
       - 'scripts/observation_timing.py'
+      - 'scripts/analog_diagnostic.py'
 permissions:
   contents: write
 concurrency:
@@ -36,6 +37,8 @@ jobs:
           fi
       - name: Extract next bounded batch
         run: python scripts/gefs_batch.py
+      - name: Evaluate historical pattern similarity
+        run: python scripts/analog_diagnostic.py
       - name: Publish archive checkpoints
         shell: bash
         run: |
