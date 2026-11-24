@@ -121,6 +121,8 @@ def train_eval(rows,lead):
     # Fixed hyperparameters; no tuning against holdout. Shallow forest regularizes small dataset.
     model=RandomForestRegressor(n_estimators=200,max_depth=4,min_samples_leaf=5,random_state=42,n_jobs=2)
     model.fit(x,y)
+    import joblib
+    joblib.dump({"model":model,"model_names":names,"lead_offset_days":lead,"station":STATION,"test_start":TEST_START,"feature_version":1}, OUT/f"rf_day{lead}.joblib",compress=3)
     pred=[max(0,float(v)) for v in model.predict([features(r,names) for r in te])]
     actual=[r["actual"] for r in te]
     comparisons={"StormLab RF":pred,"Equal blend":[st.mean(r["models"][m][0] for m in names) for r in te],
