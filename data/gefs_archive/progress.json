@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-24T20:56:39.925319+00:00",
+  "generated_at": "2026-11-24T21:20:02.407303+00:00",
   "total_initializations": 3925,
-  "attempted_initializations": 3,
-  "core_complete": 3,
-  "extended_complete": 2,
-  "feature_rows": 330,
+  "attempted_initializations": 15,
+  "core_complete": 15,
+  "extended_complete": 12,
+  "feature_rows": 1710,
   "point_count": 39,
   "member_count": 5,
-  "max_dates_per_run": 3,
+  "max_dates_per_run": 12,
   "core_leads": [
     24,
     72,
@@ -16,7 +16,7 @@
   ],
   "extended_lead": 336,
   "errors": {
-    "not_found": 30
+    "not_found": 90
   },
   "exhausted_core": 0,
   "by_year": [
@@ -41,74 +41,74 @@
     {
       "year": "2003",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2004",
       "total": 197,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2005",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2006",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2007",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2008",
       "total": 197,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2009",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2010",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2011",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2012",
       "total": 197,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2013",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2014",
       "total": 196,
-      "attempted": 0,
-      "core_complete": 0
+      "attempted": 1,
+      "core_complete": 1
     },
     {
       "year": "2015",
