@@ -1,0 +1,51 @@
+name: Experimental live snowfall inference
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/shadow-forecast.yml'
+      - 'scripts/shadow_forecast.py'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-shadow-forecast
+  cancel-in-progress: false
+jobs:
+  infer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install scikit-learn==1.6.1
+      - run: python scripts/shadow_forecast.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: experimental-live-forecast
+          path: data/experimental_live/report.json
+          retention-days: 7
+      - name: Publish experimental guidance
+        run: |
+          set -euo pipefail
+          saved=$(mktemp)
+          trap 'rm -f "$saved"' EXIT
+          cp data/experimental_live/report.json "$saved"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p data/experimental_live
+            cp "$saved" data/experimental_live/report.json
+            git add data/experimental_live/report.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish experimental live snowfall inference"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
