@@ -4,6 +4,7 @@ Each shard contains verified GRIB fields for one initialization; never overwrite
 import collections
 import datetime as dt
 import gzip
+import functools
 import hashlib
 import json
 import pathlib
@@ -18,8 +19,10 @@ MEMBERS=("c00","p01","p02","p03","p04")
 FIELDS=("t2m","t850","z500","mslp","pwat","precip24")
 CORE=(24,72,168)
 LEADS=(*CORE,336)
-MAX_DATES=3
+MAX_DATES=12
 MAX_ATTEMPTS=3
+# Reuse each forecast index within a batch, especially precipitation lead windows.
+source.index=functools.lru_cache(maxsize=128)(source.index)
 
 def read(p):
     with gzip.open(p,"rt") as f: return json.load(f)
@@ -105,7 +108,7 @@ def main():
     queue=(retry[:1]+new+retry[1:])[:MAX_DATES]
     started=time.monotonic()
     for date in queue:
-        if time.monotonic()-started>12*60: break
+        if time.monotonic()-started>20*60: break
         data=build(date,shards.get(date,{}),points);data["fingerprint"]=sig
         path=OUT/"shards"/date[:4]/(date+".json.gz")
         save(path,data);shards[date]=data
