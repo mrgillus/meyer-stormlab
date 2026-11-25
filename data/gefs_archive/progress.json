@@ -1,129 +1,73 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-25T12:36:26.690838+00:00",
+  "generated_at": "2026-11-25T13:52:17.906212+00:00",
   "total_initializations": 3925,
-  "attempted_initializations": 2121,
-  "core_complete": 2118,
-  "extended_complete": 1803,
-  "feature_rows": 245062,
+  "attempted_initializations": 2217,
+  "core_complete": 2214,
+  "extended_complete": 1876,
+  "feature_rows": 255892,
   "point_count": 39,
   "member_count": 5,
-  "max_dates_per_run": 192,
-  "workers": 16,
-  "planned_this_run": 192,
-  "received_this_run": 192,
-  "new_this_run": 192,
+  "max_dates_per_run": 96,
+  "workers": 8,
+  "planned_this_run": 96,
+  "received_this_run": 96,
+  "new_this_run": 96,
   "worker_timings": [
-    {
-      "worker": "14",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 724,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "2",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1305,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
     {
       "worker": "6",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 800,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "3",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 952,
+      "elapsed_seconds": 1124,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     },
     {
       "worker": "7",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 1000,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "15",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1161,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "8",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1137,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "13",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 755,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "4",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 906,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "1",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1227,
+      "elapsed_seconds": 712,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     },
     {
       "worker": "5",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 1034,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "11",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1027,
+      "elapsed_seconds": 1024,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     },
     {
       "worker": "0",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 1310,
+      "elapsed_seconds": 853,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     },
     {
-      "worker": "9",
+      "worker": "4",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 856,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "3",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 924,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "1",
       "assigned": 12,
       "processed": 12,
       "elapsed_seconds": 1223,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     },
     {
-      "worker": "10",
+      "worker": "2",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 708,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "12",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1042,
+      "elapsed_seconds": 1190,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     }
   ],
@@ -134,7 +78,7 @@
   ],
   "extended_lead": 336,
   "errors": {
-    "not_found": 9456,
+    "not_found": 10146,
     "other": 2
   },
   "exhausted_core": 3,
@@ -142,122 +86,122 @@
     {
       "year": "2000",
       "total": 197,
-      "attempted": 107,
-      "core_complete": 107
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2001",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 105
+      "attempted": 111,
+      "core_complete": 110
     },
     {
       "year": "2002",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2003",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2004",
       "total": 197,
-      "attempted": 106,
-      "core_complete": 104
+      "attempted": 111,
+      "core_complete": 109
     },
     {
       "year": "2005",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2006",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2007",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2008",
       "total": 197,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2009",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2010",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2011",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2012",
       "total": 197,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2013",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2014",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2015",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2016",
       "total": 197,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 111,
+      "core_complete": 111
     },
     {
       "year": "2017",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 110,
+      "core_complete": 110
     },
     {
       "year": "2018",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 110,
+      "core_complete": 110
     },
     {
       "year": "2019",
       "total": 196,
-      "attempted": 106,
-      "core_complete": 106
+      "attempted": 110,
+      "core_complete": 110
     }
   ],
   "training_ready": false,
