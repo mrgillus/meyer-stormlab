@@ -1,146 +1,146 @@
 {
-  "generated_at": "2026-11-25T00:19:47.233181+00:00",
-  "query_initialization": "20191226",
-  "complete_initializations": 591,
+  "generated_at": "2026-11-25T01:51:08.415019+00:00",
+  "query_initialization": "20191231",
+  "complete_initializations": 783,
   "results": [
     {
       "lead_hours": 24,
-      "candidates": 274,
+      "candidates": 362,
       "status": "pattern_matches",
       "matches": [
         {
-          "init": "20131130",
-          "distance": 0.8265
+          "init": "20100202",
+          "distance": 0.7304
         },
         {
-          "init": "20171219",
-          "distance": 0.8793
+          "init": "20130214",
+          "distance": 0.7473
         },
         {
-          "init": "20161228",
-          "distance": 0.8971
+          "init": "20141120",
+          "distance": 0.7478
         },
         {
-          "init": "20011215",
-          "distance": 0.9193
+          "init": "20171213",
+          "distance": 0.7488
         },
         {
-          "init": "20081123",
-          "distance": 0.9194
+          "init": "20161201",
+          "distance": 0.7503
         },
         {
-          "init": "20091120",
-          "distance": 0.921
+          "init": "20051210",
+          "distance": 0.7763
         },
         {
-          "init": "20051120",
-          "distance": 0.9386
+          "init": "20021226",
+          "distance": 0.7798
         },
         {
-          "init": "20151125",
-          "distance": 0.9387
+          "init": "20181126",
+          "distance": 0.7868
         },
         {
-          "init": "20170206",
-          "distance": 0.9511
+          "init": "20020115",
+          "distance": 0.7879
         },
         {
-          "init": "20120124",
-          "distance": 0.9664
+          "init": "20121223",
+          "distance": 0.8094
         }
       ]
     },
     {
       "lead_hours": 72,
-      "candidates": 274,
+      "candidates": 362,
       "status": "pattern_matches",
       "matches": [
         {
-          "init": "20111212",
-          "distance": 1.2455
+          "init": "20070102",
+          "distance": 0.9528
         },
         {
-          "init": "20061219",
-          "distance": 1.3279
+          "init": "20060110",
+          "distance": 0.9698
         },
         {
-          "init": "20171219",
-          "distance": 1.4132
+          "init": "20060131",
+          "distance": 0.9756
         },
         {
-          "init": "20011121",
-          "distance": 1.4174
+          "init": "20090208",
+          "distance": 1.0037
+        },
+        {
+          "init": "20130210",
+          "distance": 1.0091
+        },
+        {
+          "init": "20081126",
+          "distance": 1.0137
+        },
+        {
+          "init": "20091126",
+          "distance": 1.0226
+        },
+        {
+          "init": "20100202",
+          "distance": 1.043
+        },
+        {
+          "init": "20051212",
+          "distance": 1.0526
         },
         {
           "init": "20170118",
-          "distance": 1.4255
-        },
-        {
-          "init": "20061125",
-          "distance": 1.4707
-        },
-        {
-          "init": "20121213",
-          "distance": 1.4713
-        },
-        {
-          "init": "20161231",
-          "distance": 1.4835
-        },
-        {
-          "init": "20031206",
-          "distance": 1.5027
-        },
-        {
-          "init": "20111202",
-          "distance": 1.5049
+          "distance": 1.0553
         }
       ]
     },
     {
       "lead_hours": 168,
-      "candidates": 274,
+      "candidates": 362,
       "status": "pattern_matches",
       "matches": [
         {
-          "init": "20121206",
-          "distance": 0.7012
-        },
-        {
           "init": "20031206",
-          "distance": 0.7762
+          "distance": 0.6208
         },
         {
-          "init": "20100113",
-          "distance": 0.7853
+          "init": "20020127",
+          "distance": 0.6238
         },
         {
-          "init": "20181206",
-          "distance": 0.8065
+          "init": "20010116",
+          "distance": 0.6511
         },
         {
-          "init": "20150118",
-          "distance": 0.8116
+          "init": "20021201",
+          "distance": 0.6615
         },
         {
-          "init": "20120103",
-          "distance": 0.8203
-        },
-        {
-          "init": "20161215",
-          "distance": 0.8241
-        },
-        {
-          "init": "20031220",
-          "distance": 0.8265
+          "init": "20150108",
+          "distance": 0.6964
         },
         {
           "init": "20061221",
-          "distance": 0.8285
+          "distance": 0.7001
         },
         {
-          "init": "20041129",
-          "distance": 0.8343
+          "init": "20111202",
+          "distance": 0.7137
+        },
+        {
+          "init": "20021222",
+          "distance": 0.7151
+        },
+        {
+          "init": "20190106",
+          "distance": 0.7206
+        },
+        {
+          "init": "20010127",
+          "distance": 0.7412
         }
       ]
     }
