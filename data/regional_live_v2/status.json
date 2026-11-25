@@ -1,0 +1,107 @@
+{
+  "schema": 2,
+  "generated_at": "2026-11-25T12:33:56.894019+00:00",
+  "archive_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
+  "historical_units": {
+    "t2m": [
+      "K"
+    ],
+    "t850": [
+      "K"
+    ],
+    "z500": [
+      "gpm"
+    ],
+    "mslp": [
+      "Pa"
+    ],
+    "pwat": [
+      "kg m**-2"
+    ],
+    "precip24": [
+      "mm water equivalent"
+    ]
+  },
+  "windows": [
+    {
+      "initialization_utc": "20261125T00Z",
+      "lead_hours": 24,
+      "valid_start_utc": "2026-11-25T00:00:00+00:00",
+      "valid_end_utc": "2026-11-26T00:00:00+00:00",
+      "status": "incomplete",
+      "resolution_degrees": 0.25
+    },
+    {
+      "initialization_utc": "20261125T00Z",
+      "lead_hours": 48,
+      "valid_start_utc": "2026-11-26T00:00:00+00:00",
+      "valid_end_utc": "2026-11-27T00:00:00+00:00",
+      "status": "incomplete",
+      "resolution_degrees": 0.25
+    }
+  ],
+  "errors": [
+    {
+      "date": "20261125",
+      "lead": 24,
+      "member": "c00",
+      "error": "Missing 20261125 c00 24 TMP 850 mb 24 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 24,
+      "member": "p01",
+      "error": "Missing 20261125 p01 24 TMP 850 mb 24 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 24,
+      "member": "p02",
+      "error": "Missing 20261125 p02 24 TMP 850 mb 24 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 24,
+      "member": "p03",
+      "error": "Missing 20261125 p03 24 TMP 850 mb 24 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 24,
+      "member": "p04",
+      "error": "Missing 20261125 p04 24 TMP 850 mb 24 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 48,
+      "member": "c00",
+      "error": "Missing 20261125 c00 48 TMP 850 mb 48 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 48,
+      "member": "p01",
+      "error": "Missing 20261125 p01 48 TMP 850 mb 48 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 48,
+      "member": "p02",
+      "error": "Missing 20261125 p02 48 TMP 850 mb 48 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 48,
+      "member": "p03",
+      "error": "Missing 20261125 p03 48 TMP 850 mb 48 hour fcst in 0.25-degree product"
+    },
+    {
+      "date": "20261125",
+      "lead": 48,
+      "member": "p04",
+      "error": "Missing 20261125 p04 48 TMP 850 mb 48 hour fcst in 0.25-degree product"
+    }
+  ],
+  "operational_ready": false,
+  "note": "Same 00Z initialization, +24 and +48h leads, preceding 24h precipitation per window. Strict 0.25-degree products. Research only; reporting-time alignment and operational/reforecast differences unresolved. Not a validated 48h storm total."
+}
