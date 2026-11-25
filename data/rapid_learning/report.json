@@ -1,0 +1,440 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-25T02:26:05.183832+00:00",
+  "station": "USW00013994",
+  "training_period": "Jan\u2013Mar 2024 and Oct 2024\u2013Mar 2025",
+  "holdout_period": "Oct 2025\u2013Mar 2026",
+  "coverage": [
+    {
+      "lead": 1,
+      "train_observed_days": 273,
+      "test_observed_days": 182,
+      "models": {
+        "GFS": {
+          "train_days": 115,
+          "test_days": 182,
+          "train_snow_days": 4,
+          "test_snow_days": 4
+        },
+        "ECMWF": {
+          "train_days": 0,
+          "test_days": 0,
+          "train_snow_days": 0,
+          "test_snow_days": 0
+        },
+        "GEM": {
+          "train_days": 254,
+          "test_days": 182,
+          "train_snow_days": 6,
+          "test_snow_days": 4
+        },
+        "ICON": {
+          "train_days": 254,
+          "test_days": 182,
+          "train_snow_days": 6,
+          "test_snow_days": 4
+        },
+        "HRRR": {
+          "train_days": 115,
+          "test_days": 182,
+          "train_snow_days": 4,
+          "test_snow_days": 4
+        },
+        "RRFS": {
+          "train_days": 0,
+          "test_days": 0,
+          "train_snow_days": 0,
+          "test_snow_days": 0
+        },
+        "NBM": {
+          "train_days": 115,
+          "test_days": 182,
+          "train_snow_days": 4,
+          "test_snow_days": 4
+        }
+      }
+    },
+    {
+      "lead": 2,
+      "train_observed_days": 273,
+      "test_observed_days": 182,
+      "models": {
+        "GFS": {
+          "train_days": 114,
+          "test_days": 182,
+          "train_snow_days": 4,
+          "test_snow_days": 4
+        },
+        "ECMWF": {
+          "train_days": 0,
+          "test_days": 0,
+          "train_snow_days": 0,
+          "test_snow_days": 0
+        },
+        "GEM": {
+          "train_days": 253,
+          "test_days": 182,
+          "train_snow_days": 6,
+          "test_snow_days": 4
+        },
+        "ICON": {
+          "train_days": 253,
+          "test_days": 182,
+          "train_snow_days": 6,
+          "test_snow_days": 4
+        },
+        "HRRR": {
+          "train_days": 0,
+          "test_days": 0,
+          "train_snow_days": 0,
+          "test_snow_days": 0
+        },
+        "RRFS": {
+          "train_days": 0,
+          "test_days": 0,
+          "train_snow_days": 0,
+          "test_snow_days": 0
+        },
+        "NBM": {
+          "train_days": 114,
+          "test_days": 182,
+          "train_snow_days": 4,
+          "test_snow_days": 4
+        }
+      }
+    }
+  ],
+  "results": [
+    {
+      "lead": 1,
+      "label": "global_baseline",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "train_days": 254,
+      "test_days": 182,
+      "train_snow_days": 6,
+      "test_snow_days": 4,
+      "status": "evaluated",
+      "weights": {
+        "GEM": 0.34407298,
+        "ICON": 0.65592702
+      },
+      "train_max": {
+        "GEM": 5.12598,
+        "ICON": 3.94094
+      },
+      "metrics": {
+        "learned": {
+          "mae": 0.0691,
+          "rmse": 0.4468,
+          "bias": -0.0512,
+          "snow_day_mae": 2.7137,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "equal_all": {
+          "mae": 0.0672,
+          "rmse": 0.4276,
+          "bias": -0.048,
+          "snow_day_mae": 2.6009,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "equal_global": {
+          "mae": 0.0672,
+          "rmse": 0.4276,
+          "bias": -0.048,
+          "snow_day_mae": 2.6009,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "GEM": {
+          "mae": 0.0612,
+          "rmse": 0.3774,
+          "bias": -0.0376,
+          "snow_day_mae": 2.2392,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "ICON": {
+          "mae": 0.0732,
+          "rmse": 0.4936,
+          "bias": -0.0583,
+          "snow_day_mae": 2.9626,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        }
+      },
+      "test_events": [
+        {
+          "date": "2025-11-29",
+          "actual": 6.417322834645669,
+          "predictions": {
+            "learned": 2.719,
+            "equal_all": 3.114,
+            "equal_global": 3.114,
+            "GEM": 4.382,
+            "ICON": 1.846
+          }
+        },
+        {
+          "date": "2025-12-01",
+          "actual": 3.818897637795276,
+          "predictions": {
+            "learned": 0.801,
+            "equal_all": 0.827,
+            "equal_global": 0.827,
+            "GEM": 0.909,
+            "ICON": 0.744
+          }
+        },
+        {
+          "date": "2026-01-24",
+          "actual": 5.118110236220473,
+          "predictions": {
+            "learned": 1.535,
+            "equal_all": 1.543,
+            "equal_global": 1.543,
+            "GEM": 1.571,
+            "ICON": 1.516
+          }
+        },
+        {
+          "date": "2026-01-25",
+          "actual": 3.110236220472441,
+          "predictions": {
+            "learned": 2.555,
+            "equal_all": 2.577,
+            "equal_global": 2.577,
+            "GEM": 2.646,
+            "ICON": 2.508
+          }
+        }
+      ]
+    },
+    {
+      "lead": 1,
+      "label": "add_HRRR",
+      "models": [
+        "GEM",
+        "ICON",
+        "HRRR"
+      ],
+      "train_days": 115,
+      "test_days": 182,
+      "train_snow_days": 4,
+      "test_snow_days": 4,
+      "status": "insufficient_data"
+    },
+    {
+      "lead": 1,
+      "label": "add_RRFS",
+      "models": [
+        "GEM",
+        "ICON",
+        "RRFS"
+      ],
+      "train_days": 0,
+      "test_days": 0,
+      "train_snow_days": 0,
+      "test_snow_days": 0,
+      "status": "insufficient_data"
+    },
+    {
+      "lead": 1,
+      "label": "add_NBM",
+      "models": [
+        "GEM",
+        "ICON",
+        "NBM"
+      ],
+      "train_days": 115,
+      "test_days": 182,
+      "train_snow_days": 4,
+      "test_snow_days": 4,
+      "status": "insufficient_data"
+    },
+    {
+      "lead": 2,
+      "label": "global_baseline",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "train_days": 253,
+      "test_days": 182,
+      "train_snow_days": 6,
+      "test_snow_days": 4,
+      "status": "evaluated",
+      "weights": {
+        "GEM": 0.60028605,
+        "ICON": 0.39971395
+      },
+      "train_max": {
+        "GEM": 3.05906,
+        "ICON": 3.52756
+      },
+      "metrics": {
+        "learned": {
+          "mae": 0.0425,
+          "rmse": 0.3371,
+          "bias": -0.0308,
+          "snow_day_mae": 1.6378,
+          "hits_1in": 4,
+          "misses_1in": 0,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "equal_all": {
+          "mae": 0.0465,
+          "rmse": 0.3455,
+          "bias": -0.0362,
+          "snow_day_mae": 1.8499,
+          "hits_1in": 4,
+          "misses_1in": 0,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "equal_global": {
+          "mae": 0.0465,
+          "rmse": 0.3455,
+          "bias": -0.0362,
+          "snow_day_mae": 1.8499,
+          "hits_1in": 4,
+          "misses_1in": 0,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "GEM": {
+          "mae": 0.0565,
+          "rmse": 0.3617,
+          "bias": -0.0094,
+          "snow_day_mae": 2.1467,
+          "hits_1in": 4,
+          "misses_1in": 0,
+          "false_alarms_1in": 0,
+          "n": 182
+        },
+        "ICON": {
+          "mae": 0.0662,
+          "rmse": 0.4569,
+          "bias": -0.0629,
+          "snow_day_mae": 2.9075,
+          "hits_1in": 3,
+          "misses_1in": 1,
+          "false_alarms_1in": 0,
+          "n": 182
+        }
+      },
+      "test_events": [
+        {
+          "date": "2025-11-29",
+          "actual": 6.417322834645669,
+          "predictions": {
+            "learned": 6.39,
+            "equal_all": 5.815,
+            "equal_global": 5.815,
+            "GEM": 8.681,
+            "ICON": 2.949
+          }
+        },
+        {
+          "date": "2025-12-01",
+          "actual": 3.818897637795276,
+          "predictions": {
+            "learned": 1.185,
+            "equal_all": 1.089,
+            "equal_global": 1.089,
+            "GEM": 1.571,
+            "ICON": 0.606
+          }
+        },
+        {
+          "date": "2026-01-24",
+          "actual": 5.118110236220473,
+          "predictions": {
+            "learned": 1.433,
+            "equal_all": 1.419,
+            "equal_global": 1.419,
+            "GEM": 1.488,
+            "ICON": 1.35
+          }
+        },
+        {
+          "date": "2026-01-25",
+          "actual": 3.110236220472441,
+          "predictions": {
+            "learned": 2.905,
+            "equal_all": 2.742,
+            "equal_global": 2.742,
+            "GEM": 3.555,
+            "ICON": 1.929
+          }
+        }
+      ]
+    },
+    {
+      "lead": 2,
+      "label": "add_HRRR",
+      "models": [
+        "GEM",
+        "ICON",
+        "HRRR"
+      ],
+      "train_days": 0,
+      "test_days": 0,
+      "train_snow_days": 0,
+      "test_snow_days": 0,
+      "status": "insufficient_data"
+    },
+    {
+      "lead": 2,
+      "label": "add_RRFS",
+      "models": [
+        "GEM",
+        "ICON",
+        "RRFS"
+      ],
+      "train_days": 0,
+      "test_days": 0,
+      "train_snow_days": 0,
+      "test_snow_days": 0,
+      "status": "insufficient_data"
+    },
+    {
+      "lead": 2,
+      "label": "add_NBM",
+      "models": [
+        "GEM",
+        "ICON",
+        "NBM"
+      ],
+      "train_days": 114,
+      "test_days": 182,
+      "train_snow_days": 4,
+      "test_snow_days": 4,
+      "status": "insufficient_data"
+    }
+  ],
+  "errors": [],
+  "method": "Nonnegative sum-to-one ridge-shrunk snowfall blend; exact common cases, chronological holdout; all candidates reported, no winner chosen on holdout.",
+  "limitations": [
+    "Research only; observation reporting windows remain unresolved.",
+    "Fixed hourly offsets are not a single model issuance or latest stitched forecast.",
+    "Limited snow events, changing model versions, possible NBM overlap with individual models.",
+    "RRFS may lack older winter archives. Missing historical forecasts are never replaced with zeros or another model.",
+    "No learned regional forecasts or calibrated probabilities."
+  ]
+}

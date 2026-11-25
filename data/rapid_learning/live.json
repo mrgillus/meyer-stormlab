@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-11-25T02:26:05.279155+00:00",
+  "training_generated_at": "2026-11-25T02:26:05.183832+00:00",
+  "station": "USW00013994",
+  "predictions": [
+    {
+      "date": "2026-11-25",
+      "lead": 1,
+      "label": "global_baseline",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-26",
+      "lead": 1,
+      "label": "global_baseline",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    },
+    {
+      "date": "2026-11-25",
+      "lead": 2,
+      "label": "global_baseline",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "outside_training_range",
+      "raw": {
+        "GEM": 1.9291338582677167,
+        "ICON": 4.464566929133858
+      },
+      "exceeds_training_range": [
+        "ICON"
+      ],
+      "learned_inches": null,
+      "equal_inches": 3.197
+    },
+    {
+      "date": "2026-11-26",
+      "lead": 2,
+      "label": "global_baseline",
+      "models": [
+        "GEM",
+        "ICON"
+      ],
+      "status": "not_yet_eligible"
+    }
+  ],
+  "errors": [],
+  "note": "Fixed-offset shadow inference at Lambert only. No newest-run substitution. Out-of-training-range learned outputs withheld; no operational promotion."
+}
