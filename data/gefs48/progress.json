@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-11-25T12:46:52.985886+00:00",
+  "lead_hours": 48,
+  "complete": 72,
+  "attempted": 72,
+  "received": 72,
+  "total_initializations": 3925,
+  "feature_rows": 2160,
+  "exhausted": 0,
+  "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
+  "note": "Separate 48h lead, preceding 24h precipitation. Original archive untouched; eligible dates expand as core archive grows."
+}

@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "points": [
+    {
+      "label": "synoptic_0",
+      "lat": 32,
+      "lon": -102
+    },
+    {
+      "label": "synoptic_1",
+      "lat": 32,
+      "lon": -92
+    },
+    {
+      "label": "synoptic_2",
+      "lat": 32,
+      "lon": -82
+    },
+    {
+      "label": "synoptic_3",
+      "lat": 38,
+      "lon": -102
+    },
+    {
+      "label": "synoptic_4",
+      "lat": 38,
+      "lon": -92
+    },
+    {
+      "label": "synoptic_5",
+      "lat": 38,
+      "lon": -82
+    },
+    {
+      "label": "synoptic_6",
+      "lat": 44,
+      "lon": -102
+    },
+    {
+      "label": "synoptic_7",
+      "lat": 44,
+      "lon": -92
+    },
+    {
+      "label": "synoptic_8",
+      "lat": 44,
+      "lon": -82
+    },
+    {
+      "label": "synoptic_9",
+      "lat": 38.75,
+      "lon": -90.37
+    },
+    {
+      "label": "USW00013994",
+      "lat": 38.7525,
+      "lon": -90.3733
+    },
+    {
+      "label": "USC00237397",
+      "lat": 38.8142,
+      "lon": -90.5139
+    },
+    {
+      "label": "USW00013802",
+      "lat": 38.52,
+      "lon": -89.8467
+    },
+    {
+      "label": "USC00114489",
+      "lat": 39.1025,
+      "lon": -90.3431
+    },
+    {
+      "label": "USC00232591",
+      "lat": 39.1558,
+      "lon": -90.7831
+    },
+    {
+      "label": "USC00232220",
+      "lat": 38.14,
+      "lon": -90.5064
+    },
+    {
+      "label": "USC00238725",
+      "lat": 38.8347,
+      "lon": -91.1389
+    },
+    {
+      "label": "USC00115917",
+      "lat": 39.0728,
+      "lon": -89.7014
+    },
+    {
+      "label": "USC00117157",
+      "lat": 38.1783,
+      "lon": -89.9786
+    },
+    {
+      "label": "USC00230856",
+      "lat": 39.3444,
+      "lon": -91.1711
+    },
+    {
+      "label": "USC00237300",
+      "lat": 38.4508,
+      "lon": -91.3753
+    },
+    {
+      "label": "USC00113693",
+      "lat": 38.865,
+      "lon": -89.4053
+    },
+    {
+      "label": "USC00114108",
+      "lat": 39.1611,
+      "lon": -89.4919
+    },
+    {
+      "label": "USC00114447",
+      "lat": 39.7133,
+      "lon": -90.2286
+    },
+    {
+      "label": "USC00232809",
+      "lat": 37.7919,
+      "lon": -90.4097
+    },
+    {
+      "label": "USC00116011",
+      "lat": 38.3419,
+      "lon": -89.3592
+    },
+    {
+      "label": "USC00116837",
+      "lat": 39.6197,
+      "lon": -90.8033
+    },
+    {
+      "label": "USC00236826",
+      "lat": 37.8956,
+      "lon": -90.8414
+    },
+    {
+      "label": "USC00233079",
+      "lat": 38.8483,
+      "lon": -91.9419
+    },
+    {
+      "label": "USW00093822",
+      "lat": 39.8453,
+      "lon": -89.6839
+    },
+    {
+      "label": "USC00114629",
+      "lat": 37.9836,
+      "lon": -89.9469
+    },
+    {
+      "label": "USC00235541",
+      "lat": 39.1714,
+      "lon": -91.8717
+    },
+    {
+      "label": "USC00233043",
+      "lat": 38.4583,
+      "lon": -91.7028
+    },
+    {
+      "label": "USC00237578",
+      "lat": 39.6361,
+      "lon": -91.25
+    },
+    {
+      "label": "USC00231101",
+      "lat": 37.5142,
+      "lon": -91.1939
+    },
+    {
+      "label": "USC00117636",
+      "lat": 38.6403,
+      "lon": -88.9458
+    },
+    {
+      "label": "USC00118491",
+      "lat": 39.5225,
+      "lon": -89.2636
+    },
+    {
+      "label": "USC00112483",
+      "lat": 37.9878,
+      "lon": -89.1931
+    },
+    {
+      "label": "USC00110500",
+      "lat": 39.1811,
+      "lon": -88.7828
+    }
+  ],
+  "members": [
+    "c00",
+    "p01",
+    "p02",
+    "p03",
+    "p04"
+  ],
+  "lead_hours": [
+    24,
+    72,
+    168,
+    336
+  ],
+  "fields": [
+    "t2m",
+    "t850",
+    "z500",
+    "mslp",
+    "pwat",
+    "precip24"
+  ],
+  "archive": "NOAA GEFSv12 2000\u20132019",
+  "selection": "All cold-season initializations plus September lead-in, deterministic year-interleaved order.",
+  "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+}
