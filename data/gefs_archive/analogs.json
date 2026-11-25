@@ -1,146 +1,146 @@
 {
-  "generated_at": "2026-11-25T04:40:00.517671+00:00",
+  "generated_at": "2026-11-25T06:31:22.560699+00:00",
   "query_initialization": "20191231",
-  "complete_initializations": 1165,
+  "complete_initializations": 1355,
   "results": [
     {
       "lead_hours": 24,
-      "candidates": 520,
+      "candidates": 597,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20100202",
-          "distance": 0.7303
+          "distance": 0.7233
+        },
+        {
+          "init": "20101127",
+          "distance": 0.7305
         },
         {
           "init": "20171213",
-          "distance": 0.7412
+          "distance": 0.7382
         },
         {
           "init": "20130214",
-          "distance": 0.7446
+          "distance": 0.7419
         },
         {
           "init": "20141120",
-          "distance": 0.7502
+          "distance": 0.7468
         },
         {
           "init": "20161201",
-          "distance": 0.7648
+          "distance": 0.7602
         },
         {
           "init": "20051210",
           "distance": 0.7768
         },
         {
+          "init": "20181205",
+          "distance": 0.7831
+        },
+        {
+          "init": "20130106",
+          "distance": 0.7898
+        },
+        {
           "init": "20021226",
-          "distance": 0.7897
-        },
-        {
-          "init": "20021207",
-          "distance": 0.7937
-        },
-        {
-          "init": "20181126",
-          "distance": 0.7948
-        },
-        {
-          "init": "20020115",
-          "distance": 0.7966
+          "distance": 0.792
         }
       ]
     },
     {
       "lead_hours": 72,
-      "candidates": 520,
+      "candidates": 597,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20031124",
-          "distance": 0.8926
+          "distance": 0.8812
         },
         {
           "init": "20070102",
-          "distance": 0.9539
+          "distance": 0.9415
         },
         {
           "init": "20141220",
-          "distance": 0.9583
-        },
-        {
-          "init": "20060110",
-          "distance": 0.9708
-        },
-        {
-          "init": "20060131",
-          "distance": 0.9774
+          "distance": 0.9431
         },
         {
           "init": "20121214",
-          "distance": 0.98
+          "distance": 0.9571
+        },
+        {
+          "init": "20060110",
+          "distance": 0.9644
+        },
+        {
+          "init": "20060131",
+          "distance": 0.97
         },
         {
           "init": "20090208",
-          "distance": 0.9887
+          "distance": 0.9819
         },
         {
           "init": "20130210",
-          "distance": 1.0109
+          "distance": 1.0053
         },
         {
           "init": "20081126",
-          "distance": 1.0137
+          "distance": 1.0062
         },
         {
           "init": "20091126",
-          "distance": 1.0251
+          "distance": 1.0142
         }
       ]
     },
     {
       "lead_hours": 168,
-      "candidates": 520,
+      "candidates": 597,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20031206",
-          "distance": 0.6273
+          "distance": 0.626
         },
         {
           "init": "20020127",
-          "distance": 0.6304
+          "distance": 0.6288
         },
         {
           "init": "20010116",
-          "distance": 0.6601
+          "distance": 0.6571
         },
         {
           "init": "20021201",
-          "distance": 0.6687
+          "distance": 0.6658
+        },
+        {
+          "init": "20000126",
+          "distance": 0.6767
         },
         {
           "init": "20071124",
-          "distance": 0.6863
+          "distance": 0.6832
+        },
+        {
+          "init": "20071117",
+          "distance": 0.692
+        },
+        {
+          "init": "20120123",
+          "distance": 0.7009
         },
         {
           "init": "20150108",
-          "distance": 0.7052
+          "distance": 0.7034
         },
         {
           "init": "20061221",
-          "distance": 0.7053
-        },
-        {
-          "init": "20111202",
-          "distance": 0.721
-        },
-        {
-          "init": "20021222",
-          "distance": 0.722
-        },
-        {
-          "init": "20181216",
-          "distance": 0.7252
+          "distance": 0.705
         }
       ]
     }
