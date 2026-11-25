@@ -58,7 +58,10 @@ def gather(periods):
             except Exception as e:errors.append(dict(model=n,start=a,end=b,error=str(e)))
     return result,errors
 
-def metrics(y,p):return h.scores(list(y),list(p))
+def metrics(y,p):
+    # Convert NumPy scalars before scoring: NumPy boolean sums yield int64,
+    # which the standard JSON encoder cannot serialize.
+    return h.scores([float(v) for v in y],[float(v) for v in p])
 
 def evaluate(rows,lead,names,label,base):
     import numpy as np
