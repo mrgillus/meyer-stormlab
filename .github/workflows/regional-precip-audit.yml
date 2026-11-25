@@ -1,0 +1,52 @@
+name: Regional GEFS precipitation verification
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/regional_precip_audit.py'
+      - '.github/workflows/regional-precip-audit.yml'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-precip-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2 requests eccodes
+      - name: Independently verify precipitation and grid selection
+        run: |
+          python -m py_compile scripts/regional_precip_audit.py
+          python scripts/regional_precip_audit.py
+      - name: Publish verification results
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp data/regional_live/precip_audit*.json "$stage/"
+          source_hash=$(git hash-object scripts/regional_precip_audit.py)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ "$(git hash-object scripts/regional_precip_audit.py)" != "$source_hash" ]; then exit 1; fi
+            mkdir -p data/regional_live
+            cp "$stage/"*.json data/regional_live/
+            git add data/regional_live/precip_audit*.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish independent GEFS precipitation verification"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
