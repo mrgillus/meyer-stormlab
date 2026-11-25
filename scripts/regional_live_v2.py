@@ -14,15 +14,8 @@ WINDOWS=(("20261125",24),("20261125",48))
 def hi_path(date,member,lead,part="s"):
     return f"gefs.{date}/00/atmos/pgrb2sp25/ge{member}.t00z.pgrb2s.0p25.f{lead:03d}"
 
-def hi_record(date,member,lead,var,level,step):
-    url,rr=live.records(date,member,lead,"s")
-    matches=[r for r in rr if r[2][3]==var and r[2][4]==level and r[2][5].strip()==step]
-    if len(matches)!=1:raise ValueError(f"Missing or ambiguous 0.25-degree record {date} {member} {lead} {var} {level} {step}")
-    return url,matches[0]
-
 # Require the fine-grid product. Never silently mix in the coarser product.
 live.path=hi_path
-live.record=hi_record
 def hi_record(date,member,lead,var,level,step):
     url,rr=live.records(date,member,lead,"s")
     matches=[r for r in rr if r[2][3]==var and r[2][4]==level and r[2][5].strip()==step]
