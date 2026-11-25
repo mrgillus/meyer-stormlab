@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-25T12:47:19.221108+00:00",
+  "archive_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
+  "archive_snapshot_sha256": "4993b2897e5f0df36b78ce433a34828737a56bcec4c631210e0e3e7bd536bd9d",
+  "complete_shards": 72,
+  "feature_errors": [],
+  "results": [
+    {
+      "lead_hours": 48,
+      "label_mapping": "utc_end_date",
+      "coverage": {
+        "train": {
+          "station_days": 389,
+          "dates": 47,
+          "stations": 29,
+          "snow_station_days": 22,
+          "snow_dates": 5,
+          "regional_event_groups": 5
+        },
+        "validation": {
+          "station_days": 116,
+          "dates": 9,
+          "stations": 23,
+          "snow_station_days": 0,
+          "snow_dates": 0,
+          "regional_event_groups": 0
+        },
+        "test": {
+          "station_days": 193,
+          "dates": 9,
+          "stations": 24,
+          "snow_station_days": 0,
+          "snow_dates": 0,
+          "regional_event_groups": 0
+        }
+      },
+      "status": "insufficient_data"
+    },
+    {
+      "lead_hours": 48,
+      "label_mapping": "utc_end_previous_date",
+      "coverage": {
+        "train": {
+          "station_days": 410,
+          "dates": 47,
+          "stations": 29,
+          "snow_station_days": 44,
+          "snow_dates": 5,
+          "regional_event_groups": 5
+        },
+        "validation": {
+          "station_days": 131,
+          "dates": 9,
+          "stations": 27,
+          "snow_station_days": 0,
+          "snow_dates": 0,
+          "regional_event_groups": 0
+        },
+        "test": {
+          "station_days": 194,
+          "dates": 9,
+          "stations": 24,
+          "snow_station_days": 0,
+          "snow_dates": 0,
+          "regional_event_groups": 0
+        }
+      },
+      "status": "insufficient_data"
+    }
+  ],
+  "seasons": {
+    "train": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012
+    ],
+    "validation": [
+      2013,
+      2014,
+      2015
+    ],
+    "test": [
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "operational_ready": false,
+  "method": "Predict GHCN station-reported date snowfall from GEFS six-field ensemble features. Two prespecified UTC-end date mappings; neither is an asserted verified observation window. Entire winter splits, date-weighted metrics and regional event counts.",
+  "blockers": [
+    "Snowfall-specific reporting clocks and effective dates must be independently verified; mappings are sensitivity experiments.",
+    "Live GEFS feature extraction, units/grid compatibility and model-version shift must be verified before live inference.",
+    "Independent performance and probability calibration must be established before operational promotion."
+  ]
+}
