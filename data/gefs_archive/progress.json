@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-25T21:28:36.107172+00:00",
+  "generated_at": "2026-11-25T22:28:48.034894+00:00",
   "total_initializations": 3925,
-  "attempted_initializations": 2885,
-  "core_complete": 2879,
-  "extended_complete": 2453,
-  "feature_rows": 333405,
+  "attempted_initializations": 2980,
+  "core_complete": 2974,
+  "extended_complete": 2534,
+  "feature_rows": 344385,
   "point_count": 39,
   "member_count": 5,
   "max_dates_per_run": 96,
@@ -15,59 +15,59 @@
   "new_this_run": 95,
   "worker_timings": [
     {
-      "worker": "4",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1089,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "2",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 758,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
       "worker": "6",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 992,
+      "elapsed_seconds": 759,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     },
     {
-      "worker": "7",
+      "worker": "4",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 1007,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "1",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 564,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "5",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 1245,
-      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
-    },
-    {
-      "worker": "0",
-      "assigned": 12,
-      "processed": 12,
-      "elapsed_seconds": 836,
+      "elapsed_seconds": 932,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     },
     {
       "worker": "3",
       "assigned": 12,
       "processed": 12,
-      "elapsed_seconds": 816,
+      "elapsed_seconds": 774,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "5",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 948,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "0",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 986,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "2",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 1013,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "7",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 708,
+      "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
+    },
+    {
+      "worker": "1",
+      "assigned": 12,
+      "processed": 12,
+      "elapsed_seconds": 1249,
       "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d"
     }
   ],
@@ -78,7 +78,7 @@
   ],
   "extended_lead": 336,
   "errors": {
-    "not_found": 12762,
+    "not_found": 13182,
     "other": 33
   },
   "exhausted_core": 5,
@@ -86,122 +86,122 @@
     {
       "year": "2000",
       "total": 197,
-      "attempted": 145,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 148
     },
     {
       "year": "2001",
       "total": 196,
-      "attempted": 145,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 148
     },
     {
       "year": "2002",
       "total": 196,
-      "attempted": 145,
-      "core_complete": 145
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2003",
       "total": 196,
-      "attempted": 145,
-      "core_complete": 145
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2004",
       "total": 197,
-      "attempted": 145,
-      "core_complete": 141
+      "attempted": 149,
+      "core_complete": 145
     },
     {
       "year": "2005",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2006",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2007",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2008",
       "total": 197,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2009",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2010",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2011",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2012",
       "total": 197,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2013",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2014",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2015",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2016",
       "total": 197,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2017",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2018",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     },
     {
       "year": "2019",
       "total": 196,
-      "attempted": 144,
-      "core_complete": 144
+      "attempted": 149,
+      "core_complete": 149
     }
   ],
   "training_ready": false,
