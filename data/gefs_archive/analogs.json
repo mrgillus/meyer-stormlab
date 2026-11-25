@@ -1,36 +1,36 @@
 {
-  "generated_at": "2026-11-25T19:26:52.450657+00:00",
+  "generated_at": "2026-11-25T20:27:36.810917+00:00",
   "query_initialization": "20191231",
-  "complete_initializations": 2691,
+  "complete_initializations": 2785,
   "results": [
     {
       "lead_hours": 24,
-      "candidates": 1203,
+      "candidates": 1254,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20041202",
-          "distance": 0.6937
+          "distance": 0.6912
         },
         {
           "init": "20010131",
-          "distance": 0.7195
+          "distance": 0.7189
         },
         {
           "init": "20101127",
-          "distance": 0.7265
+          "distance": 0.7247
         },
         {
           "init": "20100202",
-          "distance": 0.7335
+          "distance": 0.7321
         },
         {
           "init": "20171214",
-          "distance": 0.7376
+          "distance": 0.7372
         },
         {
           "init": "20080114",
-          "distance": 0.7433
+          "distance": 0.7422
         },
         {
           "init": "20130214",
@@ -38,26 +38,26 @@
         },
         {
           "init": "20150117",
-          "distance": 0.7451
+          "distance": 0.7448
         },
         {
           "init": "20141120",
-          "distance": 0.7472
+          "distance": 0.746
         },
         {
           "init": "20161201",
-          "distance": 0.7515
+          "distance": 0.7513
         }
       ]
     },
     {
       "lead_hours": 72,
-      "candidates": 1203,
+      "candidates": 1254,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20000107",
-          "distance": 0.8728
+          "distance": 0.8725
         },
         {
           "init": "20031124",
@@ -65,82 +65,82 @@
         },
         {
           "init": "20160105",
-          "distance": 0.9147
+          "distance": 0.9139
         },
         {
           "init": "20121214",
-          "distance": 0.9199
+          "distance": 0.9229
         },
         {
           "init": "20021217",
-          "distance": 0.9243
+          "distance": 0.9248
         },
         {
           "init": "20041203",
-          "distance": 0.93
+          "distance": 0.9315
         },
         {
           "init": "20171215",
-          "distance": 0.9325
+          "distance": 0.9319
         },
         {
           "init": "20070102",
-          "distance": 0.9419
+          "distance": 0.9408
         },
         {
           "init": "20141220",
-          "distance": 0.9422
+          "distance": 0.9427
         },
         {
           "init": "20181217",
-          "distance": 0.9428
+          "distance": 0.9432
         }
       ]
     },
     {
       "lead_hours": 168,
-      "candidates": 1203,
+      "candidates": 1254,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20031206",
-          "distance": 0.6236
+          "distance": 0.6237
         },
         {
           "init": "20020127",
-          "distance": 0.6273
+          "distance": 0.6268
         },
         {
           "init": "20181217",
-          "distance": 0.6461
+          "distance": 0.6458
         },
         {
           "init": "20010116",
-          "distance": 0.6561
+          "distance": 0.6551
+        },
+        {
+          "init": "20060207",
+          "distance": 0.6605
         },
         {
           "init": "20021201",
-          "distance": 0.6632
+          "distance": 0.6629
         },
         {
           "init": "20000126",
-          "distance": 0.6746
+          "distance": 0.6738
         },
         {
           "init": "20071124",
-          "distance": 0.6816
+          "distance": 0.6817
         },
         {
           "init": "20020206",
-          "distance": 0.6863
+          "distance": 0.6858
         },
         {
           "init": "20071117",
-          "distance": 0.6955
-        },
-        {
-          "init": "20040203",
-          "distance": 0.6985
+          "distance": 0.6952
         }
       ]
     }
