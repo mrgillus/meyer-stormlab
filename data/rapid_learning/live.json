@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T08:24:29.658101+00:00",
+  "generated_at": "2026-11-25T09:55:55.241536+00:00",
   "training_generated_at": "2026-11-25T02:26:05.183832+00:00",
   "station": "USW00013994",
   "predictions": [
@@ -14,13 +14,13 @@
       "status": "outside_training_range",
       "raw": {
         "GEM": 4.078740157480315,
-        "ICON": 5.84251968503937
+        "ICON": 5.73228346456693
       },
       "exceeds_training_range": [
         "ICON"
       ],
       "learned_inches": null,
-      "equal_inches": 4.961
+      "equal_inches": 4.906
     },
     {
       "date": "2026-11-26",
