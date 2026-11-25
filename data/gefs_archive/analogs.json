@@ -1,146 +1,146 @@
 {
-  "generated_at": "2026-11-25T09:46:28.571637+00:00",
+  "generated_at": "2026-11-25T11:29:46.799226+00:00",
   "query_initialization": "20191231",
-  "complete_initializations": 1735,
+  "complete_initializations": 1926,
   "results": [
     {
       "lead_hours": 24,
-      "candidates": 765,
+      "candidates": 856,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20100202",
-          "distance": 0.7314
+          "distance": 0.7317
         },
         {
           "init": "20101127",
-          "distance": 0.7368
+          "distance": 0.7342
         },
         {
           "init": "20171213",
-          "distance": 0.7433
+          "distance": 0.7406
         },
         {
           "init": "20130214",
-          "distance": 0.7478
+          "distance": 0.7467
         },
         {
           "init": "20141120",
-          "distance": 0.754
+          "distance": 0.7515
         },
         {
           "init": "20020121",
-          "distance": 0.7598
+          "distance": 0.7561
         },
         {
           "init": "20161201",
-          "distance": 0.7622
+          "distance": 0.7591
         },
         {
           "init": "20010205",
-          "distance": 0.764
+          "distance": 0.7619
         },
         {
           "init": "20011227",
-          "distance": 0.766
+          "distance": 0.7654
         },
         {
           "init": "20170126",
-          "distance": 0.7781
+          "distance": 0.7776
         }
       ]
     },
     {
       "lead_hours": 72,
-      "candidates": 765,
+      "candidates": 856,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20031124",
-          "distance": 0.8899
+          "distance": 0.8829
         },
         {
           "init": "20121214",
-          "distance": 0.937
+          "distance": 0.9333
         },
         {
           "init": "20070102",
-          "distance": 0.9482
+          "distance": 0.947
         },
         {
           "init": "20141220",
-          "distance": 0.9556
+          "distance": 0.9554
         },
         {
           "init": "20060110",
-          "distance": 0.9729
+          "distance": 0.9709
         },
         {
           "init": "20060131",
-          "distance": 0.9751
+          "distance": 0.9731
         },
         {
           "init": "20090208",
-          "distance": 0.9849
+          "distance": 0.9832
         },
         {
           "init": "20130210",
-          "distance": 1.008
+          "distance": 1.0072
         },
         {
           "init": "20071217",
-          "distance": 1.0154
+          "distance": 1.0105
         },
         {
           "init": "20081126",
-          "distance": 1.0175
+          "distance": 1.0129
         }
       ]
     },
     {
       "lead_hours": 168,
-      "candidates": 765,
+      "candidates": 856,
       "status": "pattern_matches",
       "matches": [
         {
           "init": "20031206",
-          "distance": 0.6285
+          "distance": 0.6273
         },
         {
           "init": "20020127",
-          "distance": 0.6313
+          "distance": 0.6317
         },
         {
           "init": "20010116",
-          "distance": 0.6561
+          "distance": 0.656
         },
         {
           "init": "20021201",
-          "distance": 0.6653
+          "distance": 0.6656
         },
         {
           "init": "20000126",
-          "distance": 0.6761
+          "distance": 0.6763
         },
         {
           "init": "20071124",
-          "distance": 0.686
+          "distance": 0.6858
         },
         {
           "init": "20020206",
-          "distance": 0.6906
+          "distance": 0.6902
         },
         {
           "init": "20071117",
-          "distance": 0.694
+          "distance": 0.6935
         },
         {
           "init": "20120123",
-          "distance": 0.7007
+          "distance": 0.7019
         },
         {
           "init": "20150108",
-          "distance": 0.7031
+          "distance": 0.7033
         }
       ]
     }
