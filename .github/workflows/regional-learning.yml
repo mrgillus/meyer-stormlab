@@ -1,0 +1,60 @@
+name: Regional GEFS snowfall learning
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/regional_learning.py'
+      - '.github/workflows/regional-learning.yml'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-regional-learning
+  cancel-in-progress: false
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install training dependencies
+        run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2
+      - name: Train and validate against unseen winters
+        run: |
+          python -m py_compile scripts/regional_learning.py
+          python scripts/regional_learning.py
+      - name: Publish benchmark without changing live forecasts
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/regional_learning/. "$stage/"
+          source_hash=$(git hash-object scripts/regional_learning.py)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ "$(git hash-object scripts/regional_learning.py)" != "$source_hash" ]; then
+              echo "Training source changed; refusing to publish obsolete experiment."
+              exit 1
+            fi
+            mkdir -p data/regional_learning
+            cp -a "$stage/." data/regional_learning/
+            git add data/regional_learning/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish regional GEFS snowfall research benchmark"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
