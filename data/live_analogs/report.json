@@ -1,0 +1,803 @@
+{
+  "generated_at": "2026-11-25T13:03:35.453753+00:00",
+  "results": [
+    {
+      "initialization": "20261125T00Z",
+      "lead_hours": 24,
+      "candidates": 983,
+      "towns": [
+        {
+          "town": "Wentzville",
+          "station": "USC00238725",
+          "station_name": "WARRENTON 1 N",
+          "station_distance_miles": 15.5,
+          "matches": [
+            {
+              "initialization": "2003-11-27",
+              "distance": 1.1643,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2003-11-28",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2003-11-27",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2004-11-30",
+              "distance": 1.1773,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2004-12-01",
+                  "snow_inches": 0.31496062992125984
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2004-11-30",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2008-10-23",
+              "distance": 1.1879,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2008-10-24",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2008-10-23",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2014-11-11",
+              "distance": 1.2085,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2014-11-12",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2014-11-11",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2013-01-01",
+              "distance": 1.2219,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2013-01-02",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2013-01-01",
+                  "snow_inches": 2.0078740157480315
+                }
+              }
+            },
+            {
+              "initialization": "2019-11-22",
+              "distance": 1.2377,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2019-11-23",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2019-11-22",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2000-11-29",
+              "distance": 1.242,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2000-11-30",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2000-11-29",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2017-12-28",
+              "distance": 1.2443,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2017-12-29",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2017-12-28",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2018-12-16",
+              "distance": 1.2465,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2018-12-17",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2018-12-16",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2012-11-23",
+              "distance": 1.2607,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2012-11-24",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2012-11-23",
+                  "snow_inches": 0.0
+                }
+              }
+            }
+          ],
+          "coverage": {
+            "utc_end_date": 7,
+            "utc_end_previous_date": 8
+          }
+        },
+        {
+          "town": "Florissant",
+          "station": "USW00013994",
+          "station_name": "ST LOUIS LAMBERT INTL AP",
+          "station_distance_miles": 3.7,
+          "matches": [
+            {
+              "initialization": "2009-11-24",
+              "distance": 1.1857,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2009-11-25",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2009-11-24",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2013-01-01",
+              "distance": 1.1902,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2013-01-02",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2013-01-01",
+                  "snow_inches": 0.11811023622047245
+                }
+              }
+            },
+            {
+              "initialization": "2004-11-30",
+              "distance": 1.2215,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2004-12-01",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2004-11-30",
+                  "snow_inches": 0.3937007874015748
+                }
+              }
+            },
+            {
+              "initialization": "2000-11-29",
+              "distance": 1.2224,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2000-11-30",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2000-11-29",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2018-12-16",
+              "distance": 1.2321,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2018-12-17",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2018-12-16",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2019-01-08",
+              "distance": 1.2468,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2019-01-09",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2019-01-08",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2019-11-22",
+              "distance": 1.2659,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2019-11-23",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2019-11-22",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2003-12-03",
+              "distance": 1.2763,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2003-12-04",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2003-12-03",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2008-12-24",
+              "distance": 1.2807,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2008-12-25",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2008-12-24",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2014-11-11",
+              "distance": 1.2825,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2014-11-12",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2014-11-11",
+                  "snow_inches": 0.0
+                }
+              }
+            }
+          ],
+          "coverage": {
+            "utc_end_date": 10,
+            "utc_end_previous_date": 10
+          }
+        },
+        {
+          "town": "Troy",
+          "station": "USC00238725",
+          "station_name": "WARRENTON 1 N",
+          "station_distance_miles": 13.1,
+          "matches": [
+            {
+              "initialization": "2008-10-23",
+              "distance": 1.1969,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2008-10-24",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2008-10-23",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2003-11-27",
+              "distance": 1.2079,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2003-11-28",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2003-11-27",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2004-11-30",
+              "distance": 1.2311,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2004-12-01",
+                  "snow_inches": 0.31496062992125984
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2004-11-30",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2019-11-22",
+              "distance": 1.3023,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2019-11-23",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2019-11-22",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2017-12-28",
+              "distance": 1.3259,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2017-12-29",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2017-12-28",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2014-11-11",
+              "distance": 1.3375,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2014-11-12",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2014-11-11",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2012-11-23",
+              "distance": 1.3486,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2012-11-24",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2012-11-23",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2004-12-21",
+              "distance": 1.3577,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2004-12-22",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2004-12-21",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2018-12-16",
+              "distance": 1.3622,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2018-12-17",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2018-12-16",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2010-11-03",
+              "distance": 1.3672,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2010-11-04",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2010-11-03",
+                  "snow_inches": null
+                }
+              }
+            }
+          ],
+          "coverage": {
+            "utc_end_date": 7,
+            "utc_end_previous_date": 8
+          }
+        },
+        {
+          "town": "Hawk Point",
+          "station": "USC00238725",
+          "station_name": "WARRENTON 1 N",
+          "station_distance_miles": 9.4,
+          "matches": [
+            {
+              "initialization": "2008-10-23",
+              "distance": 1.2501,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2008-10-24",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2008-10-23",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2003-11-27",
+              "distance": 1.2896,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2003-11-28",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2003-11-27",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2004-11-30",
+              "distance": 1.3391,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2004-12-01",
+                  "snow_inches": 0.31496062992125984
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2004-11-30",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2010-11-03",
+              "distance": 1.395,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2010-11-04",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2010-11-03",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2019-11-22",
+              "distance": 1.406,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2019-11-23",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2019-11-22",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2011-12-26",
+              "distance": 1.4086,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2011-12-27",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2011-12-26",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2012-12-14",
+              "distance": 1.4099,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2012-12-15",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2012-12-14",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2009-11-19",
+              "distance": 1.4289,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2009-11-20",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2009-11-19",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2017-12-28",
+              "distance": 1.442,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2017-12-29",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2017-12-28",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2004-12-21",
+              "distance": 1.4461,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2004-12-22",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2004-12-21",
+                  "snow_inches": 0.0
+                }
+              }
+            }
+          ],
+          "coverage": {
+            "utc_end_date": 5,
+            "utc_end_previous_date": 6
+          }
+        },
+        {
+          "town": "Lake St. Louis",
+          "station": "USC00237397",
+          "station_name": "ST CHARLES ELM PT",
+          "station_distance_miles": 14.7,
+          "matches": [
+            {
+              "initialization": "2003-11-27",
+              "distance": 1.1991,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2003-11-28",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2003-11-27",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2013-01-01",
+              "distance": 1.2312,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2013-01-02",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2013-01-01",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2012-11-23",
+              "distance": 1.2486,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2012-11-24",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2012-11-23",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2014-11-11",
+              "distance": 1.2513,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2014-11-12",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2014-11-11",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2000-11-29",
+              "distance": 1.2671,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2000-11-30",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2000-11-29",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2018-12-16",
+              "distance": 1.2672,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2018-12-17",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2018-12-16",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2019-11-22",
+              "distance": 1.2674,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2019-11-23",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2019-11-22",
+                  "snow_inches": 0.0
+                }
+              }
+            },
+            {
+              "initialization": "2012-10-27",
+              "distance": 1.2831,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2012-10-28",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2012-10-27",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2000-11-19",
+              "distance": 1.285,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2000-11-20",
+                  "snow_inches": null
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2000-11-19",
+                  "snow_inches": null
+                }
+              }
+            },
+            {
+              "initialization": "2017-12-28",
+              "distance": 1.2862,
+              "outcomes": {
+                "utc_end_date": {
+                  "reported_date": "2017-12-29",
+                  "snow_inches": 0.0
+                },
+                "utc_end_previous_date": {
+                  "reported_date": "2017-12-28",
+                  "snow_inches": 0.0
+                }
+              }
+            }
+          ],
+          "coverage": {
+            "utc_end_date": 4,
+            "utc_end_previous_date": 3
+          }
+        }
+      ],
+      "status": "research_matches",
+      "field_resolution_degrees": {
+        "t2m": [
+          0.25
+        ],
+        "t850": [
+          0.5
+        ],
+        "z500": [
+          0.5
+        ],
+        "mslp": [
+          0.25
+        ],
+        "pwat": [
+          0.25
+        ],
+        "precip24": [
+          0.25
+        ]
+      }
+    },
+    {
+      "initialization": "20261125T00Z",
+      "lead_hours": 48,
+      "candidates": 28,
+      "towns": [],
+      "status": "insufficient_candidates"
+    }
+  ],
+  "errors": [],
+  "operational_ready": false,
+  "note": "Nearest historical atmospheric patterns from earlier seasons, +/-45 calendar days; local and synoptic blocks equally weighted, 7-day separation. Nearest observation station is a proxy, not town snowfall. Reported-date mappings unverified. Distances are not probabilities. No estimate or outcome-based selection; no validated predictive skill yet."
+}
