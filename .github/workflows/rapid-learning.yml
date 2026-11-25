@@ -1,0 +1,79 @@
+name: Rapid-refresh snowfall learning
+on:
+  workflow_dispatch:
+    inputs:
+      retrain:
+        description: Rebuild the historical benchmark
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/rapid_learning.py'
+      - '.github/workflows/rapid-learning.yml'
+  schedule:
+    - cron: '53 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-rapid-learning
+  cancel-in-progress: false
+jobs:
+  learning:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - id: active
+        name: Check experiment window
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" = schedule ] && [ "$(date -u +%s)" -ge "$(date -u -d '2026-11-27 06:00:00 UTC' +%s)" ]; then
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.active.outputs.run == 'true'
+        with:
+          python-version: '3.12'
+      - if: steps.active.outputs.run == 'true'
+        run: pip install 'numpy<3' 'scipy<2'
+      - name: Train and evaluate on independent winter
+        if: steps.active.outputs.run == 'true'
+        env:
+          EVENT: ${{ github.event_name }}
+          RETRAIN: ${{ inputs.retrain }}
+        run: |
+          python -m py_compile scripts/rapid_learning.py
+          if [ "$EVENT" = push ] || [ "$RETRAIN" = true ] || [ ! -s data/rapid_learning/report.json ]; then
+            python scripts/rapid_learning.py train
+          fi
+      - name: Generate eligible fixed-offset storm predictions
+        if: steps.active.outputs.run == 'true'
+        run: python scripts/rapid_learning.py live
+      - name: Publish benchmark and shadow predictions
+        if: steps.active.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/rapid_learning/. "$stage/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p data/rapid_learning
+            cp -a "$stage/." data/rapid_learning/
+            git add data/rapid_learning/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish rapid-refresh learning experiment"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
