@@ -48,12 +48,20 @@ def select(mode,date,member,lead,spec):
     name,file,var,level,units=spec
     step=f"{lead} hour fcst"
     if mode=="historical":
-        url=src.file_url(date,member,lead,file)
-        # The shared helper already adds suffix for unsuffixed heights only.
-        rows=index(url)
-        matches=[r for r in rows if r[2][3]==var and r[2][4]==level and r[2][5].strip()==step]
-        if len(matches)!=1:raise ValueError(f"Expected one historical record; found {len(matches)}")
-        return url,matches[0]
+        # Probe both historical pressure products, bypassing the shared HGT redirect.
+        base=file.removesuffix("_abv700mb")
+        names=[file]
+        if level.endswith(" mb"):
+            names=list(dict.fromkeys([file,base,base+"_abv700mb"]))
+        stamp=date+"00";errors=[]
+        for candidate in names:
+            url=f"{src.S3}{date[:4]}/{stamp}/{member}/Days:1-10/{candidate}_{stamp}_{member}.grib2"
+            try:rows=index(url)
+            except Exception as e:errors.append(str(e));continue
+            matches=[r for r in rows if r[2][3]==var and r[2][4]==level and r[2][5].strip()==step]
+            if len(matches)>1:raise ValueError("Ambiguous historical record")
+            if matches:return url,matches[0]
+        raise ValueError("No exact historical record in "+",".join(names)+"; "+" | ".join(errors)[:300])
     # Prefer fine grid at lower levels; above 700 hPa historical archive uses .5 degree.
     order=("a","b","s") if level.endswith(" mb") and int(level.split()[0])<700 else ("s","a","b")
     for part in order:
@@ -81,12 +89,15 @@ def decode(url,rec,date,lead,spec,points):
         for p in points:
             n=codes_grib_find_nearest(g,p["lat"],p["lon"]%360)[0]
             val=float(n["value"])
-            if not math.isfinite(val) or abs(val)>1e15:raise ValueError("Invalid value")
-            if var in ("TMP","TSOIL") and not 170<val<350:raise ValueError("Temperature range")
+            if var!="TSOIL" and (not math.isfinite(val) or abs(val)>1e15):raise ValueError("Invalid value")
+            if var=="TSOIL" and not 170<val<350:
+                values.append(None);grids.append([float(n["lat"]),float((n["lon"]+180)%360-180)]);continue
+            if var=="TMP" and not 170<val<350:raise ValueError("Temperature range")
             if var=="SPFH" and not 0<=val<.1:raise ValueError("Specific humidity range")
             if var=="RH" and not 0<=val<=110:raise ValueError("Relative humidity range")
             if var=="PRES" and not 50000<val<110000:raise ValueError("Surface pressure range")
             values.append(val);grids.append([float(n["lat"]),float((n["lon"]+180)%360-180)])
+        if not any(v is not None for v in values):raise ValueError("No usable soil grid points")
         return dict(field=name,source=url,metadata=md,values=values,grid_coordinates=grids)
     finally:codes_release(g)
 
@@ -142,10 +153,10 @@ def main():
     coverage=Counter(r["field"] for t in results for r in t["rows"])
     grids={f:sorted({r["metadata"]["iDirectionIncrementInDegrees"] for t in results for r in t["rows"] if r["field"]==f}) for f in requested}
     summary=dict(mode=mode,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),manifest_fingerprint=manifest["fingerprint"],
-        point_count=len(points),expected_tasks=len(jobs),complete_tasks=sum(len(t["rows"])==len(requested) for t in results),
+        point_count=len(points),expected_tasks=len(jobs),complete_tasks=sum(len(t["rows"])==len(requested) and all(all(v is not None for v in r["values"]) for r in t["rows"]) for t in results),
         requested_fields=requested,field_coverage={f:dict(available=coverage[f],expected=len(jobs),grid_degrees=grids[f]) for f in requested},
         errors=[dict(date=t["date"],member=t["member"],lead_hours=t["lead_hours"],**e) for t in results for e in t["errors"]],
-        value_count=sum(len(r["values"]) for t in results for r in t["rows"]),operational_ready=False,
+        value_count=sum(sum(v is not None for v in r["values"]) for t in results for r in t["rows"]), missing_point_values=sum(sum(v is None for v in r["values"]) for t in results for r in t["rows"]),operational_ready=False,
         note="Availability and profile diagnostics only. Fixed pressure levels may miss warm noses and the dendritic growth zone; below-ground levels are masked in diagnostics. Specific humidity-derived RH uses water saturation; native RH is not substituted. Soil/skin temperatures are not road temperatures. No phase, SLR or accumulation forecast.")
     if mode=="live":
         summary["profiles"]=[dict(date=t["date"],member=t["member"],lead_hours=t["lead_hours"],towns=diagnostics(t,points)) for t in results]
