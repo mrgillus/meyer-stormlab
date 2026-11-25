@@ -11,17 +11,23 @@ import storm_blend as storm
 ROOT=live.ROOT
 OUT=ROOT/"data/regional_live_v2"
 WINDOWS=(("20261125",24),("20261125",48))
+# NOAA's fine-grid subset lacks some pressure-level fields. Record the
+# actual product per field and never fall back to coarse precipitation.
+USED={}
 def hi_path(date,member,lead,part="s"):
-    return f"gefs.{date}/00/atmos/pgrb2sp25/ge{member}.t00z.pgrb2s.0p25.f{lead:03d}"
-
-# Require the fine-grid product. Never silently mix in the coarser product.
+    folder,res=("pgrb2sp25","0p25") if part=="s" else (f"pgrb2{part}p5","0p50")
+    return f"gefs.{date}/00/atmos/{folder}/ge{member}.t00z.pgrb2{part}.{res}.f{lead:03d}"
 live.path=hi_path
+
 def hi_record(date,member,lead,var,level,step):
-    url,rr=live.records(date,member,lead,"s")
-    matches=[r for r in rr if r[2][3]==var and r[2][4]==level and r[2][5].strip()==step]
-    if not matches:raise ValueError(f"Missing {date} {member} {lead} {var} {level} {step} in 0.25-degree product")
-    if len(matches)>1:raise ValueError("Ambiguous 0.25-degree record")
-    return url,matches[0]
+    for part in (("s",) if var=="APCP" else ("s","a","b")):
+        url,rr=live.records(date,member,lead,part)
+        matches=[r for r in rr if r[2][3]==var and r[2][4]==level and r[2][5].strip()==step]
+        if len(matches)>1:raise ValueError("Ambiguous GRIB record")
+        if len(matches)==1:
+            USED[(date,member,lead,var,level)]=.25 if part=="s" else .5
+            return url,matches[0]
+    raise ValueError(f"Missing {date} {member} {lead} {var} {level} {step}")
 live.record=hi_record
 
 def main():
@@ -34,13 +40,16 @@ def main():
     windows=[];errors=[]
     for date,lead in WINDOWS:
         end=dt.datetime.strptime(date,"%Y%m%d").replace(tzinfo=dt.timezone.utc)+dt.timedelta(hours=lead)
-        w=dict(initialization_utc=date+"T00Z",lead_hours=lead,valid_start_utc=(end-dt.timedelta(hours=24)).isoformat(),valid_end_utc=end.isoformat(),status="incomplete",resolution_degrees=.25)
+        w=dict(initialization_utc=date+"T00Z",lead_hours=lead,valid_start_utc=(end-dt.timedelta(hours=24)).isoformat(),valid_end_utc=end.isoformat(),status="incomplete",precipitation_resolution_degrees=.25)
         members={}
         with ThreadPoolExecutor(max_workers=5) as ex:
             for m,f in [(m,ex.submit(live.get_member,date,lead,m,coords)) for m in live.MEMBERS]:
                 try:members[m]=f.result()
                 except Exception as e:errors.append(dict(date=date,lead=lead,member=m,error=str(e)));print(errors[-1],flush=True)
+        w["field_resolution_degrees"]={f:sorted({res for (d,m,l,v,lev),res in USED.items() if d==date and l==lead and v==var and lev==level}) for f,(var,level) in live.VARS.items()}
+        w["field_resolution_degrees"]["precip24"]=sorted({res for (d,m,l,v,lev),res in USED.items() if d==date and lead-24<l<=lead and v=="APCP"})
         if len(members)!=5:windows.append(w);continue
+        if any(len(v)!=1 for v in w["field_resolution_degrees"].values()):raise ValueError("Inconsistent ensemble field resolutions")
         data=np.stack([members[m] for m in live.MEMBERS],axis=1)
         if data.shape!=(6,5,len(points)):raise ValueError("Feature shape mismatch")
         w["inputs"]=[dict(**p,precip_mm=round(float(data[5,:,i].mean()),3),member_precip_mm={m:round(float(data[5,j,i]),3) for j,m in enumerate(live.MEMBERS)},t2m_c=round(float(data[0,:,i].mean()-273.15),2),t850_c=round(float(data[1,:,i].mean()-273.15),2)) for i,p in enumerate(points) if p["kind"]=="town"]
@@ -54,7 +63,7 @@ def main():
         pred=live.infer(date,lead,data,points,report)
         w.update(pred,training_generated_at=report["generated_at"],training_archive_snapshot=report["archive_snapshot_sha256"])
         windows.append(w)
-    payload=dict(schema=2,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),archive_fingerprint=manifest["fingerprint"],historical_units=units,windows=windows,errors=errors,operational_ready=False,note="Same 00Z initialization, +24 and +48h leads, preceding 24h precipitation per window. Strict 0.25-degree products. Research only; reporting-time alignment and operational/reforecast differences unresolved. Not a validated 48h storm total.")
+    payload=dict(schema=2,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),archive_fingerprint=manifest["fingerprint"],historical_units=units,windows=windows,errors=errors,operational_ready=False,note="Same 00Z initialization, +24 and +48h leads, preceding 24h precipitation per window. Precipitation strictly 0.25-degree; missing fine-grid atmospheric fields use explicitly recorded 0.5-degree products. Mixed-resolution inputs are research-only. Research only; reporting-time alignment and operational/reforecast differences unresolved. Not a validated 48h storm total.")
     (OUT/"status.json").write_text(json.dumps(payload,indent=2,allow_nan=False)+"\n")
     if all(w["status"]=="research_only" for w in windows):
         (OUT/"report.json").write_text(json.dumps(payload,indent=2,allow_nan=False)+"\n")
