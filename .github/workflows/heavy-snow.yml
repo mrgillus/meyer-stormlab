@@ -1,0 +1,57 @@
+name: Heavy snowfall regional research benchmark
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/heavy_snow.py'
+      - '.github/workflows/heavy-snow.yml'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-heavy-snow
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2
+      - name: Train occurrence, conditional amounts, and threshold classifiers
+        run: |
+          python -m py_compile scripts/heavy_snow.py
+          python scripts/heavy_snow.py
+      - name: Publish research benchmark
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/heavy_snow/. "$stage/"
+          base=$(git rev-parse HEAD)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$base" HEAD -- scripts/heavy_snow.py scripts/regional_learning.py data/gefs_archive/manifest.json data/regional/observations.csv.gz; then exit 1; fi
+            mkdir -p data/heavy_snow
+            cp -a "$stage/." data/heavy_snow/
+            git add data/heavy_snow/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish heavy snowfall research benchmark"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
