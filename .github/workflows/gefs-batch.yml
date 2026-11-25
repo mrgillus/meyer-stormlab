@@ -14,7 +14,7 @@ on:
 permissions:
   contents: read
 env:
-  STORMLAB_ARCHIVE_WORKERS: '16'
+  STORMLAB_ARCHIVE_WORKERS: '8'
 concurrency:
   group: stormlab-gefs-batch
   cancel-in-progress: false
@@ -50,7 +50,7 @@ jobs:
     if: needs.plan.outputs.has_work == 'true'
     strategy:
       fail-fast: false
-      max-parallel: 16
+      max-parallel: 8
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     runs-on: ubuntu-latest
     timeout-minutes: 50
