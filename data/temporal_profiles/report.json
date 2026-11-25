@@ -1,0 +1,3256 @@
+{
+  "generated_at": "2026-11-25T17:21:58.383776+00:00",
+  "archive_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
+  "summaries": [
+    {
+      "mode": "historical",
+      "blocks": 16,
+      "liquid_blocks": 16,
+      "field_coverage": {
+        "t925": 16,
+        "t850": 16,
+        "t700": 16,
+        "t600": 16,
+        "t500": 16,
+        "q925": 16,
+        "q850": 16,
+        "q700": 16,
+        "q600": 16,
+        "q500": 16,
+        "omega700": 16,
+        "omega600": 16,
+        "t2m": 16,
+        "skin": 16,
+        "surface_pressure": 16
+      },
+      "errors": 0
+    },
+    {
+      "mode": "live",
+      "blocks": 40,
+      "liquid_blocks": 40,
+      "field_coverage": {
+        "t925": 40,
+        "t850": 40,
+        "t700": 40,
+        "t600": 40,
+        "t500": 40,
+        "q925": 40,
+        "q850": 40,
+        "q700": 40,
+        "q600": 40,
+        "q500": 40,
+        "omega700": 40,
+        "omega600": 40,
+        "t2m": 40,
+        "skin": 40,
+        "surface_pressure": 40
+      },
+      "errors": 0
+    }
+  ],
+  "towns": [
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.56,
+        "t925": -2.22,
+        "t850": -3.29,
+        "t700": -4.7,
+        "t600": -11.95,
+        "t500": -21.64,
+        "skin": -1.57
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 1.05,
+        "t925": -2.02,
+        "t850": -3.39,
+        "t700": -4.4,
+        "t600": -11.45,
+        "t500": -21.34,
+        "skin": -0.97
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.76,
+        "t925": -2.22,
+        "t850": -3.29,
+        "t700": -4.7,
+        "t600": -11.95,
+        "t500": -21.64,
+        "skin": -1.57
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.05,
+        "t925": -2.22,
+        "t850": -3.29,
+        "t700": -4.7,
+        "t600": -11.95,
+        "t500": -21.64,
+        "skin": -1.57
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.56,
+        "t925": -2.22,
+        "t850": -3.29,
+        "t700": -4.7,
+        "t600": -11.95,
+        "t500": -21.64,
+        "skin": -1.57
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.0,
+        "t925": -2.35,
+        "t850": -3.5,
+        "t700": -5.67,
+        "t600": -14.05,
+        "t500": -21.47,
+        "skin": -2.95
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.55,
+        "t925": -1.85,
+        "t850": -3.3,
+        "t700": -5.47,
+        "t600": -13.75,
+        "t500": -20.77,
+        "skin": -2.25
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -2.19,
+        "t925": -2.35,
+        "t850": -3.5,
+        "t700": -5.67,
+        "t600": -14.05,
+        "t500": -21.47,
+        "skin": -2.95
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -2.27,
+        "t925": -2.35,
+        "t850": -3.5,
+        "t700": -5.67,
+        "t600": -14.05,
+        "t500": -21.47,
+        "skin": -2.95
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.0,
+        "t925": -2.35,
+        "t850": -3.5,
+        "t700": -5.67,
+        "t600": -14.05,
+        "t500": -21.47,
+        "skin": -2.95
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.98,
+        "t925": -2.22,
+        "t850": -4.9,
+        "t700": -6.75,
+        "t600": -14.65,
+        "t500": -20.38,
+        "skin": 6.65
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.71,
+        "t925": -1.92,
+        "t850": -4.0,
+        "t700": -7.45,
+        "t600": -12.95,
+        "t500": -20.08,
+        "skin": 6.35
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.97,
+        "t925": -2.22,
+        "t850": -4.9,
+        "t700": -6.75,
+        "t600": -14.65,
+        "t500": -20.38,
+        "skin": 6.65
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 4.25,
+        "t925": -2.22,
+        "t850": -4.9,
+        "t700": -6.75,
+        "t600": -14.65,
+        "t500": -20.38,
+        "skin": 6.65
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.98,
+        "t925": -2.22,
+        "t850": -4.9,
+        "t700": -6.75,
+        "t600": -14.65,
+        "t500": -20.38,
+        "skin": 6.65
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 2.5,
+      "endpoint_temp_c": {
+        "t2m": 0.32,
+        "t925": -3.09,
+        "t850": -3.34,
+        "t700": -8.56,
+        "t600": -13.73,
+        "t500": -19.95,
+        "skin": 0.61
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 6.7,
+      "endpoint_temp_c": {
+        "t2m": 0.21,
+        "t925": -3.19,
+        "t850": -1.74,
+        "t700": -7.56,
+        "t600": -12.53,
+        "t500": -19.35,
+        "skin": 0.55
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.8,
+      "endpoint_temp_c": {
+        "t2m": 0.52,
+        "t925": -3.09,
+        "t850": -3.34,
+        "t700": -8.56,
+        "t600": -13.73,
+        "t500": -19.95,
+        "skin": 0.61
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.1,
+      "endpoint_temp_c": {
+        "t2m": 1.38,
+        "t925": -3.09,
+        "t850": -3.34,
+        "t700": -8.56,
+        "t600": -13.73,
+        "t500": -19.95,
+        "skin": 0.61
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 2.5,
+      "endpoint_temp_c": {
+        "t2m": 0.32,
+        "t925": -3.09,
+        "t850": -3.34,
+        "t700": -8.56,
+        "t600": -13.73,
+        "t500": -19.95,
+        "skin": 0.61
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 11.600000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.95,
+        "t850": -3.5,
+        "t700": -6.91,
+        "t600": -11.73,
+        "t500": -18.83,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 16.3,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.35,
+        "t850": -2.3,
+        "t700": -5.71,
+        "t600": -10.53,
+        "t500": -18.83,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 9.0,
+      "endpoint_temp_c": {
+        "t2m": 0.08,
+        "t925": -2.95,
+        "t850": -3.5,
+        "t700": -6.91,
+        "t600": -11.73,
+        "t500": -18.83,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 6.800000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.08,
+        "t925": -2.95,
+        "t850": -3.5,
+        "t700": -6.91,
+        "t600": -11.73,
+        "t500": -18.83,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 11.600000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.95,
+        "t850": -3.5,
+        "t700": -6.91,
+        "t600": -11.73,
+        "t500": -18.83,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 13.4,
+      "endpoint_temp_c": {
+        "t2m": 0.14,
+        "t925": -2.66,
+        "t850": -3.29,
+        "t700": -5.1,
+        "t600": -9.81,
+        "t500": -17.73,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 13.5,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.56,
+        "t850": -0.99,
+        "t700": -5.3,
+        "t600": -9.71,
+        "t500": -17.53,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 13.3,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.66,
+        "t850": -3.29,
+        "t700": -5.1,
+        "t600": -9.81,
+        "t500": -17.73,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 12.4,
+      "endpoint_temp_c": {
+        "t2m": 0.07,
+        "t925": -2.66,
+        "t850": -3.29,
+        "t700": -5.1,
+        "t600": -9.81,
+        "t500": -17.73,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 13.4,
+      "endpoint_temp_c": {
+        "t2m": 0.14,
+        "t925": -2.66,
+        "t850": -3.29,
+        "t700": -5.1,
+        "t600": -9.81,
+        "t500": -17.73,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 7.7,
+      "endpoint_temp_c": {
+        "t2m": 1.13,
+        "t925": -0.65,
+        "t850": 1.03,
+        "t700": -5.45,
+        "t600": -10.72,
+        "t500": -17.95,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 8.8,
+      "endpoint_temp_c": {
+        "t2m": 0.93,
+        "t925": 0.45,
+        "t850": 1.03,
+        "t700": -5.45,
+        "t600": -10.92,
+        "t500": -17.95,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 5.7,
+      "endpoint_temp_c": {
+        "t2m": 1.09,
+        "t925": -0.65,
+        "t850": 1.03,
+        "t700": -5.45,
+        "t600": -10.72,
+        "t500": -17.95,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 5.5,
+      "endpoint_temp_c": {
+        "t2m": 0.9,
+        "t925": -0.65,
+        "t850": 1.03,
+        "t700": -5.45,
+        "t600": -10.72,
+        "t500": -17.95,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 7.7,
+      "endpoint_temp_c": {
+        "t2m": 1.13,
+        "t925": -0.65,
+        "t850": 1.03,
+        "t700": -5.45,
+        "t600": -10.72,
+        "t500": -17.95,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "c00",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 3.7,
+      "endpoint_temp_c": {
+        "t2m": 0.99,
+        "t925": -1.32,
+        "t850": -0.53,
+        "t700": -5.49,
+        "t600": -11.1,
+        "t500": -17.44,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "c00",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 5.4,
+      "endpoint_temp_c": {
+        "t2m": 1.32,
+        "t925": 0.18,
+        "t850": -0.73,
+        "t700": -5.59,
+        "t600": -10.5,
+        "t500": -17.54,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "c00",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 1.9000000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.89,
+        "t925": -1.32,
+        "t850": -0.53,
+        "t700": -5.49,
+        "t600": -11.1,
+        "t500": -17.44,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "c00",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 0.9,
+      "endpoint_temp_c": {
+        "t2m": 0.81,
+        "t925": -1.32,
+        "t850": -0.53,
+        "t700": -5.49,
+        "t600": -11.1,
+        "t500": -17.44,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "c00",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 3.7,
+      "endpoint_temp_c": {
+        "t2m": 0.99,
+        "t925": -1.32,
+        "t850": -0.53,
+        "t700": -5.49,
+        "t600": -11.1,
+        "t500": -17.44,
+        "skin": 0.06
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.66,
+        "t925": -2.22,
+        "t850": -3.91,
+        "t700": -5.03,
+        "t600": -11.95,
+        "t500": -21.71,
+        "skin": -1.49
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 1.01,
+        "t925": -2.02,
+        "t850": -3.71,
+        "t700": -4.63,
+        "t600": -11.45,
+        "t500": -21.51,
+        "skin": -0.89
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.69,
+        "t925": -2.22,
+        "t850": -3.91,
+        "t700": -5.03,
+        "t600": -11.95,
+        "t500": -21.71,
+        "skin": -1.49
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.05,
+        "t925": -2.22,
+        "t850": -3.91,
+        "t700": -5.03,
+        "t600": -11.95,
+        "t500": -21.71,
+        "skin": -1.49
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.66,
+        "t925": -2.22,
+        "t850": -3.91,
+        "t700": -5.03,
+        "t600": -11.95,
+        "t500": -21.71,
+        "skin": -1.49
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.7,
+        "t925": -2.37,
+        "t850": -3.98,
+        "t700": -5.65,
+        "t600": -14.05,
+        "t500": -21.31,
+        "skin": -2.24
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.34,
+        "t925": -1.77,
+        "t850": -3.48,
+        "t700": -5.15,
+        "t600": -13.85,
+        "t500": -20.61,
+        "skin": -1.94
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.54,
+        "t925": -2.37,
+        "t850": -3.98,
+        "t700": -5.65,
+        "t600": -14.05,
+        "t500": -21.31,
+        "skin": -2.24
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.64,
+        "t925": -2.37,
+        "t850": -3.98,
+        "t700": -5.65,
+        "t600": -14.05,
+        "t500": -21.31,
+        "skin": -2.24
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.7,
+        "t925": -2.37,
+        "t850": -3.98,
+        "t700": -5.65,
+        "t600": -14.05,
+        "t500": -21.31,
+        "skin": -2.24
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.51,
+        "t925": -2.13,
+        "t850": -4.88,
+        "t700": -7.65,
+        "t600": -13.85,
+        "t500": -19.8,
+        "skin": 5.45
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.32,
+        "t925": -2.43,
+        "t850": -4.38,
+        "t700": -7.15,
+        "t600": -13.05,
+        "t500": -19.6,
+        "skin": 6.95
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.22,
+        "t925": -2.13,
+        "t850": -4.88,
+        "t700": -7.65,
+        "t600": -13.85,
+        "t500": -19.8,
+        "skin": 5.45
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.1,
+        "t925": -2.13,
+        "t850": -4.88,
+        "t700": -7.65,
+        "t600": -13.85,
+        "t500": -19.8,
+        "skin": 5.45
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.51,
+        "t925": -2.13,
+        "t850": -4.88,
+        "t700": -7.65,
+        "t600": -13.85,
+        "t500": -19.8,
+        "skin": 5.45
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 6.6000000000000005,
+      "endpoint_temp_c": {
+        "t2m": 0.22,
+        "t925": -3.46,
+        "t850": -3.38,
+        "t700": -7.66,
+        "t600": -13.11,
+        "t500": -20.65,
+        "skin": 0.26
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 12.4,
+      "endpoint_temp_c": {
+        "t2m": 0.13,
+        "t925": -3.56,
+        "t850": -2.28,
+        "t700": -7.16,
+        "t600": -12.61,
+        "t500": -19.65,
+        "skin": 0.16
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 3.1,
+      "endpoint_temp_c": {
+        "t2m": 0.14,
+        "t925": -3.46,
+        "t850": -3.38,
+        "t700": -7.66,
+        "t600": -13.11,
+        "t500": -20.65,
+        "skin": 0.26
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 1.5,
+      "endpoint_temp_c": {
+        "t2m": 0.19,
+        "t925": -3.46,
+        "t850": -3.38,
+        "t700": -7.66,
+        "t600": -13.11,
+        "t500": -20.65,
+        "skin": 0.26
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 6.6000000000000005,
+      "endpoint_temp_c": {
+        "t2m": 0.22,
+        "t925": -3.46,
+        "t850": -3.38,
+        "t700": -7.66,
+        "t600": -13.11,
+        "t500": -20.65,
+        "skin": 0.26
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 15.600000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.1,
+        "t925": -3.19,
+        "t850": -4.62,
+        "t700": -7.25,
+        "t600": -11.6,
+        "t500": -19.15,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 19.3,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.49,
+        "t850": -3.72,
+        "t700": -6.55,
+        "t600": -10.5,
+        "t500": -18.45,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 12.9,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -3.19,
+        "t850": -4.62,
+        "t700": -7.25,
+        "t600": -11.6,
+        "t500": -19.15,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 10.9,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -3.19,
+        "t850": -4.62,
+        "t700": -7.25,
+        "t600": -11.6,
+        "t500": -19.15,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 15.600000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.1,
+        "t925": -3.19,
+        "t850": -4.62,
+        "t700": -7.25,
+        "t600": -11.6,
+        "t500": -19.15,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 16.6,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.44,
+        "t850": -3.79,
+        "t700": -6.04,
+        "t600": -10.34,
+        "t500": -18.45,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 19.5,
+      "endpoint_temp_c": {
+        "t2m": 0.13,
+        "t925": -1.84,
+        "t850": -2.19,
+        "t700": -5.24,
+        "t600": -10.14,
+        "t500": -18.25,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 15.600000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.44,
+        "t850": -3.79,
+        "t700": -6.04,
+        "t600": -10.34,
+        "t500": -18.45,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 13.3,
+      "endpoint_temp_c": {
+        "t2m": 0.09,
+        "t925": -2.44,
+        "t850": -3.79,
+        "t700": -6.04,
+        "t600": -10.34,
+        "t500": -18.45,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 16.6,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.44,
+        "t850": -3.79,
+        "t700": -6.04,
+        "t600": -10.34,
+        "t500": -18.45,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 14.8,
+      "endpoint_temp_c": {
+        "t2m": 0.34,
+        "t925": 0.17,
+        "t850": -0.47,
+        "t700": -6.22,
+        "t600": -10.65,
+        "t500": -18.66,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 13.9,
+      "endpoint_temp_c": {
+        "t2m": 0.49,
+        "t925": 0.17,
+        "t850": -0.27,
+        "t700": -6.12,
+        "t600": -11.05,
+        "t500": -18.96,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 12.3,
+      "endpoint_temp_c": {
+        "t2m": 0.61,
+        "t925": 0.17,
+        "t850": -0.47,
+        "t700": -6.22,
+        "t600": -10.65,
+        "t500": -18.66,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 11.5,
+      "endpoint_temp_c": {
+        "t2m": 0.6,
+        "t925": 0.17,
+        "t850": -0.47,
+        "t700": -6.22,
+        "t600": -10.65,
+        "t500": -18.66,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 14.8,
+      "endpoint_temp_c": {
+        "t2m": 0.34,
+        "t925": 0.17,
+        "t850": -0.47,
+        "t700": -6.22,
+        "t600": -10.65,
+        "t500": -18.66,
+        "skin": 0.04
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p01",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 11.100000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.26,
+        "t925": -1.33,
+        "t850": -1.4,
+        "t700": -6.95,
+        "t600": -12.43,
+        "t500": -18.13,
+        "skin": 0.0
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p01",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 11.700000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.56,
+        "t925": -1.23,
+        "t850": -1.0,
+        "t700": -7.65,
+        "t600": -12.43,
+        "t500": -17.53,
+        "skin": 0.0
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p01",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 9.200000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.24,
+        "t925": -1.33,
+        "t850": -1.4,
+        "t700": -6.95,
+        "t600": -12.43,
+        "t500": -18.13,
+        "skin": 0.0
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p01",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 7.1000000000000005,
+      "endpoint_temp_c": {
+        "t2m": 0.31,
+        "t925": -1.33,
+        "t850": -1.4,
+        "t700": -6.95,
+        "t600": -12.43,
+        "t500": -18.13,
+        "skin": 0.0
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p01",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 11.100000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.26,
+        "t925": -1.33,
+        "t850": -1.4,
+        "t700": -6.95,
+        "t600": -12.43,
+        "t500": -18.13,
+        "skin": 0.0
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.83,
+        "t925": -2.52,
+        "t850": -3.31,
+        "t700": -5.06,
+        "t600": -12.19,
+        "t500": -21.73,
+        "skin": -1.28
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 1.21,
+        "t925": -2.32,
+        "t850": -3.31,
+        "t700": -4.46,
+        "t600": -11.59,
+        "t500": -21.33,
+        "skin": -0.48
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.42,
+        "t925": -2.52,
+        "t850": -3.31,
+        "t700": -5.06,
+        "t600": -12.19,
+        "t500": -21.73,
+        "skin": -1.28
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.78,
+        "t925": -2.52,
+        "t850": -3.31,
+        "t700": -5.06,
+        "t600": -12.19,
+        "t500": -21.73,
+        "skin": -1.28
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.83,
+        "t925": -2.52,
+        "t850": -3.31,
+        "t700": -5.06,
+        "t600": -12.19,
+        "t500": -21.73,
+        "skin": -1.28
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.87,
+        "t925": -2.46,
+        "t850": -3.55,
+        "t700": -5.75,
+        "t600": -14.32,
+        "t500": -22.85,
+        "skin": -2.01
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.4,
+        "t925": -2.06,
+        "t850": -3.55,
+        "t700": -5.55,
+        "t600": -14.22,
+        "t500": -21.75,
+        "skin": -2.11
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.58,
+        "t925": -2.46,
+        "t850": -3.55,
+        "t700": -5.75,
+        "t600": -14.32,
+        "t500": -22.85,
+        "skin": -2.01
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.26,
+        "t925": -2.46,
+        "t850": -3.55,
+        "t700": -5.75,
+        "t600": -14.32,
+        "t500": -22.85,
+        "skin": -2.01
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.87,
+        "t925": -2.46,
+        "t850": -3.55,
+        "t700": -5.75,
+        "t600": -14.32,
+        "t500": -22.85,
+        "skin": -2.01
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 4.08,
+        "t925": -2.63,
+        "t850": -4.41,
+        "t700": -6.76,
+        "t600": -15.31,
+        "t500": -22.15,
+        "skin": 8.85
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.58,
+        "t925": -2.03,
+        "t850": -3.91,
+        "t700": -6.66,
+        "t600": -15.01,
+        "t500": -20.85,
+        "skin": 7.85
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 4.5,
+        "t925": -2.63,
+        "t850": -4.41,
+        "t700": -6.76,
+        "t600": -15.31,
+        "t500": -22.15,
+        "skin": 8.85
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 4.69,
+        "t925": -2.63,
+        "t850": -4.41,
+        "t700": -6.76,
+        "t600": -15.31,
+        "t500": -22.15,
+        "skin": 8.85
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 4.08,
+        "t925": -2.63,
+        "t850": -4.41,
+        "t700": -6.76,
+        "t600": -15.31,
+        "t500": -22.15,
+        "skin": 8.85
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.1,
+      "endpoint_temp_c": {
+        "t2m": 1.65,
+        "t925": -3.13,
+        "t850": -3.43,
+        "t700": -7.11,
+        "t600": -15.95,
+        "t500": -21.25,
+        "skin": 1.59
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 1.0,
+      "endpoint_temp_c": {
+        "t2m": 0.89,
+        "t925": -3.03,
+        "t850": -1.93,
+        "t700": -8.21,
+        "t600": -14.35,
+        "t500": -20.35,
+        "skin": 1.44
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 1.96,
+        "t925": -3.13,
+        "t850": -3.43,
+        "t700": -7.11,
+        "t600": -15.95,
+        "t500": -21.25,
+        "skin": 1.59
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 1.99,
+        "t925": -3.13,
+        "t850": -3.43,
+        "t700": -7.11,
+        "t600": -15.95,
+        "t500": -21.25,
+        "skin": 1.59
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.1,
+      "endpoint_temp_c": {
+        "t2m": 1.65,
+        "t925": -3.13,
+        "t850": -3.43,
+        "t700": -7.11,
+        "t600": -15.95,
+        "t500": -21.25,
+        "skin": 1.59
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 4.2,
+      "endpoint_temp_c": {
+        "t2m": 0.35,
+        "t925": -2.84,
+        "t850": -1.46,
+        "t700": -7.66,
+        "t600": -13.14,
+        "t500": -20.63,
+        "skin": 0.67
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 8.700000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.3,
+        "t925": -2.34,
+        "t850": -1.66,
+        "t700": -6.76,
+        "t600": -12.44,
+        "t500": -19.13,
+        "skin": 0.47
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 2.2,
+      "endpoint_temp_c": {
+        "t2m": 0.36,
+        "t925": -2.84,
+        "t850": -1.46,
+        "t700": -7.66,
+        "t600": -13.14,
+        "t500": -20.63,
+        "skin": 0.67
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 0.7000000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.49,
+        "t925": -2.84,
+        "t850": -1.46,
+        "t700": -7.66,
+        "t600": -13.14,
+        "t500": -20.63,
+        "skin": 0.67
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 4.2,
+      "endpoint_temp_c": {
+        "t2m": 0.35,
+        "t925": -2.84,
+        "t850": -1.46,
+        "t700": -7.66,
+        "t600": -13.14,
+        "t500": -20.63,
+        "skin": 0.67
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 3.7,
+      "endpoint_temp_c": {
+        "t2m": 0.22,
+        "t925": -1.72,
+        "t850": -1.61,
+        "t700": -5.44,
+        "t600": -10.35,
+        "t500": -19.02,
+        "skin": 0.17
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 5.5,
+      "endpoint_temp_c": {
+        "t2m": 0.26,
+        "t925": -0.52,
+        "t850": -0.71,
+        "t700": -4.94,
+        "t600": -10.15,
+        "t500": -18.52,
+        "skin": 0.17
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 3.2,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -1.72,
+        "t850": -1.61,
+        "t700": -5.44,
+        "t600": -10.35,
+        "t500": -19.02,
+        "skin": 0.17
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 2.2,
+      "endpoint_temp_c": {
+        "t2m": 0.14,
+        "t925": -1.72,
+        "t850": -1.61,
+        "t700": -5.44,
+        "t600": -10.35,
+        "t500": -19.02,
+        "skin": 0.17
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 3.7,
+      "endpoint_temp_c": {
+        "t2m": 0.22,
+        "t925": -1.72,
+        "t850": -1.61,
+        "t700": -5.44,
+        "t600": -10.35,
+        "t500": -19.02,
+        "skin": 0.17
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 3.1,
+      "endpoint_temp_c": {
+        "t2m": 2.86,
+        "t925": 0.22,
+        "t850": 0.34,
+        "t700": -3.85,
+        "t600": -9.55,
+        "t500": -17.6,
+        "skin": 2.06
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 4.4,
+      "endpoint_temp_c": {
+        "t2m": 2.16,
+        "t925": 0.32,
+        "t850": 0.94,
+        "t700": -4.25,
+        "t600": -10.05,
+        "t500": -17.2,
+        "skin": 1.96
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 2.8000000000000003,
+      "endpoint_temp_c": {
+        "t2m": 2.35,
+        "t925": 0.22,
+        "t850": 0.34,
+        "t700": -3.85,
+        "t600": -9.55,
+        "t500": -17.6,
+        "skin": 2.06
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 2.5,
+      "endpoint_temp_c": {
+        "t2m": 1.78,
+        "t925": 0.22,
+        "t850": 0.34,
+        "t700": -3.85,
+        "t600": -9.55,
+        "t500": -17.6,
+        "skin": 2.06
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 3.1,
+      "endpoint_temp_c": {
+        "t2m": 2.86,
+        "t925": 0.22,
+        "t850": 0.34,
+        "t700": -3.85,
+        "t600": -9.55,
+        "t500": -17.6,
+        "skin": 2.06
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p02",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 1.1,
+      "endpoint_temp_c": {
+        "t2m": 2.28,
+        "t925": -0.5,
+        "t850": 0.98,
+        "t700": -4.75,
+        "t600": -10.85,
+        "t500": -17.15,
+        "skin": 1.16
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p02",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 0.7000000000000001,
+      "endpoint_temp_c": {
+        "t2m": 3.22,
+        "t925": -0.4,
+        "t850": 1.28,
+        "t700": -5.05,
+        "t600": -10.75,
+        "t500": -17.55,
+        "skin": 2.19
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p02",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 1.2000000000000002,
+      "endpoint_temp_c": {
+        "t2m": 1.49,
+        "t925": -0.5,
+        "t850": 0.98,
+        "t700": -4.75,
+        "t600": -10.85,
+        "t500": -17.15,
+        "skin": 1.16
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p02",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 1.4000000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.69,
+        "t925": -0.5,
+        "t850": 0.98,
+        "t700": -4.75,
+        "t600": -10.85,
+        "t500": -17.15,
+        "skin": 1.16
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p02",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 1.1,
+      "endpoint_temp_c": {
+        "t2m": 2.28,
+        "t925": -0.5,
+        "t850": 0.98,
+        "t700": -4.75,
+        "t600": -10.85,
+        "t500": -17.15,
+        "skin": 1.16
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.82,
+        "t925": -1.99,
+        "t850": -2.59,
+        "t700": -4.35,
+        "t600": -11.7,
+        "t500": -21.32,
+        "skin": -1.53
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 1.24,
+        "t925": -1.89,
+        "t850": -2.99,
+        "t700": -4.15,
+        "t600": -11.3,
+        "t500": -21.02,
+        "skin": -0.63
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.58,
+        "t925": -1.99,
+        "t850": -2.59,
+        "t700": -4.35,
+        "t600": -11.7,
+        "t500": -21.32,
+        "skin": -1.53
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.92,
+        "t925": -1.99,
+        "t850": -2.59,
+        "t700": -4.35,
+        "t600": -11.7,
+        "t500": -21.32,
+        "skin": -1.53
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.82,
+        "t925": -1.99,
+        "t850": -2.59,
+        "t700": -4.35,
+        "t600": -11.7,
+        "t500": -21.32,
+        "skin": -1.53
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.71,
+        "t925": -2.12,
+        "t850": -3.0,
+        "t700": -5.46,
+        "t600": -13.78,
+        "t500": -20.98,
+        "skin": -2.74
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.05,
+        "t925": -1.82,
+        "t850": -3.4,
+        "t700": -5.36,
+        "t600": -13.38,
+        "t500": -20.18,
+        "skin": -1.94
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.78,
+        "t925": -2.12,
+        "t850": -3.0,
+        "t700": -5.46,
+        "t600": -13.78,
+        "t500": -20.98,
+        "skin": -2.74
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.98,
+        "t925": -2.12,
+        "t850": -3.0,
+        "t700": -5.46,
+        "t600": -13.78,
+        "t500": -20.98,
+        "skin": -2.74
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.71,
+        "t925": -2.12,
+        "t850": -3.0,
+        "t700": -5.46,
+        "t600": -13.78,
+        "t500": -20.98,
+        "skin": -2.74
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 6.17,
+        "t925": -1.69,
+        "t850": -4.75,
+        "t700": -5.9,
+        "t600": -14.65,
+        "t500": -20.45,
+        "skin": 9.23
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 5.53,
+        "t925": -1.79,
+        "t850": -3.65,
+        "t700": -5.7,
+        "t600": -12.75,
+        "t500": -20.15,
+        "skin": 9.13
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 5.93,
+        "t925": -1.69,
+        "t850": -4.75,
+        "t700": -5.9,
+        "t600": -14.65,
+        "t500": -20.45,
+        "skin": 9.23
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 5.97,
+        "t925": -1.69,
+        "t850": -4.75,
+        "t700": -5.9,
+        "t600": -14.65,
+        "t500": -20.45,
+        "skin": 9.23
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 6.17,
+        "t925": -1.69,
+        "t850": -4.75,
+        "t700": -5.9,
+        "t600": -14.65,
+        "t500": -20.45,
+        "skin": 9.23
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.4,
+      "endpoint_temp_c": {
+        "t2m": 3.22,
+        "t925": -2.06,
+        "t850": -3.03,
+        "t700": -8.69,
+        "t600": -13.78,
+        "t500": -20.12,
+        "skin": 3.17
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 1.9000000000000001,
+      "endpoint_temp_c": {
+        "t2m": 1.08,
+        "t925": -2.56,
+        "t850": -1.13,
+        "t700": -7.99,
+        "t600": -12.68,
+        "t500": -19.52,
+        "skin": 2.59
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.67,
+        "t925": -2.06,
+        "t850": -3.03,
+        "t700": -8.69,
+        "t600": -13.78,
+        "t500": -20.12,
+        "skin": 3.17
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.49,
+        "t925": -2.06,
+        "t850": -3.03,
+        "t700": -8.69,
+        "t600": -13.78,
+        "t500": -20.12,
+        "skin": 3.17
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 0.4,
+      "endpoint_temp_c": {
+        "t2m": 3.22,
+        "t925": -2.06,
+        "t850": -3.03,
+        "t700": -8.69,
+        "t600": -13.78,
+        "t500": -20.12,
+        "skin": 3.17
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 9.8,
+      "endpoint_temp_c": {
+        "t2m": 0.3,
+        "t925": -2.35,
+        "t850": -2.12,
+        "t700": -8.05,
+        "t600": -13.19,
+        "t500": -19.45,
+        "skin": 0.29
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 13.8,
+      "endpoint_temp_c": {
+        "t2m": 0.28,
+        "t925": -2.05,
+        "t850": -1.12,
+        "t700": -6.55,
+        "t600": -11.79,
+        "t500": -19.05,
+        "skin": 0.29
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 7.4,
+      "endpoint_temp_c": {
+        "t2m": 0.19,
+        "t925": -2.35,
+        "t850": -2.12,
+        "t700": -8.05,
+        "t600": -13.19,
+        "t500": -19.45,
+        "skin": 0.29
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 4.800000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.23,
+        "t925": -2.35,
+        "t850": -2.12,
+        "t700": -8.05,
+        "t600": -13.19,
+        "t500": -19.45,
+        "skin": 0.29
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 9.8,
+      "endpoint_temp_c": {
+        "t2m": 0.3,
+        "t925": -2.35,
+        "t850": -2.12,
+        "t700": -8.05,
+        "t600": -13.19,
+        "t500": -19.45,
+        "skin": 0.29
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 12.8,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.75,
+        "t850": -3.49,
+        "t700": -6.61,
+        "t600": -11.7,
+        "t500": -19.91,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 17.900000000000002,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.35,
+        "t850": -2.19,
+        "t700": -5.91,
+        "t600": -11.2,
+        "t500": -19.21,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 10.200000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.09,
+        "t925": -2.75,
+        "t850": -3.49,
+        "t700": -6.61,
+        "t600": -11.7,
+        "t500": -19.91,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 8.9,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.75,
+        "t850": -3.49,
+        "t700": -6.61,
+        "t600": -11.7,
+        "t500": -19.91,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 12.8,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.75,
+        "t850": -3.49,
+        "t700": -6.61,
+        "t600": -11.7,
+        "t500": -19.91,
+        "skin": 0.01
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 12.200000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.16,
+        "t925": -1.13,
+        "t850": -1.95,
+        "t700": -5.54,
+        "t600": -10.75,
+        "t500": -19.08,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 13.5,
+      "endpoint_temp_c": {
+        "t2m": 0.17,
+        "t925": -0.53,
+        "t850": -1.65,
+        "t700": -5.34,
+        "t600": -10.75,
+        "t500": -18.98,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 11.600000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.15,
+        "t925": -1.13,
+        "t850": -1.95,
+        "t700": -5.54,
+        "t600": -10.75,
+        "t500": -19.08,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 10.3,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -1.13,
+        "t850": -1.95,
+        "t700": -5.54,
+        "t600": -10.75,
+        "t500": -19.08,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 12.200000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.16,
+        "t925": -1.13,
+        "t850": -1.95,
+        "t700": -5.54,
+        "t600": -10.75,
+        "t500": -19.08,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p03",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 4.3,
+      "endpoint_temp_c": {
+        "t2m": 0.42,
+        "t925": -1.44,
+        "t850": -1.58,
+        "t700": -6.32,
+        "t600": -9.82,
+        "t500": -17.89,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p03",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 5.800000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.61,
+        "t925": -1.14,
+        "t850": -0.68,
+        "t700": -5.92,
+        "t600": -10.32,
+        "t500": -18.29,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p03",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 4.0,
+      "endpoint_temp_c": {
+        "t2m": 0.32,
+        "t925": -1.44,
+        "t850": -1.58,
+        "t700": -6.32,
+        "t600": -9.82,
+        "t500": -17.89,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p03",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 3.5,
+      "endpoint_temp_c": {
+        "t2m": 0.33,
+        "t925": -1.44,
+        "t850": -1.58,
+        "t700": -6.32,
+        "t600": -9.82,
+        "t500": -17.89,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p03",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 4.3,
+      "endpoint_temp_c": {
+        "t2m": 0.42,
+        "t925": -1.44,
+        "t850": -1.58,
+        "t700": -6.32,
+        "t600": -9.82,
+        "t500": -17.89,
+        "skin": 0.07
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.44,
+        "t925": -2.1,
+        "t850": -3.43,
+        "t700": -4.6,
+        "t600": -11.82,
+        "t500": -21.5,
+        "skin": -1.69
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 1.24,
+        "t925": -1.9,
+        "t850": -3.73,
+        "t700": -4.3,
+        "t600": -11.42,
+        "t500": -21.2,
+        "skin": -1.19
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.76,
+        "t925": -2.1,
+        "t850": -3.43,
+        "t700": -4.6,
+        "t600": -11.82,
+        "t500": -21.5,
+        "skin": -1.69
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -1.0,
+        "t925": -2.1,
+        "t850": -3.43,
+        "t700": -4.6,
+        "t600": -11.82,
+        "t500": -21.5,
+        "skin": -1.69
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 0,
+      "end_hour": 6,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 0.44,
+        "t925": -2.1,
+        "t850": -3.43,
+        "t700": -4.6,
+        "t600": -11.82,
+        "t500": -21.5,
+        "skin": -1.69
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.89,
+        "t925": -2.15,
+        "t850": -3.85,
+        "t700": -5.55,
+        "t600": -13.82,
+        "t500": -21.06,
+        "skin": -2.97
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.54,
+        "t925": -1.65,
+        "t850": -3.15,
+        "t700": -5.25,
+        "t600": -13.42,
+        "t500": -20.66,
+        "skin": -2.17
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -2.1,
+        "t925": -2.15,
+        "t850": -3.85,
+        "t700": -5.55,
+        "t600": -13.82,
+        "t500": -21.06,
+        "skin": -2.97
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -2.17,
+        "t925": -2.15,
+        "t850": -3.85,
+        "t700": -5.55,
+        "t600": -13.82,
+        "t500": -21.06,
+        "skin": -2.97
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 6,
+      "end_hour": 12,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": -0.89,
+        "t925": -2.15,
+        "t850": -3.85,
+        "t700": -5.55,
+        "t600": -13.82,
+        "t500": -21.06,
+        "skin": -2.97
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.93,
+        "t925": -1.87,
+        "t850": -3.79,
+        "t700": -8.33,
+        "t600": -13.41,
+        "t500": -19.71,
+        "skin": 6.08
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 4.12,
+        "t925": -1.67,
+        "t850": -3.69,
+        "t700": -7.23,
+        "t600": -12.51,
+        "t500": -19.21,
+        "skin": 5.78
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.77,
+        "t925": -1.87,
+        "t850": -3.79,
+        "t700": -8.33,
+        "t600": -13.41,
+        "t500": -19.71,
+        "skin": 6.08
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.1,
+      "endpoint_temp_c": {
+        "t2m": 3.68,
+        "t925": -1.87,
+        "t850": -3.79,
+        "t700": -8.33,
+        "t600": -13.41,
+        "t500": -19.71,
+        "skin": 6.08
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 12,
+      "end_hour": 18,
+      "liquid_mm": 0.0,
+      "endpoint_temp_c": {
+        "t2m": 3.93,
+        "t925": -1.87,
+        "t850": -3.79,
+        "t700": -8.33,
+        "t600": -13.41,
+        "t500": -19.71,
+        "skin": 6.08
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 4.7,
+      "endpoint_temp_c": {
+        "t2m": 0.23,
+        "t925": -2.79,
+        "t850": -2.34,
+        "t700": -8.29,
+        "t600": -13.8,
+        "t500": -20.25,
+        "skin": 0.38
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 8.1,
+      "endpoint_temp_c": {
+        "t2m": 0.28,
+        "t925": -2.69,
+        "t850": -1.84,
+        "t700": -7.49,
+        "t600": -12.8,
+        "t500": -19.75,
+        "skin": 0.45
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 1.6,
+      "endpoint_temp_c": {
+        "t2m": 0.22,
+        "t925": -2.79,
+        "t850": -2.34,
+        "t700": -8.29,
+        "t600": -13.8,
+        "t500": -20.25,
+        "skin": 0.38
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 1.1,
+      "endpoint_temp_c": {
+        "t2m": 0.23,
+        "t925": -2.79,
+        "t850": -2.34,
+        "t700": -8.29,
+        "t600": -13.8,
+        "t500": -20.25,
+        "skin": 0.38
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 18,
+      "end_hour": 24,
+      "liquid_mm": 4.7,
+      "endpoint_temp_c": {
+        "t2m": 0.23,
+        "t925": -2.79,
+        "t850": -2.34,
+        "t700": -8.29,
+        "t600": -13.8,
+        "t500": -20.25,
+        "skin": 0.38
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 14.4,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.58,
+        "t850": -3.25,
+        "t700": -6.78,
+        "t600": -11.95,
+        "t500": -19.3,
+        "skin": 0.02
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 22.1,
+      "endpoint_temp_c": {
+        "t2m": 0.11,
+        "t925": -2.18,
+        "t850": -1.95,
+        "t700": -6.08,
+        "t600": -11.15,
+        "t500": -18.6,
+        "skin": 0.02
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 11.4,
+      "endpoint_temp_c": {
+        "t2m": 0.15,
+        "t925": -2.58,
+        "t850": -3.25,
+        "t700": -6.78,
+        "t600": -11.95,
+        "t500": -19.3,
+        "skin": 0.02
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 9.700000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.13,
+        "t925": -2.58,
+        "t850": -3.25,
+        "t700": -6.78,
+        "t600": -11.95,
+        "t500": -19.3,
+        "skin": 0.02
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 24,
+      "end_hour": 30,
+      "liquid_mm": 14.4,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.58,
+        "t850": -3.25,
+        "t700": -6.78,
+        "t600": -11.95,
+        "t500": -19.3,
+        "skin": 0.02
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 12.0,
+      "endpoint_temp_c": {
+        "t2m": 0.13,
+        "t925": -2.41,
+        "t850": -3.36,
+        "t700": -4.68,
+        "t600": -10.57,
+        "t500": -18.89,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 14.100000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.2,
+        "t925": -2.11,
+        "t850": -1.06,
+        "t700": -5.18,
+        "t600": -10.67,
+        "t500": -18.59,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 12.100000000000001,
+      "endpoint_temp_c": {
+        "t2m": 0.12,
+        "t925": -2.41,
+        "t850": -3.36,
+        "t700": -4.68,
+        "t600": -10.57,
+        "t500": -18.89,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 10.8,
+      "endpoint_temp_c": {
+        "t2m": 0.08,
+        "t925": -2.41,
+        "t850": -3.36,
+        "t700": -4.68,
+        "t600": -10.57,
+        "t500": -18.89,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 30,
+      "end_hour": 36,
+      "liquid_mm": 12.0,
+      "endpoint_temp_c": {
+        "t2m": 0.13,
+        "t925": -2.41,
+        "t850": -3.36,
+        "t700": -4.68,
+        "t600": -10.57,
+        "t500": -18.89,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 7.300000000000001,
+      "endpoint_temp_c": {
+        "t2m": 1.05,
+        "t925": 0.35,
+        "t850": 1.13,
+        "t700": -4.7,
+        "t600": -10.42,
+        "t500": -17.74,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 9.1,
+      "endpoint_temp_c": {
+        "t2m": 0.7,
+        "t925": 0.55,
+        "t850": 1.23,
+        "t700": -4.6,
+        "t600": -10.42,
+        "t500": -17.64,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 6.1000000000000005,
+      "endpoint_temp_c": {
+        "t2m": 1.06,
+        "t925": 0.35,
+        "t850": 1.13,
+        "t700": -4.7,
+        "t600": -10.42,
+        "t500": -17.74,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 5.7,
+      "endpoint_temp_c": {
+        "t2m": 0.82,
+        "t925": 0.35,
+        "t850": 1.13,
+        "t700": -4.7,
+        "t600": -10.42,
+        "t500": -17.74,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 36,
+      "end_hour": 42,
+      "liquid_mm": 7.300000000000001,
+      "endpoint_temp_c": {
+        "t2m": 1.05,
+        "t925": 0.35,
+        "t850": 1.13,
+        "t700": -4.7,
+        "t600": -10.42,
+        "t500": -17.74,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Wentzville",
+      "member": "p04",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 9.3,
+      "endpoint_temp_c": {
+        "t2m": 1.58,
+        "t925": 2.28,
+        "t850": 1.27,
+        "t700": -5.29,
+        "t600": -9.55,
+        "t500": -18.64,
+        "skin": 0.15
+      }
+    },
+    {
+      "town": "Florissant",
+      "member": "p04",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 9.200000000000001,
+      "endpoint_temp_c": {
+        "t2m": 1.72,
+        "t925": 1.98,
+        "t850": 1.07,
+        "t700": -5.09,
+        "t600": -9.65,
+        "t500": -19.14,
+        "skin": 0.05
+      }
+    },
+    {
+      "town": "Troy",
+      "member": "p04",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 5.0,
+      "endpoint_temp_c": {
+        "t2m": 1.32,
+        "t925": 2.28,
+        "t850": 1.27,
+        "t700": -5.29,
+        "t600": -9.55,
+        "t500": -18.64,
+        "skin": 0.15
+      }
+    },
+    {
+      "town": "Hawk Point",
+      "member": "p04",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 2.2,
+      "endpoint_temp_c": {
+        "t2m": 1.2,
+        "t925": 2.28,
+        "t850": 1.27,
+        "t700": -5.29,
+        "t600": -9.55,
+        "t500": -18.64,
+        "skin": 0.15
+      }
+    },
+    {
+      "town": "Lake St. Louis",
+      "member": "p04",
+      "start_hour": 42,
+      "end_hour": 48,
+      "liquid_mm": 9.3,
+      "endpoint_temp_c": {
+        "t2m": 1.58,
+        "t925": 2.28,
+        "t850": 1.27,
+        "t700": -5.29,
+        "t600": -9.55,
+        "t500": -18.64,
+        "skin": 0.15
+      }
+    }
+  ],
+  "operational_ready": false,
+  "note": "Six-hour precipitation paired with instantaneous endpoint profiles. Endpoint conditions do not establish phase throughout the block; historical pilot too small for ML. No snow totals inferred."
+}
