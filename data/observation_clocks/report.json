@@ -1,0 +1,304 @@
+{
+  "generated_at": "2026-11-25T13:03:14.596452+00:00",
+  "expected_observations": 40500,
+  "station_count": 29,
+  "stations": [
+    {
+      "station": "USW00013994",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00013994.csv.gz",
+      "expected": 3645,
+      "counts": {
+        "exact_match": 3645,
+        "clock_missing": 3645
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00237397",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00237397.csv.gz",
+      "expected": 1407,
+      "counts": {
+        "exact_match": 1407,
+        "clock_missing": 1407
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USW00013802",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00013802.csv.gz",
+      "expected": 672,
+      "counts": {
+        "exact_match": 672,
+        "clock_missing": 672
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00114489",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00114489.csv.gz",
+      "expected": 2278,
+      "counts": {
+        "exact_match": 2278,
+        "clock_missing": 2278
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00232591",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00232591.csv.gz",
+      "expected": 1793,
+      "counts": {
+        "exact_match": 1793,
+        "clock_missing": 1793
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00232220",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00232220.csv.gz",
+      "expected": 911,
+      "counts": {
+        "exact_match": 911,
+        "clock_missing": 911
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00238725",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00238725.csv.gz",
+      "expected": 1918,
+      "counts": {
+        "exact_match": 1918,
+        "clock_missing": 1918
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00115917",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00115917.csv.gz",
+      "expected": 689,
+      "counts": {
+        "exact_match": 689,
+        "clock_missing": 689
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00117157",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00117157.csv.gz",
+      "expected": 867,
+      "counts": {
+        "exact_match": 867,
+        "clock_missing": 867
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00230856",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00230856.csv.gz",
+      "expected": 1207,
+      "counts": {
+        "exact_match": 1207,
+        "clock_missing": 1207
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00237300",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00237300.csv.gz",
+      "expected": 1112,
+      "counts": {
+        "exact_match": 1112,
+        "clock_missing": 1112
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00113693",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00113693.csv.gz",
+      "expected": 1118,
+      "counts": {
+        "exact_match": 1118,
+        "clock_missing": 1118
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00114108",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00114108.csv.gz",
+      "expected": 1051,
+      "counts": {
+        "exact_match": 1051,
+        "clock_missing": 1051
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00114447",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00114447.csv.gz",
+      "expected": 1773,
+      "counts": {
+        "exact_match": 1773,
+        "clock_missing": 1773
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00232809",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00232809.csv.gz",
+      "expected": 2361,
+      "counts": {
+        "exact_match": 2361,
+        "clock_missing": 2361
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00116011",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00116011.csv.gz",
+      "expected": 2248,
+      "counts": {
+        "exact_match": 2248,
+        "clock_missing": 2248
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00116837",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00116837.csv.gz",
+      "expected": 1568,
+      "counts": {
+        "exact_match": 1568,
+        "clock_missing": 1568
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00236826",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00236826.csv.gz",
+      "expected": 1178,
+      "counts": {
+        "exact_match": 1178,
+        "clock_missing": 1178
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00233079",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00233079.csv.gz",
+      "expected": 793,
+      "counts": {
+        "exact_match": 793,
+        "clock_missing": 793
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USW00093822",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00093822.csv.gz",
+      "expected": 3645,
+      "counts": {
+        "exact_match": 3645,
+        "clock_missing": 3645
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00114629",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00114629.csv.gz",
+      "expected": 1990,
+      "counts": {
+        "exact_match": 1990,
+        "clock_missing": 1990
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00235541",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00235541.csv.gz",
+      "expected": 285,
+      "counts": {
+        "exact_match": 285,
+        "clock_missing": 285
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00233043",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00233043.csv.gz",
+      "expected": 865,
+      "counts": {
+        "exact_match": 865,
+        "clock_missing": 865
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00237578",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00237578.csv.gz",
+      "expected": 1686,
+      "counts": {
+        "exact_match": 1686,
+        "clock_missing": 1686
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00231101",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00231101.csv.gz",
+      "expected": 137,
+      "counts": {
+        "exact_match": 137,
+        "clock_missing": 137
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00117636",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00117636.csv.gz",
+      "expected": 1690,
+      "counts": {
+        "exact_match": 1690,
+        "clock_missing": 1690
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00118491",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00118491.csv.gz",
+      "expected": 801,
+      "counts": {
+        "exact_match": 801,
+        "clock_missing": 801
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00112483",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00112483.csv.gz",
+      "expected": 295,
+      "counts": {
+        "exact_match": 295,
+        "clock_missing": 295
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00110500",
+      "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USC00110500.csv.gz",
+      "expected": 517,
+      "counts": {
+        "exact_match": 517,
+        "clock_missing": 517
+      },
+      "clock_histogram": {}
+    }
+  ],
+  "counts": {
+    "exact_match": 40500,
+    "clock_missing": 40500
+  },
+  "errors": [],
+  "source_documentation": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme-by_station.txt",
+  "note": "Exact station/date/element/value/measurement flag/source flag match with clear quality flag. OBS-TIME originates in HOMR. Local clock alone does not establish time zone convention, effective 24h interval, or whether date is interval start/end. No training labels changed; missing clocks not imputed."
+}
