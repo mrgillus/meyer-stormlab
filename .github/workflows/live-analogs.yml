@@ -1,0 +1,66 @@
+name: Live storm analogs and snowfall observation clocks
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/live_analogs.py'
+      - 'scripts/observation_clocks.py'
+      - '.github/workflows/live-analogs.yml'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-analog-clocks
+  cancel-in-progress: false
+jobs:
+  research:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - script: observation_clocks
+            output: observation_clocks
+          - script: live_analogs
+            output: live_analogs
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2 requests eccodes
+      - name: Run independent research
+        env:
+          RESEARCH_SCRIPT: ${{ matrix.script }}
+        run: |
+          python -m py_compile "scripts/$RESEARCH_SCRIPT.py"
+          python "scripts/$RESEARCH_SCRIPT.py"
+      - name: Publish research report
+        env:
+          RESEARCH_OUT: ${{ matrix.output }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a "data/$RESEARCH_OUT/." "$stage/"
+          base=$(git rev-parse HEAD)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$base" HEAD -- scripts/live_analogs.py scripts/observation_clocks.py scripts/regional_live_v2.py scripts/regional_live.py scripts/regional_learning.py scripts/regional_archive.py data/gefs_archive/manifest.json data/regional/observations.csv.gz; then exit 1; fi
+            mkdir -p "data/$RESEARCH_OUT"
+            cp -a "$stage/." "data/$RESEARCH_OUT/"
+            git add "data/$RESEARCH_OUT/"
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish $RESEARCH_OUT research"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
