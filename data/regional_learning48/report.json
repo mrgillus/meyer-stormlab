@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-25T15:01:13.434801+00:00",
+  "generated_at": "2026-11-25T16:27:03.269010+00:00",
   "archive_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
-  "archive_snapshot_sha256": "2547d1e6c43505f285dede569d0f278bb9e1da83cfaab81d0e2b8556ec09490c",
-  "complete_shards": 456,
+  "archive_snapshot_sha256": "e8c09ed1dedaa21ead570859db22a7449bc55cb24e7c4014de2eaa62150ac492",
+  "complete_shards": 648,
   "feature_errors": [],
   "results": [
     {
@@ -11,24 +11,24 @@
       "label_mapping": "utc_end_date",
       "coverage": {
         "train": {
-          "station_days": 1640,
-          "dates": 213,
+          "station_days": 2320,
+          "dates": 299,
           "stations": 29,
-          "snow_station_days": 64,
-          "snow_dates": 19,
-          "regional_event_groups": 19
+          "snow_station_days": 83,
+          "snow_dates": 27,
+          "regional_event_groups": 25
         },
         "validation": {
-          "station_days": 1444,
-          "dates": 103,
-          "stations": 28,
-          "snow_station_days": 39,
-          "snow_dates": 9,
-          "regional_event_groups": 8
+          "station_days": 2028,
+          "dates": 146,
+          "stations": 29,
+          "snow_station_days": 62,
+          "snow_dates": 15,
+          "regional_event_groups": 14
         },
         "test": {
-          "station_days": 2277,
-          "dates": 109,
+          "station_days": 3252,
+          "dates": 154,
           "stations": 26,
           "snow_station_days": 11,
           "snow_dates": 7,
@@ -39,110 +39,110 @@
       "metrics": {
         "validation": {
           "RF": {
-            "date_weighted_mae": 0.1504215870415551,
-            "date_weighted_rmse": 0.5042960010220217,
-            "bias": 0.04656670098867283,
-            "snow_day_mae": 2.7867968547959783,
-            "hits": 1,
-            "misses": 38,
-            "false_alarms": 39,
-            "n": 1444,
-            "brier_1in": 0.016256158697216805
+            "date_weighted_mae": 0.15331676890123408,
+            "date_weighted_rmse": 0.4836433878115596,
+            "bias": 0.04075207562283557,
+            "snow_day_mae": 2.360875747849014,
+            "hits": 5,
+            "misses": 57,
+            "false_alarms": 48,
+            "n": 2028,
+            "brier_1in": 0.018389340244124423
           },
           "boosted": {
-            "date_weighted_mae": 0.07536974862229665,
-            "date_weighted_rmse": 0.46307215584657063,
-            "bias": -0.04990185607142017,
-            "snow_day_mae": 3.066827766856897,
+            "date_weighted_mae": 0.07764938364912773,
+            "date_weighted_rmse": 0.4380717507298478,
+            "bias": -0.05705917064166836,
+            "snow_day_mae": 2.611341022818184,
             "hits": 0,
-            "misses": 39,
-            "false_alarms": 2,
-            "n": 1444
+            "misses": 62,
+            "false_alarms": 0,
+            "n": 2028
           },
           "cold_precip_10to1": {
-            "date_weighted_mae": 0.19816811328247297,
-            "date_weighted_rmse": 0.8674520458661197,
-            "bias": 0.10132219175966525,
-            "snow_day_mae": 3.2991893861518387,
-            "hits": 8,
-            "misses": 31,
-            "false_alarms": 82,
-            "n": 1444
+            "date_weighted_mae": 0.19425754265889744,
+            "date_weighted_rmse": 0.804851869706449,
+            "bias": 0.10193281455716065,
+            "snow_day_mae": 2.535519823002648,
+            "hits": 20,
+            "misses": 42,
+            "false_alarms": 123,
+            "n": 2028
           },
           "station_climatology": {
-            "date_weighted_mae": 0.1838738478692187,
-            "date_weighted_rmse": 0.48741547437782684,
-            "bias": 0.07191509676760093,
-            "snow_day_mae": 2.813859006545403,
+            "date_weighted_mae": 0.1891578489473048,
+            "date_weighted_rmse": 0.4713987574489344,
+            "bias": 0.06512509283759375,
+            "snow_day_mae": 2.5149180380795797,
             "hits": 3,
-            "misses": 36,
-            "false_alarms": 14,
-            "n": 1444,
-            "brier_1in": 0.016331466940155418
+            "misses": 59,
+            "false_alarms": 18,
+            "n": 2028,
+            "brier_1in": 0.01992675634300798
           },
           "no_snow": {
-            "date_weighted_mae": 0.06678001019985154,
-            "date_weighted_rmse": 0.4687738696394503,
-            "bias": -0.06678001019985154,
-            "snow_day_mae": 3.1343543275098233,
+            "date_weighted_mae": 0.07225770010649275,
+            "date_weighted_rmse": 0.4554891731196676,
+            "bias": -0.07225770010649275,
+            "snow_day_mae": 2.729765433056742,
             "hits": 0,
-            "misses": 39,
+            "misses": 62,
             "false_alarms": 0,
-            "n": 1444
+            "n": 2028
           }
         },
         "test": {
           "RF": {
-            "date_weighted_mae": 0.11219571562528168,
-            "date_weighted_rmse": 0.24018969680724486,
-            "bias": 0.08304151873783919,
-            "snow_day_mae": 1.5851350286282084,
+            "date_weighted_mae": 0.1047601712337089,
+            "date_weighted_rmse": 0.24970602239284945,
+            "bias": 0.08325366397093054,
+            "snow_day_mae": 1.5562144143799008,
             "hits": 0,
             "misses": 11,
-            "false_alarms": 23,
-            "n": 2277,
-            "brier_1in": 0.007440680837258505
+            "false_alarms": 46,
+            "n": 3252,
+            "brier_1in": 0.005909719455789534
           },
           "boosted": {
-            "date_weighted_mae": 0.031997674195762535,
-            "date_weighted_rmse": 0.14984050293770118,
-            "bias": -0.004843836557885912,
-            "snow_day_mae": 1.695356008383954,
+            "date_weighted_mae": 0.026243701142282937,
+            "date_weighted_rmse": 0.12934349991908725,
+            "bias": -0.001216086591500573,
+            "snow_day_mae": 1.6953727272637886,
             "hits": 0,
             "misses": 11,
             "false_alarms": 0,
-            "n": 2277
+            "n": 3252
           },
           "cold_precip_10to1": {
-            "date_weighted_mae": 0.15801787514816978,
-            "date_weighted_rmse": 0.797093039799877,
-            "bias": 0.1414322935281657,
-            "snow_day_mae": 2.37452352289594,
+            "date_weighted_mae": 0.12081733657975645,
+            "date_weighted_rmse": 0.6755765736085868,
+            "bias": 0.10813895578503777,
+            "snow_day_mae": 2.3745235228959394,
             "hits": 7,
             "misses": 4,
-            "false_alarms": 91,
-            "n": 2277
+            "false_alarms": 95,
+            "n": 3252
           },
           "station_climatology": {
-            "date_weighted_mae": 0.2531812684931215,
-            "date_weighted_rmse": 0.419657135283831,
-            "bias": 0.2266923167815703,
-            "snow_day_mae": 1.5374032913156497,
+            "date_weighted_mae": 0.24389960487867063,
+            "date_weighted_rmse": 0.37957043023516535,
+            "bias": 0.22322255956137133,
+            "snow_day_mae": 1.5703437046609279,
             "hits": 1,
             "misses": 10,
-            "false_alarms": 138,
-            "n": 2277,
-            "brier_1in": 0.02135730249017946
+            "false_alarms": 206,
+            "n": 3252,
+            "brier_1in": 0.014521044735777873
           },
           "no_snow": {
-            "date_weighted_mae": 0.01931759236132933,
-            "date_weighted_rmse": 0.1488377940598872,
-            "bias": -0.01931759236132933,
+            "date_weighted_mae": 0.014599529993147127,
+            "date_weighted_rmse": 0.12854170935459208,
+            "bias": -0.014599529993147127,
             "snow_day_mae": 1.7302002856358807,
             "hits": 0,
             "misses": 11,
             "false_alarms": 0,
-            "n": 2277
+            "n": 3252
           }
         }
       }
@@ -152,138 +152,138 @@
       "label_mapping": "utc_end_previous_date",
       "coverage": {
         "train": {
-          "station_days": 1655,
-          "dates": 211,
+          "station_days": 2347,
+          "dates": 297,
           "stations": 29,
-          "snow_station_days": 113,
-          "snow_dates": 19,
-          "regional_event_groups": 18
+          "snow_station_days": 191,
+          "snow_dates": 29,
+          "regional_event_groups": 27
         },
         "validation": {
-          "station_days": 1431,
-          "dates": 102,
-          "stations": 28,
-          "snow_station_days": 65,
-          "snow_dates": 10,
-          "regional_event_groups": 8
+          "station_days": 2046,
+          "dates": 146,
+          "stations": 29,
+          "snow_station_days": 86,
+          "snow_dates": 16,
+          "regional_event_groups": 14
         },
         "test": {
-          "station_days": 2297,
-          "dates": 110,
+          "station_days": 3261,
+          "dates": 155,
           "stations": 26,
-          "snow_station_days": 31,
-          "snow_dates": 10,
-          "regional_event_groups": 8
+          "snow_station_days": 36,
+          "snow_dates": 11,
+          "regional_event_groups": 9
         }
       },
       "status": "evaluated_research",
       "metrics": {
         "validation": {
           "RF": {
-            "date_weighted_mae": 0.19418314274001974,
-            "date_weighted_rmse": 0.6478594853261054,
-            "bias": 0.024178446395767047,
-            "snow_day_mae": 2.9564699798487326,
-            "hits": 32,
-            "misses": 33,
-            "false_alarms": 91,
-            "n": 1431,
-            "brier_1in": 0.024530985951153564
+            "date_weighted_mae": 0.20402596857607044,
+            "date_weighted_rmse": 0.600994348873467,
+            "bias": 0.06606399498363202,
+            "snow_day_mae": 2.6144349064821655,
+            "hits": 44,
+            "misses": 42,
+            "false_alarms": 82,
+            "n": 2046,
+            "brier_1in": 0.022426945035316653
           },
           "boosted": {
-            "date_weighted_mae": 0.12115931940608228,
-            "date_weighted_rmse": 0.6527003367676897,
-            "bias": -0.086903993419184,
-            "snow_day_mae": 3.392194382821012,
-            "hits": 5,
-            "misses": 60,
-            "false_alarms": 9,
-            "n": 1431
+            "date_weighted_mae": 0.13010682962989042,
+            "date_weighted_rmse": 0.6145991300275688,
+            "bias": -0.0283262346980665,
+            "snow_day_mae": 2.762377565274258,
+            "hits": 39,
+            "misses": 47,
+            "false_alarms": 32,
+            "n": 2046
           },
           "cold_precip_10to1": {
-            "date_weighted_mae": 0.1452747981415436,
-            "date_weighted_rmse": 0.7531715387902841,
-            "bias": 0.04990494744808758,
-            "snow_day_mae": 2.011614482061536,
-            "hits": 56,
-            "misses": 9,
-            "false_alarms": 45,
-            "n": 1431
+            "date_weighted_mae": 0.15683015639918393,
+            "date_weighted_rmse": 0.728733684532444,
+            "bias": 0.061372257939344844,
+            "snow_day_mae": 2.0166234661377747,
+            "hits": 71,
+            "misses": 15,
+            "false_alarms": 76,
+            "n": 2046
           },
           "station_climatology": {
-            "date_weighted_mae": 0.3763351943587939,
-            "date_weighted_rmse": 0.7533463634609664,
-            "bias": 0.1833281941491986,
-            "snow_day_mae": 3.280356296156719,
-            "hits": 4,
-            "misses": 61,
-            "false_alarms": 33,
-            "n": 1431,
-            "brier_1in": 0.04123135438902903
+            "date_weighted_mae": 0.4190337141095152,
+            "date_weighted_rmse": 0.7552373858102173,
+            "bias": 0.2437456456947084,
+            "snow_day_mae": 3.1945969112623147,
+            "hits": 6,
+            "misses": 80,
+            "false_alarms": 54,
+            "n": 2046,
+            "brier_1in": 0.04577572122642271
           },
           "no_snow": {
-            "date_weighted_mae": 0.12001347986258265,
-            "date_weighted_rmse": 0.6933223660214068,
-            "bias": -0.12001347986258265,
-            "snow_day_mae": 3.699444652440844,
+            "date_weighted_mae": 0.11152420940929611,
+            "date_weighted_rmse": 0.677267625128783,
+            "bias": -0.11152420940929611,
+            "snow_day_mae": 3.6600990676074443,
             "hits": 0,
-            "misses": 65,
+            "misses": 86,
             "false_alarms": 0,
-            "n": 1431
+            "n": 2046
           }
         },
         "test": {
           "RF": {
-            "date_weighted_mae": 0.203407371869486,
-            "date_weighted_rmse": 0.5153242353703171,
-            "bias": 0.14915835007599595,
-            "snow_day_mae": 1.4048040320807165,
-            "hits": 11,
-            "misses": 20,
-            "false_alarms": 141,
-            "n": 2297,
-            "brier_1in": 0.018465087816692406
+            "date_weighted_mae": 0.17214020982833517,
+            "date_weighted_rmse": 0.4105933955634764,
+            "bias": 0.13276998452306749,
+            "snow_day_mae": 1.3316628588798902,
+            "hits": 13,
+            "misses": 23,
+            "false_alarms": 130,
+            "n": 3261,
+            "brier_1in": 0.013942231159126104
           },
           "boosted": {
-            "date_weighted_mae": 0.054179805457112845,
-            "date_weighted_rmse": 0.26964590373447844,
-            "bias": -0.026094070428282032,
-            "snow_day_mae": 1.9494430088060941,
+            "date_weighted_mae": 0.05387401989783209,
+            "date_weighted_rmse": 0.25173274940363,
+            "bias": -0.011660534146882957,
+            "snow_day_mae": 1.9375726604926464,
             "hits": 0,
-            "misses": 31,
-            "false_alarms": 0,
-            "n": 2297
+            "misses": 36,
+            "false_alarms": 4,
+            "n": 3261
           },
           "cold_precip_10to1": {
-            "date_weighted_mae": 0.1609434137162966,
-            "date_weighted_rmse": 0.8100209368817434,
-            "bias": 0.11653982261380104,
-            "snow_day_mae": 1.3283633165456656,
+            "date_weighted_mae": 0.12455284213556467,
+            "date_weighted_rmse": 0.6901242892746208,
+            "bias": 0.08628457255703317,
+            "snow_day_mae": 1.3868487763122312,
             "hits": 15,
-            "misses": 16,
-            "false_alarms": 90,
-            "n": 2297
+            "misses": 21,
+            "false_alarms": 93,
+            "n": 3261
           },
           "station_climatology": {
-            "date_weighted_mae": 0.40757518754641037,
-            "date_weighted_rmse": 0.5595893151328329,
-            "bias": 0.34511500388996313,
-            "snow_day_mae": 1.7986365402311597,
+            "date_weighted_mae": 0.4855942144459454,
+            "date_weighted_rmse": 0.6381476273016533,
+            "bias": 0.43677400333984934,
+            "snow_day_mae": 1.7053694576196499,
             "hits": 0,
-            "misses": 31,
-            "false_alarms": 179,
-            "n": 2297,
-            "brier_1in": 0.038188092026883246
+            "misses": 36,
+            "false_alarms": 260,
+            "n": 3261,
+            "brier_1in": 0.04704312297506038
           },
           "no_snow": {
-            "date_weighted_mae": 0.04568281147752686,
-            "date_weighted_rmse": 0.28649407478763284,
-            "bias": -0.04568281147752686,
-            "snow_day_mae": 2.1128426608053443,
+            "date_weighted_mae": 0.037834439632147124,
+            "date_weighted_rmse": 0.257704329129565,
+            "bias": -0.037834439632147124,
+            "snow_day_mae": 2.091788125368866,
             "hits": 0,
-            "misses": 31,
+            "misses": 36,
             "false_alarms": 0,
-            "n": 2297
+            "n": 3261
           }
         }
       }
