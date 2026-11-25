@@ -1,0 +1,50 @@
+name: Thanksgiving storm high-resolution blend
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/storm-blend.yml'
+      - 'scripts/storm_blend.py'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-storm-blend
+  cancel-in-progress: false
+jobs:
+  guidance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve and blend storm-specific guidance
+        run: python scripts/storm_blend.py
+      - name: Publish validated capture
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/storm/report.json && [ -z "$(git ls-files --others --exclude-standard data/storm)" ]; then exit 0; fi
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/storm/. "$stage/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p data/storm
+            cp -a "$stage/." data/storm/
+            git add data/storm/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish matched-hour high-resolution storm guidance"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
