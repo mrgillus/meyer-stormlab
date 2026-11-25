@@ -1,0 +1,757 @@
+{
+  "mode": "historical",
+  "generated_at": "2026-11-25T13:10:24.536191+00:00",
+  "manifest_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
+  "point_count": 44,
+  "expected_tasks": 12,
+  "complete_tasks": 0,
+  "requested_fields": [
+    "t925",
+    "t850",
+    "t700",
+    "t600",
+    "t500",
+    "q925",
+    "q850",
+    "q700",
+    "q600",
+    "q500",
+    "omega850",
+    "omega700",
+    "omega600",
+    "omega500",
+    "u850",
+    "u700",
+    "v850",
+    "v700",
+    "z850",
+    "z500",
+    "t2m",
+    "skin",
+    "soil0_10cm",
+    "surface_pressure"
+  ],
+  "field_coverage": {
+    "t925": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "t850": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "t700": {
+      "available": 0,
+      "expected": 12,
+      "grid_degrees": []
+    },
+    "t600": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.5
+      ]
+    },
+    "t500": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.5
+      ]
+    },
+    "q925": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "q850": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "q700": {
+      "available": 0,
+      "expected": 12,
+      "grid_degrees": []
+    },
+    "q600": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.5
+      ]
+    },
+    "q500": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.5
+      ]
+    },
+    "omega850": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "omega700": {
+      "available": 0,
+      "expected": 12,
+      "grid_degrees": []
+    },
+    "omega600": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.5
+      ]
+    },
+    "omega500": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.5
+      ]
+    },
+    "u850": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "u700": {
+      "available": 0,
+      "expected": 12,
+      "grid_degrees": []
+    },
+    "v850": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "v700": {
+      "available": 0,
+      "expected": 12,
+      "grid_degrees": []
+    },
+    "z850": {
+      "available": 0,
+      "expected": 12,
+      "grid_degrees": []
+    },
+    "z500": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.5
+      ]
+    },
+    "t2m": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "skin": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "soil0_10cm": {
+      "available": 4,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    },
+    "surface_pressure": {
+      "available": 12,
+      "expected": 12,
+      "grid_degrees": [
+        0.25
+      ]
+    }
+  },
+  "errors": [
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20000105",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20100205",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 24,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "c00",
+      "lead_hours": 48,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 24,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "t700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "q700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "omega700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "u700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "v700",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "z850",
+      "error": "Expected one historical record; found 0"
+    },
+    {
+      "date": "20190108",
+      "member": "p01",
+      "lead_hours": 48,
+      "field": "soil0_10cm",
+      "error": "Temperature range"
+    }
+  ],
+  "value_count": 9152,
+  "operational_ready": false,
+  "note": "Availability and profile diagnostics only. Fixed pressure levels may miss warm noses and the dendritic growth zone; below-ground levels are masked in diagnostics. Specific humidity-derived RH uses water saturation; native RH is not substituted. Soil/skin temperatures are not road temperatures. No phase, SLR or accumulation forecast."
+}
