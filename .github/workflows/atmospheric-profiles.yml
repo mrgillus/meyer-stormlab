@@ -1,0 +1,61 @@
+name: Atmospheric profile historical and live pilot
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/atmospheric_profiles.py'
+      - '.github/workflows/atmospheric-profiles.yml'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-atmospheric-profiles
+  cancel-in-progress: false
+jobs:
+  pilot:
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [historical, live]
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2 requests eccodes
+      - name: Extract profile fields and record exact coverage
+        env:
+          PROFILE_MODE: ${{ matrix.mode }}
+        run: |
+          python -m py_compile scripts/atmospheric_profiles.py
+          python scripts/atmospheric_profiles.py "$PROFILE_MODE"
+      - name: Publish independent pilot data
+        env:
+          PROFILE_MODE: ${{ matrix.mode }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp data/atmospheric_profiles/"$PROFILE_MODE"_* "$stage/"
+          base=$(git rev-parse HEAD)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$base" HEAD -- scripts/atmospheric_profiles.py scripts/regional_archive.py scripts/regional_live.py scripts/regional_live_v2.py data/gefs_archive/manifest.json; then exit 1; fi
+            mkdir -p data/atmospheric_profiles
+            cp "$stage/"* data/atmospheric_profiles/
+            git add data/atmospheric_profiles/"$PROFILE_MODE"_*
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish $PROFILE_MODE atmospheric profile pilot"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
