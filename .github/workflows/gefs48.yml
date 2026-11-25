@@ -1,0 +1,185 @@
+name: Backfill and train GEFS 48-hour lead
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '47 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/gefs48.py'
+      - 'scripts/train_gefs48.py'
+      - '.github/workflows/gefs48.yml'
+permissions:
+  contents: read
+concurrency:
+  group: stormlab-gefs48
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+      base: ${{ steps.base.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - id: plan
+        run: |
+          python -m py_compile scripts/gefs48.py scripts/train_gefs48.py
+          python scripts/gefs48.py plan
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gefs48-plan-${{ github.run_id }}-${{ github.run_attempt }}
+          path: gefs48-plan.json
+          retention-days: 2
+  extract:
+    needs: plan
+    if: needs.plan.outputs.has_work == 'true'
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.base }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'eccodes>=2.40,<3' requests
+      - name: Extract separate 48h checkpoints
+        env:
+          BATCH_DATES: ${{ matrix.dates }}
+        run: python scripts/gefs48.py worker
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gefs48-worker-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.worker }}
+          path: gefs48-output/
+          retention-days: 2
+          if-no-files-found: warn
+  publish:
+    needs: [plan, extract]
+    if: always() && !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - uses: actions/download-artifact@v4
+        with:
+          name: gefs48-plan-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: gefs48-worker-${{ github.run_id }}-${{ github.run_attempt }}-*
+          path: gefs48-artifacts
+      - name: Validate and publish checkpoints
+        env:
+          BATCH_BASE: ${{ needs.plan.outputs.base }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$BATCH_BASE" HEAD -- scripts/gefs48.py scripts/regional_archive.py scripts/gefs_batch.py scripts/gefs_parallel.py data/gefs_archive/manifest.json; then exit 1; fi
+            python scripts/gefs48.py publish
+            git add data/gefs48/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Checkpoint independent GEFS 48h extension"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
+  train:
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2 requests eccodes
+      - name: Train and evaluate lead-matched models
+        run: python scripts/train_gefs48.py
+      - name: Publish training report and artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/regional_learning48/. "$stage/"
+          base=$(git rev-parse HEAD)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$base" HEAD -- scripts/train_gefs48.py scripts/regional_learning.py data/gefs48/ data/regional/observations.csv.gz; then exit 1; fi
+            mkdir -p data/regional_learning48
+            cp -a "$stage/." data/regional_learning48/
+            git add data/regional_learning48/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish GEFS +48h regional training benchmark"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
+      - name: Evaluate current storm if both lead-matched experiments trained
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! python -c 'import json,datetime as d; r=json.load(open("data/regional_learning48/report.json")); assert len(r["results"])==2 and all(x["status"]=="evaluated_research" for x in r["results"]); assert d.datetime.now(d.timezone.utc)<d.datetime(2026,11,27,tzinfo=d.timezone.utc)'; then
+            echo "No eligible storm inference yet."
+            exit 0
+          fi
+          python scripts/regional_live_v2.py
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/regional_live_v2/. "$stage/"
+          base=$(git rev-parse HEAD)
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$base" HEAD -- scripts/regional_live_v2.py scripts/regional_live.py scripts/regional_learning.py data/regional_learning/ data/regional_learning48/; then exit 1; fi
+            mkdir -p data/regional_live_v2
+            cp -a "$stage/." data/regional_live_v2/
+            git add data/regional_live_v2/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish lead-matched fine-grid regional storm inference"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
