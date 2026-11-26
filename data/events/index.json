@@ -1,9 +1,48 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T19:59:43.603141+00:00",
+  "generated_at": "2026-11-26T20:03:58.264580+00:00",
   "source_latest_capture": "2026-11-26T19:39:55.496208+00:00",
-  "capture_age_hours": 0.33,
+  "capture_age_hours": 0.4,
   "capture_count_processed": 11,
+  "climatology": {
+    "status": "available",
+    "period": "1991-2020",
+    "sigma_trigger": 2,
+    "places": {
+      "Wentzville": {
+        "station": "USC00238725",
+        "distance_miles": 15.5
+      },
+      "St. Louis": {
+        "station": "USW00013994",
+        "distance_miles": 12.8
+      },
+      "St. Charles": {
+        "station": "USC00237397",
+        "distance_miles": 2.0
+      },
+      "Affton": {
+        "station": "USW00013994",
+        "distance_miles": 13.6
+      },
+      "Wildwood": {
+        "station": "USW00013994",
+        "distance_miles": 14.9
+      },
+      "Washington": {
+        "station": "USC00238725",
+        "distance_miles": 20.3
+      },
+      "Belleville": {
+        "station": "USW00013802",
+        "distance_miles": 7.4
+      },
+      "Alton": {
+        "station": "USW00013994",
+        "distance_miles": 14.0
+      }
+    }
+  },
   "status": "current",
   "screening_rules": {
     "snow": {
@@ -54,6 +93,30 @@
       "unit": "signal",
       "direction": "gte"
     },
+    "warm_day": {
+      "field": "temperature_2m_max",
+      "threshold": 2.0,
+      "unit": "sigma",
+      "direction": "gte"
+    },
+    "cold_day": {
+      "field": "temperature_2m_max",
+      "threshold": -2.0,
+      "unit": "sigma",
+      "direction": "lte"
+    },
+    "warm_night": {
+      "field": "temperature_2m_min",
+      "threshold": 2.0,
+      "unit": "sigma",
+      "direction": "gte"
+    },
+    "cold_night": {
+      "field": "temperature_2m_min",
+      "threshold": -2.0,
+      "unit": "sigma",
+      "direction": "lte"
+    },
     "heat_stress": {
       "field": "apparent_temperature_max",
       "threshold": 105,
@@ -95,6 +158,7 @@
     "Research screening signals, not official NWS alerts or calibrated probabilities.",
     "Support percent counts confirmed sources out of four. Zero requires four clear sources.",
     "Daily deterministic stitched forecasts; model initialization not identified.",
+    "Temperature anomaly modes compare daily highs/lows with nearest NOAA station normals, not hourly normals. Absolute extreme screens remain.",
     "Weather-code signals describe the most severe coded daily condition, not every hazard.",
     "Thunderstorm signals are not severe, tornado, hail, or damaging-wind probabilities; flooding requires dedicated hydrologic evidence.",
     "Forecast history is not ground truth; no model skill verdict without observations.",
@@ -1762,13 +1826,15 @@
         "drizzle-20261204",
         "precipitation-20261204",
         "rain-20261203",
-        "showers-20261203"
+        "showers-20261203",
+        "warm_night-20261203"
       ],
       "aliases": [
         "Indigo",
         "Maple",
         "Raven",
-        "Umber"
+        "Umber",
+        "Willow"
       ],
       "start_date": "2026-12-03",
       "end_date": "2026-12-05",
@@ -2000,6 +2066,64 @@
                 "quantity_models": 3,
                 "models": {
                   "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "warm_night": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 2.0,
+            "direction": "gte",
+            "unit": "sigma",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "points": [
+              {
+                "time": "2026-12-03",
+                "support_pct": 50,
+                "possible_support_pct": 75,
+                "unknown_models": 1,
+                "supporting_models": 2,
+                "quantity": 2.347,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": 50,
+                "possible_support_pct": 75,
+                "unknown_models": 1,
+                "supporting_models": 2,
+                "quantity": 2.376,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 1.25,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
                   "ECMWF": "clear",
                   "GEM": "clear",
                   "ICON": "unknown"
@@ -3749,6 +3873,112 @@
         "min_triggering_value": 0.024,
         "max_triggering_value": 0.059,
         "median_triggering_value": 0.047,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "warm_night-20261203",
+      "kind": "warm_night",
+      "title": "Unusually warm overnight lows",
+      "name": "Willow",
+      "priority": "notable",
+      "assessments": [
+        {
+          "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 2,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 75.0
+        }
+      ],
+      "daily_assessments": [
+        {
+          "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-03",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 2,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 2,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 75.0
+        }
+      ],
+      "start_date": "2026-12-03",
+      "end_date": "2026-12-04",
+      "first_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "snapshots_seen": 1,
+      "status": "in_latest_capture",
+      "lead_days": 7,
+      "models": [
+        "GEM",
+        "GFS"
+      ],
+      "locations": [
+        "Affton",
+        "Alton",
+        "Belleville",
+        "St. Charles",
+        "St. Louis",
+        "Washington",
+        "Wentzville",
+        "Wildwood"
+      ],
+      "same_place_day_support": 2,
+      "peak": {
+        "date": "2026-12-04",
+        "place": "Washington",
+        "model": "GFS",
+        "value": 2.9062
+      },
+      "threshold": {
+        "value": 2.0,
+        "unit": "sigma",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [
+          "GEM",
+          "GFS"
+        ],
+        "triggering_samples": 4,
+        "min_triggering_value": 2.3368,
+        "max_triggering_value": 2.8854,
+        "median_triggering_value": 2.488,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
