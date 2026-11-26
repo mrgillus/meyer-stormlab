@@ -124,6 +124,7 @@ function renderNow(){
   renderInsights(p,mode,peak);
   renderModels(p,d);
   renderCase();
+  window.StormLabChanges?.update({kind:"storm",report:d,point:p,location:state.location});
 }
 function renderPulse(p,mode){
   const all=(p.hourly||[]).filter(x=>num(x.snow_in));
@@ -327,6 +328,7 @@ function renderGeneral(){
   if(valid.length)showGeneralModel(valid[0].name);
   else set("modelDetail","Unavailable: insufficient matching model coverage.");
   renderCase();
+  window.StormLabChanges?.update({kind:"general",general:g,location:state.location});
 }
 function showGeneralModel(name){
   const g=state.general,m=g?.modelTotals.find(x=>x.name===name);if(!m)return;
