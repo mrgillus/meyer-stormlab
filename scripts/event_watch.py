@@ -323,6 +323,88 @@ def update_assessments(events, captures):
         event["assessments"] = sorted(old.values(), key=lambda t: parse_time(t["captured_at"]))
 
 
+def group_events(summaries, previous=()):
+    """Date-overlap parent events; hazard records remain independent.
+
+    Keep the previous parent identity when its members still overlap in time.
+    If a window splits, the component containing the original primary mode
+    keeps the name. Overlap is a regional association, not proof of a single
+    physical weather system.
+    """
+    components = []
+    for item in sorted(summaries, key=lambda x: (x["start_date"], x["end_date"], x["id"])):
+        if not components or item["start_date"] > components[-1]["end_date"]:
+            components.append({"end_date": item["end_date"], "modes": []})
+        comp = components[-1]
+        comp["modes"].append(item)
+        comp["end_date"] = max(comp["end_date"], item["end_date"])
+
+    # Give original-primary components first claim on previous identities.
+    primary_ids = {g["primary_mode_id"] for g in previous}
+    components.sort(key=lambda c: (not any(m["id"] in primary_ids for m in c["modes"]),
+                                   c["modes"][0]["start_date"]))
+    used = set()
+    reserved_names = {g["name"] for g in previous}
+    reserved_ids = {g["id"] for g in previous}
+    groups = []
+    for comp in components:
+        modes = comp["modes"]
+        member_ids = {m["id"] for m in modes}
+        matches = [g for g in previous if g["id"] not in used
+                   and member_ids.intersection(g["mode_ids"])]
+        # Do not steal a primary identity from another split component.
+        matches = [g for g in matches if g["primary_mode_id"] in member_ids
+                   or not any(g["primary_mode_id"] == m["id"] for c in components
+                              for m in c["modes"])]
+        primary = min(modes, key=lambda m: (m["first_seen"],
+                      m["priority"] == "routine", m["kind"] != "snow", m["id"]))
+        prior = min(matches, key=lambda g: (g["first_seen"], g["id"])) if matches else None
+        if prior:
+            gid, name = prior["id"], prior["name"]
+            primary_id = prior["primary_mode_id"]
+            if primary_id not in member_ids:
+                primary_id = primary["id"]
+        else:
+            # A split or new event uses an unused child name and a fresh ID.
+            candidates = sorted(modes, key=lambda m: (m != primary, m["first_seen"], m["id"]))
+            chosen = next((m for m in candidates if m["name"] not in reserved_names), None)
+            name = chosen["name"] if chosen else primary["name"] + " (split)"
+            n = 2
+            while name in reserved_names:
+                name = primary["name"] + " (split " + str(n) + ")"
+                n += 1
+            gid = "event-" + primary["id"]
+            n = 2
+            while gid in reserved_ids:
+                gid = "event-" + primary["id"] + "-group-" + str(n)
+                n += 1
+            primary_id = primary["id"]
+        used.add(gid)
+        used.update(g["id"] for g in matches)
+        reserved_names.add(name)
+        reserved_ids.add(gid)
+        statuses = {m["status"] for m in modes}
+        status = ("in_latest_capture" if "in_latest_capture" in statuses else
+                  "not_in_latest_capture" if "not_in_latest_capture" in statuses else
+                  "forecast_window_passed")
+        aliases = {m["name"] for m in modes}
+        for g in matches:
+            aliases.add(g["name"])
+            aliases.update(g.get("aliases", []))
+        groups.append({
+            "id": gid, "name": name, "primary_mode_id": primary_id,
+            "mode_ids": sorted(member_ids),
+            "aliases": sorted(aliases - {name}),
+            "start_date": min(m["start_date"] for m in modes),
+            "end_date": max(m["end_date"] for m in modes),
+            "first_seen": min(m["first_seen"] for m in modes),
+            "last_seen": max(m["last_seen"] for m in modes),
+            "status": status,
+            "priority": "notable" if any(m["priority"] == "notable" for m in modes) else "routine",
+        })
+    return sorted(groups, key=lambda g: (g["start_date"], g["end_date"], g["id"]))
+
+
 def main():
     history = read_json(DATA / "history.json", [])
     if not isinstance(history, list):
@@ -384,7 +466,13 @@ def main():
                                    x["status"] == "forecast_window_passed",
                                    max(0, x["lead_days"]), -x["same_place_day_support"],
                                    -x["snapshots_seen"]))
+    groups = group_events(summarized, prior.get("event_groups", []))
+    visible_groups = [g for g in groups if g["status"] != "forecast_window_passed"] + sorted(
+        (g for g in groups if g["status"] == "forecast_window_passed"),
+        key=lambda g: g["end_date"], reverse=True)[:40]
+    visible_modes = {mid for g in visible_groups for mid in g["mode_ids"]}
     catalog = {
+        "event_groups": groups,
         "schema": SCHEMA, "updated_at": now.isoformat(),
         "processed_captures": sorted(processed), "events": events,
     }
@@ -407,8 +495,8 @@ def main():
             "Forecast history is not ground truth; no model skill verdict without observations.",
             "15-day GFS is the longest available collector input. No 17–21 day detection.",
         ],
-        "events": [x for x in summarized if x["status"] != "forecast_window_passed"] +
-                  [x for x in summarized if x["status"] == "forecast_window_passed"][:40],
+        "event_groups": visible_groups,
+        "events": [x for x in summarized if x["id"] in visible_modes],
     }
     # Never destroy existing event history if no fresh capture is available.
     if captures or not (DEST / "index.json").exists():

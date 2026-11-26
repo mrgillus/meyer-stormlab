@@ -139,6 +139,30 @@ class EventWatchTests(unittest.TestCase):
         self.assertIsNone(watch.screen_value("ice", 66, "unknown"))
         self.assertIsNone(watch.screen_value("thunderstorm", 98, "wmo code"))
 
+    def test_date_groups_preserve_mode_ids_and_parent_name(self):
+        def mode(id, name, kind, start, end, status="in_latest_capture"):
+            return dict(id=id, name=name, kind=kind, start_date=start, end_date=end,
+                        first_seen="2026-11-24T12:00:00Z", last_seen="2026-11-25T12:00:00Z",
+                        priority="notable", status=status)
+        snow = mode("snow-1", "Drift", "snow", "2026-11-26", "2026-11-26")
+        rain = mode("rain-1", "Alder", "precipitation", "2026-11-26", "2026-11-26")
+        wind = mode("wind-1", "Gale", "wind", "2026-12-01", "2026-12-01")
+        groups = watch.group_events([snow,rain,wind])
+        self.assertEqual(len(groups), 2)
+        group = groups[0]
+        self.assertEqual(group["name"], "Drift")
+        self.assertEqual(group["mode_ids"], ["rain-1","snow-1"])
+        self.assertEqual(group["aliases"], ["Alder"])
+        rain["status"] = "not_in_latest_capture"
+        updated = watch.group_events([snow,rain,wind], groups)
+        self.assertEqual(updated[0]["id"], group["id"])
+        self.assertEqual(updated[0]["status"], "in_latest_capture")
+        rain["start_date"] = rain["end_date"] = "2026-11-28"
+        split = watch.group_events([rain,wind,snow], updated)
+        self.assertEqual(len(split), 3)
+        self.assertEqual(split[0]["id"], group["id"])
+        self.assertEqual(len({g["name"] for g in split}), 3)
+
     def test_temporary_missing_model_does_not_claim_corroboration(self):
         stamp = dt.datetime.now(watch.UTC).isoformat()
         out = watch.captured_signals(snapshot(stamp, models=("GFS",)))

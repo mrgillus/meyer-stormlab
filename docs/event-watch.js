@@ -86,6 +86,47 @@
       '<text x="'+x0+'" y="105">'+safe(short(points[0].captured_at))+'</text><text x="'+x1+'" y="105" text-anchor="end">'+safe(short(last.captured_at))+'</text></svg>'+
       '<div class="watch-models">'+chips+'</div><small class="watch-muted">'+safe(stamp(last.captured_at))+' · Not an event probability. Dashed ranges = unknown coverage.</small></div>';
   }
+  function groups(index){
+    if(Array.isArray(index?.event_groups))return index.event_groups;
+    // Older published indexes: group by overlapping dates until rebuild.
+    const out=[];
+    [...(index?.events||[])].sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id)).forEach(m=>{
+      let g=out.at(-1);
+      if(!g||m.start_date>g.end_date){
+        g={id:"event-"+m.id,name:watchName(m),primary_mode_id:m.id,mode_ids:[],
+          start_date:m.start_date,end_date:m.end_date,first_seen:m.first_seen,
+          status:m.status,priority:m.priority};
+        out.push(g);
+      }
+      g.mode_ids.push(m.id);
+      if(m.end_date>g.end_date)g.end_date=m.end_date;
+      if(m.status==="in_latest_capture")g.status=m.status;
+      else if(g.status==="forecast_window_passed"&&m.status==="not_in_latest_capture")g.status=m.status;
+      if(!routine(m))g.priority="notable";
+      if(m.kind==="snow"){g.primary_mode_id=m.id;g.name=watchName(m)}
+    });
+    return out;
+  }
+  function modeItems(group){
+    return (group?.mode_ids||[]).map(id=>state.index?.events.find(m=>m.id===id)).filter(Boolean);
+  }
+  function groupFor(id){
+    return groups(state.index).find(g=>g.id===id||g.mode_ids.includes(id));
+  }
+  function modeLabel(item){return titles[item.kind]||item.title}
+  function groupCard(group){
+    const modes=modeItems(group),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
+    const tone=marker(group.status);
+    return '<article class="event-signal '+safe(tone)+'"><div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+safe(kinds[primary?.kind]||"◎")+'</span><span class="event-flag">'+safe(describe(group.status))+'</span></div>'+
+      '<h3>Event '+safe(group.name)+'</h3><p class="event-dates">'+safe(dateRange(group))+' · '+modes.length+' weather mode(s)</p>'+
+      '<div class="event-mode-list">'+modes.map(m=>'<details class="event-mode" '+(m.id===primary?.id?'open':'')+'><summary><span>'+safe(kinds[m.kind]||"◎")+' '+safe(modeLabel(m))+'</span><strong>'+safe(modeScore(m))+'</strong></summary><p class="watch-muted">'+safe(dateRange(m))+' · '+safe(describe(m.status))+'</p>'+watchChart(m.assessments)+'</details>').join("")+'</div>'+
+      '<div class="event-evidence"><span>First seen '+safe(short(group.first_seen))+'</span><span>One regional date window</span></div>'+
+      '<button type="button" class="event-case-button" data-event-id="'+safe(primary?.id||group.primary_mode_id)+'">Explore event →</button></article>';
+  }
+  function modeScore(m){
+    const p=m.assessments?.at(-1);
+    return !p||!numeric(p.support_pct)?"Unknown":(p.unknown_models?"≥":"")+p.support_pct+"%";
+  }
   function card(item){
     const tone=marker(item.status),label=titles[item.kind]||item.title;
     const today=new Intl.DateTimeFormat("en-CA",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
@@ -109,14 +150,14 @@
       q("eventWatchList").innerHTML='<div class="blank-state">Pattern tracking is waiting for a valid archived event feed. Live model scanning remains available below.</div>';return}
     const current=freshness(index);
     set("eventWatchStatus",current?index.capture_count_processed+" captures tracked":"ARCHIVE UPDATES DELAYED");
-    const active=index.events.filter(x=>x.status==="in_latest_capture");
-    const fading=index.events.filter(x=>x.status==="not_in_latest_capture");
+    const active=groups(index).filter(x=>x.status==="in_latest_capture");
+    const fading=groups(index).filter(x=>x.status==="not_in_latest_capture");
     const today=new Intl.DateTimeFormat("en-CA",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const display=[...active,...fading].filter(x=>x.end_date>=today).sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
     if(display.length){
       const notable=display.filter(x=>!routine(x)), everyday=display.filter(routine);
-      q("eventWatchList").innerHTML=(notable.length?notable.map(card).join(""):"")+
-        (everyday.length?'<details class="routine-watches" open><summary>Routine weather events · '+everyday.length+'</summary><div class="event-watch-list">'+everyday.map(card).join("")+'</div></details>':"");
+      q("eventWatchList").innerHTML=(notable.length?notable.map(groupCard).join(""):"")+
+        (everyday.length?'<details class="routine-watches" open><summary>Routine weather events · '+everyday.length+'</summary><div class="event-watch-list">'+everyday.map(groupCard).join("")+'</div></details>':"");
     }else{
       q("eventWatchList").innerHTML='<div class="blank-state">No qualifying active or fading model signals in the published regional case catalog. The live model scan below can still be explored.</div>';
     }
@@ -125,12 +166,13 @@
       " · Stitched deterministic daily forecasts only; these are not warnings, observations, or calibrated probabilities.");
   }
   function pickRow(item){
-    const selected=state.selected===item.id?" is-selected":"";
-    const label="Event "+watchName(item)+" · "+(titles[item.kind]||item.title);
+    const selected=item.mode_ids.includes(state.selected)?" is-selected":"";
+    const modes=modeItems(item),primary=modes.find(m=>m.id===item.primary_mode_id)||modes[0];
+    const label="Event "+item.name+" · "+modes.map(modeLabel).join(" / ");
     const note=item.status==="in_latest_capture"?"Developing model signal":
       item.status==="not_in_latest_capture"?"Faded from newer guidance":"Forecast window passed";
-    return '<button class="case-choice'+selected+'" type="button" data-case-id="'+safe(item.id)+'">'+
-      '<span class="case-choice-symbol" aria-hidden="true">'+safe(kinds[item.kind]||"◎")+'</span>'+
+    return '<button class="case-choice'+selected+'" type="button" data-case-id="'+safe(item.primary_mode_id)+'">'+
+      '<span class="case-choice-symbol" aria-hidden="true">'+safe(kinds[primary?.kind]||"◎")+'</span>'+
       '<span class="case-choice-content"><strong>'+safe(label)+'</strong><small>'+
       safe(dateRange(item))+' · '+safe(note)+'</small></span>'+
       '<span class="case-choice-chevron" aria-hidden="true">›</span></button>';
@@ -138,11 +180,11 @@
   function renderArchiveList(){
     if(!state.index){set("trackedCasesStatus","CATALOG UNAVAILABLE");
       q("eventCaseList").innerHTML='<div class="blank-state">No event index could be loaded yet.</div>';return}
-    const items=state.index.events;
-    set("trackedCasesStatus",items.length+" tracked signal(s)");
+    const items=groups(state.index);
+    set("trackedCasesStatus",items.length+" tracked event(s)");
     q("eventCaseList").innerHTML=items.length?items.map(pickRow).join(""):
       '<div class="blank-state">The event collector has not identified any threshold-crossing forecasts yet.</div>';
-    if(!state.selected&&items.length)state.selected=items[0].id;
+    if(!groupFor(state.selected)&&items.length)state.selected=items[0].primary_mode_id;
     renderSelected();
   }
   async function loadCatalog(){
@@ -169,6 +211,7 @@
     const summary=index?.events.find(x=>x.id===state.selected);
     if(!summary){q("eventCaseDetail").innerHTML="";window.StormLabVerification?.render(null);return}
     window.StormLabVerification?.render(summary.id);
+    const group=groupFor(summary.id);
     const label=titles[summary.kind]||summary.title;
     const unit=summary.threshold?.unit||"";
     const trigger=summary.threshold?.direction==="lte"?"≤":"≥";
@@ -187,8 +230,9 @@
     const assessments=(caseFile.assessments||[]).slice().reverse();
     const last=caseFile.timeline?.at(-1),first=caseFile.timeline?.[0];
     q("eventCaseDetail").innerHTML='<div class="case-detail-top"><div><span class="kicker">EVENT INTELLIGENCE / '+safe(summary.id)+'</span>'+
-      '<h3>Event '+safe(watchName(summary))+'</h3><p>'+safe(label)+' · '+safe(dateRange(summary))+'</p></div><span class="event-flag">'+
+      '<h3>Event '+safe(group?.name||watchName(summary))+'</h3><p>'+safe(dateRange(group||summary))+'</p></div><span class="event-flag">'+
       safe(describe(summary.status))+'</span></div>'+
+      '<div class="event-mode-picker">'+modeItems(group).map(m=>'<button type="button" class="outline-button '+(m.id===summary.id?"mode-selected":"")+'" data-mode-id="'+safe(m.id)+'" aria-pressed="'+(m.id===summary.id)+'">'+safe(modeLabel(m))+' · '+safe(modeScore(m))+'</button>').join("")+'</div><h3 class="event-mode-title">'+safe(label)+'</h3><p class="watch-muted">Mode window: '+safe(dateRange(summary))+'</p>'+
       watchChart(caseFile.assessments)+
       '<div class="case-detail-numbers"><div><span>FIRST SEEN</span><strong>'+safe(stamp(caseFile.first_seen))+'</strong></div>'+
       '<div><span>LAST REPORTED</span><strong>'+safe(stamp(caseFile.last_seen))+'</strong></div>'+
@@ -204,7 +248,7 @@
       'Values represent archived stitched guidance, not model initialization times. See the separate verification panel for any available measured evidence.'+
       (timeline.length>25?" Showing 25 most recent of "+timeline.length+" captures.":"")+'</p>';
     q("eventCaseList").querySelectorAll(".case-choice").forEach(button=>
-      button.classList.toggle("is-selected",button.dataset.caseId===summary.id));
+      button.classList.toggle("is-selected",group?.mode_ids.includes(button.dataset.caseId)||button.dataset.caseId===summary.id));
   }
   async function reload(force=false){
     if(state.inFlight)return state.inFlight;
@@ -229,6 +273,10 @@
       document.querySelector('[data-tab="archive"]')?.click();
       renderArchiveList();
       q("trackedCasesTitle")?.scrollIntoView({behavior:"smooth",block:"start"});
+    });
+    q("eventCaseDetail")?.addEventListener("click",ev=>{
+      const button=ev.target.closest("[data-mode-id]");if(!button)return;
+      state.selected=button.dataset.modeId;renderArchiveList();
     });
     q("eventCaseList")?.addEventListener("click",ev=>{
       const button=ev.target.closest("[data-case-id]");if(!button)return;
