@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T11:04:17.383590+00:00",
-  "source_latest_capture": "2026-11-26T10:33:49.497972+00:00",
-  "capture_age_hours": 0.51,
-  "capture_count_processed": 8,
+  "generated_at": "2026-11-26T17:17:19.771625+00:00",
+  "source_latest_capture": "2026-11-26T16:38:10.281935+00:00",
+  "capture_age_hours": 0.65,
+  "capture_count_processed": 9,
   "status": "current",
   "screening_rules": {
     "snow": {
@@ -52,8 +52,8 @@
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T10:33:49.497972+00:00",
-      "snapshots_seen": 8,
+      "last_seen": "2026-11-26T16:38:10.281935+00:00",
+      "snapshots_seen": 9,
       "status": "in_latest_capture",
       "lead_days": 0,
       "models": [
@@ -77,7 +77,7 @@
         "date": "2026-11-26",
         "place": "Wildwood",
         "model": "ECMWF",
-        "value": 5.898
+        "value": 6.807
       },
       "threshold": {
         "value": 2.0,
@@ -92,9 +92,9 @@
           "ICON"
         ],
         "triggering_samples": 4,
-        "min_triggering_value": 3.748,
-        "max_triggering_value": 5.098,
-        "median_triggering_value": 4.478,
+        "min_triggering_value": 3.335,
+        "max_triggering_value": 5.264,
+        "median_triggering_value": 4.423,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -108,8 +108,8 @@
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T10:33:49.497972+00:00",
-      "snapshots_seen": 8,
+      "last_seen": "2026-11-26T16:38:10.281935+00:00",
+      "snapshots_seen": 9,
       "status": "in_latest_capture",
       "lead_days": 0,
       "models": [
@@ -129,9 +129,9 @@
       "same_place_day_support": 4,
       "peak": {
         "date": "2026-11-26",
-        "place": "St. Louis",
-        "model": "GFS",
-        "value": 1.598
+        "place": "Affton",
+        "model": "ECMWF",
+        "value": 1.567
       },
       "threshold": {
         "value": 1.25,
@@ -151,76 +151,31 @@
       "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
     },
     {
-      "id": "precipitation-20261204",
-      "kind": "precipitation",
-      "title": "Heavy precipitation signal",
-      "start_date": "2026-12-04",
-      "end_date": "2026-12-04",
-      "first_seen": "2026-11-26T10:33:49.497972+00:00",
-      "last_seen": "2026-11-26T10:33:49.497972+00:00",
-      "snapshots_seen": 1,
-      "status": "in_latest_capture",
-      "lead_days": 8,
-      "models": [
-        "GFS"
-      ],
-      "locations": [
-        "Alton",
-        "St. Charles",
-        "St. Louis",
-        "Washington",
-        "Wentzville",
-        "Wildwood"
-      ],
-      "same_place_day_support": 1,
-      "peak": {
-        "date": "2026-12-04",
-        "place": "Wentzville",
-        "model": "GFS",
-        "value": 2.866
-      },
-      "threshold": {
-        "value": 1.25,
-        "unit": "in",
-        "test": "gte"
-      },
-      "wentzville": {
-        "models": [
-          "GFS"
-        ],
-        "triggering_samples": 1,
-        "min_triggering_value": 2.866,
-        "max_triggering_value": 2.866,
-        "median_triggering_value": 2.866,
-        "note": "Only threshold-triggering daily forecasts, not a storm total."
-      },
-      "observation_status": "not_connected",
-      "verification_status": "not_verified",
-      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
-    },
-    {
-      "id": "wind-20261207",
+      "id": "wind-20261210",
       "kind": "wind",
       "title": "Strong wind signal",
-      "start_date": "2026-12-07",
-      "end_date": "2026-12-07",
-      "first_seen": "2026-11-25T04:42:00.447753+00:00",
-      "last_seen": "2026-11-26T10:33:49.497972+00:00",
-      "snapshots_seen": 2,
+      "start_date": "2026-12-10",
+      "end_date": "2026-12-10",
+      "first_seen": "2026-11-26T16:38:10.281935+00:00",
+      "last_seen": "2026-11-26T16:38:10.281935+00:00",
+      "snapshots_seen": 1,
       "status": "in_latest_capture",
-      "lead_days": 11,
+      "lead_days": 14,
       "models": [
         "GFS"
       ],
       "locations": [
-        "Alton"
+        "Affton",
+        "Alton",
+        "Belleville",
+        "Wentzville"
       ],
       "same_place_day_support": 1,
       "peak": {
-        "date": "2026-12-07",
-        "place": "Alton",
+        "date": "2026-12-10",
+        "place": "Belleville",
         "model": "GFS",
-        "value": 45.4
+        "value": 47.0
       },
       "threshold": {
         "value": 45.0,
@@ -228,11 +183,13 @@
         "test": "gte"
       },
       "wentzville": {
-        "models": [],
-        "triggering_samples": 0,
-        "min_triggering_value": null,
-        "max_triggering_value": null,
-        "median_triggering_value": null,
+        "models": [
+          "GFS"
+        ],
+        "triggering_samples": 1,
+        "min_triggering_value": 45.6,
+        "max_triggering_value": 45.6,
+        "median_triggering_value": 45.6,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -284,6 +241,54 @@
       "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
     },
     {
+      "id": "precipitation-20261204",
+      "kind": "precipitation",
+      "title": "Heavy precipitation signal",
+      "start_date": "2026-12-04",
+      "end_date": "2026-12-04",
+      "first_seen": "2026-11-26T10:33:49.497972+00:00",
+      "last_seen": "2026-11-26T10:33:49.497972+00:00",
+      "snapshots_seen": 1,
+      "status": "not_in_latest_capture",
+      "lead_days": 8,
+      "models": [
+        "GFS"
+      ],
+      "locations": [
+        "Alton",
+        "St. Charles",
+        "St. Louis",
+        "Washington",
+        "Wentzville",
+        "Wildwood"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-12-04",
+        "place": "Wentzville",
+        "model": "GFS",
+        "value": 2.866
+      },
+      "threshold": {
+        "value": 1.25,
+        "unit": "in",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [
+          "GFS"
+        ],
+        "triggering_samples": 1,
+        "min_triggering_value": 2.866,
+        "max_triggering_value": 2.866,
+        "median_triggering_value": 2.866,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
       "id": "precipitation-20261207",
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
@@ -327,6 +332,47 @@
         "min_triggering_value": 1.323,
         "max_triggering_value": 1.323,
         "median_triggering_value": 1.323,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "wind-20261207",
+      "kind": "wind",
+      "title": "Strong wind signal",
+      "start_date": "2026-12-07",
+      "end_date": "2026-12-07",
+      "first_seen": "2026-11-25T04:42:00.447753+00:00",
+      "last_seen": "2026-11-26T10:33:49.497972+00:00",
+      "snapshots_seen": 2,
+      "status": "not_in_latest_capture",
+      "lead_days": 11,
+      "models": [
+        "GFS"
+      ],
+      "locations": [
+        "Alton"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-12-07",
+        "place": "Alton",
+        "model": "GFS",
+        "value": 45.4
+      },
+      "threshold": {
+        "value": 45.0,
+        "unit": "mph",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [],
+        "triggering_samples": 0,
+        "min_triggering_value": null,
+        "max_triggering_value": null,
+        "median_triggering_value": null,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",

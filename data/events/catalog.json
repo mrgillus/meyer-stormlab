@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-26T11:04:17.383590+00:00",
+  "updated_at": "2026-11-26T17:17:19.771625+00:00",
   "processed_captures": [
     "2026-11-24T18:57:10.943633+00:00",
     "2026-11-24T22:29:47.747629+00:00",
@@ -9,7 +9,8 @@
     "2026-11-25T16:39:42.471481+00:00",
     "2026-11-25T22:28:13.906033+00:00",
     "2026-11-26T04:40:09.413279+00:00",
-    "2026-11-26T10:33:49.497972+00:00"
+    "2026-11-26T10:33:49.497972+00:00",
+    "2026-11-26T16:38:10.281935+00:00"
   ],
   "events": [
     {
@@ -17,7 +18,7 @@
       "kind": "snow",
       "title": "Snowfall potential",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T10:33:49.497972+00:00",
+      "last_seen": "2026-11-26T16:38:10.281935+00:00",
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "timeline": [
@@ -348,6 +349,47 @@
             "median_triggering_value": 4.478,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS",
+            "ICON"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 4,
+          "peak": {
+            "date": "2026-11-26",
+            "place": "Wildwood",
+            "model": "ECMWF",
+            "value": 6.807
+          },
+          "wentzville": {
+            "models": [
+              "ECMWF",
+              "GEM",
+              "GFS",
+              "ICON"
+            ],
+            "triggering_samples": 4,
+            "min_triggering_value": 3.335,
+            "max_triggering_value": 5.264,
+            "median_triggering_value": 4.423,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -378,7 +420,7 @@
           "date": "2026-11-26",
           "place": "Wildwood",
           "model": "ECMWF",
-          "value": 5.898
+          "value": 6.807
         },
         "threshold": {
           "value": 2.0,
@@ -393,9 +435,9 @@
             "ICON"
           ],
           "triggering_samples": 4,
-          "min_triggering_value": 3.748,
-          "max_triggering_value": 5.098,
-          "median_triggering_value": 4.478,
+          "min_triggering_value": 3.335,
+          "max_triggering_value": 5.264,
+          "median_triggering_value": 4.423,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
       }
@@ -405,7 +447,7 @@
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T10:33:49.497972+00:00",
+      "last_seen": "2026-11-26T16:38:10.281935+00:00",
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "timeline": [
@@ -680,6 +722,40 @@
             "median_triggering_value": null,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS",
+            "ICON"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Wildwood"
+          ],
+          "same_place_day_support": 4,
+          "peak": {
+            "date": "2026-11-26",
+            "place": "Affton",
+            "model": "ECMWF",
+            "value": 1.567
+          },
+          "wentzville": {
+            "models": [],
+            "triggering_samples": 0,
+            "min_triggering_value": null,
+            "max_triggering_value": null,
+            "median_triggering_value": null,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -706,9 +782,9 @@
         "same_place_day_support": 4,
         "peak": {
           "date": "2026-11-26",
-          "place": "St. Louis",
-          "model": "GFS",
-          "value": 1.598
+          "place": "Affton",
+          "model": "ECMWF",
+          "value": 1.567
         },
         "threshold": {
           "value": 1.25,
@@ -1229,6 +1305,87 @@
           "min_triggering_value": 2.866,
           "max_triggering_value": 2.866,
           "median_triggering_value": 2.866,
+          "note": "Only threshold-triggering daily forecasts, not a storm total."
+        }
+      }
+    },
+    {
+      "id": "wind-20261210",
+      "kind": "wind",
+      "title": "Strong wind signal",
+      "first_seen": "2026-11-26T16:38:10.281935+00:00",
+      "last_seen": "2026-11-26T16:38:10.281935+00:00",
+      "start_date": "2026-12-10",
+      "end_date": "2026-12-10",
+      "timeline": [
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
+          "models": [
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "Wentzville"
+          ],
+          "same_place_day_support": 1,
+          "peak": {
+            "date": "2026-12-10",
+            "place": "Belleville",
+            "model": "GFS",
+            "value": 47.0
+          },
+          "wentzville": {
+            "models": [
+              "GFS"
+            ],
+            "triggering_samples": 1,
+            "min_triggering_value": 45.6,
+            "max_triggering_value": 45.6,
+            "median_triggering_value": 45.6,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        }
+      ],
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "latest": {
+        "kind": "wind",
+        "title": "Strong wind signal",
+        "start_date": "2026-12-10",
+        "end_date": "2026-12-10",
+        "models": [
+          "GFS"
+        ],
+        "locations": [
+          "Affton",
+          "Alton",
+          "Belleville",
+          "Wentzville"
+        ],
+        "same_place_day_support": 1,
+        "peak": {
+          "date": "2026-12-10",
+          "place": "Belleville",
+          "model": "GFS",
+          "value": 47.0
+        },
+        "threshold": {
+          "value": 45.0,
+          "unit": "mph",
+          "test": "gte"
+        },
+        "wentzville": {
+          "models": [
+            "GFS"
+          ],
+          "triggering_samples": 1,
+          "min_triggering_value": 45.6,
+          "max_triggering_value": 45.6,
+          "median_triggering_value": 45.6,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
       }
