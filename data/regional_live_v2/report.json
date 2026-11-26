@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "generated_at": "2026-11-25T23:36:31.215246+00:00",
+  "generated_at": "2026-11-26T00:30:58.420575+00:00",
   "archive_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
   "historical_units": {
     "t2m": [
@@ -1464,9 +1464,9 @@
               "lat": 38.7525,
               "lon": -90.3733,
               "kind": "station",
-              "rf_inches": 0.477,
-              "boosted_inches": 0.016,
-              "uncalibrated_p_ge1": 0.1786,
+              "rf_inches": 0.516,
+              "boosted_inches": 0.011,
+              "uncalibrated_p_ge1": 0.0967,
               "outside_training_features": [
                 103,
                 113
@@ -1481,9 +1481,9 @@
               "lat": 38.8142,
               "lon": -90.5139,
               "kind": "station",
-              "rf_inches": 0.532,
-              "boosted_inches": 0.017,
-              "uncalibrated_p_ge1": 0.1804,
+              "rf_inches": 0.561,
+              "boosted_inches": 0.011,
+              "uncalibrated_p_ge1": 0.0967,
               "outside_training_features": [
                 103,
                 113
@@ -1498,9 +1498,9 @@
               "lat": 38.52,
               "lon": -89.8467,
               "kind": "station",
-              "rf_inches": 0.508,
+              "rf_inches": 0.561,
               "boosted_inches": 0.012,
-              "uncalibrated_p_ge1": 0.1835,
+              "uncalibrated_p_ge1": 0.0999,
               "outside_training_features": [
                 103,
                 113
@@ -1515,9 +1515,9 @@
               "lat": 39.1025,
               "lon": -90.3431,
               "kind": "station",
-              "rf_inches": 0.521,
-              "boosted_inches": 0.018,
-              "uncalibrated_p_ge1": 0.1871,
+              "rf_inches": 0.555,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0931,
               "outside_training_features": [
                 103,
                 113
@@ -1532,9 +1532,9 @@
               "lat": 39.1558,
               "lon": -90.7831,
               "kind": "station",
-              "rf_inches": 0.597,
-              "boosted_inches": 0.018,
-              "uncalibrated_p_ge1": 0.1947,
+              "rf_inches": 0.598,
+              "boosted_inches": 0.015,
+              "uncalibrated_p_ge1": 0.0976,
               "outside_training_features": [
                 103,
                 113
@@ -1549,9 +1549,9 @@
               "lat": 38.14,
               "lon": -90.5064,
               "kind": "station",
-              "rf_inches": 0.509,
-              "boosted_inches": 0.014,
-              "uncalibrated_p_ge1": 0.1831,
+              "rf_inches": 0.532,
+              "boosted_inches": 0.01,
+              "uncalibrated_p_ge1": 0.0856,
               "outside_training_features": [
                 103,
                 113
@@ -1566,9 +1566,9 @@
               "lat": 38.8347,
               "lon": -91.1389,
               "kind": "station",
-              "rf_inches": 0.618,
-              "boosted_inches": 0.017,
-              "uncalibrated_p_ge1": 0.2054,
+              "rf_inches": 0.58,
+              "boosted_inches": 0.014,
+              "uncalibrated_p_ge1": 0.11,
               "outside_training_features": [
                 103,
                 113
@@ -1583,9 +1583,9 @@
               "lat": 39.0728,
               "lon": -89.7014,
               "kind": "station",
-              "rf_inches": 0.568,
+              "rf_inches": 0.598,
               "boosted_inches": 0.013,
-              "uncalibrated_p_ge1": 0.1996,
+              "uncalibrated_p_ge1": 0.1012,
               "outside_training_features": [
                 103,
                 113
@@ -1600,9 +1600,9 @@
               "lat": 38.1783,
               "lon": -89.9786,
               "kind": "station",
-              "rf_inches": 0.471,
-              "boosted_inches": 0.012,
-              "uncalibrated_p_ge1": 0.1757,
+              "rf_inches": 0.496,
+              "boosted_inches": 0.01,
+              "uncalibrated_p_ge1": 0.0922,
               "outside_training_features": [
                 103,
                 113
@@ -1617,9 +1617,9 @@
               "lat": 39.3444,
               "lon": -91.1711,
               "kind": "station",
-              "rf_inches": 0.66,
-              "boosted_inches": 0.019,
-              "uncalibrated_p_ge1": 0.2301,
+              "rf_inches": 0.592,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.1083,
               "outside_training_features": [
                 103,
                 113
@@ -1634,9 +1634,9 @@
               "lat": 38.4508,
               "lon": -91.3753,
               "kind": "station",
-              "rf_inches": 0.563,
-              "boosted_inches": 0.025,
-              "uncalibrated_p_ge1": 0.1855,
+              "rf_inches": 0.575,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0987,
               "outside_training_features": [
                 103,
                 113
@@ -1651,9 +1651,9 @@
               "lat": 38.865,
               "lon": -89.4053,
               "kind": "station",
-              "rf_inches": 0.577,
-              "boosted_inches": 0.015,
-              "uncalibrated_p_ge1": 0.1996,
+              "rf_inches": 0.61,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.1012,
               "outside_training_features": [
                 103,
                 113
@@ -1668,9 +1668,9 @@
               "lat": 39.1611,
               "lon": -89.4919,
               "kind": "station",
-              "rf_inches": 0.557,
-              "boosted_inches": 0.015,
-              "uncalibrated_p_ge1": 0.1949,
+              "rf_inches": 0.593,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0967,
               "outside_training_features": [
                 103,
                 113
@@ -1685,9 +1685,9 @@
               "lat": 39.7133,
               "lon": -90.2286,
               "kind": "station",
-              "rf_inches": 0.542,
-              "boosted_inches": 0.015,
-              "uncalibrated_p_ge1": 0.1871,
+              "rf_inches": 0.553,
+              "boosted_inches": 0.011,
+              "uncalibrated_p_ge1": 0.0931,
               "outside_training_features": [
                 103,
                 113
@@ -1702,9 +1702,9 @@
               "lat": 37.7919,
               "lon": -90.4097,
               "kind": "station",
-              "rf_inches": 0.512,
+              "rf_inches": 0.483,
               "boosted_inches": 0.011,
-              "uncalibrated_p_ge1": 0.1825,
+              "uncalibrated_p_ge1": 0.0854,
               "outside_training_features": [
                 103,
                 113
@@ -1719,9 +1719,9 @@
               "lat": 38.3419,
               "lon": -89.3592,
               "kind": "station",
-              "rf_inches": 0.456,
-              "boosted_inches": 0.013,
-              "uncalibrated_p_ge1": 0.1897,
+              "rf_inches": 0.542,
+              "boosted_inches": 0.008,
+              "uncalibrated_p_ge1": 0.0955,
               "outside_training_features": [
                 103,
                 113
@@ -1736,9 +1736,9 @@
               "lat": 39.6197,
               "lon": -90.8033,
               "kind": "station",
-              "rf_inches": 0.566,
-              "boosted_inches": 0.017,
-              "uncalibrated_p_ge1": 0.1902,
+              "rf_inches": 0.601,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0994,
               "outside_training_features": [
                 103,
                 113
@@ -1754,8 +1754,8 @@
               "lon": -90.8414,
               "kind": "station",
               "rf_inches": 0.502,
-              "boosted_inches": 0.02,
-              "uncalibrated_p_ge1": 0.1902,
+              "boosted_inches": 0.014,
+              "uncalibrated_p_ge1": 0.086,
               "outside_training_features": [
                 103,
                 113
@@ -1770,9 +1770,9 @@
               "lat": 38.8483,
               "lon": -91.9419,
               "kind": "station",
-              "rf_inches": 0.63,
-              "boosted_inches": 0.039,
-              "uncalibrated_p_ge1": 0.1875,
+              "rf_inches": 0.58,
+              "boosted_inches": 0.018,
+              "uncalibrated_p_ge1": 0.1148,
               "outside_training_features": [
                 103,
                 113
@@ -1787,9 +1787,9 @@
               "lat": 39.8453,
               "lon": -89.6839,
               "kind": "station",
-              "rf_inches": 0.546,
-              "boosted_inches": 0.012,
-              "uncalibrated_p_ge1": 0.1929,
+              "rf_inches": 0.567,
+              "boosted_inches": 0.01,
+              "uncalibrated_p_ge1": 0.0967,
               "outside_training_features": [
                 103,
                 113
@@ -1804,9 +1804,9 @@
               "lat": 37.9836,
               "lon": -89.9469,
               "kind": "station",
-              "rf_inches": 0.524,
-              "boosted_inches": 0.008,
-              "uncalibrated_p_ge1": 0.1881,
+              "rf_inches": 0.498,
+              "boosted_inches": 0.009,
+              "uncalibrated_p_ge1": 0.0885,
               "outside_training_features": [
                 103,
                 113
@@ -1821,9 +1821,9 @@
               "lat": 39.1714,
               "lon": -91.8717,
               "kind": "station",
-              "rf_inches": 0.696,
-              "boosted_inches": 0.031,
-              "uncalibrated_p_ge1": 0.2105,
+              "rf_inches": 0.581,
+              "boosted_inches": 0.021,
+              "uncalibrated_p_ge1": 0.1145,
               "outside_training_features": [
                 103,
                 113
@@ -1838,9 +1838,9 @@
               "lat": 38.4583,
               "lon": -91.7028,
               "kind": "station",
-              "rf_inches": 0.547,
-              "boosted_inches": 0.04,
-              "uncalibrated_p_ge1": 0.1855,
+              "rf_inches": 0.563,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0973,
               "outside_training_features": [
                 103,
                 113
@@ -1855,9 +1855,9 @@
               "lat": 39.6361,
               "lon": -91.25,
               "kind": "station",
-              "rf_inches": 0.671,
-              "boosted_inches": 0.02,
-              "uncalibrated_p_ge1": 0.1902,
+              "rf_inches": 0.603,
+              "boosted_inches": 0.019,
+              "uncalibrated_p_ge1": 0.0985,
               "outside_training_features": [
                 103,
                 113
@@ -1872,9 +1872,9 @@
               "lat": 37.5142,
               "lon": -91.1939,
               "kind": "station",
-              "rf_inches": 0.57,
-              "boosted_inches": 0.025,
-              "uncalibrated_p_ge1": 0.173,
+              "rf_inches": 0.512,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.0848,
               "outside_training_features": [
                 103,
                 113
@@ -1889,9 +1889,9 @@
               "lat": 38.6403,
               "lon": -88.9458,
               "kind": "station",
-              "rf_inches": 0.504,
-              "boosted_inches": 0.011,
-              "uncalibrated_p_ge1": 0.1798,
+              "rf_inches": 0.556,
+              "boosted_inches": 0.01,
+              "uncalibrated_p_ge1": 0.0953,
               "outside_training_features": [
                 103,
                 113
@@ -1906,9 +1906,9 @@
               "lat": 39.5225,
               "lon": -89.2636,
               "kind": "station",
-              "rf_inches": 0.568,
-              "boosted_inches": 0.014,
-              "uncalibrated_p_ge1": 0.1953,
+              "rf_inches": 0.588,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0932,
               "outside_training_features": [
                 103,
                 113
@@ -1923,9 +1923,9 @@
               "lat": 37.9878,
               "lon": -89.1931,
               "kind": "station",
-              "rf_inches": 0.451,
-              "boosted_inches": 0.014,
-              "uncalibrated_p_ge1": 0.1897,
+              "rf_inches": 0.52,
+              "boosted_inches": 0.008,
+              "uncalibrated_p_ge1": 0.091,
               "outside_training_features": [
                 103,
                 113
@@ -1940,9 +1940,9 @@
               "lat": 39.1811,
               "lon": -88.7828,
               "kind": "station",
-              "rf_inches": 0.575,
-              "boosted_inches": 0.016,
-              "uncalibrated_p_ge1": 0.1924,
+              "rf_inches": 0.625,
+              "boosted_inches": 0.014,
+              "uncalibrated_p_ge1": 0.1049,
               "outside_training_features": [
                 103,
                 113
@@ -1957,9 +1957,9 @@
               "lat": 38.8114,
               "lon": -90.8529,
               "kind": "town",
-              "rf_inches": 0.554,
-              "boosted_inches": 0.018,
-              "uncalibrated_p_ge1": 0.1908,
+              "rf_inches": 0.592,
+              "boosted_inches": 0.013,
+              "uncalibrated_p_ge1": 0.1017,
               "outside_training_features": [
                 103,
                 113
@@ -1974,9 +1974,9 @@
               "lat": 38.7892,
               "lon": -90.3226,
               "kind": "town",
-              "rf_inches": 0.477,
-              "boosted_inches": 0.016,
-              "uncalibrated_p_ge1": 0.1832,
+              "rf_inches": 0.541,
+              "boosted_inches": 0.011,
+              "uncalibrated_p_ge1": 0.0967,
               "outside_training_features": [
                 103,
                 113
@@ -1991,9 +1991,9 @@
               "lat": 38.9795,
               "lon": -90.9807,
               "kind": "town",
-              "rf_inches": 0.604,
-              "boosted_inches": 0.018,
-              "uncalibrated_p_ge1": 0.2157,
+              "rf_inches": 0.587,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.1065,
               "outside_training_features": [
                 103,
                 113
@@ -2008,9 +2008,9 @@
               "lat": 38.9709,
               "lon": -91.1335,
               "kind": "town",
-              "rf_inches": 0.726,
-              "boosted_inches": 0.019,
-              "uncalibrated_p_ge1": 0.2157,
+              "rf_inches": 0.601,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.1134,
               "outside_training_features": [
                 103,
                 113
@@ -2025,9 +2025,9 @@
               "lat": 38.7976,
               "lon": -90.7857,
               "kind": "town",
-              "rf_inches": 0.547,
-              "boosted_inches": 0.017,
-              "uncalibrated_p_ge1": 0.1908,
+              "rf_inches": 0.592,
+              "boosted_inches": 0.013,
+              "uncalibrated_p_ge1": 0.1013,
               "outside_training_features": [
                 103,
                 113
@@ -2040,56 +2040,56 @@
           ],
           "heldout_metrics": {
             "RF": {
-              "date_weighted_mae": 0.1397644671087608,
-              "date_weighted_rmse": 0.3911765810490281,
-              "bias": 0.06250333903985597,
-              "snow_day_mae": 2.2027103592743553,
-              "hits": 0,
-              "misses": 125,
-              "false_alarms": 73,
-              "n": 9573,
-              "brier_1in": 0.014148473566361796
+              "date_weighted_mae": 0.15436973951160118,
+              "date_weighted_rmse": 0.5036068028183119,
+              "bias": 0.057762532319766496,
+              "snow_day_mae": 2.659622046060899,
+              "hits": 2,
+              "misses": 151,
+              "false_alarms": 139,
+              "n": 10498,
+              "brier_1in": 0.015109626179701774
             },
             "boosted": {
-              "date_weighted_mae": 0.06691081470677483,
-              "date_weighted_rmse": 0.3609836548978617,
-              "bias": -0.022440352294935264,
-              "snow_day_mae": 2.3921316591867243,
+              "date_weighted_mae": 0.08193367456544222,
+              "date_weighted_rmse": 0.4749519678056938,
+              "bias": -0.03093502003971598,
+              "snow_day_mae": 2.9594724724895753,
               "hits": 0,
-              "misses": 125,
+              "misses": 153,
               "false_alarms": 5,
-              "n": 9573
+              "n": 10498
             },
             "cold_precip_10to1": {
-              "date_weighted_mae": 0.14111227072170304,
-              "date_weighted_rmse": 0.6985789936698287,
-              "bias": 0.07829111671808289,
-              "snow_day_mae": 2.1163016838333815,
-              "hits": 46,
-              "misses": 79,
-              "false_alarms": 303,
-              "n": 9573
+              "date_weighted_mae": 0.14769703497164519,
+              "date_weighted_rmse": 0.7392636733102224,
+              "bias": 0.06087830654181746,
+              "snow_day_mae": 2.688315547829748,
+              "hits": 47,
+              "misses": 106,
+              "false_alarms": 312,
+              "n": 10498
             },
             "station_climatology": {
-              "date_weighted_mae": 0.3146628999668571,
-              "date_weighted_rmse": 0.5061804384578638,
-              "bias": 0.23795787286406933,
-              "snow_day_mae": 2.2080649469106177,
-              "hits": 3,
-              "misses": 122,
-              "false_alarms": 326,
-              "n": 9573,
-              "brier_1in": 0.022387182352832522
+              "date_weighted_mae": 0.33944498728036365,
+              "date_weighted_rmse": 0.5925806888860935,
+              "bias": 0.24164854613544468,
+              "snow_day_mae": 2.750813945531454,
+              "hits": 4,
+              "misses": 149,
+              "false_alarms": 352,
+              "n": 10498,
+              "brier_1in": 0.024270899154847477
             },
             "no_snow": {
-              "date_weighted_mae": 0.0483376872711662,
-              "date_weighted_rmse": 0.36546479160775763,
-              "bias": -0.0483376872711662,
-              "snow_day_mae": 2.489298790682971,
+              "date_weighted_mae": 0.05994177752496755,
+              "date_weighted_rmse": 0.47737311064030735,
+              "bias": -0.05994177752496755,
+              "snow_day_mae": 3.0494410834906986,
               "hits": 0,
-              "misses": 125,
+              "misses": 153,
               "false_alarms": 0,
-              "n": 9573
+              "n": 10498
             }
           }
         },
@@ -2102,9 +2102,9 @@
               "lat": 38.7525,
               "lon": -90.3733,
               "kind": "station",
-              "rf_inches": 0.319,
-              "boosted_inches": 0.018,
-              "uncalibrated_p_ge1": 0.0558,
+              "rf_inches": 0.292,
+              "boosted_inches": 0.013,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2121,9 +2121,9 @@
               "lat": 38.8142,
               "lon": -90.5139,
               "kind": "station",
-              "rf_inches": 0.338,
-              "boosted_inches": 0.02,
-              "uncalibrated_p_ge1": 0.0616,
+              "rf_inches": 0.287,
+              "boosted_inches": 0.015,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2140,9 +2140,9 @@
               "lat": 38.52,
               "lon": -89.8467,
               "kind": "station",
-              "rf_inches": 0.326,
-              "boosted_inches": 0.015,
-              "uncalibrated_p_ge1": 0.0558,
+              "rf_inches": 0.31,
+              "boosted_inches": 0.014,
+              "uncalibrated_p_ge1": 0.0727,
               "outside_training_features": [
                 73,
                 103,
@@ -2159,9 +2159,9 @@
               "lat": 39.1025,
               "lon": -90.3431,
               "kind": "station",
-              "rf_inches": 0.335,
-              "boosted_inches": 0.022,
-              "uncalibrated_p_ge1": 0.05,
+              "rf_inches": 0.288,
+              "boosted_inches": 0.013,
+              "uncalibrated_p_ge1": 0.0768,
               "outside_training_features": [
                 73,
                 103,
@@ -2178,9 +2178,9 @@
               "lat": 39.1558,
               "lon": -90.7831,
               "kind": "station",
-              "rf_inches": 0.347,
-              "boosted_inches": 0.032,
-              "uncalibrated_p_ge1": 0.0558,
+              "rf_inches": 0.28,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2197,9 +2197,9 @@
               "lat": 38.14,
               "lon": -90.5064,
               "kind": "station",
-              "rf_inches": 0.333,
-              "boosted_inches": 0.016,
-              "uncalibrated_p_ge1": 0.0616,
+              "rf_inches": 0.292,
+              "boosted_inches": 0.013,
+              "uncalibrated_p_ge1": 0.0733,
               "outside_training_features": [
                 73,
                 103,
@@ -2216,9 +2216,9 @@
               "lat": 38.8347,
               "lon": -91.1389,
               "kind": "station",
-              "rf_inches": 0.389,
-              "boosted_inches": 0.025,
-              "uncalibrated_p_ge1": 0.0654,
+              "rf_inches": 0.296,
+              "boosted_inches": 0.017,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2235,9 +2235,9 @@
               "lat": 39.0728,
               "lon": -89.7014,
               "kind": "station",
-              "rf_inches": 0.327,
-              "boosted_inches": 0.017,
-              "uncalibrated_p_ge1": 0.0558,
+              "rf_inches": 0.292,
+              "boosted_inches": 0.013,
+              "uncalibrated_p_ge1": 0.0727,
               "outside_training_features": [
                 73,
                 103,
@@ -2254,9 +2254,9 @@
               "lat": 38.1783,
               "lon": -89.9786,
               "kind": "station",
-              "rf_inches": 0.319,
+              "rf_inches": 0.305,
               "boosted_inches": 0.015,
-              "uncalibrated_p_ge1": 0.0558,
+              "uncalibrated_p_ge1": 0.0733,
               "outside_training_features": [
                 73,
                 103,
@@ -2273,9 +2273,9 @@
               "lat": 39.3444,
               "lon": -91.1711,
               "kind": "station",
-              "rf_inches": 0.416,
-              "boosted_inches": 0.031,
-              "uncalibrated_p_ge1": 0.0652,
+              "rf_inches": 0.285,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.0724,
               "outside_training_features": [
                 73,
                 103,
@@ -2292,9 +2292,9 @@
               "lat": 38.4508,
               "lon": -91.3753,
               "kind": "station",
-              "rf_inches": 0.404,
-              "boosted_inches": 0.03,
-              "uncalibrated_p_ge1": 0.0629,
+              "rf_inches": 0.308,
+              "boosted_inches": 0.023,
+              "uncalibrated_p_ge1": 0.0759,
               "outside_training_features": [
                 73,
                 103,
@@ -2311,9 +2311,9 @@
               "lat": 38.865,
               "lon": -89.4053,
               "kind": "station",
-              "rf_inches": 0.325,
-              "boosted_inches": 0.017,
-              "uncalibrated_p_ge1": 0.0573,
+              "rf_inches": 0.293,
+              "boosted_inches": 0.014,
+              "uncalibrated_p_ge1": 0.0734,
               "outside_training_features": [
                 73,
                 103,
@@ -2330,9 +2330,9 @@
               "lat": 39.1611,
               "lon": -89.4919,
               "kind": "station",
-              "rf_inches": 0.315,
-              "boosted_inches": 0.019,
-              "uncalibrated_p_ge1": 0.0539,
+              "rf_inches": 0.282,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0787,
               "outside_training_features": [
                 73,
                 103,
@@ -2349,9 +2349,9 @@
               "lat": 39.7133,
               "lon": -90.2286,
               "kind": "station",
-              "rf_inches": 0.315,
-              "boosted_inches": 0.023,
-              "uncalibrated_p_ge1": 0.0539,
+              "rf_inches": 0.252,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0724,
               "outside_training_features": [
                 73,
                 103,
@@ -2368,9 +2368,9 @@
               "lat": 37.7919,
               "lon": -90.4097,
               "kind": "station",
-              "rf_inches": 0.328,
-              "boosted_inches": 0.015,
-              "uncalibrated_p_ge1": 0.0549,
+              "rf_inches": 0.296,
+              "boosted_inches": 0.012,
+              "uncalibrated_p_ge1": 0.0749,
               "outside_training_features": [
                 73,
                 103,
@@ -2387,9 +2387,9 @@
               "lat": 38.3419,
               "lon": -89.3592,
               "kind": "station",
-              "rf_inches": 0.318,
-              "boosted_inches": 0.012,
-              "uncalibrated_p_ge1": 0.0573,
+              "rf_inches": 0.305,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.0734,
               "outside_training_features": [
                 73,
                 103,
@@ -2406,9 +2406,9 @@
               "lat": 39.6197,
               "lon": -90.8033,
               "kind": "station",
-              "rf_inches": 0.381,
-              "boosted_inches": 0.034,
-              "uncalibrated_p_ge1": 0.0629,
+              "rf_inches": 0.27,
+              "boosted_inches": 0.017,
+              "uncalibrated_p_ge1": 0.0698,
               "outside_training_features": [
                 73,
                 103,
@@ -2425,9 +2425,9 @@
               "lat": 37.8956,
               "lon": -90.8414,
               "kind": "station",
-              "rf_inches": 0.369,
-              "boosted_inches": 0.022,
-              "uncalibrated_p_ge1": 0.0645,
+              "rf_inches": 0.289,
+              "boosted_inches": 0.015,
+              "uncalibrated_p_ge1": 0.0749,
               "outside_training_features": [
                 73,
                 103,
@@ -2444,9 +2444,9 @@
               "lat": 38.8483,
               "lon": -91.9419,
               "kind": "station",
-              "rf_inches": 0.422,
-              "boosted_inches": 0.024,
-              "uncalibrated_p_ge1": 0.0653,
+              "rf_inches": 0.287,
+              "boosted_inches": 0.023,
+              "uncalibrated_p_ge1": 0.0727,
               "outside_training_features": [
                 73,
                 103,
@@ -2463,9 +2463,9 @@
               "lat": 39.8453,
               "lon": -89.6839,
               "kind": "station",
-              "rf_inches": 0.306,
-              "boosted_inches": 0.016,
-              "uncalibrated_p_ge1": 0.0555,
+              "rf_inches": 0.268,
+              "boosted_inches": 0.009,
+              "uncalibrated_p_ge1": 0.0626,
               "outside_training_features": [
                 73,
                 103,
@@ -2482,9 +2482,9 @@
               "lat": 37.9836,
               "lon": -89.9469,
               "kind": "station",
-              "rf_inches": 0.319,
+              "rf_inches": 0.299,
               "boosted_inches": 0.013,
-              "uncalibrated_p_ge1": 0.0558,
+              "uncalibrated_p_ge1": 0.0733,
               "outside_training_features": [
                 73,
                 103,
@@ -2501,9 +2501,9 @@
               "lat": 39.1714,
               "lon": -91.8717,
               "kind": "station",
-              "rf_inches": 0.456,
-              "boosted_inches": 0.036,
-              "uncalibrated_p_ge1": 0.0666,
+              "rf_inches": 0.285,
+              "boosted_inches": 0.023,
+              "uncalibrated_p_ge1": 0.0737,
               "outside_training_features": [
                 73,
                 103,
@@ -2520,9 +2520,9 @@
               "lat": 38.4583,
               "lon": -91.7028,
               "kind": "station",
-              "rf_inches": 0.392,
-              "boosted_inches": 0.028,
-              "uncalibrated_p_ge1": 0.0629,
+              "rf_inches": 0.293,
+              "boosted_inches": 0.026,
+              "uncalibrated_p_ge1": 0.0772,
               "outside_training_features": [
                 73,
                 103,
@@ -2539,9 +2539,9 @@
               "lat": 39.6361,
               "lon": -91.25,
               "kind": "station",
-              "rf_inches": 0.43,
-              "boosted_inches": 0.041,
-              "uncalibrated_p_ge1": 0.0656,
+              "rf_inches": 0.275,
+              "boosted_inches": 0.024,
+              "uncalibrated_p_ge1": 0.0724,
               "outside_training_features": [
                 73,
                 103,
@@ -2558,9 +2558,9 @@
               "lat": 37.5142,
               "lon": -91.1939,
               "kind": "station",
-              "rf_inches": 0.365,
-              "boosted_inches": 0.025,
-              "uncalibrated_p_ge1": 0.0629,
+              "rf_inches": 0.298,
+              "boosted_inches": 0.029,
+              "uncalibrated_p_ge1": 0.0857,
               "outside_training_features": [
                 73,
                 103,
@@ -2577,9 +2577,9 @@
               "lat": 38.6403,
               "lon": -88.9458,
               "kind": "station",
-              "rf_inches": 0.302,
+              "rf_inches": 0.281,
               "boosted_inches": 0.008,
-              "uncalibrated_p_ge1": 0.0571,
+              "uncalibrated_p_ge1": 0.0714,
               "outside_training_features": [
                 73,
                 103,
@@ -2596,9 +2596,9 @@
               "lat": 39.5225,
               "lon": -89.2636,
               "kind": "station",
-              "rf_inches": 0.295,
-              "boosted_inches": 0.014,
-              "uncalibrated_p_ge1": 0.0534,
+              "rf_inches": 0.248,
+              "boosted_inches": 0.011,
+              "uncalibrated_p_ge1": 0.0601,
               "outside_training_features": [
                 73,
                 103,
@@ -2615,9 +2615,9 @@
               "lat": 37.9878,
               "lon": -89.1931,
               "kind": "station",
-              "rf_inches": 0.318,
-              "boosted_inches": 0.009,
-              "uncalibrated_p_ge1": 0.0591,
+              "rf_inches": 0.326,
+              "boosted_inches": 0.014,
+              "uncalibrated_p_ge1": 0.0773,
               "outside_training_features": [
                 73,
                 103,
@@ -2634,9 +2634,9 @@
               "lat": 39.1811,
               "lon": -88.7828,
               "kind": "station",
-              "rf_inches": 0.303,
-              "boosted_inches": 0.012,
-              "uncalibrated_p_ge1": 0.0581,
+              "rf_inches": 0.28,
+              "boosted_inches": 0.01,
+              "uncalibrated_p_ge1": 0.076,
               "outside_training_features": [
                 73,
                 103,
@@ -2653,9 +2653,9 @@
               "lat": 38.8114,
               "lon": -90.8529,
               "kind": "town",
-              "rf_inches": 0.37,
-              "boosted_inches": 0.026,
-              "uncalibrated_p_ge1": 0.0635,
+              "rf_inches": 0.29,
+              "boosted_inches": 0.017,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2672,9 +2672,9 @@
               "lat": 38.7892,
               "lon": -90.3226,
               "kind": "town",
-              "rf_inches": 0.319,
-              "boosted_inches": 0.018,
-              "uncalibrated_p_ge1": 0.0558,
+              "rf_inches": 0.289,
+              "boosted_inches": 0.013,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2691,9 +2691,9 @@
               "lat": 38.9795,
               "lon": -90.9807,
               "kind": "town",
-              "rf_inches": 0.391,
-              "boosted_inches": 0.03,
-              "uncalibrated_p_ge1": 0.0654,
+              "rf_inches": 0.283,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2710,9 +2710,9 @@
               "lat": 38.9709,
               "lon": -91.1335,
               "kind": "town",
-              "rf_inches": 0.432,
-              "boosted_inches": 0.033,
-              "uncalibrated_p_ge1": 0.0657,
+              "rf_inches": 0.274,
+              "boosted_inches": 0.016,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2729,9 +2729,9 @@
               "lat": 38.7976,
               "lon": -90.7857,
               "kind": "town",
-              "rf_inches": 0.334,
-              "boosted_inches": 0.027,
-              "uncalibrated_p_ge1": 0.0616,
+              "rf_inches": 0.283,
+              "boosted_inches": 0.017,
+              "uncalibrated_p_ge1": 0.0687,
               "outside_training_features": [
                 73,
                 103,
@@ -2746,62 +2746,62 @@
           ],
           "heldout_metrics": {
             "RF": {
-              "date_weighted_mae": 0.16203310813254437,
-              "date_weighted_rmse": 0.5183171272907862,
-              "bias": 0.0810720143470588,
-              "snow_day_mae": 2.3282017702158395,
-              "hits": 47,
-              "misses": 96,
-              "false_alarms": 307,
-              "n": 9608,
-              "brier_1in": 0.017622404115483076
+              "date_weighted_mae": 0.1554388493814293,
+              "date_weighted_rmse": 0.5070437992782908,
+              "bias": 0.07837200222425855,
+              "snow_day_mae": 2.2562482314262726,
+              "hits": 60,
+              "misses": 93,
+              "false_alarms": 372,
+              "n": 10499,
+              "brier_1in": 0.01630317538058811
             },
             "boosted": {
-              "date_weighted_mae": 0.08283748570835586,
-              "date_weighted_rmse": 0.47980748762128106,
-              "bias": -0.02111714019639027,
-              "snow_day_mae": 2.8248613692318076,
-              "hits": 11,
-              "misses": 132,
-              "false_alarms": 49,
-              "n": 9608
+              "date_weighted_mae": 0.07951987444928478,
+              "date_weighted_rmse": 0.4578330902295802,
+              "bias": -0.019193326084130605,
+              "snow_day_mae": 2.8121189418218497,
+              "hits": 17,
+              "misses": 136,
+              "false_alarms": 32,
+              "n": 10499
             },
             "cold_precip_10to1": {
-              "date_weighted_mae": 0.13867521542940844,
-              "date_weighted_rmse": 0.7060709974465053,
-              "bias": 0.06784374007438286,
-              "snow_day_mae": 2.0734673974877027,
-              "hits": 69,
-              "misses": 74,
-              "false_alarms": 306,
-              "n": 9608
+              "date_weighted_mae": 0.13284730811644724,
+              "date_weighted_rmse": 0.6832997904263269,
+              "bias": 0.06362046853373243,
+              "snow_day_mae": 2.081350330901216,
+              "hits": 71,
+              "misses": 82,
+              "false_alarms": 313,
+              "n": 10499
             },
             "station_climatology": {
-              "date_weighted_mae": 0.49026431568883416,
-              "date_weighted_rmse": 0.7389452797760218,
-              "bias": 0.39891624915003243,
-              "snow_day_mae": 2.6289323091996746,
+              "date_weighted_mae": 0.47208312873039476,
+              "date_weighted_rmse": 0.7157974552529204,
+              "bias": 0.38210479427475896,
+              "snow_day_mae": 2.633911845767306,
               "hits": 12,
-              "misses": 131,
-              "false_alarms": 1193,
-              "n": 9608,
-              "brier_1in": 0.03220557582317091
+              "misses": 141,
+              "false_alarms": 1301,
+              "n": 10499,
+              "brier_1in": 0.030756361432446998
             },
             "no_snow": {
-              "date_weighted_mae": 0.06079829353862305,
-              "date_weighted_rmse": 0.4854511476138467,
-              "bias": -0.06079829353862305,
-              "snow_day_mae": 3.0735998454775384,
+              "date_weighted_mae": 0.05932724852697682,
+              "date_weighted_rmse": 0.47640196117619016,
+              "bias": -0.05932724852697682,
+              "snow_day_mae": 3.0517877882577564,
               "hits": 0,
-              "misses": 143,
+              "misses": 153,
               "false_alarms": 0,
-              "n": 9608
+              "n": 10499
             }
           }
         }
       ],
-      "training_generated_at": "2026-11-25T23:35:50.871610+00:00",
-      "training_archive_snapshot": "d00888dbc5fc2f59eedb04c4bd5b64b3e0bf15c184b27ed62a5d4aff66128db5"
+      "training_generated_at": "2026-11-26T00:30:22.563899+00:00",
+      "training_archive_snapshot": "4dad7407e804811cb209a43e86185125e247fa57cfc5cdd6e2dea87dca1ca934"
     }
   ],
   "errors": [],
