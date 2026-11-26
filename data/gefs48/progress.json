@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-26T00:29:05.611931+00:00",
+  "generated_at": "2026-11-26T02:01:19.260673+00:00",
   "lead_hours": 48,
-  "complete": 2176,
-  "attempted": 2179,
+  "complete": 2367,
+  "attempted": 2370,
   "received": 192,
   "total_initializations": 3925,
-  "feature_rows": 65363,
-  "exhausted": 2,
+  "feature_rows": 71093,
+  "exhausted": 3,
   "fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
   "note": "Independent 48h extension; balanced winter splits, no dependency on original archive completion. Original archive untouched.",
   "workers": 8,
   "planned_this_run": 192,
   "split_allocation": {
-    "validation": 49,
-    "train": 96,
-    "test": 47
+    "validation": 46,
+    "test": 45,
+    "train": 101
   }
 }
