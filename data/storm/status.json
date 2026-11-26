@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-26T01:59:47.858353+00:00",
+  "retrieved_at": "2026-11-26T03:38:35.655288+00:00",
   "status": "published",
   "complete_points": 40,
   "total_points": 40,
@@ -17,322 +17,322 @@
     {
       "name": "Wentzville",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.99
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.12
     },
     {
       "name": "Florissant",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.17
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.02
     },
     {
       "name": "Troy",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.44
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.87
     },
     {
       "name": "Hawk Point",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.42
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.77
     },
     {
       "name": "Lake St. Louis",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.88
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.01
     },
     {
       "name": "grid-0-0",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.33
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.78
     },
     {
       "name": "grid-0-1",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.04
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.33
     },
     {
       "name": "grid-0-2",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.94
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.09
     },
     {
       "name": "grid-0-3",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 6.0
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.16
     },
     {
       "name": "grid-0-4",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 6.28
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.39
     },
     {
       "name": "grid-0-5",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 6.68
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.56
     },
     {
       "name": "grid-0-6",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.75
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.62
     },
     {
       "name": "grid-1-0",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.41
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.76
     },
     {
       "name": "grid-1-1",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.86
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.18
     },
     {
       "name": "grid-1-2",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.96
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.2
     },
     {
       "name": "grid-1-3",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.93
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.06
     },
     {
       "name": "grid-1-4",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 6.1
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.17
     },
     {
       "name": "grid-1-5",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.8
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.76
     },
     {
       "name": "grid-1-6",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.64
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.49
     },
     {
       "name": "grid-2-0",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.53
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.93
     },
     {
       "name": "grid-2-1",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.66
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 5.02
     },
     {
       "name": "grid-2-2",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.21
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.47
     },
     {
       "name": "grid-2-3",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.09
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.3
     },
     {
       "name": "grid-2-4",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.28
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.35
     },
     {
       "name": "grid-2-5",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.69
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.67
     },
     {
       "name": "grid-2-6",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 3.93
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.0
     },
     {
       "name": "grid-3-0",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.1
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.56
     },
     {
       "name": "grid-3-1",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.01
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.39
     },
     {
       "name": "grid-3-2",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.59
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.99
     },
     {
       "name": "grid-3-3",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.78
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.06
     },
     {
       "name": "grid-3-4",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.47
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.53
     },
     {
       "name": "grid-3-5",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.75
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.72
     },
     {
       "name": "grid-3-6",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.19
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.12
     },
     {
       "name": "grid-4-0",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.36
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.8
     },
     {
       "name": "grid-4-1",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.09
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.59
     },
     {
       "name": "grid-4-2",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 5.06
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 4.36
     },
     {
       "name": "grid-4-3",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.28
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.64
     },
     {
       "name": "grid-4-4",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.28
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.37
     },
     {
       "name": "grid-4-5",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.59
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.55
     },
     {
       "name": "grid-4-6",
       "blend_hours": 48,
-      "future_hours": 29,
-      "future_expected_hours": 29,
-      "elapsed_forecast_hours": 19,
-      "remaining_forecast_in": 4.21
+      "future_hours": 27,
+      "future_expected_hours": 27,
+      "elapsed_forecast_hours": 21,
+      "remaining_forecast_in": 3.06
     }
   ]
 }
