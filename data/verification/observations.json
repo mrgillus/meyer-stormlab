@@ -1,12 +1,1143 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T03:16:00.696673+00:00",
-  "retrieved_at": null,
+  "generated_at": "2026-11-26T03:16:52.002569+00:00",
+  "retrieved_at": "2026-11-26T03:16:52.002569+00:00",
   "provider": "RCC-ACIS MultiStnData",
   "provider_endpoint": "https://data.rcc-acis.org/MultiStnData",
-  "provider_status": "unavailable",
-  "provider_error": "RCC-ACIS unavailable or did not return a valid response: HTTP Error 400: Bad Request",
-  "stations": [],
+  "provider_status": "retrieved",
+  "provider_error": null,
+  "stations": [
+    {
+      "station_id": "ACIS:11369",
+      "name": "WASHINGTON",
+      "state": "MO",
+      "lat": 38.54155,
+      "lon": -90.975,
+      "source_ids": [
+        "238746 2",
+        "USC00238746 6",
+        "WHGM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Washington",
+      "nearest_town_distance_mi": 2.3
+    },
+    {
+      "station_id": "ACIS:54553",
+      "name": "WASHINGTON 2.7 ESE",
+      "state": "MO",
+      "lat": 38.5386,
+      "lon": -90.96688,
+      "source_ids": [
+        "US1MOFR0010 6",
+        "MOFR0010 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Washington",
+      "nearest_town_distance_mi": 2.8
+    },
+    {
+      "station_id": "ACIS:100694",
+      "name": "CATAWISSA 3.0 SSE",
+      "state": "MO",
+      "lat": 38.38702,
+      "lon": -90.75571,
+      "source_ids": [
+        "US1MOFR0031 6",
+        "MOFR0031 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 17.7
+    },
+    {
+      "station_id": "ACIS:103045",
+      "name": "WASHINGTON 3.3 ESE",
+      "state": "MO",
+      "lat": 38.53319,
+      "lon": -90.95799,
+      "source_ids": [
+        "US1MOFR0033 6",
+        "MOFR0033 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Washington",
+      "nearest_town_distance_mi": 3.4
+    },
+    {
+      "station_id": "ACIS:109288",
+      "name": "ST CLAIR 3W",
+      "state": "MO",
+      "lat": 38.35323,
+      "lon": -91.04882,
+      "source_ids": [
+        "237962 2",
+        "USC00237962 6",
+        "SCAM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Washington",
+      "nearest_town_distance_mi": 14.3
+    },
+    {
+      "station_id": "ACIS:114867",
+      "name": "PACIFIC 4.2 SE",
+      "state": "MO",
+      "lat": 38.431,
+      "lon": -90.704,
+      "source_ids": [
+        "US1MOJF0041 6",
+        "MOJF0041 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 13.6
+    },
+    {
+      "station_id": "ACIS:54612",
+      "name": "TROY 1.2 NNE",
+      "state": "MO",
+      "lat": 38.992,
+      "lon": -90.9652,
+      "source_ids": [
+        "US1MOFSA113 6",
+        "MOFSA113 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wentzville",
+      "nearest_town_distance_mi": 13.9
+    },
+    {
+      "station_id": "ACIS:111417",
+      "name": "LAKE ST LOUIS 1.7 WSW",
+      "state": "MO",
+      "lat": 38.78163,
+      "lon": -90.81301,
+      "source_ids": [
+        "US1MOSS0055 6",
+        "MOSS0055 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wentzville",
+      "nearest_town_distance_mi": 3.0
+    },
+    {
+      "station_id": "ACIS:47",
+      "name": "CAHOKIA ST LOUIS DOWNTOWN AP",
+      "state": "IL",
+      "lat": 38.56402,
+      "lon": -90.14869,
+      "source_ids": [
+        "03960 1",
+        "CPS 3",
+        "KCPS 5",
+        "USW00003960 6",
+        "USW00003960 32"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Louis",
+      "nearest_town_distance_mi": 5.1
+    },
+    {
+      "station_id": "ACIS:11375",
+      "name": "ST LOUIS SCIENCE CENTER",
+      "state": "MO",
+      "lat": 38.63079,
+      "lon": -90.27077,
+      "source_ids": [
+        "237452 2",
+        "USC00237452 6",
+        "SSCM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Louis",
+      "nearest_town_distance_mi": 3.9
+    },
+    {
+      "station_id": "ACIS:11385",
+      "name": "ST LOUIS SPIRIT OF ST LOUIS AP",
+      "state": "MO",
+      "lat": 38.65752,
+      "lon": -90.65577,
+      "source_ids": [
+        "03966 1",
+        "237964 2",
+        "SUS 3",
+        "KSUS 5",
+        "USW00003966 6",
+        "USW00003966 32"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 6.9
+    },
+    {
+      "station_id": "ACIS:34085",
+      "name": "FAIRMONT CITY 0.9 ENE",
+      "state": "IL",
+      "lat": 38.65491,
+      "lon": -90.08633,
+      "source_ids": [
+        "US1ILSC0018 6",
+        "ILSC0018 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Louis",
+      "nearest_town_distance_mi": 6.4
+    },
+    {
+      "station_id": "ACIS:34380",
+      "name": "ST. LOUIS 5.7 SW",
+      "state": "MO",
+      "lat": 38.5805,
+      "lon": -90.28507,
+      "source_ids": [
+        "US1MOSLC007 6",
+        "MOSLC007 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 3.2
+    },
+    {
+      "station_id": "ACIS:54819",
+      "name": "KIRKWOOD 1.6 S",
+      "state": "MO",
+      "lat": 38.55799,
+      "lon": -90.42483,
+      "source_ids": [
+        "US1MOSL0004 6",
+        "MOSL0004 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 4.8
+    },
+    {
+      "station_id": "ACIS:54827",
+      "name": "BALLWIN 0.5 NNW",
+      "state": "MO",
+      "lat": 38.60083,
+      "lon": -90.55476,
+      "source_ids": [
+        "US1MOSL0027 6",
+        "MOSL0027 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 0.6
+    },
+    {
+      "station_id": "ACIS:75090",
+      "name": "BALLWIN 1.6 E",
+      "state": "MO",
+      "lat": 38.59143,
+      "lon": -90.52347,
+      "source_ids": [
+        "US1MOSL0049 6",
+        "MOSL0049 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 1.9
+    },
+    {
+      "station_id": "ACIS:75995",
+      "name": "CONCORD 0.7 W",
+      "state": "MO",
+      "lat": 38.51399,
+      "lon": -90.3661,
+      "source_ids": [
+        "US1MOSL0063 6",
+        "MOSL0063 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 3.4
+    },
+    {
+      "station_id": "ACIS:76988",
+      "name": "CEDAR HILL 2.6 N",
+      "state": "MO",
+      "lat": 38.39311,
+      "lon": -90.64074,
+      "source_ids": [
+        "US1MOJF0021 6",
+        "MOJF0021 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 14.4
+    },
+    {
+      "station_id": "ACIS:78304",
+      "name": "MANCHESTER 2.0 S",
+      "state": "MO",
+      "lat": 38.56443,
+      "lon": -90.51711,
+      "source_ids": [
+        "US1MOSL0067 6",
+        "MOSL0067 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 2.9
+    },
+    {
+      "station_id": "ACIS:85549",
+      "name": "GLENDALE 0.3 NE",
+      "state": "MO",
+      "lat": 38.59536,
+      "lon": -90.37776,
+      "source_ids": [
+        "US1MOSL0074 6",
+        "MOSL0074 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 3.4
+    },
+    {
+      "station_id": "ACIS:92946",
+      "name": "COLUMBIA 4.7 S",
+      "state": "IL",
+      "lat": 38.3872,
+      "lon": -90.2149,
+      "source_ids": [
+        "US1ILMO0007 6",
+        "ILMO0007 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 13.5
+    },
+    {
+      "station_id": "ACIS:97399",
+      "name": "FENTON 4.1 S",
+      "state": "MO",
+      "lat": 38.4763,
+      "lon": -90.4516,
+      "source_ids": [
+        "US1MOJF0025 6",
+        "MOJF0025 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 8.4
+    },
+    {
+      "station_id": "ACIS:97417",
+      "name": "CLAYTON 1.2 NW",
+      "state": "MO",
+      "lat": 38.65468,
+      "lon": -90.3471,
+      "source_ids": [
+        "US1MOSL0081 6",
+        "MOSL0081 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 6.7
+    },
+    {
+      "station_id": "ACIS:102357",
+      "name": "MILSTADT 2SW",
+      "state": "IL",
+      "lat": 38.44161,
+      "lon": -90.13477,
+      "source_ids": [
+        "115660 2",
+        "USC00115660 6",
+        "MSTI2 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 9.8
+    },
+    {
+      "station_id": "ACIS:103813",
+      "name": "ARNOLD 2.3 S",
+      "state": "MO",
+      "lat": 38.3947,
+      "lon": -90.3725,
+      "source_ids": [
+        "US1MOJF0032 6",
+        "MOJF0032 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 11.5
+    },
+    {
+      "station_id": "ACIS:110526",
+      "name": "BELLEVILLE 1.9 WNW",
+      "state": "IL",
+      "lat": 38.54266,
+      "lon": -90.03534,
+      "source_ids": [
+        "US1ILSC0037 6",
+        "ILSC0037 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 3.2
+    },
+    {
+      "station_id": "ACIS:110795",
+      "name": "ARNOLD 0.3 E",
+      "state": "MO",
+      "lat": 38.42845,
+      "lon": -90.36371,
+      "source_ids": [
+        "US1MOJF0036 6",
+        "MOJF0036 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 9.1
+    },
+    {
+      "station_id": "ACIS:112323",
+      "name": "WATERLOO 2.9 ENE",
+      "state": "IL",
+      "lat": 38.34038,
+      "lon": -90.10278,
+      "source_ids": [
+        "US1ILMO0010 6",
+        "ILMO0010 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 14.0
+    },
+    {
+      "station_id": "ACIS:113501",
+      "name": "WEBSTER GROVES 0.4 ENE",
+      "state": "MO",
+      "lat": 38.58849,
+      "lon": -90.34857,
+      "source_ids": [
+        "US1MOSL0099 6",
+        "MOSL0099 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 2.2
+    },
+    {
+      "station_id": "ACIS:113541",
+      "name": "AFFTON 0.2 SSW",
+      "state": "MO",
+      "lat": 38.54661,
+      "lon": -90.32989,
+      "source_ids": [
+        "US1MOSL0094 6",
+        "MOSL0094 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 0.9
+    },
+    {
+      "station_id": "ACIS:117213",
+      "name": "CRESTWOOD 1.0 ESE",
+      "state": "MO",
+      "lat": 38.54812,
+      "lon": -90.3668,
+      "source_ids": [
+        "US1MOSL0118 6",
+        "MOSL0118 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 1.8
+    },
+    {
+      "station_id": "ACIS:117454",
+      "name": "LEMAY 0.6 SSE",
+      "state": "MO",
+      "lat": 38.52281,
+      "lon": -90.28058,
+      "source_ids": [
+        "US1MOSL0110 6",
+        "MOSL0110 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 3.9
+    },
+    {
+      "station_id": "ACIS:117577",
+      "name": "FENTON 2.4 SW",
+      "state": "MO",
+      "lat": 38.5102,
+      "lon": -90.48159,
+      "source_ids": [
+        "US1MOSL0113 6",
+        "MOSL0113 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 7.0
+    },
+    {
+      "station_id": "ACIS:117679",
+      "name": "ST. LOUIS 2.0 SSW",
+      "state": "MO",
+      "lat": 38.61156,
+      "lon": -90.26502,
+      "source_ids": [
+        "US1MOSL0117 6",
+        "MOSL0117 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Louis",
+      "nearest_town_distance_mi": 3.7
+    },
+    {
+      "station_id": "ACIS:117784",
+      "name": "CONCORD 1.3 S",
+      "state": "MO",
+      "lat": 38.49565,
+      "lon": -90.35061,
+      "source_ids": [
+        "US1MOSL0107 6",
+        "MOSL0107 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Affton",
+      "nearest_town_distance_mi": 4.4
+    },
+    {
+      "station_id": "ACIS:118191",
+      "name": "EUREKA 1.4 NNW",
+      "state": "MO",
+      "lat": 38.52016,
+      "lon": -90.65451,
+      "source_ids": [
+        "US1MOSL0104 6",
+        "MOSL0104 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 7.2
+    },
+    {
+      "station_id": "ACIS:118430",
+      "name": "BALLWIN 1.0 SE",
+      "state": "MO",
+      "lat": 38.58367,
+      "lon": -90.53905,
+      "source_ids": [
+        "US1MOSL0115 6",
+        "MOSL0115 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 1.2
+    },
+    {
+      "station_id": "ACIS:5762",
+      "name": "EDWARDSVILLE 2 W",
+      "state": "IL",
+      "lat": 38.80934,
+      "lon": -90.00344,
+      "source_ids": [
+        "112679 2",
+        "USC00112679 6",
+        "EDWI2 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 11.2
+    },
+    {
+      "station_id": "ACIS:5766",
+      "name": "ALTON - MELVIN PRICE L&D",
+      "state": "IL",
+      "lat": 38.86702,
+      "lon": -90.14886,
+      "source_ids": [
+        "110137 2",
+        "USC00110137 6",
+        "ALNI2 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 2.5
+    },
+    {
+      "station_id": "ACIS:5779",
+      "name": "JERSEYVILLE 2 SW",
+      "state": "IL",
+      "lat": 39.10246,
+      "lon": -90.34315,
+      "source_ids": [
+        "114489 2",
+        "USC00114489 6",
+        "JVLI2 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 16.9
+    },
+    {
+      "station_id": "ACIS:5781",
+      "name": "MEDORA 1 S",
+      "state": "IL",
+      "lat": 39.15616,
+      "lon": -90.13918,
+      "source_ids": [
+        "115539 2",
+        "USC00115539 6",
+        "MEDI2 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 18.5
+    },
+    {
+      "station_id": "ACIS:11384",
+      "name": "ST CHARLES 7 SSW",
+      "state": "MO",
+      "lat": 38.6853,
+      "lon": -90.52335,
+      "source_ids": [
+        "237398 2",
+        "USC00237398 6",
+        "STCM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 6.7
+    },
+    {
+      "station_id": "ACIS:11391",
+      "name": "WELDON SPRING NWS",
+      "state": "MO",
+      "lat": 38.69893,
+      "lon": -90.68287,
+      "source_ids": [
+        "238805 2",
+        "USC00238805 6",
+        "LSX 7",
+        "WSWM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 10.0
+    },
+    {
+      "station_id": "ACIS:11398",
+      "name": "ST LOUIS LAMBERT INTL AIRPORT",
+      "state": "MO",
+      "lat": 38.75246,
+      "lon": -90.37342,
+      "source_ids": [
+        "13994 1",
+        "237455 2",
+        "STL 3",
+        "72434 4",
+        "KSTL 5",
+        "USW00013994 6",
+        "STL 7",
+        "USW00013994 32"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 7.1
+    },
+    {
+      "station_id": "ACIS:11400",
+      "name": "ST CHARLES ELM POINT",
+      "state": "MO",
+      "lat": 38.81418,
+      "lon": -90.51382,
+      "source_ids": [
+        "237397 2",
+        "USC00237397 6",
+        "SCHM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 2.0
+    },
+    {
+      "station_id": "ACIS:11439",
+      "name": "CAP AU GRIS LOCK & DAM 25",
+      "state": "MO",
+      "lat": 39.00277,
+      "lon": -90.68922,
+      "source_ids": [
+        "231283 2",
+        "USC00231283 6",
+        "CAGM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wentzville",
+      "nearest_town_distance_mi": 15.9
+    },
+    {
+      "station_id": "ACIS:11593",
+      "name": "ST PETERS 2 SE",
+      "state": "MO",
+      "lat": 38.76783,
+      "lon": -90.58932,
+      "source_ids": [
+        "237475 2",
+        "USC00237475 6",
+        "SPEM7 7",
+        "SJOM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 5.1
+    },
+    {
+      "station_id": "ACIS:29373",
+      "name": "ST CHARLES COUNTY AP",
+      "state": "MO",
+      "lat": 38.93043,
+      "lon": -90.43291,
+      "source_ids": [
+        "53904 1",
+        "SET 3",
+        "3SZ 3",
+        "KSET 5",
+        "K3SZ 5",
+        "USW00053904 6",
+        "USW00053904 32"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 10.4
+    },
+    {
+      "station_id": "ACIS:51821",
+      "name": "GRANITE CITY 1.4 ENE",
+      "state": "IL",
+      "lat": 38.72453,
+      "lon": -90.10694,
+      "source_ids": [
+        "US1ILMD0010 6",
+        "ILMD0010 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Louis",
+      "nearest_town_distance_mi": 8.4
+    },
+    {
+      "station_id": "ACIS:51822",
+      "name": "GRANITE CITY 2.3 NE",
+      "state": "IL",
+      "lat": 38.73478,
+      "lon": -90.09619,
+      "source_ids": [
+        "US1ILMD0012 6",
+        "ILMD0012 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Louis",
+      "nearest_town_distance_mi": 9.3
+    },
+    {
+      "station_id": "ACIS:54650",
+      "name": "EDMUNDSON 0.7 NNW",
+      "state": "MO",
+      "lat": 38.7425,
+      "lon": -90.3721,
+      "source_ids": [
+        "US1MOFSA189 6",
+        "MOFSA189 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 7.4
+    },
+    {
+      "station_id": "ACIS:54826",
+      "name": "FLORISSANT 2.9 W",
+      "state": "MO",
+      "lat": 38.7983,
+      "lon": -90.3779,
+      "source_ids": [
+        "US1MOSL0024 6",
+        "MOSL0024 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 6.5
+    },
+    {
+      "station_id": "ACIS:75569",
+      "name": "ST. CHARLES 2.3 NE",
+      "state": "MO",
+      "lat": 38.81243,
+      "lon": -90.48309,
+      "source_ids": [
+        "US1MOSS0027 6",
+        "MOSS0027 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 1.8
+    },
+    {
+      "station_id": "ACIS:83337",
+      "name": "ST. PETERS 2.2 NE",
+      "state": "MO",
+      "lat": 38.80238,
+      "lon": -90.5779,
+      "source_ids": [
+        "US1MOSS0037 6",
+        "MOSS0037 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 4.4
+    },
+    {
+      "station_id": "ACIS:95209",
+      "name": "COTTLEVILLE",
+      "state": "MO",
+      "lat": 38.73119,
+      "lon": -90.65159,
+      "source_ids": [
+        "231932 2",
+        "USC00231932 6",
+        "COTM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 9.2
+    },
+    {
+      "station_id": "ACIS:95210",
+      "name": "DARDENNE PRAIRIE 4 SE",
+      "state": "MO",
+      "lat": 38.73116,
+      "lon": -90.68421,
+      "source_ids": [
+        "232114 2",
+        "USC00232114 6",
+        "DARM7 7"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wentzville",
+      "nearest_town_distance_mi": 10.6
+    },
+    {
+      "station_id": "ACIS:96000",
+      "name": "MARYLAND HEIGHTS 1.2 ESE",
+      "state": "MO",
+      "lat": 38.71742,
+      "lon": -90.45667,
+      "source_ids": [
+        "US1MOSL0079 6",
+        "MOSL0079 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 5.4
+    },
+    {
+      "station_id": "ACIS:96928",
+      "name": "O'FALLON 2.6 NNE",
+      "state": "MO",
+      "lat": 38.82169,
+      "lon": -90.69714,
+      "source_ids": [
+        "US1MOSS0042 6",
+        "MOSS0042 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wentzville",
+      "nearest_town_distance_mi": 8.4
+    },
+    {
+      "station_id": "ACIS:101405",
+      "name": "JERSEYVILLE 3.4 SW",
+      "state": "IL",
+      "lat": 39.0914,
+      "lon": -90.3797,
+      "source_ids": [
+        "US1ILJR0003 6",
+        "ILJR0003 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 17.4
+    },
+    {
+      "station_id": "ACIS:101974",
+      "name": "ST. PETERS 4.5 W",
+      "state": "MO",
+      "lat": 38.76875,
+      "lon": -90.68716,
+      "source_ids": [
+        "US1MOSS0048 6",
+        "MOSS0048 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wentzville",
+      "nearest_town_distance_mi": 9.4
+    },
+    {
+      "station_id": "ACIS:102012",
+      "name": "O'FALLON 2.1 SSE",
+      "state": "MO",
+      "lat": 38.75772,
+      "lon": -90.68925,
+      "source_ids": [
+        "US1MOSS0047 6",
+        "MOSS0047 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wentzville",
+      "nearest_town_distance_mi": 9.6
+    },
+    {
+      "station_id": "ACIS:114951",
+      "name": "ST. CHARLES 2.3 S",
+      "state": "MO",
+      "lat": 38.75766,
+      "lon": -90.50981,
+      "source_ids": [
+        "US1MOSS0058 6",
+        "MOSS0058 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 2.2
+    },
+    {
+      "station_id": "ACIS:115193",
+      "name": "BETHALTO 0.9 NW",
+      "state": "IL",
+      "lat": 38.91114,
+      "lon": -90.05771,
+      "source_ids": [
+        "US1ILMD0054 6",
+        "ILMD0054 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 7.0
+    },
+    {
+      "station_id": "ACIS:118225",
+      "name": "FLORISSANT 1.9 NW",
+      "state": "MO",
+      "lat": 38.81365,
+      "lon": -90.35227,
+      "source_ids": [
+        "US1MOSL0111 6",
+        "MOSL0111 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "St. Charles",
+      "nearest_town_distance_mi": 8.0
+    },
+    {
+      "station_id": "ACIS:31769",
+      "name": "BELLEVILLE SCOTT AFB",
+      "state": "IL",
+      "lat": 38.55,
+      "lon": -89.85,
+      "source_ids": [
+        "13802 1",
+        "BLV 3",
+        "KBLV 5",
+        "BLV 7",
+        "USW00013802 32"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 7.5
+    },
+    {
+      "station_id": "ACIS:64075",
+      "name": "FAIRVIEW HEIGHTS 2.0 ENE",
+      "state": "IL",
+      "lat": 38.6049,
+      "lon": -89.9685,
+      "source_ids": [
+        "US1ILSC0016 6",
+        "ILSC0016 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 5.9
+    },
+    {
+      "station_id": "ACIS:81985",
+      "name": "MASCOUTAH 1.5 SSE",
+      "state": "IL",
+      "lat": 38.48795,
+      "lon": -89.79602,
+      "source_ids": [
+        "US1ILSC0026 6",
+        "ILSC0026 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 10.4
+    },
+    {
+      "station_id": "ACIS:112991",
+      "name": "FREEBURG 0.8 WNW",
+      "state": "IL",
+      "lat": 38.43024,
+      "lon": -89.92273,
+      "source_ids": [
+        "US1ILSC0039 6",
+        "ILSC0039 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 7.0
+    },
+    {
+      "station_id": "ACIS:113662",
+      "name": "LEBANON 0.3 NE",
+      "state": "IL",
+      "lat": 38.60643,
+      "lon": -89.81079,
+      "source_ids": [
+        "US1ILSC0042 6",
+        "ILSC0042 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 11.1
+    },
+    {
+      "station_id": "ACIS:114063",
+      "name": "SWANSEA 0.7 ESE",
+      "state": "IL",
+      "lat": 38.53779,
+      "lon": -89.97662,
+      "source_ids": [
+        "US1ILSC0040 6",
+        "ILSC0040 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 1.3
+    },
+    {
+      "station_id": "ACIS:116537",
+      "name": "O'FALLON 1.8 N",
+      "state": "IL",
+      "lat": 38.61856,
+      "lon": -89.91731,
+      "source_ids": [
+        "US1ILSC0047 6",
+        "ILSC0047 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 7.7
+    },
+    {
+      "station_id": "ACIS:117319",
+      "name": "LEBANON 1.6 SSE",
+      "state": "IL",
+      "lat": 38.58345,
+      "lon": -89.80028,
+      "source_ids": [
+        "US1ILSC0045 6",
+        "ILSC0045 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 10.8
+    },
+    {
+      "station_id": "ACIS:51826",
+      "name": "EDWARDSVILLE 0.9 WSW",
+      "state": "IL",
+      "lat": 38.80895,
+      "lon": -89.96996,
+      "source_ids": [
+        "US1ILMD0020 6",
+        "ILMD0020 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 12.8
+    },
+    {
+      "station_id": "ACIS:96180",
+      "name": "MARYVILLE 1.4 ENE",
+      "state": "IL",
+      "lat": 38.7322,
+      "lon": -89.9402,
+      "source_ids": [
+        "US1ILMD0039 6",
+        "ILMD0039 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 14.8
+    },
+    {
+      "station_id": "ACIS:97773",
+      "name": "EDWARDSVILLE 1.1 ENE",
+      "state": "IL",
+      "lat": 38.8041,
+      "lon": -89.9477,
+      "source_ids": [
+        "US1ILMD0040 6",
+        "ILMD0040 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 14.1
+    },
+    {
+      "station_id": "ACIS:98378",
+      "name": "TROY 1.9 S",
+      "state": "IL",
+      "lat": 38.70328,
+      "lon": -89.89787,
+      "source_ids": [
+        "US1ILMD0041 6",
+        "ILMD0041 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Belleville",
+      "nearest_town_distance_mi": 13.5
+    },
+    {
+      "station_id": "ACIS:99360",
+      "name": "EDWARDSVILLE 1.2 ENE",
+      "state": "IL",
+      "lat": 38.8029,
+      "lon": -89.9445,
+      "source_ids": [
+        "US1ILMD0045 6",
+        "ILMD0045 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 14.3
+    },
+    {
+      "station_id": "ACIS:115570",
+      "name": "EDWARDSVILLE 5.5 E",
+      "state": "IL",
+      "lat": 38.7861,
+      "lon": -89.8633,
+      "source_ids": [
+        "US1ILMD0053 6",
+        "ILMD0053 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Alton",
+      "nearest_town_distance_mi": 18.7
+    }
+  ],
   "reports": [],
   "limitations": [
     "Station daily reporting window may not match calendar day.",
