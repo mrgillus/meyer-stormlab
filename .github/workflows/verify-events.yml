@@ -1,0 +1,63 @@
+name: Verify weather events against measured station data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # After forecast snapshots and 04:17/10:17/16:17/22:17 UTC event catalog.
+    - cron: '19 5,11,17,23 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-events.yml'
+      - 'scripts/event_verification.py'
+      - 'tests/test_event_verification.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stormlab-observed-event-verification
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit-test observation extraction, provenance and scoring gates
+        run: python -m unittest discover -s tests -p 'test_event_verification.py' -v
+      - name: Retrieve daily station reports and attach to tracked events
+        run: python scripts/event_verification.py
+      - name: Publish evidence without altering source forecast archives
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s data/verification/report.json
+          test -s data/verification/observations.json
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/verification/. "$stage/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p data/verification
+            cp -a "$stage/." data/verification/
+            git add data/verification/
+            if git diff --cached --quiet; then
+              echo "No observation changes"
+              exit 0
+            fi
+            git commit -m "Publish station evidence and unscored weather event verification"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 4))
+          done
+          echo "Unable to publish verification evidence" >&2
+          exit 1
