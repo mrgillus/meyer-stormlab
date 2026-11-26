@@ -68,7 +68,7 @@
     const x0=32,x1=310,y0=9,y1=88,t0=Date.parse(points[0].captured_at),t1=Date.parse(last.captured_at);
     const x=p=>t0===t1?(x0+x1)/2:x0+(Date.parse(p.captured_at)-t0)/(t1-t0)*(x1-x0);
     const y=v=>y1-v/100*(y1-y0);
-    let lines="",dots="",areas="",prior=null;
+    let lines="",dots="",prior=null;
     points.forEach(p=>{
       const px=x(p),lo=numeric(p.support_pct)?p.support_pct:0;
       if(p.unknown_models)lines+='<line class="watch-uncertain" x1="'+px+'" x2="'+px+'" y1="'+y(lo)+'" y2="'+y(p.possible_support_pct)+'"><title>'+safe(stamp(p.captured_at))+' · incomplete coverage</title></line>';
@@ -179,7 +179,7 @@
     const y=v=>y1-(v-lo)/(hi-lo)*(y1-y0);
     const unit=quantity?(series.unit==="F"?"°F":series.unit==="in"?"″":" mph"):"%";
     const fmt=v=>(quantity&&series.unit==="in"?Number(v.toFixed(2)):Math.round(v))+unit;
-    let lines="",dots="",prior=null;
+    let lines="",dots="",areas="",prior=null;
     points.forEach((p,i)=>{
       const xx=x(i),v=p[field];
       if(!quantity&&p.unknown_models){
