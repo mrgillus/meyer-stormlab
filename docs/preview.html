@@ -8,6 +8,7 @@
 <title>StormLab — The Atmosphere Has a Story</title>
 <link rel="stylesheet" href="./preview.css?v=2">
 <script src="./changefeed.js?v=2" defer></script>
+<script src="./event-watch.js?v=1" defer></script>
 <script src="./preview.js?v=3" defer></script>
 </head>
 <body>
@@ -123,6 +124,12 @@
     <p>We scan available daily GFS, ECMWF, GEM, and ICON guidance for notable snowfall, heavy precipitation, wind gusts, and temperature extremes. Signals are <strong>not</strong> severe-weather or flood forecasts; we need ensemble and atmospheric diagnostics for that.</p>
     <button id="horizonRefresh" class="outline-button" type="button">Check the forecast horizon ↻</button>
   </article>
+  <section class="event-chronicle" aria-labelledby="eventWatchTitle">
+    <div class="story-heading"><div><span class="eyebrow">THE PERSISTENT STORM WATCH</span><h2 id="eventWatchTitle">Signals with a history.</h2></div><span class="outline-tag" id="eventWatchStatus">Checking event archive</span></div>
+    <p class="event-intro">Not just the newest model run. Every tracked signal retains its first detection and whether later forecast captures supported it—or let it fade.</p>
+    <div id="eventWatchList" class="event-watch-list" aria-live="polite"><div class="blank-state">Reading the published regional event catalog…</div></div>
+    <p class="fine-print" id="eventWatchSource">Preliminary signals based on archived daily model guidance. Not NWS warnings or calibrated probabilities.</p>
+  </section>
   <div class="horizon-group"><div class="group-title"><span class="eyebrow">SIGNALS WORTH EXPLORING</span><span class="small-note" id="horizonWindow">Forecast availability varies by model</span></div>
     <div id="watchList" class="watch-list"><div class="blank-state">Select “Check the forecast horizon” to load real extended forecast data.</div></div>
   </div>
@@ -132,6 +139,13 @@
 <section id="view-archive" class="view" aria-labelledby="archive-title" hidden>
   <div class="section-entrance"><span class="eyebrow">THE ATMOSPHERE REMEMBERS</span><span class="small-note">Forecast history ≠ observed truth</span></div>
   <div class="page-intro archive-intro"><span class="page-kicker">ACT III / THE VERDICT</span><h1 id="archive-title">After the <em>storm.</em></h1><p>What the models thought. How their forecasts evolved. And—once verified observations are connected—what really happened.</p></div>
+  <section class="event-archive" aria-labelledby="trackedCasesTitle">
+    <div class="story-heading"><div><span class="eyebrow">PERMANENT FORECAST CASE FILES</span><h2 id="trackedCasesTitle">From first signal to final forecast.</h2></div><span class="outline-tag" id="trackedCasesStatus">Loading catalog</span></div>
+    <p class="event-intro">Select any tracked pattern to see when the models first flagged it, which guidance kept the signal alive, and when it faded. The verdict awaits real observations.</p>
+    <div class="case-picker" id="eventCaseList"><div class="blank-state">Loading the regional storm catalog…</div></div>
+    <div id="eventCaseDetail" class="event-case-detail" aria-live="polite"></div>
+  </section>
+  <div class="story-heading" style="margin-top:40px"><div><span class="eyebrow">DETAILED STORM RECONSTRUCTION</span><h2>Thanksgiving 2026: model snapshots.</h2></div></div>
   <article class="glass-card file-card"><div class="card-top"><div><span class="kicker">CASE FILE 001</span><h2>Thanksgiving 2026 · Winter storm</h2></div><span class="status-pill amber" id="caseStatus">Verification pending</span></div>
     <p id="caseSummary">StormLab preserved the model forecasts for this event. Actual ground accumulation has not yet been verified in this dataset.</p>
     <div class="file-stats"><div><span class="kicker">LATEST MODELLED WINDOW</span><strong id="caseModel">—</strong></div><div><span class="kicker">SNAPSHOT ARCHIVE</span><strong id="caseCaptures">—</strong></div><div><span class="kicker">VERIFIED GROUND TRUTH</span><strong id="caseObserved">Not connected</strong></div></div>
