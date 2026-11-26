@@ -32,7 +32,713 @@
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
       "last_seen": "2026-11-26T19:20:55.996274+00:00",
       "status": "in_latest_capture",
-      "priority": "notable"
+      "priority": "notable",
+      "forecast_modes": {
+        "drizzle": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1,
+            "direction": "gte",
+            "unit": "signal",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 75,
+                "possible_support_pct": 75,
+                "unknown_models": 0,
+                "supporting_models": 3,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 50,
+                "possible_support_pct": 50,
+                "unknown_models": 0,
+                "supporting_models": 2,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "supports",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "fog": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1,
+            "direction": "gte",
+            "unit": "signal",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "freeze": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 32,
+            "direction": "lte",
+            "unit": "F",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": 32.2,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 75,
+                "possible_support_pct": 75,
+                "unknown_models": 0,
+                "supporting_models": 3,
+                "quantity": 28.4,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 75,
+                "possible_support_pct": 75,
+                "unknown_models": 0,
+                "supporting_models": 3,
+                "quantity": 29.95,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": 33.8,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "supports",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 75,
+                "possible_support_pct": 75,
+                "unknown_models": 0,
+                "supporting_models": 3,
+                "quantity": 28.25,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "light_snow": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1,
+            "direction": "gte",
+            "unit": "signal",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "precipitation": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1.25,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 100,
+                "possible_support_pct": 100,
+                "unknown_models": 0,
+                "supporting_models": 4,
+                "quantity": 1.545,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "supports"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.027,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.724,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "rain": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 100,
+                "possible_support_pct": 100,
+                "unknown_models": 0,
+                "supporting_models": 4,
+                "quantity": 0.876,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "supports"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 75,
+                "possible_support_pct": 75,
+                "unknown_models": 0,
+                "supporting_models": 3,
+                "quantity": 0.026,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "supports"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 100,
+                "possible_support_pct": 100,
+                "unknown_models": 0,
+                "supporting_models": 4,
+                "quantity": 0.628,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "supports"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "showers": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 50,
+                "possible_support_pct": 50,
+                "unknown_models": 0,
+                "supporting_models": 2,
+                "quantity": 0.012,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "supports"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "snow": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 2.0,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-11-26",
+                "support_pct": 100,
+                "possible_support_pct": 100,
+                "unknown_models": 0,
+                "supporting_models": 4,
+                "quantity": 5.526,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "supports"
+                }
+              },
+              {
+                "time": "2026-11-27",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.014,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-30",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 4,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        }
+      }
     },
     {
       "id": "event-precipitation-20261204",
@@ -56,7 +762,299 @@
       "first_seen": "2026-11-26T10:33:49.497972+00:00",
       "last_seen": "2026-11-26T19:20:55.996274+00:00",
       "status": "in_latest_capture",
-      "priority": "notable"
+      "priority": "notable",
+      "forecast_modes": {
+        "drizzle": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1,
+            "direction": "gte",
+            "unit": "signal",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-03",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": 50,
+                "possible_support_pct": 75,
+                "unknown_models": 1,
+                "supporting_models": 2,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": 50,
+                "possible_support_pct": 75,
+                "unknown_models": 1,
+                "supporting_models": 2,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "freeze": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 32,
+            "direction": "lte",
+            "unit": "F",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-03",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 50.9,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 50.3,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": 25,
+                "possible_support_pct": 50,
+                "unknown_models": 1,
+                "supporting_models": 1,
+                "quantity": 39.5,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "supports",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "precipitation": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1.25,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-03",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 0.008,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 0.488,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 0.012,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "rain": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-03",
+                "support_pct": 50,
+                "possible_support_pct": 75,
+                "unknown_models": 1,
+                "supporting_models": 2,
+                "quantity": 0.016,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "supports",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": 50,
+                "possible_support_pct": 75,
+                "unknown_models": 1,
+                "supporting_models": 2,
+                "quantity": 0.441,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": 25,
+                "possible_support_pct": 50,
+                "unknown_models": 1,
+                "supporting_models": 1,
+                "quantity": 0.0,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "showers": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-03",
+                "support_pct": 25,
+                "possible_support_pct": 50,
+                "unknown_models": 1,
+                "supporting_models": 1,
+                "quantity": 0.0,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": 50,
+                "possible_support_pct": 75,
+                "unknown_models": 1,
+                "supporting_models": 2,
+                "quantity": 0.071,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "supports",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": 25,
+                "possible_support_pct": 50,
+                "unknown_models": 1,
+                "supporting_models": 1,
+                "quantity": 0.0,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        }
+      }
     },
     {
       "id": "event-precipitation-20261207",
@@ -80,7 +1078,224 @@
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
       "last_seen": "2026-11-26T19:20:55.996274+00:00",
       "status": "in_latest_capture",
-      "priority": "notable"
+      "priority": "notable",
+      "forecast_modes": {
+        "drizzle": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1,
+            "direction": "gte",
+            "unit": "signal",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-07",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-08",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "precipitation": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1.25,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-07",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 1.024,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-08",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 0.154,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "rain": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-07",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.886,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-08",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.11,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "showers": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-07",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.138,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-08",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.051,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "wind": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 45.0,
+            "direction": "gte",
+            "unit": "mph",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-07",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 50.1,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-08",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 40.9,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        }
+      }
     },
     {
       "id": "event-wind-20261210",
@@ -98,11 +1313,69 @@
       "first_seen": "2026-11-26T16:38:10.281935+00:00",
       "last_seen": "2026-11-26T19:20:55.996274+00:00",
       "status": "in_latest_capture",
-      "priority": "notable"
+      "priority": "notable",
+      "forecast_modes": {
+        "freeze": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 32,
+            "direction": "lte",
+            "unit": "F",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-10",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 31.9,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "wind": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 45.0,
+            "direction": "gte",
+            "unit": "mph",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-26T19:20:55.996274+00:00",
+            "points": [
+              {
+                "time": "2026-12-10",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 13.9,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        }
+      }
     }
   ],
   "schema": 1,
-  "updated_at": "2026-11-26T19:31:43.932599+00:00",
+  "updated_at": "2026-11-26T19:39:48.317758+00:00",
   "processed_captures": [
     "2026-11-24T18:57:10.943633+00:00",
     "2026-11-24T22:29:47.747629+00:00",
