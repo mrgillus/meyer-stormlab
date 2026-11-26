@@ -1,6 +1,8 @@
 name: Regional same-cycle fine-grid GEFS inference
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "22 3,9,15,21 * * *"
   push:
     branches: [main]
     paths:
@@ -14,7 +16,7 @@ concurrency:
 jobs:
   inference:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:

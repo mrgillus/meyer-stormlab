@@ -10,7 +10,15 @@ import storm_blend as storm
 
 ROOT=live.ROOT
 OUT=ROOT/"data/regional_live_v2"
-WINDOWS=(("20261125",24),("20261125",48))
+def forecast_windows(now):
+    """Select latest eligible 00Z cycle after an eight-hour availability lag."""
+    if now.tzinfo is None:
+        raise ValueError("Timezone-aware clock required")
+    now=now.astimezone(dt.timezone.utc)
+    cycle=(now-dt.timedelta(hours=8)).date()
+    return [(cycle.strftime("%Y%m%d"),lead) for lead in (24,48,72,168)
+            if dt.datetime.combine(cycle,dt.time.min,tzinfo=dt.timezone.utc)
+            +dt.timedelta(hours=lead)>now]
 # NOAA's fine-grid subset lacks some pressure-level fields. Record the
 # actual product per field and never fall back to coarse precipitation.
 USED={}
@@ -38,7 +46,8 @@ def main():
     points.extend(dict(label=p["name"],lat=p["lat"],lon=p["lon"],kind="town") for p in storm.POINTS if p["kind"]=="town")
     coords=[(p["lat"],p["lon"]) for p in points]
     windows=[];errors=[]
-    for date,lead in WINDOWS:
+    started=dt.datetime.now(dt.timezone.utc)
+    for date,lead in forecast_windows(started):
         end=dt.datetime.strptime(date,"%Y%m%d").replace(tzinfo=dt.timezone.utc)+dt.timedelta(hours=lead)
         w=dict(initialization_utc=date+"T00Z",lead_hours=lead,valid_start_utc=(end-dt.timedelta(hours=24)).isoformat(),valid_end_utc=end.isoformat(),status="incomplete",precipitation_resolution_degrees=.25)
         members={}
@@ -53,7 +62,7 @@ def main():
         data=np.stack([members[m] for m in live.MEMBERS],axis=1)
         if data.shape!=(6,5,len(points)):raise ValueError("Feature shape mismatch")
         w["inputs"]=[dict(**p,precip_mm=round(float(data[5,:,i].mean()),3),member_precip_mm={m:round(float(data[5,j,i]),3) for j,m in enumerate(live.MEMBERS)},t2m_c=round(float(data[0,:,i].mean()-273.15),2),t850_c=round(float(data[1,:,i].mean()-273.15),2)) for i,p in enumerate(points) if p["kind"]=="town"]
-        live.TRAIN=ROOT/"data"/("regional_learning" if lead==24 else "regional_learning48")
+        live.TRAIN=ROOT/"data"/("regional_learning48" if lead==48 else "regional_learning")
         report_path=live.TRAIN/"report.json"
         if not report_path.exists():w["status"]="awaiting_lead_matched_training";windows.append(w);continue
         report=json.loads(report_path.read_text())
@@ -63,11 +72,11 @@ def main():
         pred=live.infer(date,lead,data,points,report)
         w.update(pred,training_generated_at=report["generated_at"],training_archive_snapshot=report["archive_snapshot_sha256"])
         windows.append(w)
-    payload=dict(schema=2,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),archive_fingerprint=manifest["fingerprint"],historical_units=units,windows=windows,errors=errors,operational_ready=False,note="Same 00Z initialization, +24 and +48h leads, preceding 24h precipitation per window. Precipitation strictly 0.25-degree; missing fine-grid atmospheric fields use explicitly recorded 0.5-degree products. Mixed-resolution inputs are research-only. Research only; reporting-time alignment and operational/reforecast differences unresolved. Not a validated 48h storm total.")
+    payload=dict(schema=2,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),archive_fingerprint=manifest["fingerprint"],historical_units=units,windows=windows,errors=errors,operational_ready=False,note="Latest eligible 00Z initialization, unexpired +24/+48/+72/+168h leads, preceding 24h precipitation per window. Precipitation strictly 0.25-degree; missing fine-grid atmospheric fields use explicitly recorded 0.5-degree products. Mixed-resolution inputs are research-only. Research only; reporting-time alignment and operational/reforecast differences unresolved. Not a validated 48h storm total.")
     (OUT/"status.json").write_text(json.dumps(payload,indent=2,allow_nan=False)+"\n")
-    if all(w["status"]=="research_only" for w in windows):
+    (OUT/"captures").mkdir(exist_ok=True)
+    (OUT/"captures"/(started.strftime("%Y%m%dT%H%M%SZ")+".json")).write_text(json.dumps(payload,allow_nan=False))
+    if windows and all(w["status"]=="research_only" for w in windows):
         (OUT/"report.json").write_text(json.dumps(payload,indent=2,allow_nan=False)+"\n")
-        (OUT/"captures").mkdir(exist_ok=True)
-        (OUT/"captures"/(dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")+".json")).write_text(json.dumps(payload,allow_nan=False))
     print(json.dumps(payload,allow_nan=False),flush=True)
 if __name__=="__main__":main()

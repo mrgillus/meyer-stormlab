@@ -14,3 +14,7 @@ Keep live deterministic guidance distinct from research forecasts until independ
 ## Scheduling
 
 Regional training runs daily and on relevant code updates. The fixed 48-hour research benchmark runs daily and on code updates. GitHub Actions is the unattended execution layer. A successful planning job alone is not evidence of training or publication.
+
+## Continuous shadow inference
+
+Select a recent 00Z cycle with an eight-hour availability lag, evaluate unexpired lead-matched +24/+48/+72/+168h windows, and archive incomplete attempts as well as successful ones. Runs every six hours. Consult status.json for latest attempt and report.json for last complete run. Research only; no automatic promotion.
