@@ -134,7 +134,6 @@ def fetch_observations(start,end):
                 result=json.load(res)
             if not isinstance(result,dict) or "error" in result or not isinstance(result.get("data"),list):
                 raise ValueError("ACIS response error: "+str(result.get("error") if isinstance(result,dict) else "invalid structure")[:240])
-            print("ACIS sample payload (for integration diagnosis):",json.dumps(result["data"][:2],default=str)[:2100],flush=True)
             return result,SOURCE
         except urllib.error.HTTPError as exc:
             detail=exc.read(300).decode("utf-8",errors="replace")
@@ -174,17 +173,31 @@ def normalize_provider(raw,start,end):
         if nearest[0][0]>MAX_DISTANCE_MI:continue
         stations.append(station)
         rows=entry.get("data") or []
-        for row in rows:
-            if not isinstance(row,(list,tuple)) or len(row)<3:continue
-            try:
-                day=parseday(row[0])
-            except (TypeError,ValueError):continue
+        expected_days=(end-start).days+1
+        for row_index,row in enumerate(rows):
+            if not isinstance(row,(list,tuple)):continue
+            if len(row)==3 and isinstance(row[0],str) and len(row[0])==10:
+                try:
+                    day=parseday(row[0])
+                except (TypeError,ValueError):continue
+                snow_raw,liquid_raw=row[1],row[2]
+                date_source="explicit_acis_reported_date"
+            elif len(row)==2 and len(rows)==expected_days:
+                # MultiStnData range responses return [snow, precip] for
+                # each sequential requested day WITHOUT a date column.
+                # Never infer dates if the returned row count differs.
+                day=start+dt.timedelta(days=row_index)
+                snow_raw,liquid_raw=row
+                date_source="requested_range_index"
+            else:
+                continue
             if day<start or day>end:continue
-            snow,snow_quality,snow_clock,snow_flag=decode_amount(row[1])
-            liquid,liquid_quality,liquid_clock,liquid_flag=decode_amount(row[2])
+            snow,snow_quality,snow_clock,snow_flag=decode_amount(snow_raw)
+            liquid,liquid_quality,liquid_clock,liquid_flag=decode_amount(liquid_raw)
             if snow_quality=="missing" and liquid_quality=="missing":continue
             observations.append({
                 "station_id":identity,"reported_date":day.isoformat(),
+                "date_mapping":date_source,
                 "snowfall_in":snow,"snow_quality":snow_quality,
                 "precipitation_in":liquid,"precip_quality":liquid_quality,
                 "snow_observation_clock_raw":snow_clock,
