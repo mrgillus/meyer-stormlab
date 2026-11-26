@@ -392,10 +392,33 @@ async function loadHorizon(){
   renderHorizon();
   button.disabled=false;
 }
+function updateHomeHorizon(groups,feeds,today){
+  if(!feeds.length){
+    set("homeHorizonStatus","HORIZON · UNAVAILABLE");
+    set("homeHorizonHeadline","Waiting for a clear signal.");
+    set("homeHorizonSummary","Extended model feeds couldn't be reached. We won't invent a developing storm.");
+    return;
+  }
+  if(!groups.length){
+    set("homeHorizonStatus","HORIZON · NO LARGE SIGNALS");
+    set("homeHorizonHeadline","A quieter forecast horizon.");
+    set("homeHorizonSummary",feeds.length+" responding forecast sources did not meet our screening thresholds during days 3–16. This limited scan doesn't rule out severe weather or flooding.");
+    return;
+  }
+  const g=groups[0],count=g.models.size;
+  const begin=shortDate(datePlus(today,g.firstLead)),end=shortDate(datePlus(today,g.lastLead));
+  const date=begin+(g.firstLead===g.lastLead?"":" – "+end);
+  set("homeHorizonStatus",count>1?"HORIZON · MULTIPLE SOURCES":"HORIZON · EARLY SIGNAL");
+  set("homeHorizonHeadline",count>1?"Something is worth watching.":"One model has a hunch.");
+  set("homeHorizonSummary",g.kind+" around "+date+". "+count+" of "+feeds.length+
+    " responding model feeds meet a preliminary threshold. This is an unverified pattern signal, not a storm warning or a calibrated risk probability.");
+}
+
 function renderHorizon(){
   const d=state.horizon;if(!d)return;
   const feeds=d.feeds;set("horizonStatus",feeds.length+"/"+EXT_MODELS.length+" feeds · "+new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour:"numeric",minute:"2-digit"}).format(d.updated));
   if(!feeds.length){
+    updateHomeHorizon([],feeds,null);
     q("watchList").innerHTML='<div class="blank-state"><span class="notice-error">The extended model feeds could not be reached.</span> There is no reliable 16-day outlook to display. Try again later. The Now view still works independently.</div>';return;
   }
   const parts=new Intl.DateTimeFormat("en-US",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
@@ -422,6 +445,7 @@ function renderHorizon(){
   }
   groups.sort((a,b)=>b.models.size-a.models.size||a.firstLead-b.firstLead);
   const featured=groups.slice(0,6);
+  updateHomeHorizon(groups,feeds,today);
   set("horizonWindow","Day 3–16 · model availability varies");
   if(!featured.length){
     q("watchList").innerHTML='<div class="blank-state"><strong>No strong signals in the daily fields we could retrieve.</strong><p>That does not mean the next two weeks are risk-free. These checks cannot diagnose severe thunderstorms or flooding, and only '+e(feeds.length)+' long-range feeds responded.</p></div>';return;
@@ -510,7 +534,8 @@ function install(){
     try{window.localStorage.setItem("stormlab.preview.location",state.location)}catch(_){}
     loadNow(true);
     if(state.tab==="lab")loadLab();
-    if(state.tab==="horizon"){state.horizon=null;loadHorizon()}
+    state.horizon=null;
+    loadHorizon();
     if(state.tab==="archive")renderCase();
   });
   document.querySelectorAll("[data-tab]").forEach(button=>button.addEventListener("click",()=>goTab(button.dataset.tab)));
@@ -526,7 +551,9 @@ function install(){
   window.addEventListener("hashchange",()=>goTab(location.hash.replace("#",""),false));
   goTab(location.hash.replace("#","")||"now",false);
   loadNow();
+  if(state.tab==="now")loadHorizon();
   window.setInterval(()=>{if(document.visibilityState==="visible")loadNow(true)},10*60*1000);
+  window.setInterval(()=>{if(document.visibilityState==="visible" && state.tab==="now")loadHorizon()},2*60*60*1000);
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",install,{once:true});else install();
 })();
