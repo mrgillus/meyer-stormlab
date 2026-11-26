@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T03:07:40.724527+00:00",
-  "source_latest_capture": "2026-11-25T22:28:13.906033+00:00",
-  "capture_age_hours": 4.66,
-  "capture_count_processed": 6,
+  "generated_at": "2026-11-26T05:19:59.892700+00:00",
+  "source_latest_capture": "2026-11-26T04:40:09.413279+00:00",
+  "capture_age_hours": 0.66,
+  "capture_count_processed": 7,
   "status": "current",
   "screening_rules": {
     "snow": {
@@ -52,8 +52,8 @@
       "start_date": "2026-11-25",
       "end_date": "2026-11-26",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-25T22:28:13.906033+00:00",
-      "snapshots_seen": 6,
+      "last_seen": "2026-11-26T04:40:09.413279+00:00",
+      "snapshots_seen": 7,
       "status": "in_latest_capture",
       "lead_days": 0,
       "models": [
@@ -91,10 +91,10 @@
           "GFS",
           "ICON"
         ],
-        "triggering_samples": 7,
-        "min_triggering_value": 2.067,
+        "triggering_samples": 8,
+        "min_triggering_value": 2.039,
         "max_triggering_value": 5.429,
-        "median_triggering_value": 3.169,
+        "median_triggering_value": 3.032,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -108,23 +108,26 @@
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-25T22:28:13.906033+00:00",
-      "snapshots_seen": 6,
+      "last_seen": "2026-11-26T04:40:09.413279+00:00",
+      "snapshots_seen": 7,
       "status": "in_latest_capture",
       "lead_days": 1,
       "models": [
-        "GEM"
+        "ECMWF",
+        "GEM",
+        "GFS"
       ],
       "locations": [
+        "Affton",
         "Belleville",
         "St. Charles"
       ],
-      "same_place_day_support": 1,
+      "same_place_day_support": 3,
       "peak": {
         "date": "2026-11-26",
         "place": "Belleville",
-        "model": "GEM",
-        "value": 1.26
+        "model": "GFS",
+        "value": 1.39
       },
       "threshold": {
         "value": 1.25,
@@ -150,26 +153,23 @@
       "start_date": "2026-11-29",
       "end_date": "2026-11-29",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-25T16:39:42.471481+00:00",
-      "snapshots_seen": 3,
-      "status": "not_in_latest_capture",
+      "last_seen": "2026-11-26T04:40:09.413279+00:00",
+      "snapshots_seen": 4,
+      "status": "in_latest_capture",
       "lead_days": 4,
       "models": [
         "GFS"
       ],
       "locations": [
-        "Affton",
-        "Belleville",
-        "St. Louis",
-        "Washington",
-        "Wildwood"
+        "St. Charles",
+        "Wentzville"
       ],
       "same_place_day_support": 1,
       "peak": {
         "date": "2026-11-29",
-        "place": "St. Louis",
+        "place": "Wentzville",
         "model": "GFS",
-        "value": 1.535
+        "value": 1.362
       },
       "threshold": {
         "value": 1.25,
@@ -177,11 +177,13 @@
         "test": "gte"
       },
       "wentzville": {
-        "models": [],
-        "triggering_samples": 0,
-        "min_triggering_value": null,
-        "max_triggering_value": null,
-        "median_triggering_value": null,
+        "models": [
+          "GFS"
+        ],
+        "triggering_samples": 1,
+        "min_triggering_value": 1.362,
+        "max_triggering_value": 1.362,
+        "median_triggering_value": 1.362,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -195,9 +197,9 @@
       "start_date": "2026-12-07",
       "end_date": "2026-12-07",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-24T22:29:47.747629+00:00",
-      "snapshots_seen": 2,
-      "status": "not_in_latest_capture",
+      "last_seen": "2026-11-26T04:40:09.413279+00:00",
+      "snapshots_seen": 3,
+      "status": "in_latest_capture",
       "lead_days": 12,
       "models": [
         "GFS"
@@ -215,9 +217,9 @@
       "same_place_day_support": 1,
       "peak": {
         "date": "2026-12-07",
-        "place": "Washington",
+        "place": "Alton",
         "model": "GFS",
-        "value": 1.689
+        "value": 1.831
       },
       "threshold": {
         "value": 1.25,
@@ -229,9 +231,9 @@
           "GFS"
         ],
         "triggering_samples": 1,
-        "min_triggering_value": 1.547,
-        "max_triggering_value": 1.547,
-        "median_triggering_value": 1.547,
+        "min_triggering_value": 1.323,
+        "max_triggering_value": 1.323,
+        "median_triggering_value": 1.323,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
