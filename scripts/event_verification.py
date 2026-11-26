@@ -102,33 +102,46 @@ def decode_amount(raw):
         return (None, "out_of_range", clock, flags)
     return (round(amount, 3), "measured", clock, flags)
 
-def provider_request(start, end):
-    q = {
+def provider_params(start, end):
+    return {
         "bbox": ",".join(str(x) for x in BBOX),
         "sdate": start.isoformat(), "edate": end.isoformat(),
         "meta": "name,state,ll,sids,uid",
-        "elems": json.dumps([
+        "elems": [
             {"name":"snow", "interval":"dly", "duration":"dly", "add":"t,f"},
             {"name":"pcpn", "interval":"dly", "duration":"dly", "add":"t,f"},
-        ], separators=(",",":")),
-        "output": "json",
+        ],
+        "output":"json",
     }
-    return SOURCE+"?"+urllib.parse.urlencode(q)
+
+def provider_request(start, end):
+    """Readable diagnostic URL; production sends the complex JSON as POST."""
+    params=provider_params(start,end)
+    params["elems"]=json.dumps(params["elems"],separators=(",",":"))
+    return SOURCE+"?"+urllib.parse.urlencode(params)
 
 def fetch_observations(start,end):
-    url=provider_request(start,end)
+    params=provider_params(start,end)
+    encoded=urllib.parse.urlencode({"params":json.dumps(params,separators=(",",":"))}).encode("utf-8")
     last=None
     for attempt in range(3):
         try:
-            req=urllib.request.Request(url,headers={"User-Agent":"MeyerStormLab/1.0 (research; regional daily station evidence)","Accept":"application/json"})
+            req=urllib.request.Request(SOURCE,data=encoded,
+                headers={"User-Agent":"MeyerStormLab/1.0 (regional climate verification)",
+                         "Accept":"application/json",
+                         "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"})
             with urllib.request.urlopen(req,timeout=45) as res:
                 result=json.load(res)
             if not isinstance(result,dict) or "error" in result or not isinstance(result.get("data"),list):
-                raise ValueError("ACIS did not return a valid station data array")
-            return result,url
-        except (urllib.error.HTTPError, urllib.error.URLError,TimeoutError,ValueError,OSError) as exc:
+                raise ValueError("ACIS response error: "+str(result.get("error") if isinstance(result,dict) else "invalid structure")[:240])
+            return result,SOURCE
+        except urllib.error.HTTPError as exc:
+            detail=exc.read(300).decode("utf-8",errors="replace")
+            last=f"HTTP {exc.code}: {detail}"
+            if exc.code<500 and exc.code!=429:break
+        except (urllib.error.URLError,TimeoutError,ValueError,OSError) as exc:
             last=exc
-            if attempt<2:time.sleep(2*(attempt+1))
+        if attempt<2:time.sleep(2*(attempt+1))
     raise RuntimeError("RCC-ACIS unavailable or did not return a valid response: "+str(last))
 
 def normalize_provider(raw,start,end):
