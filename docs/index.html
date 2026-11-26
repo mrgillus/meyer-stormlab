@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#081525">
 <meta name="description" content="Meyer StormLab — follow the atmosphere from early signals to the final storm verdict. An independent, data-driven weather observatory for Greater St. Louis.">
 <title>StormLab — The Atmosphere Has a Story</title>
-<link rel="stylesheet" href="./app.css?v=5">
+<link rel="stylesheet" href="./app.css?v=6">
 <script src="./changefeed.js?v=2" defer></script>
 <script src="./verification.js?v=1" defer></script>
-<script src="./event-watch.js?v=3" defer></script>
-<script src="./app.js?v=3" defer></script>
+<script src="./event-watch.js?v=4" defer></script>
+<script src="./app.js?v=4" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -41,8 +41,7 @@
   <div class="update-cluster"><span class="live-dot" id="healthDot" aria-hidden="true"></span><span id="lastUpdate" aria-live="polite">Connecting to StormLab…</span><button class="icon-button" id="refresh" type="button" aria-label="Refresh StormLab data" title="Refresh StormLab data">↻</button></div>
 </div>
 <nav class="main-nav" aria-label="Explore StormLab">
-  <button class="nav-item active" data-tab="now" aria-current="page" type="button"><span class="nav-symbol">◉</span> Now</button>
-  <button class="nav-item" data-tab="horizon" type="button"><span class="nav-symbol">◎</span> Horizon</button>
+  <button class="nav-item active" data-tab="now" aria-current="page" type="button"><span class="nav-symbol">◉</span> Storms</button>
   <button class="nav-item" data-tab="archive" type="button"><span class="nav-symbol">▤</span> Storm files</button>
   <button class="nav-item" data-tab="lab" type="button"><span class="nav-symbol">⌁</span> The Lab</button>
 </nav>
@@ -75,6 +74,13 @@
     </div>
     <div class="art-credit">ATMOSPHERIC ART · NOT LIVE RADAR</div>
   </article>
+  <section class="event-chronicle" aria-labelledby="eventWatchTitle">
+    <div class="story-heading"><div><span class="eyebrow">THE HORIZON TRACKER</span><h2 id="eventWatchTitle">On our radar.</h2></div><span class="outline-tag" id="eventWatchStatus">Checking event archive</span></div>
+    <p class="event-intro">Regional named watches, including developing, active and faded signals. Each remains on this board until its forecast window passes.</p>
+    <div id="eventWatchList" class="event-watch-list" aria-live="polite"><div class="blank-state">Reading the published regional event catalog…</div></div>
+    <p class="fine-print" id="eventWatchSource">Preliminary signals based on archived daily model guidance. Not NWS warnings or calibrated probabilities.</p>
+    <p class="fine-print"><a href="https://github.com/mrgillus/meyer-stormlab/blob/main/EVENT_WATCH.md" target="_blank" rel="noopener noreferrer">How StormLab identifies and tracks weather signals ↗</a></p>
+  </section>
   <section class="briefing-panel" id="visitBriefing" aria-labelledby="briefingTitle">
     <div class="briefing-head">
       <div><span class="eyebrow">THE LATEST CHAPTER</span><h2 id="briefingTitle">Since your last visit.</h2></div>
@@ -110,32 +116,21 @@
     <div class="model-detail" id="modelDetail" aria-live="polite">Select a model to see its coverage and meteorological detail.</div>
     <p class="fine-print">NBM is itself a blend. Values are model snowfall forecasts, not measured snow depth; missing forecast hours are not zero.</p>
   </article>
-  <div class="bottom-crosslink"><div><span class="eyebrow" id="homeHorizonStatus">HORIZON · SCANNING</span><h3 id="homeHorizonHeadline">What's brewing beyond this storm?</h3><p id="homeHorizonSummary">Looking for meaningful weather signals in the upcoming model guidance.</p></div><button type="button" class="action-pill" data-go="horizon">Explore Horizon <span aria-hidden="true">↗</span></button></div>
-</section>
-<section id="view-horizon" class="view" aria-labelledby="horizon-title" hidden>
-  <div class="section-entrance"><span class="eyebrow">LOOKING BEYOND THE RADAR</span><span class="small-note">Up to 16 days · experimental</span></div>
-  <div class="page-intro horizon-intro">
-    <div class="orbit-art" aria-hidden="true"><span></span><span></span><span></span></div>
-    <span class="page-kicker">ACT II / THE POSSIBILITIES</span>
-    <h1 id="horizon-title">What's <em>brewing?</em></h1>
-    <p>Not a calendar full of little sunshine icons. A search for atmospheric signals that might develop into something meaningful.</p>
-  </div>
+  <details class="glass-card storm-scan">
+    <summary><span>Extended forecast scan</span><small id="homeHorizonStatus">HORIZON · SCANNING</small></summary>
+    <div class="storm-scan-body"><h3 id="homeHorizonHeadline">What's brewing beyond this storm?</h3><p id="homeHorizonSummary">Looking for meaningful weather signals in upcoming guidance.</p>
   <article class="glass-card horizon-explainer"><div class="horizon-top"><span class="eyebrow">THE SIGNAL SCAN</span><span class="status-pill" id="horizonStatus">Awaiting fresh guidance</span></div>
     <h2>The next two weeks, under a microscope.</h2>
     <p>We scan available daily GFS, ECMWF, GEM, and ICON guidance for notable snowfall, heavy precipitation, wind gusts, and temperature extremes. Signals are <strong>not</strong> severe-weather or flood forecasts; we need ensemble and atmospheric diagnostics for that.</p>
     <button id="horizonRefresh" class="outline-button" type="button">Check the forecast horizon ↻</button>
   </article>
-  <section class="event-chronicle" aria-labelledby="eventWatchTitle">
-    <div class="story-heading"><div><span class="eyebrow">THE HORIZON TRACKER</span><h2 id="eventWatchTitle">Named watches.</h2></div><span class="outline-tag" id="eventWatchStatus">Checking event archive</span></div>
-    <p class="event-intro">Not just the newest model run. Every tracked signal retains its first detection and whether later forecast captures supported it—or let it fade.</p>
-    <div id="eventWatchList" class="event-watch-list" aria-live="polite"><div class="blank-state">Reading the published regional event catalog…</div></div>
-    <p class="fine-print" id="eventWatchSource">Preliminary signals based on archived daily model guidance. Not NWS warnings or calibrated probabilities.</p>
-    <p class="fine-print"><a href="https://github.com/mrgillus/meyer-stormlab/blob/main/EVENT_WATCH.md" target="_blank" rel="noopener noreferrer">How StormLab identifies and tracks weather signals ↗</a></p>
-  </section>
   <div class="horizon-group"><div class="group-title"><span class="eyebrow">SIGNALS WORTH EXPLORING</span><span class="small-note" id="horizonWindow">Forecast availability varies by model</span></div>
     <div id="watchList" class="watch-list"><div class="blank-state">Select “Check the forecast horizon” to load real extended forecast data.</div></div>
   </div>
+
   <div class="horizon-limit"><span class="limit-icon">∿</span><div><strong>Beyond day 16: the map fades, not the uncertainty.</strong><p>Our current browser-fed models do not support a credible 17–21-day local storm scan. Extended ensemble pattern guidance is a planned capability; StormLab won't invent a threat to fill the gap.</p></div></div>
+    </div>
+  </details>
   <div class="bottom-crosslink"><div><span class="eyebrow">LOOKING BACK</span><h3>How did the last storm unfold?</h3><p>Every storm leaves a trail of forecasts. The next step is verifying those against observations.</p></div><button type="button" class="action-pill" data-go="archive">Open Storm Files <span aria-hidden="true">↗</span></button></div>
 </section>
 <section id="view-archive" class="view" aria-labelledby="archive-title" hidden>

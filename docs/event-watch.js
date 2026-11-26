@@ -81,11 +81,13 @@
   }
   function card(item){
     const tone=marker(item.status),label=titles[item.kind]||item.title;
+    const today=new Intl.DateTimeFormat("en-CA",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    const windowLabel=item.start_date<=today&&item.end_date>=today?"Forecast window now":"Upcoming forecast window";
     const sourceCount=item.models?.length||0;
     return '<article class="event-signal '+safe(tone)+'">'+
       '<div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+
       safe(kinds[item.kind]||"◎")+'</span><span class="event-flag">'+safe(describe(item.status))+'</span></div>'+
-      '<h3>Watch '+safe(watchName(item))+'</h3><p class="event-dates">'+safe(label)+' · '+safe(dateRange(item))+'</p>'+
+      '<h3>Watch '+safe(watchName(item))+'</h3><p class="event-dates">'+safe(label)+' · '+safe(dateRange(item))+'</p><small class="watch-muted">'+safe(windowLabel)+'</small>'+
       watchChart(item.assessments)+
       '<p class="event-story">'+safe(modelEvidence(item))+". "+safe(item.snapshots_seen)+" stored model capture(s). "+
       safe(item.locations?.length||0)+' regional location(s) flagged.</p>'+
@@ -102,7 +104,8 @@
     set("eventWatchStatus",current?index.capture_count_processed+" captures tracked":"ARCHIVE UPDATES DELAYED");
     const active=index.events.filter(x=>x.status==="in_latest_capture");
     const fading=index.events.filter(x=>x.status==="not_in_latest_capture");
-    const display=[...active,...fading].sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
+    const today=new Intl.DateTimeFormat("en-CA",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+    const display=[...active,...fading].filter(x=>x.end_date>=today).sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
     if(display.length){
       q("eventWatchList").innerHTML=display.map(card).join("");
     }else{
@@ -223,11 +226,12 @@
       const button=ev.target.closest("[data-case-id]");if(!button)return;
       state.selected=button.dataset.caseId;renderArchiveList();
     });
-    document.querySelectorAll('[data-tab="horizon"],[data-tab="archive"]').forEach(button=>
+    document.querySelectorAll('[data-tab="now"],[data-tab="archive"]').forEach(button=>
       button.addEventListener("click",()=>reload()));
     document.addEventListener("visibilitychange",()=>{
       if(document.visibilityState==="visible")reload();
     });
+    q("refresh")?.addEventListener("click",()=>reload(true));
     reload();
     window.setInterval(()=>{if(document.visibilityState==="visible")reload(true)},15*60*1000);
   }

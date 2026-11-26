@@ -44,20 +44,22 @@ function statusMode(d){
   return now>end?"past":now>=start?"active":"future";
 }
 function goTab(tab,updateHash=true){
-  if(!["now","horizon","archive","lab"].includes(tab))tab="now";
+  const jumpToWatches=tab==="horizon";
+  if(!["now","archive","lab"].includes(tab))tab="now";
   state.tab=tab;
   document.querySelectorAll(".nav-item").forEach(b=>{
     const on=b.dataset.tab===tab;b.classList.toggle("active",on);
     if(on)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");
   });
-  ["now","horizon","archive","lab"].forEach(t=>{
+  ["now","archive","lab"].forEach(t=>{
     const el=q("view-"+t);el.hidden=t!==tab;el.classList.toggle("active",t===tab);
   });
   if(updateHash && window.location.hash!=="#"+tab)history.replaceState(null,"","#"+tab);
   if(tab==="lab")loadLab();
   if(tab==="archive")renderCase();
-  if(tab==="horizon"&&!state.horizon)loadHorizon();
-  window.scrollTo({top:0,behavior:"instant"});
+  if(tab==="now"&&!state.horizon)loadHorizon();
+  if(jumpToWatches)q("eventWatchTitle")?.scrollIntoView({block:"start"});
+  else window.scrollTo({top:0,behavior:"instant"});
 }
 function updateHealth(){
   const dot=q("healthDot"),d=state.report, s=state.status;
@@ -543,7 +545,7 @@ function install(){
   q("showEvidence").addEventListener("click",()=>q("evidence").scrollIntoView({behavior:"smooth",block:"start"}));
   q("refresh").addEventListener("click",async()=>{
     q("refresh").disabled=true;
-    try{await loadNow();if(state.tab==="lab")await loadLab();if(state.tab==="horizon")await loadHorizon();if(state.tab==="archive"&&state.history)renderCaseHistory()}
+    try{await loadNow();if(state.tab==="lab")await loadLab();if(state.tab==="now")await loadHorizon();if(state.tab==="archive"&&state.history)renderCaseHistory()}
     finally{q("refresh").disabled=false}
   });
   q("horizonRefresh").addEventListener("click",loadHorizon);
@@ -551,7 +553,6 @@ function install(){
   window.addEventListener("hashchange",()=>goTab(location.hash.replace("#",""),false));
   goTab(location.hash.replace("#","")||"now",false);
   loadNow();
-  if(state.tab==="now")loadHorizon();
   window.setInterval(()=>{if(document.visibilityState==="visible")loadNow(true)},10*60*1000);
   window.setInterval(()=>{if(document.visibilityState==="visible" && state.tab==="now")loadHorizon()},2*60*60*1000);
 }
