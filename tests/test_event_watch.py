@@ -179,6 +179,39 @@ class EventWatchTests(unittest.TestCase):
         self.assertIsNone(out[1]["support_pct"])
         self.assertEqual(out[1]["possible_support_pct"], 25)
 
+    def test_forecast_chart_quantities_include_nontriggering_values(self):
+        stamp = dt.datetime.now(watch.UTC).isoformat()
+        s = snapshot(stamp, snow=0, models=watch.MODELS)
+        day = s["locations"]["Wentzville"]["GFS"]["daily"]["time"][0]
+        for model, value in zip(watch.MODELS, [4, 2, 0, 0]):
+            s["locations"]["Wentzville"][model]["daily"]["snowfall_sum"] = [value]
+        s["locations"] = {p: s["locations"]["Wentzville"].copy() for p in watch.PLACES}
+        point = watch.forecast_series(s, "snow", day, day)["points"][0]
+        self.assertEqual(point["support_pct"], 50)
+        self.assertEqual(point["quantity"], 1)
+        del s["locations"]["Wentzville"]["ICON"]
+        point = watch.forecast_series(s, "snow", day, day)["points"][0]
+        self.assertEqual(point["unknown_models"], 1)
+        self.assertEqual(point["quantity_models"], 3)
+        self.assertEqual(point["quantity"], 2)
+
+    def test_hourly_chart_uses_hourly_not_daily_threshold(self):
+        stamp = dt.datetime.now(watch.UTC).isoformat()
+        s = snapshot(stamp, snow=0, models=watch.MODELS)
+        day = s["locations"]["Wentzville"]["GFS"]["daily"]["time"][0]
+        for model in watch.MODELS:
+            sample = s["locations"]["Wentzville"][model]
+            sample["hourly"] = {"time": [day+"T12:00", day+"T13:00"],
+                                "snowfall": [.1 if model == "GFS" else 0, 0]}
+            sample["hourly_units"] = {"snowfall": "inch"}
+        s["locations"] = {p: s["locations"]["Wentzville"].copy() for p in watch.PLACES}
+        chart = watch.forecast_series(s, "snow", day, day, hourly=True)
+        points = {p["time"]: p for p in chart["points"]}
+        self.assertEqual(chart["threshold"], .01)
+        self.assertEqual(points[day+"T12:00"]["support_pct"], 25)
+        self.assertEqual(points[day+"T13:00"]["support_pct"], 0)
+        self.assertIsNone(points[day+"T14:00"]["support_pct"])
+
     def test_temporary_missing_model_does_not_claim_corroboration(self):
         stamp = dt.datetime.now(watch.UTC).isoformat()
         out = watch.captured_signals(snapshot(stamp, models=("GFS",)))

@@ -320,6 +320,100 @@ def daily_assessments(snapshot, kind, start_date, end_date):
     return out
 
 
+# Hourly screening levels are deliberately distinct from daily totals.
+HOURLY_RULES = {
+    "snow": ("snowfall", .01), "rain": ("rain", .01),
+    "showers": ("showers", .01), "precipitation": ("precipitation", .25),
+    "wind": ("wind_gusts_10m", 45), "freeze": ("temperature_2m", 32),
+    "cold": ("temperature_2m", 10), "heat": ("temperature_2m", 100),
+    "cold_stress": ("apparent_temperature", 0), "heat_stress": ("apparent_temperature", 105),
+    **{k: ("weather_code", 1) for k in CODE_HITS},
+}
+
+
+def forecast_series(snapshot, kind, start_date, end_date, hourly=False):
+    """Forecast-time series, not capture-time history or observations.
+
+    Quantity: median of per-model regional extrema, using all eight places
+    including non-triggering values. Partial regional coverage is excluded
+    from quantity; a positive hit still counts towards confirmed support.
+    """
+    field, threshold, direction, unit = THRESHOLDS[kind]
+    if hourly:
+        field, threshold = HOURLY_RULES[kind]
+    section, units_key = ("hourly", "hourly_units") if hourly else ("daily", "units")
+    start = dt.date.fromisoformat(start_date)
+    end = dt.date.fromisoformat(end_date)
+    today = parse_time(snapshot["retrieved_at"]).astimezone(CT).date()
+    start = max(start, today)
+    lookups = {}
+    for model in MODELS:
+        for place in PLACES:
+            sample = (snapshot.get("locations", {}).get(place, {}) or {}).get(model) or {}
+            series = sample.get(section) or {}
+            times = series.get("time") or []
+            raw = series.get(field) or []
+            # Repeated local wall-clock timestamps during DST are ambiguous.
+            counts = defaultdict(int)
+            for t in times:
+                counts[t] += 1
+            lookups[(model, place)] = {
+                t: screen_value(kind, v, (sample.get(units_key) or {}).get(field))
+                for t, v in zip(times, raw) if counts[t] == 1
+            }
+    points = []
+    day = start
+    while day <= end:
+        slots = [day.isoformat()] if not hourly else [
+            day.isoformat() + f"T{h:02d}:00" for h in range(24)]
+        for slot in slots:
+            if hourly:
+                local = dt.datetime.fromisoformat(slot)
+                if local.replace(tzinfo=CT, fold=0).utcoffset() != local.replace(tzinfo=CT, fold=1).utcoffset():
+                    continue  # ambiguous/nonexistent DST wall-clock hour
+            states, extremes = {}, []
+            for model in MODELS:
+                values = [lookups[(model, place)].get(slot) for place in PLACES]
+                valid = [v for v in values if v is not None]
+                hit = any(v >= threshold if direction == "gte" else v <= threshold for v in valid)
+                complete = len(valid) == len(PLACES)
+                states[model] = "supports" if hit else "clear" if complete else "unknown"
+                if complete and unit != "signal":
+                    extremes.append(max(valid) if direction == "gte" else min(valid))
+            n = sum(s == "supports" for s in states.values())
+            u = sum(s == "unknown" for s in states.values())
+            points.append({"time": slot, "support_pct": 25*n if n or not u else None,
+                           "possible_support_pct": 25*(n+u), "unknown_models": u,
+                           "supporting_models": n, "quantity": round(statistics.median(extremes), 3) if extremes else None,
+                           "quantity_models": len(extremes), "models": states})
+        day += dt.timedelta(days=1)
+    return {"resolution": "hourly" if hourly else "daily", "threshold": threshold,
+            "direction": direction, "unit": unit, "quantity_stat": "regional model-extrema median",
+            "captured_at": snapshot["retrieved_at"], "points": points}
+
+
+def group_forecast(snapshot, group, modes):
+    if not snapshot:
+        return {}
+    today = parse_time(snapshot["retrieved_at"]).astimezone(CT).date()
+    by_kind = defaultdict(list)
+    for m in modes:
+        by_kind[m["kind"]].append(m)
+    result = {}
+    for kind, items in by_kind.items():
+        daily = forecast_series(snapshot, kind, group["start_date"], group["end_date"])
+        mode_start = max(today, min(dt.date.fromisoformat(m["start_date"]) for m in items))
+        mode_end = max(dt.date.fromisoformat(m["end_date"]) for m in items)
+        hourly = None
+        if (mode_end >= mode_start and (mode_end-mode_start).days <= 1
+                and (mode_start-today).days <= 2):
+            candidate = forecast_series(snapshot, kind, mode_start.isoformat(), mode_end.isoformat(), hourly=True)
+            if any(p["unknown_models"] < len(MODELS) or p["supporting_models"] for p in candidate["points"]):
+                hourly = candidate
+        result[kind] = {"daily": daily, "hourly": hourly}
+    return result
+
+
 def update_assessments(events, captures):
     """Backfill only from retained real captures, then append idempotently."""
     for event in events:
@@ -489,6 +583,12 @@ def main():
         (g for g in groups if g["status"] == "forecast_window_passed"),
         key=lambda g: g["end_date"], reverse=True)[:40]
     visible_modes = {mid for g in visible_groups for mid in g["mode_ids"]}
+    by_id = {m["id"]: m for m in summarized}
+    for group in visible_groups:
+        if group["status"] != "forecast_window_passed":
+            group["forecast_modes"] = group_forecast(
+                captures[-1] if captures else None, group,
+                [by_id[mid] for mid in group["mode_ids"]])
     catalog = {
         "event_groups": groups,
         "schema": SCHEMA, "updated_at": now.isoformat(),

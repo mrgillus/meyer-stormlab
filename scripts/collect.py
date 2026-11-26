@@ -19,11 +19,17 @@ FIELDS = ("snowfall_sum","precipitation_sum","temperature_2m_min",
 EXTRA_FIELDS = ("rain_sum", "showers_sum", "weather_code",
                 "apparent_temperature_max", "apparent_temperature_min")
 
-def request(model, days, lat, lon, expanded=True):
+HOURLY_FIELDS = ("snowfall", "precipitation", "rain", "showers",
+                 "weather_code", "wind_gusts_10m", "temperature_2m",
+                 "apparent_temperature")
+
+def request(model, days, lat, lon, expanded=True, hourly=True):
     fields = FIELDS + EXTRA_FIELDS if expanded else FIELDS
     params = dict(latitude=lat, longitude=lon, models=model, daily=",".join(fields),
                   timezone="America/Chicago", temperature_unit="fahrenheit",
                   wind_speed_unit="mph", precipitation_unit="inch", forecast_days=days)
+    if hourly:
+        params["hourly"] = ",".join(HOURLY_FIELDS)
     url = "https://api.open-meteo.com/v1/forecast?" + urllib.parse.urlencode(params)
     for attempt in range(3):
         try:
@@ -33,11 +39,16 @@ def request(model, days, lat, lon, expanded=True):
             if not daily["time"] or not all(len(daily[k]) == len(daily["time"]) for k in FIELDS):
                 raise ValueError("Malformed daily series")
             return {"daily": daily, "units": obj["daily_units"],
+                    "hourly": obj.get("hourly", {}), "hourly_units": obj.get("hourly_units", {}),
                     "grid_latitude": obj["latitude"], "grid_longitude": obj["longitude"],
                     "retrieved_at": dt.datetime.now(dt.timezone.utc).isoformat()}
         except (OSError, ValueError, KeyError) as exc:
+            if hourly and getattr(exc, "code", None) == 400:
+                result = request(model, days, lat, lon, expanded=expanded, hourly=False)
+                result["hourly_status"] = "unsupported_request"
+                return result
             if expanded and getattr(exc, "code", None) == 400:
-                result = request(model, days, lat, lon, expanded=False)
+                result = request(model, days, lat, lon, expanded=False, hourly=False)
                 result["extra_fields_status"] = "unsupported_request"
                 return result
             if attempt == 2:
