@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-26T03:16:00.696673+00:00",
+  "retrieved_at": null,
+  "provider": "RCC-ACIS MultiStnData",
+  "provider_endpoint": "https://data.rcc-acis.org/MultiStnData",
+  "provider_status": "unavailable",
+  "provider_error": "RCC-ACIS unavailable or did not return a valid response: HTTP Error 400: Bad Request",
+  "stations": [],
+  "reports": [],
+  "limitations": [
+    "Station daily reporting window may not match calendar day.",
+    "Trace and accumulated/multiday values are not numeric zero.",
+    "Station reports are not ground truth at nearby towns without geospatial context.",
+    "No total snowfall from a daily reported date without interval harmonization.",
+    "Independent ACIS station observations are never overwritten by modeled forecasts."
+  ]
+}
