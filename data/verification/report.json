@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T03:21:15.897630+00:00",
-  "source_latest_observation_capture": "2026-11-26T03:21:15.897630+00:00",
+  "generated_at": "2026-11-26T06:17:15.289680+00:00",
+  "source_latest_observation_capture": "2026-11-26T06:17:15.289680+00:00",
   "provider_status": "retrieved",
   "provider_error": null,
   "source": "RCC-ACIS daily station reports (snowfall and liquid precipitation)",
@@ -31,20 +31,20 @@
       "daily_report_count": 0,
       "forecast_reference": {
         "status": "pre_event_capture",
-        "captured_at": "2026-11-25T22:28:13.906033+00:00",
-        "snapshot_path": "data/snapshots/2026-11/20261125T222813Z.json",
+        "captured_at": "2026-11-26T04:40:09.413279+00:00",
+        "snapshot_path": "data/snapshots/2026-11/20261126T044009Z.json",
         "daily_forecasts": [
           {
             "town": "Wentzville",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.74
+            "modeled_daily_snow_in": 5.126
           },
           {
             "town": "Wentzville",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.024
+            "modeled_daily_snow_in": 4.988
           },
           {
             "town": "Wentzville",
@@ -62,13 +62,13 @@
             "town": "St. Louis",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.713
+            "modeled_daily_snow_in": 4.657
           },
           {
             "town": "St. Louis",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 3.114
+            "modeled_daily_snow_in": 4.106
           },
           {
             "town": "St. Louis",
@@ -86,13 +86,13 @@
             "town": "St. Charles",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.244
+            "modeled_daily_snow_in": 4.272
           },
           {
             "town": "St. Charles",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 3.528
+            "modeled_daily_snow_in": 4.685
           },
           {
             "town": "St. Charles",
@@ -110,13 +110,13 @@
             "town": "Affton",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.071
+            "modeled_daily_snow_in": 4.906
           },
           {
             "town": "Affton",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.484
+            "modeled_daily_snow_in": 5.787
           },
           {
             "town": "Affton",
@@ -134,13 +134,13 @@
             "town": "Wildwood",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.98
+            "modeled_daily_snow_in": 5.622
           },
           {
             "town": "Wildwood",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.87
+            "modeled_daily_snow_in": 6.394
           },
           {
             "town": "Wildwood",
@@ -158,13 +158,13 @@
             "town": "Washington",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.409
+            "modeled_daily_snow_in": 4.161
           },
           {
             "town": "Washington",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.602
+            "modeled_daily_snow_in": 5.787
           },
           {
             "town": "Washington",
@@ -182,13 +182,13 @@
             "town": "Belleville",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.961
+            "modeled_daily_snow_in": 4.795
           },
           {
             "town": "Belleville",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.098
+            "modeled_daily_snow_in": 4.74
           },
           {
             "town": "Belleville",
@@ -206,13 +206,13 @@
             "town": "Alton",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 3.996
+            "modeled_daily_snow_in": 4.161
           },
           {
             "town": "Alton",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 2.894
+            "modeled_daily_snow_in": 3.555
           },
           {
             "town": "Alton",
