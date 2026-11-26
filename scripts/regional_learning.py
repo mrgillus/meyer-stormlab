@@ -137,8 +137,30 @@ def evaluate(lead,mapping,rows,outrows):
         training_min=X.min(axis=0),training_max=X.max(axis=0)),OUT/f"research_{lead}_{mapping}.joblib",compress=3)
     return result
 
+def input_signature():
+    """Hash the exact complete archive shards, labels, and training source."""
+    digest=hashlib.sha256()
+    for path in (ARCH/"manifest.json", ROOT/"data/regional/observations.csv.gz", Path(__file__)):
+        digest.update(path.read_bytes())
+    digest.update(repr((LEADS, MAPPINGS, tuple(TRAIN), tuple(VALID), tuple(TEST))).encode())
+    for path in sorted((ARCH/"shards").glob("*/*.json.gz")):
+        digest.update(path.relative_to(ARCH).as_posix().encode())
+        digest.update(path.read_bytes())
+    return digest.hexdigest()
+
+
 def main():
     OUT.mkdir(parents=True,exist_ok=True)
+    signature=input_signature()
+    previous=OUT/"report.json"
+    if previous.exists():
+        try:
+            old=json.loads(previous.read_text())
+            if old.get("input_signature")==signature:
+                print("Research training inputs unchanged; skipping duplicate fit.",flush=True)
+                return
+        except (OSError,ValueError):
+            pass
     manifest,batches,n,digest,bad=load();results=[];predictions=[]
     for (lead,mapping),rows in sorted(batches.items()):
         print("Training",lead,mapping,len(rows),flush=True)
@@ -146,7 +168,7 @@ def main():
         print(json.dumps(result,allow_nan=False),flush=True)
     with gzip.open(OUT/"heldout_predictions.csv.gz","wt",newline="") as f:
         w=csv.writer(f);w.writerow(["lead_hours","reported_date_mapping","reported_date","station","actual_in","rf_in","boosted_in","rf_uncalibrated_p_ge1","cold_precip_in"]);w.writerows(predictions)
-    report=dict(schema=1,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),archive_fingerprint=manifest["fingerprint"],
+    report=dict(schema=1,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),input_signature=signature,archive_fingerprint=manifest["fingerprint"],
         archive_snapshot_sha256=digest,complete_shards=n,feature_errors=bad,results=results,
         seasons={"train":list(TRAIN),"validation":list(VALID),"test":list(TEST)},
         operational_ready=False,method="Predict GHCN station-reported date snowfall from GEFS six-field ensemble features. Two prespecified UTC-end date mappings; neither is an asserted verified observation window. Entire winter splits, date-weighted metrics and regional event counts.",
