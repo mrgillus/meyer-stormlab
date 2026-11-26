@@ -98,3 +98,33 @@ button.model-row.is-selected .model-name{color:#9ce6f4}
  .case-detail-numbers>div:last-child{grid-column:1/-1}
  .case-detail-top h3{font-size:20px}
 }
+
+
+/* Independent observations and forecast-verification safety gate */
+.verification-section{margin:37px 0 41px}
+.verification-section .story-heading{margin-top:0}
+.verification-body{border:1px solid #385870;border-radius:13px;background:linear-gradient(135deg,rgba(18,43,60,.95),rgba(12,32,48,.94));padding:23px}
+.verification-note{display:flex;gap:15px;align-items:start}
+.verification-symbol{flex:0 0 40px;width:40px;height:40px;border-radius:11px;border:1px solid #518299;display:flex;align-items:center;justify-content:center;color:#a4e1ee;font-size:23px}
+.verification-note strong{display:block;color:#edf8fa;font-size:17px;font-weight:660}
+.verification-note p{font-size:12px;line-height:1.7;margin:5px 0 0;max-width:780px;color:#b1c9d7}
+.verification-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid #355265;border-bottom:1px solid #355265;padding:20px 0;margin:21px 0}
+.verification-summary>div{display:grid;gap:6px}
+.verification-summary span{font-size:9px;font-weight:740;letter-spacing:.09em;color:#8daebe}
+.verification-summary strong{color:#f0f9fb;font-size:19px;letter-spacing:-.02em}
+.verification-forecast{border:1px solid #3b5870;background:#0e2b40;border-radius:9px;margin-top:23px;padding:17px}
+.verification-forecast p{font-size:12px;color:#bad0dd;line-height:1.7;margin:9px 0}
+.verification-forecast-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.verification-forecast-chips span{font-size:11px;color:#dfedf3;background:#193f53;border:1px solid #41687c;border-radius:6px;padding:5px 9px}
+.verification-integrity{font-size:12px;line-height:1.75;color:#e7d3b0;border-left:2px solid #c9a46d;padding-left:13px;margin:19px 0}
+.verification-body .capture-scroll{margin-top:20px}
+.verification-body .capture-table th,.verification-body .capture-table td{white-space:nowrap}
+@media(max-width:650px){
+ .verification-body{padding:17px 13px}
+ .verification-note{gap:10px}
+ .verification-note strong{font-size:15px}
+ .verification-summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+ .verification-summary>div:last-child{grid-column:1/-1}
+ .verification-summary strong{font-size:17px}
+ .verification-forecast{padding:14px}
+}
