@@ -304,6 +304,22 @@ def assess(snapshot, kind, start_date, end_date):
     }
 
 
+def daily_assessments(snapshot, kind, start_date, end_date):
+    """Independent per-day source support; a multi-day hit is not a daily hit."""
+    start = dt.date.fromisoformat(start_date)
+    end = dt.date.fromisoformat(end_date)
+    today = parse_time(snapshot["retrieved_at"]).astimezone(CT).date()
+    start = max(start, today)
+    out = []
+    while start <= end:
+        day = start.isoformat()
+        result = assess(snapshot, kind, day, day)
+        if result is not None:
+            out.append(result)
+        start += dt.timedelta(days=1)
+    return out
+
+
 def update_assessments(events, captures):
     """Backfill only from retained real captures, then append idempotently."""
     for event in events:
@@ -449,6 +465,8 @@ def main():
             "name": event["name"],
             "priority": "routine" if event["kind"] in ROUTINE_KINDS else "notable",
             "assessments": event["assessments"][-60:],
+            "daily_assessments": daily_assessments(captures[-1], event["kind"],
+                    event["start_date"], event["end_date"]) if captures else [],
             "start_date": event["start_date"], "end_date": event["end_date"],
             "first_seen": event["first_seen"], "last_seen": event["last_seen"],
             "snapshots_seen": len(event["timeline"]), "status": status,

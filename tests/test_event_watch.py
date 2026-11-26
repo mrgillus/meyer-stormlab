@@ -163,6 +163,22 @@ class EventWatchTests(unittest.TestCase):
         self.assertEqual(split[0]["id"], group["id"])
         self.assertEqual(len({g["name"] for g in split}), 3)
 
+    def test_daily_mode_support_does_not_spread_across_window(self):
+        stamp = dt.datetime.now(watch.UTC).isoformat()
+        s = snapshot(stamp, snow=0, models=watch.MODELS)
+        day = s["locations"]["Wentzville"]["GFS"]["daily"]["time"][0]
+        day2 = (dt.date.fromisoformat(day) + dt.timedelta(days=1)).isoformat()
+        for name, sample in s["locations"]["Wentzville"].items():
+            sample["daily"]["time"] = [day, day2]
+            sample["daily"]["snowfall_sum"] = [3 if name == "GFS" else 0, 0]
+        s["locations"] = {p: s["locations"]["Wentzville"] for p in watch.PLACES}
+        out = watch.daily_assessments(s, "snow", day, day2)
+        self.assertEqual([p["support_pct"] for p in out], [25, 0])
+        del s["locations"]["Wentzville"]["ICON"]
+        out = watch.daily_assessments(s, "snow", day, day2)
+        self.assertIsNone(out[1]["support_pct"])
+        self.assertEqual(out[1]["possible_support_pct"], 25)
+
     def test_temporary_missing_model_does_not_claim_corroboration(self):
         stamp = dt.datetime.now(watch.UTC).isoformat()
         out = watch.captured_signals(snapshot(stamp, models=("GFS",)))

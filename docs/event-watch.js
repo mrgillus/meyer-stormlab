@@ -114,13 +114,79 @@
     return groups(state.index).find(g=>g.id===id||g.mode_ids.includes(id));
   }
   function modeLabel(item){return titles[item.kind]||item.title}
+  const families=[
+    {name:"Snow and ice",icon:"❄",kinds:["snow","light_snow","ice"]},
+    {name:"Rain and precipitation",icon:"☂",kinds:["rain","drizzle","showers","precipitation"]},
+    {name:"Thunderstorms and severe weather",icon:"ϟ",kinds:["thunderstorm","tornado","hail","damaging_wind","severe"]},
+    {name:"Wind",icon:"〰",kinds:["wind"]},
+    {name:"Temperature",icon:"◇",kinds:["freeze","cold","cold_stress","heat","heat_stress"]},
+    {name:"Visibility",icon:"≋",kinds:["fog"]},
+    {name:"Flooding",icon:"◈",kinds:["flood","flash_flood","river_flood"]}
+  ];
+  function score(p){
+    return !p||!numeric(p.support_pct)?"Unknown":(p.unknown_models?"≥":"")+p.support_pct+"%";
+  }
+  function nextDay(d){
+    const t=new Date(d+"T12:00:00Z");t.setUTCDate(t.getUTCDate()+1);return t.toISOString().slice(0,10);
+  }
+  function modeWindows(records){
+    // Current daily assessments are comparable only when their capture matches.
+    const map=new Map(),fallback=[];
+    records.forEach(m=>{
+      const days=m.daily_assessments||[];
+      if(!days.length){
+        fallback.push({start_date:m.start_date,end_date:m.end_date,label:modeScore(m),
+          note:m.status==="forecast_window_passed"?"Past forecast window":"Window-level support",id:m.id});
+        return;
+      }
+      days.forEach(p=>{
+        const label=score(p),note=p.support_pct===0?"Faded":p.unknown_models?"Incomplete coverage":"";
+        const old=map.get(p.start_date);
+        // Duplicate records for the same kind/day share the same underlying forecast.
+        if(!old||Date.parse(p.captured_at)>Date.parse(old.captured_at)){
+          map.set(p.start_date,{start_date:p.start_date,end_date:p.end_date,label,note,
+            id:m.id,captured_at:p.captured_at,key:JSON.stringify(p.models)});
+        }
+      });
+    });
+    const merged=[];
+    [...map.values()].sort((a,b)=>a.start_date.localeCompare(b.start_date)).forEach(p=>{
+      const prev=merged.at(-1);
+      if(prev&&prev.label===p.label&&prev.note===p.note&&prev.key===p.key&&
+          prev.captured_at===p.captured_at&&prev.id===p.id&&nextDay(prev.end_date)===p.start_date){
+        prev.end_date=p.end_date;
+      }else merged.push({...p});
+    });
+    return [...merged,...fallback].sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.end_date.localeCompare(b.end_date));
+  }
+  function familyRows(modes){
+    const known=new Set(families.flatMap(f=>f.kinds));
+    const other=modes.filter(m=>!known.has(m.kind)).map(m=>m.kind);
+    return [...families,{name:"Other weather",icon:"◎",kinds:[...new Set(other)]}].map(f=>{
+      const members=modes.filter(m=>f.kinds.includes(m.kind));
+      if(!members.length)return "";
+      const types=[...new Set(members.map(m=>m.kind))].map(kind=>{
+        const records=members.filter(m=>m.kind===kind).sort((a,b)=>a.start_date.localeCompare(b.start_date));
+        return '<div class="event-itinerary-type"><strong>'+safe(modeLabel(records[0]))+'</strong>'+
+          modeWindows(records).map(w=>'<div class="event-itinerary-window"><span>'+safe(dateRange(w))+
+            (w.note?'<small> · '+safe(w.note)+'</small>':'')+'</span><b class="'+(w.label==="0%"||w.label==="Unknown"?"muted":"")+'">'+safe(w.label)+'</b></div>').join("")+
+          '<details class="event-mode-history"><summary>Forecast evolution</summary>'+
+            records.map(m=>'<p class="watch-muted">'+safe(dateRange(m))+' · '+safe(describe(m.status))+'</p>'+
+              watchChart(m.assessments)+'<button type="button" class="event-case-button" data-event-id="'+safe(m.id)+'">Mode details →</button>').join("")+
+          '</details></div>';
+      }).join("");
+      return '<section class="event-itinerary-family"><h4><span aria-hidden="true">'+safe(f.icon)+'</span> '+safe(f.name)+'</h4>'+types+'</section>';
+    }).join("");
+  }
   function groupCard(group){
     const modes=modeItems(group),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
-    const tone=marker(group.status);
+    const tone=marker(group.status),types=new Set(modes.map(m=>m.kind)).size;
     return '<article class="event-signal '+safe(tone)+'"><div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+safe(kinds[primary?.kind]||"◎")+'</span><span class="event-flag">'+safe(describe(group.status))+'</span></div>'+
-      '<h3>Event '+safe(group.name)+'</h3><p class="event-dates">'+safe(dateRange(group))+' · '+modes.length+' weather mode(s)</p>'+
-      '<div class="event-mode-list">'+modes.map(m=>'<details class="event-mode" '+(m.id===primary?.id?'open':'')+'><summary><span>'+safe(kinds[m.kind]||"◎")+' '+safe(modeLabel(m))+'</span><strong>'+safe(modeScore(m))+'</strong></summary><p class="watch-muted">'+safe(dateRange(m))+' · '+safe(describe(m.status))+'</p>'+watchChart(m.assessments)+'</details>').join("")+'</div>'+
-      '<div class="event-evidence"><span>First seen '+safe(short(group.first_seen))+'</span><span>One regional date window</span></div>'+
+      '<h3>Event '+safe(group.name)+'</h3><p class="event-dates">'+safe(dateRange(group))+' · '+types+' weather mode(s)</p>'+
+      '<div class="event-itinerary-heading"><span>Weather mode / forecast dates</span><span>Model support</span></div>'+
+      '<div class="event-itinerary">'+familyRows(modes)+'</div>'+
+      '<small class="watch-muted">Regional threshold support, not event probability. Daily guidance; no hourly timing implied.</small>'+
+      '<div class="event-evidence"><span>First seen '+safe(short(group.first_seen))+'</span></div>'+
       '<button type="button" class="event-case-button" data-event-id="'+safe(primary?.id||group.primary_mode_id)+'">Explore event →</button></article>';
   }
   function modeScore(m){

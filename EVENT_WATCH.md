@@ -62,3 +62,7 @@ The collector requests rain and shower sums, daily WMO weather code and apparent
 ### Date-driven event grouping
 
 The persistent `event_groups` layer groups overlapping regional forecast date ranges across all weather modes. A parent event has one name, one date range and multiple underlying mode IDs. Each mode retains its existing forecast and verification history. Existing parent identities survive model changes; if windows separate the original primary mode keeps its parent identity. The earliest detected mode supplies the initial name, with notable snowfall preferred for simultaneous detection. Prior names are retained as aliases when groups merge. The grouping is a temporal association, not proof that every mode arises from the same meteorological system. Distinct nonoverlapping windows are separate events. No combined event probability is computed.
+
+### Event itinerary
+
+The compact event tile groups hazard modes by family, then by mode type; repeated episodes use separate date rows. Independent daily model support is derived from the latest actual capture, rather than spreading a whole-window threshold hit over every day. Adjacent days are combined only when model states and capture match. Missing coverage stays unknown. Historical or legacy windows without day-level evidence are labeled as window-level or past forecasts. Model histories and verification remain available per underlying mode. The source currently supplies daily guidance for this feature, not hour-level timing or calibrated probabilities.
