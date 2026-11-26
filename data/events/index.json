@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T19:15:57.609081+00:00",
+  "generated_at": "2026-11-26T19:20:55.578487+00:00",
   "source_latest_capture": "2026-11-26T16:38:10.281935+00:00",
-  "capture_age_hours": 2.63,
+  "capture_age_hours": 2.71,
   "capture_count_processed": 9,
   "status": "current",
   "screening_rules": {
@@ -11,6 +11,66 @@
       "threshold": 2.0,
       "unit": "in",
       "direction": "gte"
+    },
+    "light_snow": {
+      "field": "weather_code",
+      "threshold": 1,
+      "unit": "signal",
+      "direction": "gte"
+    },
+    "rain": {
+      "field": "rain_sum",
+      "threshold": 0.01,
+      "unit": "in",
+      "direction": "gte"
+    },
+    "showers": {
+      "field": "showers_sum",
+      "threshold": 0.01,
+      "unit": "in",
+      "direction": "gte"
+    },
+    "drizzle": {
+      "field": "weather_code",
+      "threshold": 1,
+      "unit": "signal",
+      "direction": "gte"
+    },
+    "ice": {
+      "field": "weather_code",
+      "threshold": 1,
+      "unit": "signal",
+      "direction": "gte"
+    },
+    "thunderstorm": {
+      "field": "weather_code",
+      "threshold": 1,
+      "unit": "signal",
+      "direction": "gte"
+    },
+    "fog": {
+      "field": "weather_code",
+      "threshold": 1,
+      "unit": "signal",
+      "direction": "gte"
+    },
+    "freeze": {
+      "field": "temperature_2m_min",
+      "threshold": 32,
+      "unit": "F",
+      "direction": "lte"
+    },
+    "heat_stress": {
+      "field": "apparent_temperature_max",
+      "threshold": 105,
+      "unit": "F",
+      "direction": "gte"
+    },
+    "cold_stress": {
+      "field": "apparent_temperature_min",
+      "threshold": 0,
+      "unit": "F",
+      "direction": "lte"
     },
     "precipitation": {
       "field": "precipitation_sum",
@@ -41,7 +101,8 @@
     "Research screening signals, not official NWS alerts or calibrated probabilities.",
     "Support percent counts confirmed sources out of four. Zero requires four clear sources.",
     "Daily deterministic stitched forecasts; model initialization not identified.",
-    "Signals cannot establish severe thunderstorms, tornadoes, flood risk, or snow depth.",
+    "Weather-code signals describe the most severe coded daily condition, not every hazard.",
+    "Thunderstorm signals are not severe, tornado, hail, or damaging-wind probabilities; flooding requires dedicated hydrologic evidence.",
     "Forecast history is not ground truth; no model skill verdict without observations.",
     "15-day GFS is the longest available collector input. No 17–21 day detection."
   ],
@@ -51,6 +112,7 @@
       "kind": "snow",
       "title": "Snowfall potential",
       "name": "Drift",
+      "priority": "notable",
       "assessments": [
         {
           "captured_at": "2026-11-24T18:57:10.943633+00:00",
@@ -254,6 +316,7 @@
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
       "name": "Alder",
+      "priority": "notable",
       "assessments": [
         {
           "captured_at": "2026-11-24T18:57:10.943633+00:00",
@@ -450,6 +513,7 @@
       "kind": "wind",
       "title": "Strong wind signal",
       "name": "Gale",
+      "priority": "notable",
       "assessments": [
         {
           "captured_at": "2026-11-26T16:38:10.281935+00:00",
@@ -515,6 +579,7 @@
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
       "name": "Birch",
+      "priority": "notable",
       "assessments": [
         {
           "captured_at": "2026-11-24T18:57:10.943633+00:00",
@@ -706,6 +771,7 @@
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
       "name": "Flint",
+      "priority": "notable",
       "assessments": [
         {
           "captured_at": "2026-11-26T10:33:49.497972+00:00",
@@ -789,6 +855,7 @@
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
       "name": "Cedar",
+      "priority": "notable",
       "assessments": [
         {
           "captured_at": "2026-11-24T18:57:10.943633+00:00",
@@ -986,6 +1053,7 @@
       "kind": "wind",
       "title": "Strong wind signal",
       "name": "Ember",
+      "priority": "notable",
       "assessments": [
         {
           "captured_at": "2026-11-25T04:42:00.447753+00:00",
