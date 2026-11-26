@@ -147,6 +147,7 @@ function renderPulse(p,mode){
     const label=hour(h.end_ct)+" · "+h.snow_in.toFixed(3)+' inches modeled'+(h.source==="prior_forecast"?" · frozen earlier forecast, not observed":"");
     return '<button type="button" class="'+classes+'" style="height:'+pct.toFixed(1)+'%" title="'+e(label)+'" aria-label="'+e(label)+'"></button>';
   }).join("");
+  q("pulseChart").querySelectorAll(".pulse-bar").forEach((b,i)=>b.addEventListener("click",()=>{const h=bars[i];set("chartHelp",hour(h.end_ct)+" · "+h.snow_in.toFixed(3)+'" forecast snowfall'+(h.source==="prior_forecast"?" · stored earlier forecast, NOT an observation":" · latest model forecast"));}));
   const start=bars[0].end_ct,end=bars[bars.length-1].end_ct;
   q("pulseAxis").innerHTML="<span>"+e(hour(start))+"</span><span>"+e(mode==="active"?"Past ← · → Forecast":"Modeled storm window")+"</span><span>"+e(hour(end))+"</span>";
   set("chartHelp",mode==="active"?"The storm's modeled hourly heartbeat; dimmed bars are frozen older forecasts.":mode==="past"?"An archived forecast timeline, not a reconstructed observation.":"A developing forecast timeline; peak timing may change.");
@@ -273,6 +274,7 @@ function generalPulse(g,kind){
     const v=h[kind],label=hour(h.end_ct)+" · "+v.toFixed(2)+suffix+" modeled";
     return '<button class="pulse-bar'+(v>=peak-.000001?" peak":"")+'" type="button" style="height:'+Math.max(2,100*v/peak).toFixed(1)+'%" aria-label="'+e(label)+'" title="'+e(label)+'"></button>';
   }).join("");
+  q("pulseChart").querySelectorAll(".pulse-bar").forEach((b,i)=>b.addEventListener("click",()=>{const h=valid[i];set("chartHelp",hour(h.end_ct)+" · "+h[kind].toFixed(2)+suffix+" modeled · "+h.sources+" model time-series available");}));
   q("pulseAxis").innerHTML="<span>"+e(hour(valid[0].end_ct))+"</span><span>Next 48 hours →</span><span>"+e(hour(valid[valid.length-1].end_ct))+"</span>";
   set("pulseProvenance","Live hourly guidance averaged across responding models, not radar observations. Provider time series may combine model cycles.");
 }
@@ -371,6 +373,7 @@ function classify(v){
 }
 function datePlus(date,offset){const d=new Date(date+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+offset);return d.toISOString().slice(0,10)}
 async function loadHorizon(){
+  const requestedLocation=state.location;
   const button=q("horizonRefresh");button.disabled=true;
   set("horizonStatus","Scanning model guidance…");
   q("watchList").innerHTML='<div class="blank-state">Checking the latest available daily model forecasts…</div>';
@@ -381,6 +384,7 @@ async function loadHorizon(){
     return {model:m.name,daily:j.daily};
   });
   const settled=await Promise.allSettled(futures);
+  if(requestedLocation!==state.location){button.disabled=false;return}
   const feeds=settled.filter(x=>x.status==="fulfilled").map(x=>x.value);
   state.horizon={feeds,updated:new Date(),failed:settled.length-feeds.length};
   renderHorizon();
