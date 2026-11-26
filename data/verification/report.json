@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T03:16:52.002569+00:00",
-  "source_latest_observation_capture": "2026-11-26T03:16:52.002569+00:00",
+  "generated_at": "2026-11-26T03:17:34.756869+00:00",
+  "source_latest_observation_capture": "2026-11-26T03:17:34.756869+00:00",
   "provider_status": "retrieved",
   "provider_error": null,
   "source": "RCC-ACIS daily station reports (snowfall and liquid precipitation)",
