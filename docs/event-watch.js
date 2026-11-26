@@ -94,7 +94,7 @@
     return '<article class="event-signal '+safe(tone)+'">'+
       '<div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+
       safe(kinds[item.kind]||"◎")+'</span><span class="event-flag">'+safe(describe(item.status))+'</span></div>'+
-      '<h3>Watch '+safe(watchName(item))+'</h3><p class="event-dates">'+safe(label)+' · '+safe(dateRange(item))+'</p><small class="watch-muted">'+safe(windowLabel+(routine(item)?" · Routine signal":" · Notable signal"))+'</small>'+
+      '<h3>Event '+safe(watchName(item))+'</h3><p class="event-dates">'+safe(label)+' · '+safe(dateRange(item))+'</p><small class="watch-muted">'+safe(windowLabel+(routine(item)?" · Routine signal":" · Notable signal"))+'</small>'+
       watchChart(item.assessments)+
       '<p class="event-story">'+safe(modelEvidence(item))+". "+safe(item.snapshots_seen)+" stored model capture(s). "+
       safe(item.locations?.length||0)+' regional location(s) flagged.</p>'+
@@ -116,7 +116,7 @@
     if(display.length){
       const notable=display.filter(x=>!routine(x)), everyday=display.filter(routine);
       q("eventWatchList").innerHTML=(notable.length?notable.map(card).join(""):"")+
-        (everyday.length?'<details class="routine-watches" open><summary>Routine weather watches · '+everyday.length+'</summary><div class="event-watch-list">'+everyday.map(card).join("")+'</div></details>':"");
+        (everyday.length?'<details class="routine-watches" open><summary>Routine weather events · '+everyday.length+'</summary><div class="event-watch-list">'+everyday.map(card).join("")+'</div></details>':"");
     }else{
       q("eventWatchList").innerHTML='<div class="blank-state">No qualifying active or fading model signals in the published regional case catalog. The live model scan below can still be explored.</div>';
     }
@@ -126,7 +126,7 @@
   }
   function pickRow(item){
     const selected=state.selected===item.id?" is-selected":"";
-    const label="Watch "+watchName(item)+" · "+(titles[item.kind]||item.title);
+    const label="Event "+watchName(item)+" · "+(titles[item.kind]||item.title);
     const note=item.status==="in_latest_capture"?"Developing model signal":
       item.status==="not_in_latest_capture"?"Faded from newer guidance":"Forecast window passed";
     return '<button class="case-choice'+selected+'" type="button" data-case-id="'+safe(item.id)+'">'+
@@ -187,7 +187,7 @@
     const assessments=(caseFile.assessments||[]).slice().reverse();
     const last=caseFile.timeline?.at(-1),first=caseFile.timeline?.[0];
     q("eventCaseDetail").innerHTML='<div class="case-detail-top"><div><span class="kicker">EVENT INTELLIGENCE / '+safe(summary.id)+'</span>'+
-      '<h3>Watch '+safe(watchName(summary))+'</h3><p>'+safe(label)+' · '+safe(dateRange(summary))+'</p></div><span class="event-flag">'+
+      '<h3>Event '+safe(watchName(summary))+'</h3><p>'+safe(label)+' · '+safe(dateRange(summary))+'</p></div><span class="event-flag">'+
       safe(describe(summary.status))+'</span></div>'+
       watchChart(caseFile.assessments)+
       '<div class="case-detail-numbers"><div><span>FIRST SEEN</span><strong>'+safe(stamp(caseFile.first_seen))+'</strong></div>'+
