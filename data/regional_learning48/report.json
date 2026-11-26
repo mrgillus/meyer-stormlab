@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T11:57:51.624160+00:00",
+  "generated_at": "2026-11-26T12:55:01.833767+00:00",
   "archive_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
-  "archive_snapshot_sha256": "de2c02d2a6f852e74325c2751c0b76a12c577a3c2c2314db63653f9ee2ab8e73",
-  "complete_shards": 3889,
+  "archive_snapshot_sha256": "20286312487d2a948ba5b9d3d5922c13c53df7b19dbb38597803d303615e129c",
+  "complete_shards": 3917,
   "feature_errors": [],
   "results": [
     {
@@ -106,7 +106,7 @@
           "boosted": {
             "date_weighted_mae": 0.08829713739576188,
             "date_weighted_rmse": 0.4545088074993944,
-            "bias": -0.012776297545789387,
+            "bias": -0.012776297545789388,
             "snow_day_mae": 2.799333559281639,
             "hits": 11,
             "misses": 146,
@@ -193,7 +193,7 @@
           "boosted": {
             "date_weighted_mae": 0.15848117331953648,
             "date_weighted_rmse": 0.7827906347788511,
-            "bias": -0.013268251707073846,
+            "bias": -0.013268251707073849,
             "snow_day_mae": 3.234114300376158,
             "hits": 83,
             "misses": 273,
@@ -247,7 +247,7 @@
           "boosted": {
             "date_weighted_mae": 0.085544446578945,
             "date_weighted_rmse": 0.4548638720539733,
-            "bias": -0.004085579466492713,
+            "bias": -0.004085579466492715,
             "snow_day_mae": 2.6030699730677256,
             "hits": 29,
             "misses": 128,
