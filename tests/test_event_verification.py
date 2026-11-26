@@ -142,6 +142,29 @@ class VerificationTests(unittest.TestCase):
                   dt.date(2027,4,1))
         self.assertEqual(trimmed,[])
 
+    def test_completed_event_evidence_is_not_deleted_after_retention_window(self):
+        with tempfile.TemporaryDirectory() as root:
+            old_data,old_events,old_out=v.DATA,v.EVENTS,v.OUT
+            try:
+                v.DATA=pathlib.Path(root)
+                v.EVENTS=v.DATA/"events"
+                v.OUT=v.DATA/"verification"
+                v.EVENTS.mkdir()
+                v.OUT.mkdir()
+                (v.EVENTS/"catalog.json").write_text('{"events":[]}')
+                previous={"event_id":"snow-20260101","kind":"snow",
+                          "forecast_dates":{"start":"2026-01-01","end":"2026-01-02"},
+                          "verification_status":"not_scored",
+                          "station_daily_reports":[{"station_id":"ACIS:4","value_in":3.0}]}
+                (v.OUT/"report.json").write_text(json.dumps({"events":[previous]}))
+                v.main()
+                after=json.loads((v.OUT/"report.json").read_text())
+                self.assertEqual(len(after["events"]),1)
+                self.assertEqual(after["events"][0]["event_id"],"snow-20260101")
+                self.assertEqual(after["events"][0]["station_daily_reports"][0]["value_in"],3.0)
+            finally:
+                v.DATA,v.EVENTS,v.OUT=old_data,old_events,old_out
+
     def test_acis_provider_url_lists_snow_precip_and_flags(self):
         url=v.provider_request(dt.date(2026,11,24),dt.date(2026,11,26))
         self.assertIn("MultiStnData",url)
