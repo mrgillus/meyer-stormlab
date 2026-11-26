@@ -232,7 +232,7 @@ def forecast_reference(case):
                 elif unit not in ("in","inch"):continue
                 forecasts.append({"town":town,"model":model,"calendar_date":day,"modeled_daily_snow_in":round(value,3)})
     return {"status":"pre_event_capture","captured_at":captured.isoformat(),
-            "snapshot_path":str(path.relative_to(ROOT)),
+            "snapshot_path":str(path.relative_to(DATA.parent)),
             "daily_forecasts":forecasts[:500],
             "note":"Model daily calendar windows have NOT been matched to station observation-day windows. Do not calculate an error score."}
 
