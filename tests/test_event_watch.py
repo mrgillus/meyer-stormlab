@@ -87,6 +87,42 @@ class EventWatchTests(unittest.TestCase):
             finally:
                 watch.DATA, watch.DEST = old_data, old_dest
 
+    def test_assessment_clear_missing_and_positive(self):
+        stamp = dt.datetime.now(watch.UTC).isoformat()
+        s = snapshot(stamp, snow=0, models=watch.MODELS)
+        s["locations"] = {p: s["locations"]["Wentzville"].copy() for p in watch.PLACES}
+        day = s["locations"]["Wentzville"]["GFS"]["daily"]["time"][0]
+        self.assertEqual(watch.assess(s, "snow", day, day)["support_pct"], 0)
+        del s["locations"]["Wentzville"]["ICON"]
+        a = watch.assess(s, "snow", day, day)
+        self.assertIsNone(a["support_pct"])
+        self.assertEqual(a["possible_support_pct"], 25)
+        s["locations"]["Wentzville"]["GFS"]["daily"]["snowfall_sum"] = [3]
+        a = watch.assess(s, "snow", day, day)
+        self.assertEqual(a["support_pct"], 25)
+        self.assertEqual(a["possible_support_pct"], 50)
+
+    def test_watch_name_and_faded_history_persist(self):
+        now = dt.datetime.now(watch.UTC)
+        a = snapshot((now-dt.timedelta(hours=3)).isoformat(), models=watch.MODELS)
+        day = a["locations"]["Wentzville"]["GFS"]["daily"]["time"][0]
+        b = snapshot((now-dt.timedelta(hours=2)).isoformat(), snow=0, date=day, models=watch.MODELS)
+        c = snapshot((now-dt.timedelta(hours=1)).isoformat(), date=day, models=watch.MODELS)
+        for s in (a,b,c):
+            s["locations"] = {p: s["locations"]["Wentzville"] for p in watch.PLACES}
+        events = []
+        watch.upsert(events, watch.captured_signals(a)[0], a["retrieved_at"], set())
+        watch.assign_names(events)
+        name = events[0]["name"]
+        watch.update_assessments(events, [a,b])
+        self.assertEqual([p["support_pct"] for p in events[0]["assessments"]], [100,0])
+        watch.upsert(events, watch.captured_signals(c)[0], c["retrieved_at"], set())
+        watch.assign_names(events)
+        watch.update_assessments(events, [a,b,c])
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]["name"], name)
+        self.assertEqual([p["support_pct"] for p in events[0]["assessments"]], [100,0,100])
+
     def test_temporary_missing_model_does_not_claim_corroboration(self):
         stamp = dt.datetime.now(watch.UTC).isoformat()
         out = watch.captured_signals(snapshot(stamp, models=("GFS",)))

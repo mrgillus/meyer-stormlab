@@ -51,13 +51,42 @@
       (numeric(v)?v.toFixed(label==="mph"||label==="°F"?0:2):"—")+" "+label+
       ". This is not a storm-total forecast.";
   }
+  const watchName = item => item.name || item.id;
+  function watchChart(points){
+    if(!Array.isArray(points)||!points.length)return '<p class="watch-muted">Assessment history awaits a collector update.</p>';
+    const last=points.at(-1), previous=points.at(-2), pct=last.support_pct;
+    const label=!numeric(pct)?"Unknown":(last.unknown_models?"≥":"")+pct+"%";
+    const change=numeric(pct)&&numeric(previous?.support_pct)&&!last.unknown_models&&!previous.unknown_models?
+      (pct>previous.support_pct?"Strengthening":pct<previous.support_pct?"Weakening":pct===0?"Faded":"Steady"):"";
+    const x0=32,x1=310,y0=9,y1=88,t0=Date.parse(points[0].captured_at),t1=Date.parse(last.captured_at);
+    const x=p=>t0===t1?(x0+x1)/2:x0+(Date.parse(p.captured_at)-t0)/(t1-t0)*(x1-x0);
+    const y=v=>y1-v/100*(y1-y0);
+    let lines="",dots="",prior=null;
+    points.forEach(p=>{
+      const px=x(p),lo=numeric(p.support_pct)?p.support_pct:0;
+      if(p.unknown_models)lines+='<line class="watch-uncertain" x1="'+px+'" x2="'+px+'" y1="'+y(lo)+'" y2="'+y(p.possible_support_pct)+'"><title>'+safe(stamp(p.captured_at))+' · incomplete coverage</title></line>';
+      if(numeric(p.support_pct)){
+        const py=y(p.support_pct);
+        if(prior)lines+='<line class="watch-trend-line" x1="'+prior[0]+'" y1="'+prior[1]+'" x2="'+px+'" y2="'+py+'"/>';
+        dots+='<circle class="watch-dot" cx="'+px+'" cy="'+py+'" r="2.6"><title>'+safe(stamp(p.captured_at))+' · '+safe(p.supporting_models)+' of '+safe(p.total_models)+' support; '+safe(p.unknown_models)+' unknown</title></circle>';
+        prior=[px,py];
+      }else prior=null;
+    });
+    const grid=[0,50,100].map(v=>'<line class="watch-grid" x1="'+x0+'" x2="'+x1+'" y1="'+y(v)+'" y2="'+y(v)+'"/><text x="1" y="'+(y(v)+3)+'">'+v+'%</text>').join("");
+    const chips=Object.entries(last.models||{}).map(([m,s])=>'<span class="watch-model '+safe(s)+'">'+safe(m)+' · '+safe(s==="supports"?"YES":s==="clear"?"NO":"?")+'</span>').join("");
+    return '<div class="watch-assessment"><div class="watch-score"><strong>'+safe(label)+'</strong><div><b>Confirmed model support</b><small>'+safe(last.supporting_models)+'/'+safe(last.total_models)+' supporting · '+safe(last.total_models-last.unknown_models)+'/'+safe(last.total_models)+' assessed'+(change?' · '+safe(change):'')+'</small></div></div>'+
+      '<svg class="watch-graph" viewBox="0 0 320 110" role="img" aria-label="Confirmed model support by forecast capture">'+grid+lines+dots+
+      '<text x="'+x0+'" y="105">'+safe(short(points[0].captured_at))+'</text><text x="'+x1+'" y="105" text-anchor="end">'+safe(short(last.captured_at))+'</text></svg>'+
+      '<div class="watch-models">'+chips+'</div><small class="watch-muted">'+safe(stamp(last.captured_at))+' · Not an event probability. Dashed ranges = unknown coverage.</small></div>';
+  }
   function card(item){
     const tone=marker(item.status),label=titles[item.kind]||item.title;
     const sourceCount=item.models?.length||0;
     return '<article class="event-signal '+safe(tone)+'">'+
       '<div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+
       safe(kinds[item.kind]||"◎")+'</span><span class="event-flag">'+safe(describe(item.status))+'</span></div>'+
-      '<h3>'+safe(label)+'</h3><p class="event-dates">'+safe(dateRange(item))+'</p>'+
+      '<h3>Watch '+safe(watchName(item))+'</h3><p class="event-dates">'+safe(label)+' · '+safe(dateRange(item))+'</p>'+
+      watchChart(item.assessments)+
       '<p class="event-story">'+safe(modelEvidence(item))+". "+safe(item.snapshots_seen)+" stored model capture(s). "+
       safe(item.locations?.length||0)+' regional location(s) flagged.</p>'+
       '<div class="event-evidence"><span>'+safe(sourceCount)+' model source(s)</span>'+
@@ -73,7 +102,7 @@
     set("eventWatchStatus",current?index.capture_count_processed+" captures tracked":"ARCHIVE UPDATES DELAYED");
     const active=index.events.filter(x=>x.status==="in_latest_capture");
     const fading=index.events.filter(x=>x.status==="not_in_latest_capture");
-    const display=[...active,...fading].slice(0,6);
+    const display=[...active,...fading].sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
     if(display.length){
       q("eventWatchList").innerHTML=display.map(card).join("");
     }else{
@@ -85,7 +114,7 @@
   }
   function pickRow(item){
     const selected=state.selected===item.id?" is-selected":"";
-    const label=titles[item.kind]||item.title;
+    const label="Watch "+watchName(item)+" · "+(titles[item.kind]||item.title);
     const note=item.status==="in_latest_capture"?"Developing model signal":
       item.status==="not_in_latest_capture"?"Faded from newer guidance":"Forecast window passed";
     return '<button class="case-choice'+selected+'" type="button" data-case-id="'+safe(item.id)+'">'+
@@ -112,6 +141,10 @@
     return state.catalogInFlight;
   }
   function timelineRow(item,kind){
+    if(item.models&&!Array.isArray(item.models)){
+      const support=numeric(item.support_pct)?(item.unknown_models?"≥":"")+item.support_pct+"%":"Unknown";
+      return '<tr><td>'+safe(stamp(item.captured_at))+'</td><td>'+safe(support)+'</td><td>'+safe(item.unknown_models)+'</td><td>'+safe(Object.entries(item.models).map(([m,s])=>m+": "+s).join(" · "))+'</td><td>'+safe(dateRange(item))+'</td></tr>';
+    }
     const peak=item.peak;
     const unit=kind==="wind"?"mph":kind==="cold"||kind==="heat"?"°F":"in";
     const max=peak&&numeric(peak.value)?peak.value.toFixed(unit==="mph"||unit==="°F"?0:2)+" "+unit:"—";
@@ -139,10 +172,12 @@
       return;
     }
     const timeline=Array.isArray(caseFile.timeline)?caseFile.timeline.slice().reverse():[];
+    const assessments=(caseFile.assessments||[]).slice().reverse();
     const last=caseFile.timeline?.at(-1),first=caseFile.timeline?.[0];
     q("eventCaseDetail").innerHTML='<div class="case-detail-top"><div><span class="kicker">EVENT INTELLIGENCE / '+safe(summary.id)+'</span>'+
-      '<h3>'+safe(label)+'</h3><p>'+safe(dateRange(summary))+'</p></div><span class="event-flag">'+
+      '<h3>Watch '+safe(watchName(summary))+'</h3><p>'+safe(label)+' · '+safe(dateRange(summary))+'</p></div><span class="event-flag">'+
       safe(describe(summary.status))+'</span></div>'+
+      watchChart(caseFile.assessments)+
       '<div class="case-detail-numbers"><div><span>FIRST SEEN</span><strong>'+safe(stamp(caseFile.first_seen))+'</strong></div>'+
       '<div><span>LAST REPORTED</span><strong>'+safe(stamp(caseFile.last_seen))+'</strong></div>'+
       '<div><span>FORECAST CAPTURES</span><strong>'+safe(timeline.length)+'</strong></div></div>'+
@@ -150,11 +185,12 @@
       safe(summary.threshold?.value)+' '+safe(unit)+' screening level. '+
       safe(modelEvidence(summary))+". "+
       safe(localEvidence(summary))+'</p>'+
-      '<p class="case-detail-copy">Ground observations are not connected. A captured forecast is not a storm observation, and this signal is not an NWS watch, warning, or calibrated risk forecast.</p>'+
-      '<div class="capture-scroll"><table class="capture-table"><thead><tr><th>Forecast captured</th><th>Models</th><th>Same-place support</th><th>Strongest daily sample*</th><th>Forecast days</th></tr></thead><tbody>'+
+      '<p class="case-detail-copy">Observation verification is shown separately when available. A captured forecast is not a storm observation, and this signal is not an NWS watch, warning, or calibrated risk forecast.</p>'+
+      (assessments.length?'<div class="capture-scroll"><table class="capture-table"><thead><tr><th>Reassessed</th><th>Support</th><th>Unknown models</th><th>Model status</th><th>Forecast days</th></tr></thead><tbody>'+assessments.map(t=>timelineRow(t,summary.kind)).join("")+'</tbody></table></div>':'')+
+      '<div class="capture-scroll"><table class="capture-table"><thead><tr><th>Positive capture</th><th>Models</th><th>Same-place support</th><th>Strongest daily sample*</th><th>Forecast days</th></tr></thead><tbody>'+
       timeline.slice(0,25).map(t=>timelineRow(t,summary.kind)).join("")+'</tbody></table></div>'+
       '<p class="fine-print">*The strongest triggering model/day/location sample is not a forecast for your selected town. '+
-      'Values represent archived stitched guidance, not model initialization times. No measured outcome or accuracy verdict is available.'+
+      'Values represent archived stitched guidance, not model initialization times. See the separate verification panel for any available measured evidence.'+
       (timeline.length>25?" Showing 25 most recent of "+timeline.length+" captures.":"")+'</p>';
     q("eventCaseList").querySelectorAll(".case-choice").forEach(button=>
       button.classList.toggle("is-selected",button.dataset.caseId===summary.id));
@@ -165,7 +201,7 @@
       renderHorizon();renderArchiveList();return;
     }
     state.inFlight=read("index.json").then(d=>{
-      state.index=d;state.loadedAt=Date.now();
+      state.index=d;state.catalog=null;state.loadedAt=Date.now();
       renderHorizon();renderArchiveList();
     }).catch(e=>{
       if(!state.index){

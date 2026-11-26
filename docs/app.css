@@ -128,3 +128,6 @@ button.model-row.is-selected .model-name{color:#9ce6f4}
  .verification-summary strong{font-size:17px}
  .verification-forecast{padding:14px}
 }
+
+/* Named Horizon watch assessment */
+.watch-assessment{display:grid;gap:8px;padding:12px 0;border-block:1px solid #355469;margin:5px 0 9px;min-width:0}.watch-score{display:flex;gap:12px;align-items:center}.watch-score>strong{font-size:30px;color:#88c8ef;line-height:1.1}.watch-score>div{display:grid;gap:3px}.watch-score b{font-size:12px;color:#e5f2fa}.watch-score small,.watch-muted{color:#a7c1d1;font-size:11px;line-height:1.5}.watch-graph{width:100%;max-width:640px;display:block;overflow:visible}.watch-graph text{font-size:9px;fill:#a7c1d1}.watch-grid{stroke:#38556c;stroke-width:.7}.watch-trend-line{stroke:#88c8ef;stroke-width:2.2;stroke-linecap:round}.watch-dot{fill:#88c8ef}.watch-uncertain{stroke:#c3a66d;stroke-width:1.5;stroke-dasharray:3 3}.watch-models{display:flex;flex-wrap:wrap;gap:5px}.watch-model{border:1px solid #40586a;border-radius:5px;padding:3px 6px;font-size:10px;color:#b3c5d1}.watch-model.supports{color:#a6dfcd;border-color:#488571}.watch-model.unknown{color:#e3c28a;border-style:dashed}

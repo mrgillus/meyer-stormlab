@@ -50,3 +50,7 @@ python scripts/event_watch.py
 Frontend integration: \`docs/event-watch.js\` reads the compact index for *Horizon* and the catalog for the *Storm Files* timeline. Existing \`docs/app.js\` operates the live hourly and specialized-storm views.
 
 See \`.github/workflows/event-watch.yml\` for the actual schedule, publication and retry rules.
+
+### Named Horizon watches
+
+Each case keeps a permanent sequential name in addition to its original ID. Every retained forecast capture is reassessed against the case window as known at that capture. Positive, clear and unknown evidence are preserved separately; faded watches remain visible through their latest anticipated date range, then move to Storm Files. Confirmed support is the percentage of the four configured sources crossing the regional threshold anywhere in the remaining window, **not** a probability or same-place concurrence. A source is clear only if all eight locations and remaining dates have valid below-threshold guidance; missing data is unknown. A zero is plotted only when all four sources are clear; partial support is a lower bound with a dashed possible-support range. Historical backfill uses the retained real captures, never invented forecasts. Names are StormLab research labels, not official storm names or NWS watches.

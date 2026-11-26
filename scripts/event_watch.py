@@ -21,6 +21,12 @@ UTC = dt.timezone.utc
 CT = ZoneInfo("America/Chicago")
 SCHEMA = 1
 MODELS = ("GFS", "ECMWF", "GEM", "ICON")
+PLACES = ("Wentzville", "St. Louis", "St. Charles", "Affton", "Wildwood",
+          "Washington", "Belleville", "Alton")
+WATCH_NAMES = ("Alder", "Birch", "Cedar", "Drift", "Ember", "Flint", "Gale",
+               "Hawthorn", "Indigo", "Juniper", "Kestrel", "Linden", "Maple",
+               "North", "Onyx", "Pine", "Quartz", "Raven", "Sable", "Thorn",
+               "Umber", "Vale", "Willow", "Xenia", "Yarrow", "Zephyr")
 # Screening criteria, not official warning thresholds or event probabilities.
 THRESHOLDS = {
     "snow": ("snowfall_sum", 2.0, "gte", "in"),
@@ -171,7 +177,9 @@ def event_id(item, used):
 
 
 def upsert(events, item, stamp, used):
-    matches = [v for v in events if v["id"] not in used and overlaps(v, item)]
+    today = parse_time(stamp).astimezone(CT).date().isoformat()
+    matches = [v for v in events if v["id"] not in used and
+               v["end_date"] >= today and overlaps(v, item)]
     if matches:
         # Prefer the most recently seen case if multiple similar older events exist.
         case = max(matches, key=lambda x: x["last_seen"])
@@ -200,6 +208,80 @@ def upsert(events, item, stamp, used):
     return case
 
 
+def assign_names(events):
+    used = {e["name"] for e in events if e.get("name")}
+    number = 0
+    for event in sorted(events, key=lambda e: (e["first_seen"], e["id"])):
+        if event.get("name"):
+            continue
+        while True:
+            cycle, idx = divmod(number, len(WATCH_NAMES))
+            number += 1
+            name = WATCH_NAMES[idx] + (f" {cycle + 1}" if cycle else "")
+            if name not in used:
+                break
+        event["name"] = name
+        used.add(name)
+
+
+def assess(snapshot, kind, start_date, end_date):
+    """Confirmed support out of four sources, not a calibrated probability.
+    A negative requires valid below-threshold values across all remaining
+    dates and all eight locations. Missing or truncated data is unknown.
+    """
+    stamp = snapshot["retrieved_at"]
+    today = parse_time(stamp).astimezone(CT).date()
+    start = max(today, dt.date.fromisoformat(start_date))
+    end = dt.date.fromisoformat(end_date)
+    if start > end:
+        return None
+    dates = [(start + dt.timedelta(days=i)).isoformat()
+             for i in range((end - start).days + 1)]
+    field, threshold, operation, target = THRESHOLDS[kind]
+    states = {}
+    for model in MODELS:
+        hit, complete = False, True
+        for place in PLACES:
+            sample = (snapshot.get("locations", {}).get(place, {}) or {}).get(model) or {}
+            daily, units = sample.get("daily") or {}, sample.get("units") or {}
+            by_date = dict(zip(daily.get("time") or [], daily.get(field) or []))
+            for date in dates:
+                value = normalized(by_date.get(date), units.get(field), target)
+                if value is None:
+                    complete = False
+                elif (value >= threshold if operation == "gte" else value <= threshold):
+                    hit = True
+        states[model] = "supports" if hit else "clear" if complete else "unknown"
+    support = sum(s == "supports" for s in states.values())
+    unknown = sum(s == "unknown" for s in states.values())
+    return {
+        "captured_at": stamp, "start_date": start_date, "end_date": end_date,
+        "models": states, "supporting_models": support, "unknown_models": unknown,
+        "total_models": len(MODELS),
+        "support_pct": round(100 * support / len(MODELS), 1) if support or not unknown else None,
+        "possible_support_pct": round(100 * (support + unknown) / len(MODELS), 1),
+    }
+
+
+def update_assessments(events, captures):
+    """Backfill only from retained real captures, then append idempotently."""
+    for event in events:
+        old = {x["captured_at"]: x for x in event.get("assessments", [])}
+        positive = sorted(event.get("timeline", []), key=lambda t: parse_time(t["captured_at"]))
+        for capture in captures:
+            stamp = capture["retrieved_at"]
+            if stamp in old:
+                continue
+            eligible = [x for x in positive if parse_time(x["captured_at"]) <= parse_time(stamp)]
+            if not eligible:
+                continue
+            window = eligible[-1]
+            point = assess(capture, event["kind"], window["start_date"], window["end_date"])
+            if point is not None:
+                old[stamp] = point
+        event["assessments"] = sorted(old.values(), key=lambda t: parse_time(t["captured_at"]))
+
+
 def main():
     history = read_json(DATA / "history.json", [])
     if not isinstance(history, list):
@@ -224,6 +306,8 @@ def main():
         processed.add(stamp)
         new_count += 1
 
+    assign_names(events)
+    update_assessments(events, captures)
     latest_stamp = captures[-1]["retrieved_at"] if captures else None
     now = dt.datetime.now(UTC)
     today = now.astimezone(CT).date()
@@ -239,6 +323,8 @@ def main():
         start = dt.date.fromisoformat(event["start_date"])
         summary = {
             "id": event["id"], "kind": event["kind"], "title": event["title"],
+            "name": event["name"],
+            "assessments": event["assessments"][-60:],
             "start_date": event["start_date"], "end_date": event["end_date"],
             "first_seen": event["first_seen"], "last_seen": event["last_seen"],
             "snapshots_seen": len(event["timeline"]), "status": status,
@@ -272,12 +358,14 @@ def main():
                                 "direction": v[2]} for k, v in THRESHOLDS.items()},
         "limitations": [
             "Research screening signals, not official NWS alerts or calibrated probabilities.",
+            "Support percent counts confirmed sources out of four. Zero requires four clear sources.",
             "Daily deterministic stitched forecasts; model initialization not identified.",
             "Signals cannot establish severe thunderstorms, tornadoes, flood risk, or snow depth.",
             "Forecast history is not ground truth; no model skill verdict without observations.",
             "15-day GFS is the longest available collector input. No 17–21 day detection.",
         ],
-        "events": summarized[:40],
+        "events": [x for x in summarized if x["status"] != "forecast_window_passed"] +
+                  [x for x in summarized if x["status"] == "forecast_window_passed"][:40],
     }
     # Never destroy existing event history if no fresh capture is available.
     if captures or not (DEST / "index.json").exists():
