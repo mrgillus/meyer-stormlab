@@ -1,0 +1,55 @@
+name: Evaluate paired storm-window learning
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 10 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/storm_total_benchmark.py'
+      - 'tests/test_storm_total_benchmark.py'
+      - '.github/workflows/storm-total-learning.yml'
+permissions:
+  contents: write
+concurrency:
+  group: stormlab-storm-total-learning
+  cancel-in-progress: false
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p test_storm_total_benchmark.py -v
+      - run: python scripts/storm_total_benchmark.py
+      - name: Publish research report
+        run: |
+          set -euo pipefail
+          stage=$(mktemp)
+          trap 'rm -f "$stage"' EXIT
+          cp data/storm_total_learning/report.json "$stage"
+          base=$(git rev-parse HEAD)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$base" HEAD -- scripts/storm_total_benchmark.py data/regional_learning/heldout_predictions.csv.gz data/regional_learning48/heldout_predictions.csv.gz data/regional_learning/report.json data/regional_learning48/report.json; then
+              echo "Training inputs changed; rerun against the new published models."
+              exit 1
+            fi
+            mkdir -p data/storm_total_learning
+            cp "$stage" data/storm_total_learning/report.json
+            git add data/storm_total_learning/report.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Publish paired 48-hour storm-window benchmark"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
