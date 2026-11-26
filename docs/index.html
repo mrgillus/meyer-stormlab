@@ -7,6 +7,7 @@
 <meta name="description" content="Meyer StormLab — follow the atmosphere from early signals to the final storm verdict. An independent, data-driven weather observatory for Greater St. Louis.">
 <title>StormLab — The Atmosphere Has a Story</title>
 <link rel="stylesheet" href="./app.css?v=1">
+<script src="./changefeed.js?v=1" defer></script>
 <script src="./app.js?v=2" defer></script>
 </head>
 <body>
@@ -72,6 +73,18 @@
     </div>
     <div class="art-credit">ATMOSPHERIC ART · NOT LIVE RADAR</div>
   </article>
+  <section class="briefing-panel" id="visitBriefing" aria-labelledby="briefingTitle">
+    <div class="briefing-head">
+      <div><span class="eyebrow">THE LATEST CHAPTER</span><h2 id="briefingTitle">Since your last visit.</h2></div>
+      <span class="briefing-status" id="briefingStatus">Awaiting a checkpoint</span>
+    </div>
+    <div class="briefing-body">
+      <span class="briefing-mark" id="briefingMark" aria-hidden="true">✳</span>
+      <div><strong id="briefingHeadline">Let's see what has changed.</strong><p id="briefingSummary" aria-live="polite">The briefing will compare verified forecast captures for this location when the feed loads.</p></div>
+    </div>
+    <div class="briefing-facts" id="briefingFacts" aria-label="Forecast comparison details"></div>
+    <div class="briefing-foot"><span id="briefingCompared">Only shared forecast hours are compared; no modeled amount is an observation.</span><button type="button" id="resetBriefing" class="briefing-reset">Reset comparison</button></div>
+  </section>
   <div class="note-strip" role="status" id="modelNote">Live model details will appear when the feed is verified.</div>
   <div class="story-heading"><div><span class="eyebrow">ACT I / THE EVOLUTION</span><h2>Follow the storm.</h2></div><span class="outline-tag">Forecast, not observation</span></div>
   <div class="two-col">
