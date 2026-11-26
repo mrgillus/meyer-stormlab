@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="./app.css?v=12">
 <script src="./changefeed.js?v=2" defer></script>
 <script src="./verification.js?v=1" defer></script>
-<script src="./event-watch.js?v=12" defer></script>
-<script src="./app.js?v=4" defer></script>
+<script src="./event-watch.js?v=13" defer></script>
+<script src="./app.js?v=13" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -46,40 +46,13 @@
   <button class="nav-item" data-tab="lab" type="button"><span class="nav-symbol">⌁</span> The Lab</button>
 </nav>
 <main id="main">
-<section id="view-now" class="view active" aria-labelledby="now-title">
+<section id="view-now" class="view active" aria-labelledby="currentEventTitle">
   <div class="section-entrance"><span class="eyebrow"><i class="signal-line"></i> THE STORY RIGHT NOW</span><span class="small-note" id="sourceAge">Awaiting verified model feed</span></div>
   <section class="event-chronicle current-event-section" aria-labelledby="currentEventTitle">
     <div class="story-heading"><div><span class="eyebrow">CURRENT EVENT WINDOW</span><h2 id="currentEventTitle">In progress.</h2></div><span class="outline-tag" id="currentEventStatus">Checking event catalog</span></div>
     <div id="currentEventList" class="event-watch-list current-event-list" aria-live="polite"><div class="blank-state">Reading the current regional event window…</div></div>
     <p class="fine-print" id="currentEventSource">A forecast window includes today; actual conditions require independent observations.</p>
   </section>
-  <div class="section-entrance local-forecast-heading"><span class="eyebrow">LOCAL FORECAST DETAIL</span><span class="small-note">Selected location</span></div>
-  <article class="feature">
-    <div class="feature-glow" aria-hidden="true"></div>
-    <svg class="feature-art" aria-hidden="true" viewBox="0 0 700 540" preserveAspectRatio="xMidYMid slice">
-      <defs><radialGradient id="stormcloud"><stop offset="0" stop-color="#b7e8f2" stop-opacity=".22"/><stop offset=".48" stop-color="#3688aa" stop-opacity=".14"/><stop offset="1" stop-color="#0b2540" stop-opacity="0"/></radialGradient></defs>
-      <circle cx="384" cy="290" r="245" fill="url(#stormcloud)"/>
-      <g fill="none" stroke="#82cee9" stroke-width="1.5" opacity=".22">
-        <path d="M91 258C114 89 354-16 525 102s191 371-25 402S135 438 157 267c14-117 161-204 283-133 104 62 121 196 37 261-93 70-208 34-233-58-24-84 64-165 143-133 70 28 75 106 39 141"/>
-        <path d="M45 229C77 25 367-75 584 69s228 439-48 499S57 482 97 251"/>
-        <path d="M138 289C136 146 294 63 434 118c156 60 171 235 62 308S258 428 227 345c-30-81 22-155 91-163"/>
-        <path d="M188 271C214 164 344 127 436 186c76 50 82 168-15 205s-173-20-162-90"/>
-      </g>
-      <g fill="#bfeaff" opacity=".32"><circle cx="127" cy="170" r="2"/><circle cx="548" cy="144" r="2.5"/><circle cx="606" cy="353" r="1.5"/><circle cx="316" cy="106" r="2"/><circle cx="233" cy="433" r="2"/><circle cx="506" cy="448" r="2"/></g>
-    </svg>
-    <div class="feature-content">
-      <div class="feature-kicker"><span class="pill live-pill" id="stormMode">MONITORING</span><span id="eventDates">Live regional weather intelligence</span></div>
-      <h1 id="now-title"><span class="head-quiet">The atmosphere</span><br><em id="heroHeadline">has a story.</em></h1>
-      <p class="lead" id="heroNarrative">Connecting to our seven-model regional forecast so the story comes from real data, not a scripted weather report.</p>
-      <div class="feature-divider"></div>
-      <div class="hero-data">
-        <div class="hero-stat"><span class="stat-label" id="totalLabel">MODELED STORM WINDOW</span><span class="stat-big" id="bigSnow">—<small> in</small></span><span class="stat-sub" id="snowFootnote">Not measured ground accumulation</span></div>
-        <div class="hero-stat side"><span class="stat-label">INTENSITY PEAK</span><span class="stat-mid" id="peakTime">—</span><span class="stat-sub" id="peakValue">Checking hourly forecast</span></div>
-        <div class="hero-stat side"><span class="stat-label">ACTIVE MODEL SOURCES</span><span class="stat-mid" id="modelCount">—</span><span class="stat-sub">Global · Rapid · NBM</span></div>
-      </div>
-    </div>
-    <div class="art-credit">ATMOSPHERIC ART · NOT LIVE RADAR</div>
-  </article>
   <section class="event-chronicle" aria-labelledby="eventWatchTitle">
     <div class="story-heading"><div><span class="eyebrow">THE HORIZON TRACKER</span><h2 id="eventWatchTitle">On our radar.</h2></div><span class="outline-tag" id="eventWatchStatus">Checking event archive</span></div>
     <p class="event-intro">Upcoming regional named events for rain, winter weather, thunderstorms, temperature extremes and wind. When the forecast window begins, the event moves to the current-event section above. Faded signals remain tracked until their window passes.</p>

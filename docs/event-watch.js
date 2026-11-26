@@ -286,7 +286,7 @@
         const records=members.filter(m=>m.kind===kind).sort((a,b)=>a.start_date.localeCompare(b.start_date));
         const forecasts=seriesFor(group,kind,records),main=forecasts.hourly||forecasts.daily;
         const p=peakSummary(main);
-        const open=featured&&(primaryKind?kind===primaryKind:i===0);
+        const open=featured&&!["snow","rain","flood"].includes(f.id)&&(primaryKind?kind===primaryKind:i===0);
         return '<details class="wx-mode" '+(open?'open':'')+'><summary class="wx-mode-summary"><span><b>'+safe(modeLabel(records[0]))+'</b><small>'+safe(main?(p.time?"Peak support · "+p.time:p.allClear?"No threshold support":"Incomplete guidance"):"Awaiting guidance")+'</small></span><span class="wx-mode-number"><strong>'+safe(p.support)+'</strong><small>model support</small></span><span class="wx-chevron" aria-hidden="true">⌄</span></summary>'+
           '<div class="wx-mode-body">'+(p.amount?'<div class="wx-peak"><span>Modeled '+(main.direction==="lte"?"minimum":"peak")+'</span><strong>'+safe(p.amount)+'</strong><small>'+safe(p.amountTime)+'</small></div>':"")+
           (main?(main.legacy?'<p class="watch-muted">Legacy daily support only.</p>'+linePlot(main):forecastPanel(main)):'<p class="watch-muted">Awaiting forecast-time series.</p>')+

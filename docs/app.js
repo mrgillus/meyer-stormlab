@@ -87,7 +87,6 @@ function renderNow(){
   const eventAge=d?(Date.now()-Date.parse(d.retrieved_at))/3600000:Infinity;
   if(state.general&&(eventMode==="past"||eventMode==="unknown"||eventAge>4)){renderGeneral();return}
   if(!d||!p){
-    set("heroNarrative","The current StormLab model report could not be retrieved. The original dashboard remains available.");
     set("modelNote","No confirmed storm forecast is available right now. Please retry in a moment.");
     q("modelNote").classList.add("warning");
     updateHealth();return;
@@ -99,18 +98,7 @@ function renderNow(){
   const comparison=(future.length?future:hourData.filter(h=>num(h.snow_in)));
   const peak=comparison.reduce((a,b)=>(!a||b.snow_in>a.snow_in?b:a),null);
   const sources=Object.values(p.models||{}).filter(m=>m?.hours>0).length;
-  set("stormMode",mode==="past"?"FORECAST ARCHIVED":mode==="active"?"STORM IN PROGRESS":"PATTERN MONITORING");
-  q("stormMode").classList.toggle("ended",mode==="past");
   const start=shortDate(d.window_start),end=shortDate(new Date(Date.parse(d.window_end)-3600000));
-  set("eventDates",start+"–"+end+" · Greater St. Louis");
-  set("heroHeadline",mode==="past"?"the forecast remembered.":mode==="active"?"is in motion.":"is taking shape.");
-  set("heroNarrative",stormNarrative(p,d,mode));
-  set("totalLabel",mode==="past"?"ARCHIVED MODEL TOTAL":"MODELED STORM WINDOW");
-  q("bigSnow").innerHTML=num(p.blend_in)?e(p.blend_in.toFixed(2))+'<small> in</small>':'—<small> in</small>';
-  set("snowFootnote",mode==="past"?"Not verified storm accumulation":"Forecast, not observed snow depth");
-  set("peakTime",peak?hour(peak.end_ct):"—");
-  set("peakValue",peak?(peak.snow_in.toFixed(2)+'" modeled per hour'):"No complete hourly forecast");
-  set("modelCount",sources?String(sources):"—");
   const blocked=state.status?.status!=="published" && state.status && Date.parse(state.status.retrieved_at)>=Date.parse(d.retrieved_at);
   const pieces=[
     "Captured "+ct(d.retrieved_at),
@@ -285,27 +273,13 @@ function renderGeneral(){
   const g=state.general;if(!g||g.location!==state.location)return;
   const good=g.models.length>=2&&g.completeHours>=40;
   const kind=good&&g.snowTotal>=1?"snow":good&&g.liquidTotal>=1?"liquid":good&&g.maxGust>=40?"gust":"quiet";
-  const mode=kind==="quiet"?"QUIETER PATTERN":"SIGNAL DETECTED";
-  const heading={snow:"has a snowy chapter.",liquid:"is turning unsettled.",gust:"is picking up speed.",quiet:"is between chapters."}[kind];
-  set("stormMode",good?mode:"GUIDANCE LIMITED");
-  q("stormMode").classList.toggle("ended",!good);
-  set("eventDates","Live model scan · next 48 hours");
-  set("heroHeadline",good?heading:"needs a closer look.");
   const body=!good?"The public hourly forecast feeds are incomplete. We don't have enough overlapping guidance to issue a useful blended 48-hour story.":
     kind==="snow"?"Multiple models indicate meaningful snowfall potential in the next 48 hours near "+state.location+". This is an uncalibrated hourly model average, not a measured total or a validated StormLab snow forecast.":
     kind==="liquid"?"Models indicate a wet 48-hour window near "+state.location+". Heavy precipitation can matter, but a single local liquid total cannot establish flooding risk.":
     kind==="gust"?"Wind is the standout signal in the next 48 hours near "+state.location+". This is forecast wind guidance, not a severe-weather outlook.":
     "No major snowfall, liquid-precipitation, or wind thresholds are met in the available 48-hour guidance. That's a quieter signal, not a guarantee of calm weather.";
-  set("heroNarrative",body);
-  const v=kind==="snow"?g.snowTotal:kind==="liquid"?g.liquidTotal:kind==="gust"?g.maxGust:g.liquidTotal;
-  set("totalLabel",kind==="snow"?"48-HOUR MODEL SNOW":kind==="liquid"?"48-HOUR MODEL LIQUID":kind==="gust"?"PEAK MODEL GUST":"48-HOUR MODEL LIQUID");
-  q("bigSnow").innerHTML=num(v)?e(v.toFixed(kind==="gust"?0:2))+'<small> '+(kind==="gust"?"mph":"in")+'</small>':'—';
-  set("snowFootnote","Live model guidance · not observations");
   const pulseKind=kind==="gust"?"gust":kind==="liquid"||kind==="quiet"?"liquid":"snow";
   const peak=g.hours.filter(h=>num(h[pulseKind])).reduce((a,b)=>!a||b[pulseKind]>a[pulseKind]?b:a,null);
-  set("peakTime",peak?hour(peak.end_ct):"—");
-  set("peakValue",peak?(peak[pulseKind].toFixed(pulseKind==="gust"?0:2)+(pulseKind==="gust"?" mph":'"')+" modeled peak"):"Hourly guidance incomplete");
-  set("modelCount",String(g.models.length));
   set("lastUpdate",(good?"Live model scan · ":"Partial model scan · ")+ct(g.fetchedAt));
   q("healthDot").className="live-dot"+(good?" good":" old");
   set("sourceAge",good?"LIVE MODEL GUIDANCE":"PARTIAL GUIDANCE");
