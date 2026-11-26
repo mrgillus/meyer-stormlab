@@ -68,7 +68,7 @@
     const x0=32,x1=310,y0=9,y1=88,t0=Date.parse(points[0].captured_at),t1=Date.parse(last.captured_at);
     const x=p=>t0===t1?(x0+x1)/2:x0+(Date.parse(p.captured_at)-t0)/(t1-t0)*(x1-x0);
     const y=v=>y1-v/100*(y1-y0);
-    let lines="",dots="",prior=null;
+    let lines="",dots="",areas="",prior=null;
     points.forEach(p=>{
       const px=x(p),lo=numeric(p.support_pct)?p.support_pct:0;
       if(p.unknown_models)lines+='<line class="watch-uncertain" x1="'+px+'" x2="'+px+'" y1="'+y(lo)+'" y2="'+y(p.possible_support_pct)+'"><title>'+safe(stamp(p.captured_at))+' · incomplete coverage</title></line>';
@@ -115,13 +115,13 @@
   }
   function modeLabel(item){return titles[item.kind]||item.title}
   const families=[
-    {name:"Snow and ice",icon:"❄",kinds:["snow","light_snow","ice"]},
-    {name:"Rain and precipitation",icon:"☂",kinds:["rain","drizzle","showers","precipitation"]},
-    {name:"Thunderstorms and severe weather",icon:"ϟ",kinds:["thunderstorm","tornado","hail","damaging_wind","severe"]},
-    {name:"Wind",icon:"〰",kinds:["wind"]},
-    {name:"Temperature",icon:"◇",kinds:["freeze","cold","cold_stress","heat","heat_stress"]},
-    {name:"Visibility",icon:"≋",kinds:["fog"]},
-    {name:"Flooding",icon:"◈",kinds:["flood","flash_flood","river_flood"]}
+    {id:"snow",name:"Snow and ice",icon:"❄",kinds:["snow","light_snow","ice"]},
+    {id:"rain",name:"Rain and precipitation",icon:"☂",kinds:["rain","drizzle","showers","precipitation"]},
+    {id:"severe",name:"Thunderstorms and severe weather",icon:"ϟ",kinds:["thunderstorm","tornado","hail","damaging_wind","severe"]},
+    {id:"wind",name:"Wind",icon:"〰",kinds:["wind"]},
+    {id:"temperature",name:"Temperature",icon:"◇",kinds:["freeze","cold","cold_stress","heat","heat_stress"]},
+    {id:"fog",name:"Visibility",icon:"≋",kinds:["fog"]},
+    {id:"flood",name:"Flooding",icon:"◈",kinds:["flood","flash_flood","river_flood"]}
   ];
   function score(p){
     return !p||!numeric(p.support_pct)?"Unknown":(p.unknown_models?"≥":"")+p.support_pct+"%";
@@ -188,7 +188,10 @@
       }
       if(!numeric(v)){prior=null;return}
       const yy=y(v);
-      if(prior)lines+='<line class="forecast-line '+(quantity?"quantity":"support")+'" x1="'+prior[0]+'" y1="'+prior[1]+'" x2="'+xx+'" y2="'+yy+'"/>';
+      if(prior){
+        lines+='<line class="forecast-line '+(quantity?"quantity":"support")+'" x1="'+prior[0]+'" y1="'+prior[1]+'" x2="'+xx+'" y2="'+yy+'"/>';
+        areas+='<path class="forecast-area '+(quantity?"quantity":"support")+'" d="M '+prior[0]+' '+y1+' L '+prior[0]+' '+prior[1]+' L '+xx+' '+yy+' L '+xx+' '+y1+' Z"/>';
+      }
       dots+='<circle class="forecast-dot '+(quantity?"quantity":"support")+'" cx="'+xx+'" cy="'+yy+'" r="'+(hourly?1.8:3)+'"><title>'+safe(forecastTime(p,hourly))+' · '+safe(quantity?fmt(v)+" · "+p.quantity_models+" complete sources":score(p))+'</title></circle>';
       prior=[xx,yy];
     });
@@ -196,7 +199,10 @@
     const grid=tickValues.map(v=>'<line class="watch-grid" x1="'+x0+'" x2="'+x1+'" y1="'+y(v)+'" y2="'+y(v)+'"/><text x="1" y="'+(y(v)+3)+'">'+safe(fmt(v))+'</text>').join("");
     const indexes=[...new Set([0,Math.floor((points.length-1)/2),points.length-1])];
     const ticks=indexes.map((i,k)=>'<text x="'+x(i)+'" y="100" text-anchor="'+(indexes.length===1?"middle":k===0?"start":k===indexes.length-1?"end":"middle")+'">'+safe(forecastTime(points[i],hourly))+'</text>').join("");
-    return '<svg class="forecast-plot" viewBox="0 0 320 106" role="img" aria-label="'+(quantity?"Forecast quantity":"Model support")+' by forecast valid time">'+grid+lines+dots+ticks+'</svg>';
+    const now=regionalToday();
+    const current=points.findIndex(p=>p.time.slice(0,10)===now);
+    const currentMarker=!hourly&&current>=0?'<line class="forecast-now" x1="'+x(current)+'" x2="'+x(current)+'" y1="'+y0+'" y2="'+y1+'"><title>Today · Central time</title></line>':"";
+    return '<svg class="forecast-plot" viewBox="0 0 320 106" role="img" aria-label="'+(quantity?"Forecast quantity":"Model support")+' by forecast valid time">'+grid+areas+currentMarker+lines+dots+ticks+'</svg>';
   }
   function forecastPanel(series){
     if(!series?.points?.length)return '<p class="watch-muted">No forecast-time chart available.</p>';
@@ -208,40 +214,98 @@
       '<div class="forecast-plot-label"><span class="forecast-key support"></span> Model support (%)</div>'+linePlot(series,false)+
       '<small class="watch-muted">'+safe(series.unit==="signal"?"Matching weather code":threshold)+' per '+(hourly?"hour":"day")+' · dashed bars = missing coverage, not a calibrated chance.</small></div>';
   }
-  function familyRows(modes,group){
+  const artwork={
+    snow:'<path d="M24 5v38M7.5 14.5l33 19M7.5 33.5l33-19M19 8l5 5 5-5M19 40l5-5 5 5M8 20l7-2-2-7M40 28l-7 2 2 7M13 37l2-7-7-2M35 11l-2 7 7 2"/>',
+    rain:'<path d="M13 28a9 9 0 0 1 1-18 12 12 0 0 1 22 5 7 7 0 0 1 1 13H13M15 33l-3 6m13-6-3 6m13-6-3 6"/>',
+    severe:'<path d="M9 27a8 8 0 0 1 5-15 11 11 0 0 1 21 3 7 7 0 0 1 3 13h-8M25 21l-9 13h9l-3 10 12-16h-9z"/>',
+    wind:'<path d="M5 15h28a5 5 0 1 0-5-5M5 24h35a4 4 0 1 1-4 4M5 33h19a5 5 0 1 1-5 5"/>',
+    temperature:'<path d="M20 29V10a4 4 0 0 1 8 0v19a9 9 0 1 1-8 0zM24 17v17M33 14h6m-6 8h4"/><circle cx="24" cy="36" r="3"/>',
+    fog:'<path d="M8 15a8 8 0 0 1 8-6 10 10 0 0 1 19 5 6 6 0 0 1 6 6M5 24h38M10 31h28M5 38h38"/>',
+    flood:'<path d="M5 13q5-6 10 0t10 0t10 0t10 0M5 24q5-6 10 0t10 0t10 0t10 0M5 35q5-6 10 0t10 0t10 0t10 0"/>',
+    other:'<circle cx="24" cy="24" r="15"/><path d="M24 3v8m0 26v8M3 24h8m26 0h8"/>'
+  };
+  function weatherArt(id,cls="wx-icon"){
+    return '<svg class="'+safe(cls)+'" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(artwork[id]||artwork.other)+'</svg>';
+  }
+  function activeFamilies(modes){
     const known=new Set(families.flatMap(f=>f.kinds));
-    const other=modes.filter(m=>!known.has(m.kind)).map(m=>m.kind);
-    return [...families,{name:"Other weather",icon:"◎",kinds:[...new Set(other)]}].map(f=>{
+    const other=[...new Set(modes.filter(m=>!known.has(m.kind)).map(m=>m.kind))];
+    return [...families,{id:"other",name:"Other weather",icon:"◎",kinds:other}].filter(f=>modes.some(m=>f.kinds.includes(m.kind)));
+  }
+  function seriesFor(group,kind,records){
+    const forecasts=group.forecast_modes?.[kind];
+    if(forecasts?.hourly||forecasts?.daily)return forecasts;
+    const raw=records.flatMap(m=>m.daily_assessments||[]).map(p=>({...p,time:p.start_date}));
+    const points=[...new Map(raw.map(p=>[p.time,p])).values()].sort((a,b)=>a.time.localeCompare(b.time));
+    return {daily:points.length?{resolution:"daily",unit:"signal",points,legacy:true}:null,hourly:null};
+  }
+  function peakSummary(series){
+    const points=series?.points||[];
+    const positive=points.filter(p=>numeric(p.support_pct)&&p.support_pct>0);
+    const supported=positive.reduce((a,p)=>!a||p.support_pct>a.support_pct?p:a,null);
+    const quantified=points.filter(p=>numeric(p.quantity));
+    const peak=quantified.reduce((a,p)=>!a||(series.direction==="lte"?p.quantity<a.quantity:p.quantity>a.quantity)?p:a,null);
+    const allClear=points.length>0&&points.every(p=>p.support_pct===0&&!p.unknown_models);
+    const hourly=series?.resolution==="hourly";
+    const unit=series?.unit==="F"?"°F":series?.unit==="in"?(hourly?"″/hr":"″/day"):" mph";
+    const amount=peak?Number(peak.quantity.toFixed(series.unit==="in"?2:0))+unit:null;
+    return {support:supported?score(supported):allClear?"0%":"Unknown",
+      time:supported?forecastTime(supported,hourly):null,amount,
+      amountTime:peak?forecastTime(peak,hourly):null,allClear};
+  }
+  function eventRibbon(group,modes,fs){
+    const start=group.start_date,end=group.end_date;
+    const days=[];
+    for(let day=start;day<=end&&days.length<32;day=nextDay(day))days.push(day);
+    if(!days.length)return "";
+    const today=regionalToday();
+    const rows=fs.map(f=>{
+      const records=modes.filter(m=>f.kinds.includes(m.kind));
+      const points=records.flatMap(m=>seriesFor(group,m.kind,records.filter(r=>r.kind===m.kind)).daily?.points||[]);
+      return '<div class="wx-ribbon-row wx-'+f.id+'"><span class="wx-ribbon-icon" title="'+safe(f.name)+'">'+weatherArt(f.id)+'</span>'+
+        days.map(day=>{
+          const ps=points.filter(p=>p.time===day);
+          const hit=ps.some(p=>numeric(p.support_pct)&&p.support_pct>0);
+          const unknown=!ps.length||ps.some(p=>!numeric(p.support_pct)||p.unknown_models);
+          const status=hit?"supported":unknown?"unknown":"clear";
+          return '<span class="wx-ribbon-cell '+status+(day===today?" today":"")+'" title="'+safe(short(day)+" · "+f.name+" · "+(hit?"At least one model supports a mode":unknown?"Incomplete or missing data":"No threshold support"))+'"></span>';
+        }).join("")+'</div>';
+    }).join("");
+    return '<section class="wx-ribbon"><div class="wx-ribbon-head"><b>Event at a glance</b><span>Regional forecast timeline</span></div>'+
+      '<div class="wx-ribbon-scroll"><div class="wx-ribbon-grid" style="--days:'+days.length+'"><div class="wx-ribbon-row wx-ribbon-dates"><span></span>'+days.map(day=>'<span class="'+(day===today?"today":"")+'">'+safe(short(day))+'</span>').join("")+'</div>'+rows+'</div></div>'+
+      '<div class="wx-ribbon-legend"><span>● Model signal</span><span>▧ Incomplete coverage</span><span>– No support</span></div></section>';
+  }
+  function familyRows(modes,group,featured){
+    return activeFamilies(modes).map(f=>{
       const members=modes.filter(m=>f.kinds.includes(m.kind));
-      if(!members.length)return "";
-      const types=[...new Set(members.map(m=>m.kind))].map(kind=>{
+      const kindsIn=[...new Set(members.map(m=>m.kind))];
+      const primaryKind=members.find(m=>m.id===group.primary_mode_id)?.kind;
+      const rows=kindsIn.map((kind,i)=>{
         const records=members.filter(m=>m.kind===kind).sort((a,b)=>a.start_date.localeCompare(b.start_date));
-        const forecasts=group.forecast_modes?.[kind];
-        const main=forecasts?.hourly||forecasts?.daily;
-        const fallback=records.flatMap(m=>m.daily_assessments||[]).map(p=>({...p,time:p.start_date}));
-        const fallbackSeries={resolution:"daily",unit:"signal",points:[...new Map(fallback.map(p=>[p.time,p])).values()].sort((a,b)=>a.time.localeCompare(b.time))};
-        return '<div class="event-itinerary-type"><strong>'+safe(modeLabel(records[0]))+'</strong>'+
-          (main?forecastPanel(main):fallbackSeries.points.length?'<small class="watch-muted">Daily support only · quantity and hourly guidance pending.</small>'+linePlot(fallbackSeries):'<p class="watch-muted">Awaiting forecast-time series.</p>')+
-          (forecasts?.hourly&&forecasts?.daily?'<details class="event-mode-history"><summary>Full event daily outlook</summary>'+forecastPanel(forecasts.daily)+'</details>':"")+
-          '<details class="event-mode-history"><summary>Forecast evolution (previous model updates)</summary>'+
-            records.map(m=>'<p class="watch-muted">'+safe(dateRange(m))+' · '+safe(describe(m.status))+'</p>'+
-              watchChart(m.assessments)+'<button type="button" class="event-case-button" data-event-id="'+safe(m.id)+'">Mode details →</button>').join("")+
-          '</details></div>';
+        const forecasts=seriesFor(group,kind,records),main=forecasts.hourly||forecasts.daily;
+        const p=peakSummary(main);
+        const open=featured&&(primaryKind?kind===primaryKind:i===0);
+        return '<details class="wx-mode" '+(open?'open':'')+'><summary class="wx-mode-summary"><span><b>'+safe(modeLabel(records[0]))+'</b><small>'+safe(main?(p.time?"Peak support · "+p.time:p.allClear?"No threshold support":"Incomplete guidance"):"Awaiting guidance")+'</small></span><span class="wx-mode-number"><strong>'+safe(p.support)+'</strong><small>model support</small></span><span class="wx-chevron" aria-hidden="true">⌄</span></summary>'+
+          '<div class="wx-mode-body">'+(p.amount?'<div class="wx-peak"><span>Modeled '+(main.direction==="lte"?"minimum":"peak")+'</span><strong>'+safe(p.amount)+'</strong><small>'+safe(p.amountTime)+'</small></div>':"")+
+          (main?(main.legacy?'<p class="watch-muted">Legacy daily support only.</p>'+linePlot(main):forecastPanel(main)):'<p class="watch-muted">Awaiting forecast-time series.</p>')+
+          (forecasts.hourly&&forecasts.daily?'<details class="event-mode-history"><summary>Full event daily outlook</summary>'+forecastPanel(forecasts.daily)+'</details>':"")+
+          '<details class="event-mode-history"><summary>Forecast evolution · previous model updates</summary>'+
+            records.map(m=>'<p class="watch-muted">'+safe(dateRange(m))+' · '+safe(describe(m.status))+'</p>'+watchChart(m.assessments)+'<button type="button" class="event-case-button" data-event-id="'+safe(m.id)+'">Mode details →</button>').join("")+
+          '</details></div></details>';
       }).join("");
-      return '<section class="event-itinerary-family"><h4><span aria-hidden="true">'+safe(f.icon)+'</span> '+safe(f.name)+'</h4>'+types+'</section>';
+      return '<section class="wx-family wx-'+f.id+'"><div class="wx-family-head">'+weatherArt(f.id,"wx-watermark")+'<div class="wx-icon-box">'+weatherArt(f.id)+'</div><div><h4>'+safe(f.name)+'</h4><small>'+kindsIn.length+' weather mode'+(kindsIn.length===1?"":"s")+'</small></div></div><div class="wx-family-modes">'+rows+'</div></section>';
     }).join("");
   }
   function groupCard(group,isCurrent=false){
-    const modes=modeItems(group),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
+    const modes=modeItems(group),fs=activeFamilies(modes),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
+    const pf=fs.find(f=>f.kinds.includes(primary?.kind))||{id:"other"};
     const tone=marker(group.status),types=new Set(modes.map(m=>m.kind)).size;
     const flag=isCurrent?(group.status==="in_latest_capture"?"Current event window":"Current window · signal faded"):describe(group.status);
-    return '<article class="event-signal '+safe(tone)+'"><div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+safe(kinds[primary?.kind]||"◎")+'</span><span class="event-flag">'+safe(flag)+'</span></div>'+
-      '<h3>Event '+safe(group.name)+'</h3><p class="event-dates">'+safe(dateRange(group))+' · '+types+' weather mode(s)</p>'+
-      '<div class="event-itinerary-heading"><span>Weather mode / forecast timeline</span><span>Quantity &amp; support</span></div>'+
-      '<div class="event-itinerary">'+familyRows(modes,group)+'</div>'+
-      '<small class="watch-muted">Forecast valid-time charts; model support is not calibrated probability. Hourly outlooks use separate hourly thresholds.</small>'+
-      '<div class="event-evidence"><span>First seen '+safe(short(group.first_seen))+'</span></div>'+
-      '<button type="button" class="event-case-button" data-event-id="'+safe(primary?.id||group.primary_mode_id)+'">Explore event →</button></article>';
+    const header='<div class="wx-event-hero wx-'+pf.id+'">'+weatherArt(pf.id,"wx-event-art")+'<div class="wx-event-kicker"><span>'+safe(isCurrent?"FEATURED EVENT":"UPCOMING EVENT")+'</span><span class="event-flag">'+safe(flag)+'</span></div><div class="wx-event-title"><div class="wx-icon-box">'+weatherArt(pf.id)+'</div><div><h3>Event '+safe(group.name)+'</h3><p>'+safe(dateRange(group))+' · '+types+' weather modes</p></div></div><div class="wx-family-tags">'+fs.map(f=>'<span class="wx-'+f.id+'">'+weatherArt(f.id)+safe(f.name)+'</span>').join("")+'</div></div>';
+    const contents=eventRibbon(group,modes,fs)+'<div class="wx-families">'+familyRows(modes,group,isCurrent)+'</div><p class="watch-muted wx-source">Regional forecast guidance. Model support is not a calibrated probability. Hourly and daily thresholds differ.</p>';
+    return '<article class="event-signal wx-event '+(isCurrent?"wx-featured":"wx-upcoming")+' '+safe(tone)+'">'+header+
+      (isCurrent?contents:'<details class="wx-upcoming-detail"><summary>Explore weather modes <span aria-hidden="true">⌄</span></summary>'+contents+'</details>')+
+      '<div class="wx-event-footer"><small>First seen '+safe(short(group.first_seen))+'</small><button type="button" class="event-case-button" data-event-id="'+safe(primary?.id||group.primary_mode_id)+'">Storm files →</button></div></article>';
   }
   function modeScore(m){
     const p=m.assessments?.at(-1);
