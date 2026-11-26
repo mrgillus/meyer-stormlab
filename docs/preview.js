@@ -18,7 +18,7 @@ const EXT_MODELS=[
   {id:"icon_global",name:"ICON",days:7}
 ];
 const q=id=>document.getElementById(id);
-const state={report:null,status:null,history:null,tab:"now",horizon:null,location:"Wentzville",archiveLoading:false};
+const state={report:null,status:null,history:null,tab:"now",horizon:null,general:null,location:"Wentzville",archiveLoading:false};
 const num=x=>typeof x==="number" && Number.isFinite(x);
 const inches=x=>num(x)?x.toFixed(2)+'"':"—";
 const shortDate=d=>new Intl.DateTimeFormat("en-US",{timeZone:TZ,month:"short",day:"numeric"}).format(new Date(d));
@@ -81,6 +81,9 @@ function stormNarrative(p,d,mode){
 }
 function renderNow(){
   const d=state.report,p=selected();
+  const eventMode=statusMode(d);
+  const eventAge=d?(Date.now()-Date.parse(d.retrieved_at))/3600000:Infinity;
+  if(state.general&&(eventMode==="past"||eventMode==="unknown"||eventAge>4)){renderGeneral();return}
   if(!d||!p){
     set("heroNarrative","The current StormLab model report could not be retrieved. The original dashboard remains available.");
     set("modelNote","No confirmed storm forecast is available right now. Please retry in a moment.");
@@ -192,6 +195,145 @@ function selectModel(name){
     '<span>'+e(m.hours+" forecast hours represented. "+(m.full_total_in===null?"Only future hours are available in the current capture.":"Full storm window represented.")+" The model initialization cycle is not recorded by this feed.")+'</span>'+
     (details.length?'<div class="detail-metrics">'+details.map(v=>'<span>'+e(v)+'</span>').join("")+'</div>':"");
 }
+
+function generalRequest(m){
+  const loc=LOCS[state.location];
+  const qs=new URLSearchParams({
+    latitude:String(loc.lat),longitude:String(loc.lon),models:m.id,
+    hourly:"snowfall,precipitation,temperature_2m,wind_gusts_10m",
+    timezone:"GMT",timeformat:"unixtime",temperature_unit:"fahrenheit",
+    precipitation_unit:"inch",wind_speed_unit:"mph",forecast_days:"5"
+  });
+  return "https://api.open-meteo.com/v1/forecast?"+qs;
+}
+function snowToInches(v,unit){
+  if(!num(v))return null;
+  if(unit==="cm")return v/2.54;
+  if(unit==="mm")return v/25.4;
+  if(unit==="inch"||unit==="in")return v;
+  return null;
+}
+async function loadGeneralForecast(){
+  const requestedLocation=state.location;
+  const responses=await Promise.allSettled(EXT_MODELS.map(async m=>{
+    const r=await fetch(generalRequest(m),{cache:"no-store",signal:AbortSignal.timeout(19000)});
+    if(!r.ok)throw Error(m.name+" returned HTTP "+r.status);
+    const d=await r.json();
+    if(d.error||!Array.isArray(d.hourly?.time))throw Error(m.name+" returned incomplete hourly fields");
+    const units=d.hourly_units||{};
+    if(!["cm","mm","inch","in"].includes(units.snowfall))throw Error(m.name+" snowfall unit is unknown");
+    if(!["inch","in"].includes(units.precipitation))throw Error(m.name+" precipitation unit is unknown");
+    const byHour=new Map();
+    for(let i=0;i<d.hourly.time.length;i++){
+      const ts=d.hourly.time[i]*1000;if(!Number.isFinite(ts))continue;
+      byHour.set(ts,{
+        snow:snowToInches(d.hourly.snowfall?.[i],units.snowfall),
+        liquid:num(d.hourly.precipitation?.[i])?d.hourly.precipitation[i]:null,
+        gust:num(d.hourly.wind_gusts_10m?.[i])?d.hourly.wind_gusts_10m[i]:null,
+        temp:num(d.hourly.temperature_2m?.[i])?d.hourly.temperature_2m[i]:null
+      });
+    }
+    return {name:m.name,byHour};
+  }));
+  // Ignore a delayed result for a location the user has already changed.
+  if(requestedLocation!==state.location)return;
+  const models=responses.filter(r=>r.status==="fulfilled").map(r=>r.value);
+  const now=Date.now(),first=Math.ceil(now/3600000)*3600000;
+  const hours=[];
+  for(let i=0;i<48;i++){
+    const ts=first+i*3600000;
+    const src=models.map(m=>m.byHour.get(ts)).filter(Boolean);
+    const mean=k=>{const values=src.map(s=>s[k]).filter(num);return values.length>=2?values.reduce((a,b)=>a+b,0)/values.length:null};
+    hours.push({end_ct:new Date(ts).toISOString(),snow:mean("snow"),liquid:mean("liquid"),gust:mean("gust"),temp:mean("temp"),sources:src.length});
+  }
+  const modelTotals=models.map(m=>{
+    const arr=hours.map(h=>m.byHour.get(Date.parse(h.end_ct))).filter(Boolean);
+    const validSnow=arr.map(x=>x.snow).filter(num), validLiquid=arr.map(x=>x.liquid).filter(num);
+    const gusts=arr.map(x=>x.gust).filter(num);
+    return {name:m.name,hours:validSnow.length,snow:validSnow.length>=40?validSnow.reduce((a,b)=>a+b,0):null,
+      liquid:validLiquid.length>=40?validLiquid.reduce((a,b)=>a+b,0):null,
+      gust:gusts.length?Math.max(...gusts):null};
+  });
+  const usable=hours.filter(h=>num(h.snow)&&num(h.liquid));
+  const snowTotal=usable.length>=40?usable.reduce((sum,h)=>sum+h.snow,0):null;
+  const liquidTotal=usable.length>=40?usable.reduce((sum,h)=>sum+h.liquid,0):null;
+  const gusts=hours.map(h=>h.gust).filter(num);
+  const temps=hours.map(h=>h.temp).filter(num);
+  state.general={location:requestedLocation,fetchedAt:new Date().toISOString(),models,modelTotals,hours,
+    snowTotal,liquidTotal,maxGust:gusts.length?Math.max(...gusts):null,
+    lowestTemp:temps.length?Math.min(...temps):null,completeHours:usable.length,
+    failed:responses.length-models.length};
+}
+function generalPulse(g,kind){
+  const valid=g.hours.filter(h=>num(h[kind]));
+  const peak=Math.max(.001,...valid.map(h=>h[kind]));
+  if(!valid.length){q("pulseChart").innerHTML='<div class="empty-pulse">No complete hourly fields are available.</div>';return}
+  const suffix=kind==="gust"?" mph":' inches';
+  q("pulseChart").innerHTML=valid.map(h=>{
+    const v=h[kind],label=hour(h.end_ct)+" · "+v.toFixed(2)+suffix+" modeled";
+    return '<button class="pulse-bar'+(v>=peak-.000001?" peak":"")+'" type="button" style="height:'+Math.max(2,100*v/peak).toFixed(1)+'%" aria-label="'+e(label)+'" title="'+e(label)+'"></button>';
+  }).join("");
+  q("pulseAxis").innerHTML="<span>"+e(hour(valid[0].end_ct))+"</span><span>Next 48 hours →</span><span>"+e(hour(valid[valid.length-1].end_ct))+"</span>";
+  set("pulseProvenance","Live hourly guidance averaged across responding models, not radar observations. Provider time series may combine model cycles.");
+}
+function renderGeneral(){
+  const g=state.general;if(!g||g.location!==state.location)return;
+  const good=g.models.length>=2&&g.completeHours>=40;
+  const kind=good&&g.snowTotal>=1?"snow":good&&g.liquidTotal>=1?"liquid":good&&g.maxGust>=40?"gust":"quiet";
+  const mode=kind==="quiet"?"QUIETER PATTERN":"SIGNAL DETECTED";
+  const heading={snow:"has a snowy chapter.",liquid:"is turning unsettled.",gust:"is picking up speed.",quiet:"is between chapters."}[kind];
+  set("stormMode",good?mode:"GUIDANCE LIMITED");
+  q("stormMode").classList.toggle("ended",!good);
+  set("eventDates","Live model scan · next 48 hours");
+  set("heroHeadline",good?heading:"needs a closer look.");
+  const body=!good?"The public hourly forecast feeds are incomplete. We don't have enough overlapping guidance to issue a useful blended 48-hour story.":
+    kind==="snow"?"Multiple models indicate meaningful snowfall potential in the next 48 hours near "+state.location+". This is an uncalibrated hourly model average, not a measured total or a validated StormLab snow forecast.":
+    kind==="liquid"?"Models indicate a wet 48-hour window near "+state.location+". Heavy precipitation can matter, but a single local liquid total cannot establish flooding risk.":
+    kind==="gust"?"Wind is the standout signal in the next 48 hours near "+state.location+". This is forecast wind guidance, not a severe-weather outlook.":
+    "No major snowfall, liquid-precipitation, or wind thresholds are met in the available 48-hour guidance. That's a quieter signal, not a guarantee of calm weather.";
+  set("heroNarrative",body);
+  const v=kind==="snow"?g.snowTotal:kind==="liquid"?g.liquidTotal:kind==="gust"?g.maxGust:g.liquidTotal;
+  set("totalLabel",kind==="snow"?"48-HOUR MODEL SNOW":kind==="liquid"?"48-HOUR MODEL LIQUID":kind==="gust"?"PEAK MODEL GUST":"48-HOUR MODEL LIQUID");
+  q("bigSnow").innerHTML=num(v)?e(v.toFixed(kind==="gust"?0:2))+'<small> '+(kind==="gust"?"mph":"in")+'</small>':'—';
+  set("snowFootnote","Live model guidance · not observations");
+  const pulseKind=kind==="gust"?"gust":kind==="liquid"||kind==="quiet"?"liquid":"snow";
+  const peak=g.hours.filter(h=>num(h[pulseKind])).reduce((a,b)=>!a||b[pulseKind]>a[pulseKind]?b:a,null);
+  set("peakTime",peak?hour(peak.end_ct):"—");
+  set("peakValue",peak?(peak[pulseKind].toFixed(pulseKind==="gust"?0:2)+(pulseKind==="gust"?" mph":'"')+" modeled peak"):"Hourly guidance incomplete");
+  set("modelCount",String(g.models.length));
+  set("lastUpdate",(good?"Live model scan · ":"Partial model scan · ")+ct(g.fetchedAt));
+  q("healthDot").className="live-dot"+(good?" good":" old");
+  set("sourceAge",good?"LIVE MODEL GUIDANCE":"PARTIAL GUIDANCE");
+  set("modelNote",g.models.length+"/4 public forecast sources responded · "+g.completeHours+"/48 usable matched hourly periods · Retrieved "+ct(g.fetchedAt)+" · Single-cycle provenance not supplied by provider.");
+  q("modelNote").classList.toggle("warning",!good);
+  set("chartHelp",pulseKind==="snow"?"How the snowfall signal builds over the next 48 hours.":pulseKind==="gust"?"Modeled gust intensity through the next 48 hours.":"Modeled hourly precipitation through the next 48 hours.");
+  generalPulse(g,pulseKind);
+  const insights=[
+    ["What stands out",good?kind==="quiet"?"A quieter pattern across the latest hourly model guidance.":body:"Not enough overlapping model hours to make a confident summary."],
+    ["The model check",g.models.length+" independent forecast model feeds responded. "+g.completeHours+" of 48 upcoming hours have at least two valid snow and precipitation estimates."],
+    ["What this does not tell us","This is neither radar-observed weather nor a verified severe-weather, flood, or snowfall outlook. A specialized event feed takes priority when one is active."]
+  ];
+  q("insights").innerHTML=insights.map((x,i)=>'<div class="insight"><span class="insight-marker" aria-hidden="true">'+["◎","⌁","✳"][i]+'</span><div><strong>'+e(x[0])+'</strong><p>'+e(x[1])+'</p></div></div>').join("");
+  set("modelWindow","48 upcoming forecast hours. Equal-weight averages across available GFS, ECMWF, GEM, and ICON guidance; this is not the specialized seven-model storm blend.");
+  const max=Math.max(1,...g.modelTotals.map(m=>m[pulseKind]||0));
+  const valid=g.modelTotals.filter(m=>num(m[pulseKind]));
+  q("modelBars").innerHTML=valid.length?valid.map(m=>{
+    const v=m[pulseKind];
+    return '<button type="button" class="model-row" data-model="'+e(m.name)+'" title="'+e(m.name+" · "+v.toFixed(2))+'"><span class="model-name">'+e(m.name)+'</span><div class="model-track"><div class="model-fill" style="width:'+Math.max(.5,100*v/max).toFixed(1)+'%"></div></div><span class="model-val">'+e(v.toFixed(pulseKind==="gust"?0:2))+'<small> '+(pulseKind==="gust"?"mph":"in")+'</small></span></button>';
+  }).join(""):'<p class="muted">No sufficient model totals available.</p>';
+  q("modelBars").querySelectorAll(".model-row").forEach(b=>b.addEventListener("click",()=>showGeneralModel(b.dataset.model)));
+  if(valid.length)showGeneralModel(valid[0].name);
+  else set("modelDetail","Unavailable: insufficient matching model coverage.");
+  renderCase();
+}
+function showGeneralModel(name){
+  const g=state.general,m=g?.modelTotals.find(x=>x.name===name);if(!m)return;
+  q("modelBars").querySelectorAll(".model-row").forEach(b=>b.classList.toggle("is-selected",b.dataset.model===name));
+  q("modelDetail").innerHTML='<strong>'+e(m.name)+' · 48-hour hourly guidance</strong>'+
+    '<span>'+e(m.hours+" modeled snow hours available (40 required for a total); initialization cycle not recorded in this response.")+'</span>'+
+    '<div class="detail-metrics"><span>Snow: '+e(inches(m.snow))+'</span><span>Liquid: '+e(inches(m.liquid))+'</span><span>Max gust: '+e(num(m.gust)?m.gust.toFixed(0)+" mph":"—")+'</span></div>';
+}
+
 async function loadNow(silent=false){
   if(!silent)set("lastUpdate","Checking latest model capture…");
   const results=await Promise.allSettled([read("storm/report.json"),read("storm/status.json")]);
@@ -199,8 +341,12 @@ async function loadNow(silent=false){
     state.report=results[0].value;
     state.status=results[1].status==="fulfilled"?results[1].value:null;
   }else if(!state.report){
-    set("lastUpdate","StormLab feed unavailable");
-    set("modelNote","Could not load the published storm model data: "+results[0].reason.message);
+    set("lastUpdate","StormLab event feed unavailable");
+  }
+  const event=state.report;
+  const age=event?(Date.now()-Date.parse(event.retrieved_at))/3600000:Infinity;
+  if(!event||statusMode(event)==="past"||statusMode(event)==="unknown"||age>4){
+    try{await loadGeneralForecast()}catch(ex){console.warn("Live hourly fallback unavailable",ex)}
   }
   renderNow();
 }
@@ -354,8 +500,9 @@ function install(){
   q("location").addEventListener("change",ev=>{
     if(!LOCS[ev.target.value])return;
     state.location=ev.target.value;
+    state.general=null;
     try{window.localStorage.setItem("stormlab.preview.location",state.location)}catch(_){}
-    renderNow();
+    loadNow(true);
     if(state.tab==="lab")loadLab();
     if(state.tab==="horizon"){state.horizon=null;loadHorizon()}
     if(state.tab==="archive")renderCase();
