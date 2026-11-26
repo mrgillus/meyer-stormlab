@@ -1,0 +1,65 @@
+name: Compile regional weather event intelligence
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs after the existing 03:37/09:37/15:37/21:37 UTC model collector.
+    - cron: '17 4,10,16,22 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/event-watch.yml'
+      - 'scripts/event_watch.py'
+      - 'tests/test_event_watch.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stormlab-event-watch
+  cancel-in-progress: false
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify the event detector
+        run: python -m unittest discover -s tests -p 'test_event_watch.py' -v
+      - name: Build persistent event catalog from archived forecast captures
+        run: python scripts/event_watch.py
+      - name: Publish the event catalog without overwriting collector output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s data/events/index.json
+          test -s data/events/catalog.json
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/events/. "$stage/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p data/events
+            cp -a "$stage/." data/events/
+            git add data/events/
+            if git diff --cached --quiet; then
+              echo "Event catalog unchanged"
+              exit 0
+            fi
+            git commit -m "Publish timestamped regional weather event watch"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 4))
+          done
+          echo "Could not publish event intelligence" >&2
+          exit 1
