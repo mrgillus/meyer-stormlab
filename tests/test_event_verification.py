@@ -42,6 +42,33 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(obs[1]["snow_quality"],"trace")
         self.assertEqual(obs[2]["snow_quality"],"accumulated_interval_unknown")
 
+    def test_real_acis_multistation_arrays_map_dates_by_exact_range(self):
+        start=dt.date(2026,11,23)
+        end=dt.date(2026,11,25)
+        raw={"data":[{"meta":{"uid":9,"name":"SAMPLE","state":"MO",
+                "ll":[-90.8529,38.8114],"sids":["US1MOST0012 10"]},
+            "data":[
+                [["M",-1,"M"],["0.04",7," "]],
+                [["0.0",8," "],["0.00",8," "]],
+                [["1.5",8," "],["0.20",8," "]],
+            ]}]}
+        stations,observations=v.normalize_provider(raw,start,end)
+        self.assertEqual(len(stations),1)
+        self.assertEqual(len(observations),3)
+        self.assertEqual([o["reported_date"] for o in observations],
+            ["2026-11-23","2026-11-24","2026-11-25"])
+        self.assertEqual(observations[0]["snow_quality"],"missing")
+        self.assertEqual(observations[0]["precipitation_in"],.04)
+        self.assertEqual(observations[1]["snowfall_in"],0.0)
+        self.assertEqual(observations[2]["snowfall_in"],1.5)
+        self.assertEqual(observations[2]["date_mapping"],"requested_range_index")
+        self.assertFalse(observations[2]["observation_interval_verified"])
+        # A truncated or otherwise incomplete range must never be assigned
+        # dates by pretending it starts on the first requested day.
+        raw["data"][0]["data"].pop()
+        _,incomplete=v.normalize_provider(raw,start,end)
+        self.assertEqual(incomplete,[])
+
     def test_verification_holds_score_even_with_station_report(self):
         case={"id":"snow-20261125","kind":"snow","title":"Snowfall potential",
             "start_date":"2026-11-25","end_date":"2026-11-26","timeline":[]}
