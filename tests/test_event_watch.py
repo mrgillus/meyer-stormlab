@@ -22,7 +22,7 @@ def snapshot(stamp, snow=3.2, date=None, models=("GFS", "ECMWF")):
                         "snowfall_sum": [snow],
                         "precipitation_sum": [0.4],
                         "wind_gusts_10m_max": [20],
-                        "temperature_2m_min": [30],
+                        "temperature_2m_min": [34],
                         "temperature_2m_max": [45],
                     },
                     "units": {
@@ -122,6 +122,22 @@ class EventWatchTests(unittest.TestCase):
         self.assertEqual(len(events), 1)
         self.assertEqual(events[0]["name"], name)
         self.assertEqual([p["support_pct"] for p in events[0]["assessments"]], [100,0,100])
+
+    def test_expanded_hazards_and_missing_codes(self):
+        stamp = dt.datetime.now(watch.UTC).isoformat()
+        s = snapshot(stamp, snow=0)
+        for m in s["locations"]["Wentzville"].values():
+            m["daily"].update(rain_sum=[.05], showers_sum=[.02], weather_code=[95],
+                              apparent_temperature_max=[106], apparent_temperature_min=[-2])
+            m["units"].update(rain_sum="inch", showers_sum="inch", weather_code="wmo code",
+                              apparent_temperature_max="°F", apparent_temperature_min="°F")
+        kinds = {x["kind"] for x in watch.captured_signals(s)}
+        self.assertEqual(kinds, {"rain", "showers", "thunderstorm", "heat_stress", "cold_stress"})
+        self.assertEqual(watch.screen_value("ice", 66, "wmo code"), 1)
+        self.assertEqual(watch.screen_value("ice", 61, "wmo code"), 0)
+        self.assertIsNone(watch.screen_value("ice", None, "wmo code"))
+        self.assertIsNone(watch.screen_value("ice", 66, "unknown"))
+        self.assertIsNone(watch.screen_value("thunderstorm", 98, "wmo code"))
 
     def test_temporary_missing_model_does_not_claim_corroboration(self):
         stamp = dt.datetime.now(watch.UTC).isoformat()

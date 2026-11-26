@@ -11,9 +11,15 @@
   })[c]);
   const numeric = x => typeof x === "number" && Number.isFinite(x);
   const state = {index:null,catalog:null,selected:null,loadedAt:0,inFlight:null,catalogInFlight:null};
-  const titles = {snow:"Snowfall potential",precipitation:"Heavy precipitation",
+  const titles = {snow:"Accumulating snowfall",precipitation:"Heavy precipitation",
     wind:"Strong winds",cold:"Unusual cold",heat:"Extreme heat"};
-  const kinds = {snow:"❄",precipitation:"◈",wind:"〰",cold:"◇",heat:"☀"};
+  const kinds = {snow:"❄",light_snow:"❄",precipitation:"◈",rain:"☂",showers:"☂",
+    drizzle:"☂",ice:"◇",thunderstorm:"ϟ",fog:"≋",freeze:"◇",heat_stress:"☀",
+    cold_stress:"◇",wind:"〰",cold:"◇",heat:"☀"};
+  const routine = item => item.priority==="routine";
+  const unitsFor = kind => ["wind"].includes(kind)?"mph":
+    ["cold","heat","freeze","heat_stress","cold_stress"].includes(kind)?"°F":
+    ["light_snow","drizzle","ice","thunderstorm","fog"].includes(kind)?"signal":"in";
   const stamp = s => new Intl.DateTimeFormat("en-US",{timeZone:CT,month:"short",day:"numeric",
     hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(new Date(s));
   const short = date => new Intl.DateTimeFormat("en-US",{timeZone:CT,month:"short",day:"numeric"})
@@ -45,7 +51,8 @@
   function localEvidence(item){
     const loc=item.wentzville;
     if(!loc||!loc.triggering_samples)return "No Wentzville daily forecast met this screening threshold in the captured data.";
-    const label=item.kind==="wind"?"mph":item.kind==="cold"||item.kind==="heat"?"°F":"in";
+    const label=unitsFor(item.kind);
+    if(label==="signal")return "Wentzville: "+loc.models.length+" source(s) flagged the matching daily weather code. This is not an intensity estimate.";
     const v=loc.median_triggering_value;
     return "Wentzville: "+loc.models.length+" model source(s) crossed the threshold; median triggering daily value "+
       (numeric(v)?v.toFixed(label==="mph"||label==="°F"?0:2):"—")+" "+label+
@@ -87,7 +94,7 @@
     return '<article class="event-signal '+safe(tone)+'">'+
       '<div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+
       safe(kinds[item.kind]||"◎")+'</span><span class="event-flag">'+safe(describe(item.status))+'</span></div>'+
-      '<h3>Watch '+safe(watchName(item))+'</h3><p class="event-dates">'+safe(label)+' · '+safe(dateRange(item))+'</p><small class="watch-muted">'+safe(windowLabel)+'</small>'+
+      '<h3>Watch '+safe(watchName(item))+'</h3><p class="event-dates">'+safe(label)+' · '+safe(dateRange(item))+'</p><small class="watch-muted">'+safe(windowLabel+(routine(item)?" · Routine signal":" · Notable signal"))+'</small>'+
       watchChart(item.assessments)+
       '<p class="event-story">'+safe(modelEvidence(item))+". "+safe(item.snapshots_seen)+" stored model capture(s). "+
       safe(item.locations?.length||0)+' regional location(s) flagged.</p>'+
@@ -107,7 +114,9 @@
     const today=new Intl.DateTimeFormat("en-CA",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
     const display=[...active,...fading].filter(x=>x.end_date>=today).sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
     if(display.length){
-      q("eventWatchList").innerHTML=display.map(card).join("");
+      const notable=display.filter(x=>!routine(x)), everyday=display.filter(routine);
+      q("eventWatchList").innerHTML=(notable.length?notable.map(card).join(""):"")+
+        (everyday.length?'<details class="routine-watches" open><summary>Routine weather watches · '+everyday.length+'</summary><div class="event-watch-list">'+everyday.map(card).join("")+'</div></details>':"");
     }else{
       q("eventWatchList").innerHTML='<div class="blank-state">No qualifying active or fading model signals in the published regional case catalog. The live model scan below can still be explored.</div>';
     }
@@ -149,8 +158,8 @@
       return '<tr><td>'+safe(stamp(item.captured_at))+'</td><td>'+safe(support)+'</td><td>'+safe(item.unknown_models)+'</td><td>'+safe(Object.entries(item.models).map(([m,s])=>m+": "+s).join(" · "))+'</td><td>'+safe(dateRange(item))+'</td></tr>';
     }
     const peak=item.peak;
-    const unit=kind==="wind"?"mph":kind==="cold"||kind==="heat"?"°F":"in";
-    const max=peak&&numeric(peak.value)?peak.value.toFixed(unit==="mph"||unit==="°F"?0:2)+" "+unit:"—";
+    const unit=unitsFor(kind);
+    const max=peak&&numeric(peak.value)?(unit==="signal"?"Matching code":peak.value.toFixed(unit==="mph"||unit==="°F"?0:2)+" "+unit):"—";
     return '<tr><td>'+safe(stamp(item.captured_at))+'</td><td>'+safe(item.models?.length||0)+
       '</td><td>'+safe(item.same_place_day_support||0)+'</td><td>'+safe(max)+
       '</td><td>'+safe(dateRange(item))+'</td></tr>';
@@ -184,8 +193,7 @@
       '<div class="case-detail-numbers"><div><span>FIRST SEEN</span><strong>'+safe(stamp(caseFile.first_seen))+'</strong></div>'+
       '<div><span>LAST REPORTED</span><strong>'+safe(stamp(caseFile.last_seen))+'</strong></div>'+
       '<div><span>FORECAST CAPTURES</span><strong>'+safe(timeline.length)+'</strong></div></div>'+
-      '<p class="case-detail-copy">We started tracking this when a daily forecast crossed our '+safe(trigger)+
-      safe(summary.threshold?.value)+' '+safe(unit)+' screening level. '+
+      '<p class="case-detail-copy">We started tracking this when a daily forecast crossed our '+(unit==="signal"?"matching daily weather-code":safe(trigger)+safe(summary.threshold?.value)+' '+safe(unit))+' screening level. '+
       safe(modelEvidence(summary))+". "+
       safe(localEvidence(summary))+'</p>'+
       '<p class="case-detail-copy">Observation verification is shown separately when available. A captured forecast is not a storm observation, and this signal is not an NWS watch, warning, or calibrated risk forecast.</p>'+

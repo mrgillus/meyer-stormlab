@@ -30,18 +30,50 @@ WATCH_NAMES = ("Alder", "Birch", "Cedar", "Drift", "Ember", "Flint", "Gale",
 # Screening criteria, not official warning thresholds or event probabilities.
 THRESHOLDS = {
     "snow": ("snowfall_sum", 2.0, "gte", "in"),
+    "light_snow": ("weather_code", 1, "gte", "signal"),
+    "rain": ("rain_sum", 0.01, "gte", "in"),
+    "showers": ("showers_sum", 0.01, "gte", "in"),
+    "drizzle": ("weather_code", 1, "gte", "signal"),
+    "ice": ("weather_code", 1, "gte", "signal"),
+    "thunderstorm": ("weather_code", 1, "gte", "signal"),
+    "fog": ("weather_code", 1, "gte", "signal"),
+    "freeze": ("temperature_2m_min", 32, "lte", "F"),
+    "heat_stress": ("apparent_temperature_max", 105, "gte", "F"),
+    "cold_stress": ("apparent_temperature_min", 0, "lte", "F"),
     "precipitation": ("precipitation_sum", 1.25, "gte", "in"),
     "wind": ("wind_gusts_10m_max", 45.0, "gte", "mph"),
     "cold": ("temperature_2m_min", 10.0, "lte", "F"),
     "heat": ("temperature_2m_max", 100.0, "gte", "F"),
 }
 LABELS = {
-    "snow": "Snowfall potential",
+    "snow": "Accumulating snowfall",
+    "light_snow": "Light snow / flurries",
+    "rain": "Rainfall",
+    "showers": "Convective showers",
+    "drizzle": "Drizzle",
+    "ice": "Freezing rain / drizzle signal",
+    "thunderstorm": "Thunderstorm signal",
+    "fog": "Fog signal",
+    "freeze": "Freezing temperature",
+    "heat_stress": "Dangerous apparent heat signal",
+    "cold_stress": "Dangerous apparent cold signal",
     "precipitation": "Heavy precipitation signal",
     "wind": "Strong wind signal",
     "cold": "Unusual cold signal",
     "heat": "Extreme heat signal",
 }
+# Daily weather code represents the day's most severe coded condition, not
+# every phenomenon. A negative below means no matching code, not no hazard.
+CODE_HITS = {
+    "light_snow": {71, 77, 85},
+    "drizzle": {51, 53, 55},
+    "ice": {56, 57, 66, 67},
+    "thunderstorm": {95, 96, 97, 99},
+    "fog": {45, 48},
+}
+VALID_CODES = {0, 1, 2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66,
+               67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 97, 99}
+ROUTINE_KINDS = {"rain", "showers", "drizzle", "light_snow", "fog", "freeze"}
 UNIT_ALIASES = {
     "in": {"inch": 1., "in": 1., "cm": 1/2.54, "mm": 1/25.4},
     "mph": {"mp/h": 1., "mph": 1., "km/h": 1/1.609344, "m/s": 2.2369362921},
@@ -80,6 +112,15 @@ def normalized(value, unit, target):
     return value * multiplier
 
 
+def screen_value(kind, raw, unit):
+    if kind in CODE_HITS:
+        if (str(unit).lower() != "wmo code" or isinstance(raw, bool)
+                or not isinstance(raw, (int, float)) or raw not in VALID_CODES):
+            return None
+        return float(raw in CODE_HITS[kind])
+    return normalized(raw, unit, THRESHOLDS[kind][3])
+
+
 def captured_signals(snapshot):
     """For each kind, cluster consecutive calendar days across the metro."""
     recorded = parse_time(snapshot["retrieved_at"])
@@ -103,7 +144,7 @@ def captured_signals(snapshot):
                 for kind, (field, threshold, operation, target) in THRESHOLDS.items():
                     series = daily.get(field) or []
                     raw = series[idx] if idx < len(series) else None
-                    value = normalized(raw, units.get(field), target)
+                    value = screen_value(kind, raw, units.get(field))
                     if value is None:
                         continue
                     hit = value >= threshold if operation == "gte" else value <= threshold
@@ -129,7 +170,7 @@ def captured_signals(snapshot):
             for x in segment:
                 pairs[(x["date"], x["place"])].add(x["model"])
             corroboration = max((len(p) for p in pairs.values()), default=0)
-            samples = sorted(segment, key=lambda x: x["value"], reverse=kind!="cold")
+            samples = sorted(segment, key=lambda x: x["value"], reverse=THRESHOLDS[kind][2] != "lte")
             strongest = samples[0]
             local = [x for x in segment if x["place"] == "Wentzville"]
             # These are threshold-triggering daily model values, not a storm-total blend.
@@ -246,7 +287,7 @@ def assess(snapshot, kind, start_date, end_date):
             daily, units = sample.get("daily") or {}, sample.get("units") or {}
             by_date = dict(zip(daily.get("time") or [], daily.get(field) or []))
             for date in dates:
-                value = normalized(by_date.get(date), units.get(field), target)
+                value = screen_value(kind, by_date.get(date), units.get(field))
                 if value is None:
                     complete = False
                 elif (value >= threshold if operation == "gte" else value <= threshold):
@@ -324,6 +365,7 @@ def main():
         summary = {
             "id": event["id"], "kind": event["kind"], "title": event["title"],
             "name": event["name"],
+            "priority": "routine" if event["kind"] in ROUTINE_KINDS else "notable",
             "assessments": event["assessments"][-60:],
             "start_date": event["start_date"], "end_date": event["end_date"],
             "first_seen": event["first_seen"], "last_seen": event["last_seen"],
@@ -360,7 +402,8 @@ def main():
             "Research screening signals, not official NWS alerts or calibrated probabilities.",
             "Support percent counts confirmed sources out of four. Zero requires four clear sources.",
             "Daily deterministic stitched forecasts; model initialization not identified.",
-            "Signals cannot establish severe thunderstorms, tornadoes, flood risk, or snow depth.",
+            "Weather-code signals describe the most severe coded daily condition, not every hazard.",
+            "Thunderstorm signals are not severe, tornado, hail, or damaging-wind probabilities; flooding requires dedicated hydrologic evidence.",
             "Forecast history is not ground truth; no model skill verdict without observations.",
             "15-day GFS is the longest available collector input. No 17–21 day detection.",
         ],

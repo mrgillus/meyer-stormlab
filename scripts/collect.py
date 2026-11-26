@@ -16,8 +16,12 @@ PLACES = {"Wentzville": (38.8114,-90.8529), "St. Louis": (38.6270,-90.1994),
           "Belleville": (38.5201,-89.9839), "Alton": (38.8906,-90.1843)}
 FIELDS = ("snowfall_sum","precipitation_sum","temperature_2m_min",
           "temperature_2m_max","wind_gusts_10m_max")
-def request(model, days, lat, lon):
-    params = dict(latitude=lat, longitude=lon, models=model, daily=",".join(FIELDS),
+EXTRA_FIELDS = ("rain_sum", "showers_sum", "weather_code",
+                "apparent_temperature_max", "apparent_temperature_min")
+
+def request(model, days, lat, lon, expanded=True):
+    fields = FIELDS + EXTRA_FIELDS if expanded else FIELDS
+    params = dict(latitude=lat, longitude=lon, models=model, daily=",".join(fields),
                   timezone="America/Chicago", temperature_unit="fahrenheit",
                   wind_speed_unit="mph", precipitation_unit="inch", forecast_days=days)
     url = "https://api.open-meteo.com/v1/forecast?" + urllib.parse.urlencode(params)
@@ -32,6 +36,10 @@ def request(model, days, lat, lon):
                     "grid_latitude": obj["latitude"], "grid_longitude": obj["longitude"],
                     "retrieved_at": dt.datetime.now(dt.timezone.utc).isoformat()}
         except (OSError, ValueError, KeyError) as exc:
+            if expanded and getattr(exc, "code", None) == 400:
+                result = request(model, days, lat, lon, expanded=False)
+                result["extra_fields_status"] = "unsupported_request"
+                return result
             if attempt == 2:
                 raise
             time.sleep(2 ** attempt)
