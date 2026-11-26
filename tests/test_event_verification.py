@@ -122,6 +122,26 @@ class VerificationTests(unittest.TestCase):
         self.assertLess(v.distance_miles((38.8114,-90.8529),(38.8114,-90.8529)),.001)
         self.assertGreater(v.distance_miles((38.8114,-90.8529),(38.6270,-90.1994)),30)
 
+    def test_prior_station_days_persist_and_new_corrections_replace_them(self):
+        station={"station_id":"ACIS:111","name":"TEST"}
+        old=[{"station_id":"ACIS:111","reported_date":"2026-11-23",
+              "snowfall_in":1.0},{"station_id":"ACIS:111",
+              "reported_date":"2026-11-24","snowfall_in":2.0}]
+        new=[{"station_id":"ACIS:111","reported_date":"2026-11-24",
+              "snowfall_in":2.5},{"station_id":"ACIS:111",
+              "reported_date":"2026-11-25","snowfall_in":3.0}]
+        stations,obs=v.retain_recent_measurements([station],old,[station],
+                  new,dt.date(2026,11,26))
+        self.assertEqual(len(stations),1)
+        self.assertEqual(len(obs),3)
+        by_date={r["reported_date"]:r["snowfall_in"] for r in obs}
+        self.assertEqual(by_date["2026-11-23"],1.0)
+        self.assertEqual(by_date["2026-11-24"],2.5)
+        self.assertEqual(by_date["2026-11-25"],3.0)
+        _,trimmed=v.retain_recent_measurements([station],old,[station],new,
+                  dt.date(2027,4,1))
+        self.assertEqual(trimmed,[])
+
     def test_acis_provider_url_lists_snow_precip_and_flags(self):
         url=v.provider_request(dt.date(2026,11,24),dt.date(2026,11,26))
         self.assertIn("MultiStnData",url)
