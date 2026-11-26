@@ -1,21 +1,21 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T06:17:15.289680+00:00",
-  "source_latest_observation_capture": "2026-11-26T06:17:15.289680+00:00",
+  "generated_at": "2026-11-26T12:19:36.235786+00:00",
+  "source_latest_observation_capture": "2026-11-26T12:19:36.235786+00:00",
   "provider_status": "retrieved",
   "provider_error": null,
   "source": "RCC-ACIS daily station reports (snowfall and liquid precipitation)",
   "observed_station_count": 78,
-  "reported_station_days": 181,
+  "reported_station_days": 185,
   "cases_reviewed": 2,
-  "cases_with_daily_reports": 1,
+  "cases_with_daily_reports": 0,
   "cases_scored": 0,
   "verification_policy": "fail_closed_until_observation_interval_and_station_location_are_aligned",
   "events": [
     {
-      "event_id": "precipitation-20261126",
-      "kind": "precipitation",
-      "title": "Heavy precipitation signal",
+      "event_id": "snow-20261125",
+      "kind": "snow",
+      "title": "Snowfall potential",
       "forecast_dates": {
         "start": "2026-11-26",
         "end": "2026-11-26"
@@ -232,851 +232,218 @@
       "safety_note": "Stations report daily measurements, NOT an observed 48-hour storm total. Dates and locations may not align with model forecasts."
     },
     {
-      "event_id": "snow-20261125",
-      "kind": "snow",
-      "title": "Snowfall potential",
+      "event_id": "precipitation-20261126",
+      "kind": "precipitation",
+      "title": "Heavy precipitation signal",
       "forecast_dates": {
-        "start": "2026-11-25",
+        "start": "2026-11-26",
         "end": "2026-11-26"
       },
       "observation_status": "event_window_not_complete",
       "verification_status": "not_scored",
-      "verification_reason": "Forecast window not yet over; Daily station observation windows have not been verified against model calendar-day windows.",
+      "verification_reason": "Forecast window not yet over; No compatible measured daily station reports are available yet.",
       "actual_observed_storm_total_in": null,
       "forecast_error_in": null,
       "model_skill": null,
-      "station_daily_reports": [
-        {
-          "station_id": "ACIS:111417",
-          "station_name": "LAKE ST LOUIS 1.7 WSW",
-          "near_town": "Wentzville",
-          "distance_to_near_town_mi": 3.0,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:96928",
-          "station_name": "O'FALLON 2.6 NNE",
-          "near_town": "Wentzville",
-          "distance_to_near_town_mi": 8.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:101974",
-          "station_name": "ST. PETERS 4.5 W",
-          "near_town": "Wentzville",
-          "distance_to_near_town_mi": 9.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:54827",
-          "station_name": "BALLWIN 0.5 NNW",
-          "near_town": "Wildwood",
-          "distance_to_near_town_mi": 0.6,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:118430",
-          "station_name": "BALLWIN 1.0 SE",
-          "near_town": "Wildwood",
-          "distance_to_near_town_mi": 1.2,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:11400",
-          "station_name": "ST CHARLES ELM POINT",
-          "near_town": "St. Charles",
-          "distance_to_near_town_mi": 2.0,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "6",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:114951",
-          "station_name": "ST. CHARLES 2.3 S",
-          "near_town": "St. Charles",
-          "distance_to_near_town_mi": 2.2,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "9",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:54553",
-          "station_name": "WASHINGTON 2.7 ESE",
-          "near_town": "Washington",
-          "distance_to_near_town_mi": 2.8,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:78304",
-          "station_name": "MANCHESTER 2.0 S",
-          "near_town": "Wildwood",
-          "distance_to_near_town_mi": 2.9,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:110526",
-          "station_name": "BELLEVILLE 1.9 WNW",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 3.2,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:85549",
-          "station_name": "GLENDALE 0.3 NE",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 3.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:117679",
-          "station_name": "ST. LOUIS 2.0 SSW",
-          "near_town": "St. Louis",
-          "distance_to_near_town_mi": 3.7,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:117784",
-          "station_name": "CONCORD 1.3 S",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 4.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:11593",
-          "station_name": "ST PETERS 2 SE",
-          "near_town": "St. Charles",
-          "distance_to_near_town_mi": 5.1,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:64075",
-          "station_name": "FAIRVIEW HEIGHTS 2.0 ENE",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 5.9,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "6",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:34085",
-          "station_name": "FAIRMONT CITY 0.9 ENE",
-          "near_town": "St. Louis",
-          "distance_to_near_town_mi": 6.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:97417",
-          "station_name": "CLAYTON 1.2 NW",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 6.7,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "9",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:112991",
-          "station_name": "FREEBURG 0.8 WNW",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 7.0,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:115193",
-          "station_name": "BETHALTO 0.9 NW",
-          "near_town": "Alton",
-          "distance_to_near_town_mi": 7.0,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:116537",
-          "station_name": "O'FALLON 1.8 N",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 7.7,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:118225",
-          "station_name": "FLORISSANT 1.9 NW",
-          "near_town": "St. Charles",
-          "distance_to_near_town_mi": 8.0,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:51821",
-          "station_name": "GRANITE CITY 1.4 ENE",
-          "near_town": "St. Louis",
-          "distance_to_near_town_mi": 8.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "6",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:97399",
-          "station_name": "FENTON 4.1 S",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 8.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:110795",
-          "station_name": "ARNOLD 0.3 E",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 9.1,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:95209",
-          "station_name": "COTTLEVILLE",
-          "near_town": "St. Charles",
-          "distance_to_near_town_mi": 9.2,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "6",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:51822",
-          "station_name": "GRANITE CITY 2.3 NE",
-          "near_town": "St. Louis",
-          "distance_to_near_town_mi": 9.3,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:11391",
-          "station_name": "WELDON SPRING NWS",
-          "near_town": "Wildwood",
-          "distance_to_near_town_mi": 10.0,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "6",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:81985",
-          "station_name": "MASCOUTAH 1.5 SSE",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 10.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:113662",
-          "station_name": "LEBANON 0.3 NE",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 11.1,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:103813",
-          "station_name": "ARNOLD 2.3 S",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 11.5,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:51826",
-          "station_name": "EDWARDSVILLE 0.9 WSW",
-          "near_town": "Alton",
-          "distance_to_near_town_mi": 12.8,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:92946",
-          "station_name": "COLUMBIA 4.7 S",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 13.5,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:98378",
-          "station_name": "TROY 1.9 S",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 13.5,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:97773",
-          "station_name": "EDWARDSVILLE 1.1 ENE",
-          "near_town": "Alton",
-          "distance_to_near_town_mi": 14.1,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "5",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:99360",
-          "station_name": "EDWARDSVILLE 1.2 ENE",
-          "near_town": "Alton",
-          "distance_to_near_town_mi": 14.3,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:76988",
-          "station_name": "CEDAR HILL 2.6 N",
-          "near_town": "Wildwood",
-          "distance_to_near_town_mi": 14.4,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:96180",
-          "station_name": "MARYVILLE 1.4 ENE",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 14.8,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:5779",
-          "station_name": "JERSEYVILLE 2 SW",
-          "near_town": "Alton",
-          "distance_to_near_town_mi": 16.9,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:100694",
-          "station_name": "CATAWISSA 3.0 SSE",
-          "near_town": "Wildwood",
-          "distance_to_near_town_mi": 17.7,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:115570",
-          "station_name": "EDWARDSVILLE 5.5 E",
-          "near_town": "Alton",
-          "distance_to_near_town_mi": 18.7,
-          "reported_date": "2026-11-25",
-          "value_in": 0.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        }
-      ],
-      "station_count": 40,
-      "daily_report_count": 40,
+      "station_daily_reports": [],
+      "station_count": 0,
+      "daily_report_count": 0,
       "forecast_reference": {
         "status": "pre_event_capture",
-        "captured_at": "2026-11-25T04:42:00.447753+00:00",
-        "snapshot_path": "data/snapshots/2026-11/20261125T044200Z.json",
+        "captured_at": "2026-11-26T04:40:09.413279+00:00",
+        "snapshot_path": "data/snapshots/2026-11/20261126T044009Z.json",
         "daily_forecasts": [
           {
             "town": "Wentzville",
             "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 1.461
-          },
-          {
-            "town": "Wentzville",
-            "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.835
+            "modeled_daily_snow_in": 5.126
           },
           {
             "town": "Wentzville",
             "model": "ECMWF",
-            "calendar_date": "2026-11-25",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 4.988
+          },
+          {
+            "town": "Wentzville",
+            "model": "GEM",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 5.429
+          },
+          {
+            "town": "Wentzville",
+            "model": "ICON",
+            "calendar_date": "2026-11-26",
             "modeled_daily_snow_in": 3.169
           },
           {
-            "town": "Wentzville",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.228
-          },
-          {
-            "town": "Wentzville",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 1.157
-          },
-          {
-            "town": "Wentzville",
-            "model": "GEM",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.035
-          },
-          {
-            "town": "Wentzville",
-            "model": "ICON",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.079
-          },
-          {
-            "town": "Wentzville",
-            "model": "ICON",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.146
-          },
-          {
-            "town": "St. Louis",
-            "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.921
-          },
-          {
             "town": "St. Louis",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 8.047
-          },
-          {
-            "town": "St. Louis",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.217
+            "modeled_daily_snow_in": 4.657
           },
           {
             "town": "St. Louis",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.299
-          },
-          {
-            "town": "St. Louis",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.811
+            "modeled_daily_snow_in": 4.106
           },
           {
             "town": "St. Louis",
             "model": "GEM",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 7.744
-          },
-          {
-            "town": "St. Louis",
-            "model": "ICON",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 5.098
+            "modeled_daily_snow_in": 7.028
           },
           {
             "town": "St. Louis",
             "model": "ICON",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 3.39
-          },
-          {
-            "town": "St. Charles",
-            "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 1.846
+            "modeled_daily_snow_in": 2.094
           },
           {
             "town": "St. Charles",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.917
-          },
-          {
-            "town": "St. Charles",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.217
+            "modeled_daily_snow_in": 4.272
           },
           {
             "town": "St. Charles",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.539
-          },
-          {
-            "town": "St. Charles",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.37
+            "modeled_daily_snow_in": 4.685
           },
           {
             "town": "St. Charles",
             "model": "GEM",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 8.047
+            "modeled_daily_snow_in": 6.504
           },
           {
             "town": "St. Charles",
             "model": "ICON",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.382
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 1.957
           },
           {
-            "town": "St. Charles",
+            "town": "Affton",
+            "model": "GFS",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 4.906
+          },
+          {
+            "town": "Affton",
+            "model": "ECMWF",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 5.787
+          },
+          {
+            "town": "Affton",
+            "model": "GEM",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 7.055
+          },
+          {
+            "town": "Affton",
+            "model": "ICON",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 2.48
+          },
+          {
+            "town": "Wildwood",
+            "model": "GFS",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 5.622
+          },
+          {
+            "town": "Wildwood",
+            "model": "ECMWF",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 6.394
+          },
+          {
+            "town": "Wildwood",
+            "model": "GEM",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 6.862
+          },
+          {
+            "town": "Wildwood",
+            "model": "ICON",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 2.673
+          },
+          {
+            "town": "Washington",
+            "model": "GFS",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 4.161
+          },
+          {
+            "town": "Washington",
+            "model": "ECMWF",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 5.787
+          },
+          {
+            "town": "Washington",
+            "model": "GEM",
+            "calendar_date": "2026-11-26",
+            "modeled_daily_snow_in": 4.575
+          },
+          {
+            "town": "Washington",
             "model": "ICON",
             "calendar_date": "2026-11-26",
             "modeled_daily_snow_in": 3.665
           },
           {
-            "town": "Affton",
-            "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.646
-          },
-          {
-            "town": "Affton",
+            "town": "Belleville",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 7.799
+            "modeled_daily_snow_in": 4.795
           },
           {
-            "town": "Affton",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.575
-          },
-          {
-            "town": "Affton",
+            "town": "Belleville",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.339
+            "modeled_daily_snow_in": 4.74
           },
           {
-            "town": "Affton",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.866
-          },
-          {
-            "town": "Affton",
+            "town": "Belleville",
             "model": "GEM",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.559
+            "modeled_daily_snow_in": 7.193
           },
           {
-            "town": "Affton",
-            "model": "ICON",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 5.236
-          },
-          {
-            "town": "Affton",
+            "town": "Belleville",
             "model": "ICON",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.906
+            "modeled_daily_snow_in": 0.799
           },
           {
-            "town": "Wildwood",
-            "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 1.598
-          },
-          {
-            "town": "Wildwood",
+            "town": "Alton",
             "model": "GFS",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 7.579
+            "modeled_daily_snow_in": 4.161
           },
           {
-            "town": "Wildwood",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.106
-          },
-          {
-            "town": "Wildwood",
+            "town": "Alton",
             "model": "ECMWF",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 8.075
+            "modeled_daily_snow_in": 3.555
           },
           {
-            "town": "Wildwood",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.37
-          },
-          {
-            "town": "Wildwood",
+            "town": "Alton",
             "model": "GEM",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.228
-          },
-          {
-            "town": "Wildwood",
-            "model": "ICON",
-            "calendar_date": "2026-11-25",
             "modeled_daily_snow_in": 4.685
           },
           {
-            "town": "Wildwood",
-            "model": "ICON",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.043
-          },
-          {
-            "town": "Washington",
-            "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 0.854
-          },
-          {
-            "town": "Washington",
-            "model": "GFS",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 5.594
-          },
-          {
-            "town": "Washington",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.039
-          },
-          {
-            "town": "Washington",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 7.331
-          },
-          {
-            "town": "Washington",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 1.02
-          },
-          {
-            "town": "Washington",
-            "model": "GEM",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.217
-          },
-          {
-            "town": "Washington",
-            "model": "ICON",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 3.197
-          },
-          {
-            "town": "Washington",
-            "model": "ICON",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 6.504
-          },
-          {
-            "town": "Belleville",
-            "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.465
-          },
-          {
-            "town": "Belleville",
-            "model": "GFS",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 9.618
-          },
-          {
-            "town": "Belleville",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 4.768
-          },
-          {
-            "town": "Belleville",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 4.63
-          },
-          {
-            "town": "Belleville",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 3.417
-          },
-          {
-            "town": "Belleville",
-            "model": "GEM",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 7.165
-          },
-          {
-            "town": "Belleville",
-            "model": "ICON",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 6.063
-          },
-          {
-            "town": "Belleville",
-            "model": "ICON",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 1.323
-          },
-          {
-            "town": "Alton",
-            "model": "GFS",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 3.142
-          },
-          {
-            "town": "Alton",
-            "model": "GFS",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 7.0
-          },
-          {
-            "town": "Alton",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 3.941
-          },
-          {
-            "town": "Alton",
-            "model": "ECMWF",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 2.839
-          },
-          {
-            "town": "Alton",
-            "model": "GEM",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 2.673
-          },
-          {
-            "town": "Alton",
-            "model": "GEM",
-            "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 7.717
-          },
-          {
-            "town": "Alton",
-            "model": "ICON",
-            "calendar_date": "2026-11-25",
-            "modeled_daily_snow_in": 5.457
-          },
-          {
             "town": "Alton",
             "model": "ICON",
             "calendar_date": "2026-11-26",
-            "modeled_daily_snow_in": 1.02
+            "modeled_daily_snow_in": 0.524
           }
         ],
         "note": "Model daily calendar windows have NOT been matched to station observation-day windows. Do not calculate an error score."
