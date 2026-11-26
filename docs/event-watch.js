@@ -18,6 +18,7 @@
     cold_stress:"◇",wind:"〰",cold:"◇",heat:"☀"};
   const routine = item => item.priority==="routine";
   const unitsFor = kind => ["wind"].includes(kind)?"mph":
+    ["warm_day","cold_day","warm_night","cold_night"].includes(kind)?"σ":
     ["cold","heat","freeze","heat_stress","cold_stress"].includes(kind)?"°F":
     ["light_snow","drizzle","ice","thunderstorm","fog"].includes(kind)?"signal":"in";
   const stamp = s => new Intl.DateTimeFormat("en-US",{timeZone:CT,month:"short",day:"numeric",
@@ -119,7 +120,7 @@
     {id:"rain",name:"Rain and precipitation",icon:"☂",kinds:["rain","drizzle","showers","precipitation"]},
     {id:"severe",name:"Thunderstorms and severe weather",icon:"ϟ",kinds:["thunderstorm","tornado","hail","damaging_wind","severe"]},
     {id:"wind",name:"Wind",icon:"〰",kinds:["wind"]},
-    {id:"temperature",name:"Temperature",icon:"◇",kinds:["freeze","cold","cold_stress","heat","heat_stress"]},
+    {id:"temperature",name:"Temperature",icon:"◇",kinds:["warm_day","cold_day","warm_night","cold_night","cold","cold_stress","heat","heat_stress"]},
     {id:"fog",name:"Visibility",icon:"≋",kinds:["fog"]},
     {id:"flood",name:"Flooding",icon:"◈",kinds:["flood","flash_flood","river_flood"]}
   ];
@@ -171,14 +172,15 @@
     if(!points.length||!values.length&&quantity)return '<p class="watch-muted">Quantity guidance unavailable.</p>';
     if(!values.length&&!points.some(p=>p.unknown_models>0))return '<p class="watch-muted">Forecast series unavailable.</p>';
     const x0=36,x1=310,y0=12,y1=82;
-    let lo=quantity?(series.unit==="F"?Math.min(...values):0):0;
+    let lo=quantity?(["F","sigma"].includes(series.unit)?Math.min(...values):0):0;
     let hi=quantity?Math.max(...values):100;
     if(quantity&&hi===lo){hi=lo+(series.unit==="F"?5:1)}
     if(quantity&&series.unit==="F"){lo-=2;hi+=2}
+    if(quantity&&series.unit==="sigma"){lo=Math.min(lo,-2);hi=Math.max(hi,2)}
     const x=i=>points.length===1?(x0+x1)/2:x0+(x1-x0)*i/(points.length-1);
     const y=v=>y1-(v-lo)/(hi-lo)*(y1-y0);
-    const unit=quantity?(series.unit==="F"?"°F":series.unit==="in"?"″":" mph"):"%";
-    const fmt=v=>(quantity&&series.unit==="in"?Number(v.toFixed(2)):Math.round(v))+unit;
+    const unit=quantity?(series.unit==="F"?"°F":series.unit==="in"?"″":series.unit==="sigma"?"σ":" mph"):"%";
+    const fmt=v=>(quantity&&["in","sigma"].includes(series.unit)?Number(v.toFixed(2)):Math.round(v))+unit;
     let lines="",dots="",areas="",prior=null;
     points.forEach((p,i)=>{
       const xx=x(i),v=p[field];
@@ -206,11 +208,11 @@
   }
   function forecastPanel(series){
     if(!series?.points?.length)return '<p class="watch-muted">No forecast-time chart available.</p>';
-    const hourly=series.resolution==="hourly",unit=series.unit==="F"?"°F":series.unit;
+    const hourly=series.resolution==="hourly",unit=series.unit==="F"?"°F":series.unit==="sigma"?"σ":series.unit;
     const threshold=(series.direction==="lte"?"≤":"≥")+" "+series.threshold+" "+unit;
     const quantity=series.unit!=="signal";
     return '<div class="forecast-series"><div class="forecast-series-head"><b>'+(hourly?"Hourly":"Daily")+' outlook</b><small>Central time · forecast, not observation</small></div>'+
-      (quantity?'<div class="forecast-plot-label"><span class="forecast-key quantity"></span> '+safe(series.unit==="in"?(hourly?"Amount per hour":"Amount per day"):series.unit==="mph"?"Regional peak gust":"Regional temperature extreme")+' · '+safe(unit)+'</div>'+linePlot(series,true)+'<small class="watch-muted">Median of complete models’ regional extrema, not a local total.</small>':"")+
+      (quantity?'<div class="forecast-plot-label"><span class="forecast-key quantity"></span> '+safe(series.unit==="in"?(hourly?"Amount per hour":"Amount per day"):series.unit==="mph"?"Regional peak gust":series.unit==="sigma"?"Departure from historical normal":"Regional temperature extreme")+' · '+safe(unit)+'</div>'+linePlot(series,true)+'<small class="watch-muted">Median of complete models’ regional extrema, not a local total.</small>':"")+
       '<div class="forecast-plot-label"><span class="forecast-key support"></span> Model support (%)</div>'+linePlot(series,false)+
       '<small class="watch-muted">'+safe(series.unit==="signal"?"Matching weather code":threshold)+' per '+(hourly?"hour":"day")+' · dashed bars = missing coverage, not a calibrated chance.</small></div>';
   }
@@ -247,8 +249,8 @@
     const peak=quantified.reduce((a,p)=>!a||(series.direction==="lte"?p.quantity<a.quantity:p.quantity>a.quantity)?p:a,null);
     const allClear=points.length>0&&points.every(p=>p.support_pct===0&&!p.unknown_models);
     const hourly=series?.resolution==="hourly";
-    const unit=series?.unit==="F"?"°F":series?.unit==="in"?(hourly?"″/hr":"″/day"):" mph";
-    const amount=peak?Number(peak.quantity.toFixed(series.unit==="in"?2:0))+unit:null;
+    const unit=series?.unit==="F"?"°F":series?.unit==="in"?(hourly?"″/hr":"″/day"):series?.unit==="sigma"?"σ":" mph";
+    const amount=peak?Number(peak.quantity.toFixed(["in","sigma"].includes(series.unit)?2:0))+unit:null;
     return {support:supported?score(supported):allClear?"0%":"Unknown",
       time:supported?forecastTime(supported,hourly):null,amount,
       amountTime:peak?forecastTime(peak,hourly):null,allClear};
@@ -361,7 +363,7 @@
     }else{
       q("eventWatchList").innerHTML='<div class="blank-state">No upcoming event windows are listed in the published regional catalog.</div>';
     }
-    set("eventWatchSource","Source snapshot: "+stamp(index.source_latest_capture)+
+    set("eventWatchSource","Temperature climatology: "+(index.climatology?.status==="available"?Object.keys(index.climatology.places||{}).length+"/8 locations · NOAA 1991–2020":"not available")+" · Source snapshot: "+stamp(index.source_latest_capture)+
       (fresh?"":" · STALE — waiting for scheduled collector")+
       " · Stitched deterministic daily forecasts only; these are not warnings, observations, or calibrated probabilities.");
   }
@@ -413,7 +415,7 @@
     window.StormLabVerification?.render(summary.id);
     const group=groupFor(summary.id);
     const label=titles[summary.kind]||summary.title;
-    const unit=summary.threshold?.unit||"";
+    const unit=summary.threshold?.unit==="sigma"?"σ":summary.threshold?.unit||"";
     const trigger=summary.threshold?.direction==="lte"?"≤":"≥";
     q("eventCaseDetail").innerHTML='<p class="muted">Loading the full captured model history for this event…</p>';
     let caseFile;

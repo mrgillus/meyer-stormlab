@@ -234,6 +234,25 @@ class EventWatchTests(unittest.TestCase):
         self.assertEqual(groups[0]["mode_ids"], ["snow"])
         self.assertEqual(groups[1]["mode_ids"], ["rain"])
 
+    def test_temperature_anomalies_use_matching_daily_high_and_low(self):
+        stamp = dt.datetime.now(watch.UTC).isoformat()
+        s = snapshot(stamp, snow=0, models=watch.MODELS)
+        day = s["locations"]["Wentzville"]["GFS"]["daily"]["time"][0]
+        s["climatology"] = {"period":"1991-2020","unit":"F",
+            "places":{"Wentzville":{"station":"test"}},
+            "stations":{"test":{"days":{day[5:]:{"high":45,"high_sd":8,"low":30,"low_sd":5}}}}}
+        for sample in s["locations"]["Wentzville"].values():
+            sample["daily"]["temperature_2m_max"]=[62]
+            sample["daily"]["temperature_2m_min"]=[30]
+        self.assertEqual({x["kind"] for x in watch.captured_signals(s)}, {"warm_day"})
+        s["locations"] = {p: s["locations"]["Wentzville"].copy() for p in watch.PLACES}
+        s["climatology"]["places"] = {p:{"station":"test"} for p in watch.PLACES}
+        self.assertEqual(watch.assess(s,"warm_day",day,day)["support_pct"],100)
+        self.assertEqual(watch.forecast_series(s,"warm_day",day,day)["points"][0]["quantity"],2.125)
+        del s["climatology"]
+        self.assertIsNone(watch.assess(s,"warm_day",day,day)["support_pct"])
+        self.assertEqual(watch.captured_signals(s),[])
+
     def test_temporary_missing_model_does_not_claim_corroboration(self):
         stamp = dt.datetime.now(watch.UTC).isoformat()
         out = watch.captured_signals(snapshot(stamp, models=("GFS",)))

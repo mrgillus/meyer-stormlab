@@ -10,6 +10,7 @@ on:
     paths:
       - '.github/workflows/event-watch.yml'
       - 'scripts/event_watch.py'
+      - 'scripts/import_climatology.py'
       - 'tests/test_event_watch.py'
 
 permissions:
@@ -22,7 +23,7 @@ concurrency:
 jobs:
   classify:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,6 +33,8 @@ jobs:
           python-version: '3.12'
       - name: Verify the event detector
         run: python -m unittest discover -s tests -p 'test_event_watch.py' -v
+      - name: Import or reuse NOAA daily climate normals
+        run: python scripts/import_climatology.py
       - name: Build persistent event catalog from archived forecast captures
         run: python scripts/event_watch.py
       - name: Publish the event catalog without overwriting collector output

@@ -38,6 +38,10 @@ THRESHOLDS = {
     "thunderstorm": ("weather_code", 1, "gte", "signal"),
     "fog": ("weather_code", 1, "gte", "signal"),
     "freeze": ("temperature_2m_min", 32, "lte", "F"),
+    "warm_day": ("temperature_2m_max", 2.0, "gte", "sigma"),
+    "cold_day": ("temperature_2m_max", -2.0, "lte", "sigma"),
+    "warm_night": ("temperature_2m_min", 2.0, "gte", "sigma"),
+    "cold_night": ("temperature_2m_min", -2.0, "lte", "sigma"),
     "heat_stress": ("apparent_temperature_max", 105, "gte", "F"),
     "cold_stress": ("apparent_temperature_min", 0, "lte", "F"),
     "precipitation": ("precipitation_sum", 1.25, "gte", "in"),
@@ -55,6 +59,10 @@ LABELS = {
     "thunderstorm": "Thunderstorm signal",
     "fog": "Fog signal",
     "freeze": "Freezing temperature",
+    "warm_day": "Unusually warm daytime highs",
+    "cold_day": "Unusually cold daytime highs",
+    "warm_night": "Unusually warm overnight lows",
+    "cold_night": "Unusually cold overnight lows",
     "heat_stress": "Dangerous apparent heat signal",
     "cold_stress": "Dangerous apparent cold signal",
     "precipitation": "Heavy precipitation signal",
@@ -77,6 +85,7 @@ ROUTINE_KINDS = {"rain", "showers", "drizzle", "light_snow", "fog"}
 # Keep the legacy freeze rule for archival compatibility, but do not flag
 # routine freezing temperatures or let them join/extend named events.
 CONTEXT_ONLY_KINDS = {"freeze"}
+ANOMALY_KINDS = {"warm_day", "cold_day", "warm_night", "cold_night"}
 UNIT_ALIASES = {
     "in": {"inch": 1., "in": 1., "cm": 1/2.54, "mm": 1/25.4},
     "mph": {"mp/h": 1., "mph": 1., "km/h": 1/1.609344, "m/s": 2.2369362921},
@@ -115,7 +124,25 @@ def normalized(value, unit, target):
     return value * multiplier
 
 
-def screen_value(kind, raw, unit):
+def anomaly_baseline(snapshot, place, date, kind):
+    c = snapshot.get("climatology") or {}
+    if c.get("period") != "1991-2020" or c.get("unit") != "F":
+        return None
+    match = c.get("places", {}).get(place) or {}
+    station = c.get("stations", {}).get(match.get("station")) or {}
+    values = station.get("days", {}).get(date[5:10]) or {}
+    key = "high" if kind.endswith("_day") else "low"
+    normal, sd = values.get(key), values.get(key+"_sd")
+    if not all(isinstance(v,(int,float)) and not isinstance(v,bool) and math.isfinite(v) for v in (normal,sd)) or sd <= 0:
+        return None
+    return normal, sd
+
+
+def screen_value(kind, raw, unit, snapshot=None, place=None, date=None):
+    if kind in ANOMALY_KINDS:
+        value = normalized(raw, unit, "F")
+        baseline = anomaly_baseline(snapshot or {}, place, date or "", kind)
+        return (value-baseline[0])/baseline[1] if value is not None and baseline else None
     if kind in CODE_HITS:
         if (str(unit).lower() != "wmo code" or isinstance(raw, bool)
                 or not isinstance(raw, (int, float)) or raw not in VALID_CODES):
@@ -149,7 +176,7 @@ def captured_signals(snapshot):
                         continue
                     series = daily.get(field) or []
                     raw = series[idx] if idx < len(series) else None
-                    value = screen_value(kind, raw, units.get(field))
+                    value = screen_value(kind, raw, units.get(field), snapshot, place, date)
                     if value is None:
                         continue
                     hit = value >= threshold if operation == "gte" else value <= threshold
@@ -292,7 +319,7 @@ def assess(snapshot, kind, start_date, end_date):
             daily, units = sample.get("daily") or {}, sample.get("units") or {}
             by_date = dict(zip(daily.get("time") or [], daily.get(field) or []))
             for date in dates:
-                value = screen_value(kind, by_date.get(date), units.get(field))
+                value = screen_value(kind, by_date.get(date), units.get(field), snapshot, place, date)
                 if value is None:
                     complete = False
                 elif (value >= threshold if operation == "gte" else value <= threshold):
@@ -344,6 +371,8 @@ def forecast_series(snapshot, kind, start_date, end_date, hourly=False):
     from quantity; a positive hit still counts towards confirmed support.
     """
     field, threshold, direction, unit = THRESHOLDS[kind]
+    if hourly and kind in ANOMALY_KINDS:
+        raise ValueError("Daily climatology cannot be used as hourly normals")
     if hourly:
         field, threshold = HOURLY_RULES[kind]
     section, units_key = ("hourly", "hourly_units") if hourly else ("daily", "units")
@@ -363,7 +392,7 @@ def forecast_series(snapshot, kind, start_date, end_date, hourly=False):
             for t in times:
                 counts[t] += 1
             lookups[(model, place)] = {
-                t: screen_value(kind, v, (sample.get(units_key) or {}).get(field))
+                t: screen_value(kind, v, (sample.get(units_key) or {}).get(field), snapshot, place, t)
                 for t, v in zip(times, raw) if counts[t] == 1
             }
     points = []
@@ -410,7 +439,7 @@ def group_forecast(snapshot, group, modes):
         mode_start = max(today, min(dt.date.fromisoformat(m["start_date"]) for m in items))
         mode_end = max(dt.date.fromisoformat(m["end_date"]) for m in items)
         hourly = None
-        if (mode_end >= mode_start and (mode_end-mode_start).days <= 1
+        if (kind not in ANOMALY_KINDS and mode_end >= mode_start and (mode_end-mode_start).days <= 1
                 and (mode_start-today).days <= 2):
             candidate = forecast_series(snapshot, kind, mode_start.isoformat(), mode_end.isoformat(), hourly=True)
             if any(p["unknown_models"] < len(MODELS) or p["supporting_models"] for p in candidate["points"]):
@@ -534,14 +563,29 @@ def main():
     processed = set(prior.get("processed_captures", []))
     if not isinstance(events, list):
         raise ValueError("Corrupt event catalog")
+    climate = read_json(DEST / "climatology.json", {})
+    climate_ready = bool(climate.get("places")) and climate.get("period") == "1991-2020"
+    for capture in captures:
+        if climate_ready:
+            capture["climatology"] = climate
+    anomaly_processed = set(prior.get("anomaly_processed_captures", []))
     new_count = 0
     for capture in captures:
         stamp = capture["retrieved_at"]
         if stamp in processed:
+            if not climate_ready or capture is not captures[-1] or stamp in anomaly_processed:
+                continue
+            per_capture_ids = set()
+            for item in captured_signals(capture):
+                if item["kind"] in ANOMALY_KINDS:
+                    upsert(events, item, stamp, per_capture_ids)
+            anomaly_processed.add(stamp)
             continue
         per_capture_ids = set()
         for item in captured_signals(capture):
             upsert(events, item, stamp, per_capture_ids)
+        if climate_ready:
+            anomaly_processed.add(stamp)
         processed.add(stamp)
         new_count += 1
 
@@ -598,7 +642,7 @@ def main():
     catalog = {
         "event_groups": groups,
         "schema": SCHEMA, "updated_at": now.isoformat(),
-        "processed_captures": sorted(processed), "events": events,
+        "processed_captures": sorted(processed), "anomaly_processed_captures": sorted(anomaly_processed), "events": events,
     }
     latest_age = ((now - parse_time(latest_stamp)).total_seconds()/3600
                   if latest_stamp else None)
@@ -607,6 +651,9 @@ def main():
         "source_latest_capture": latest_stamp,
         "capture_age_hours": round(latest_age, 2) if latest_age is not None else None,
         "capture_count_processed": len(processed),
+        "climatology": {"status": "available" if climate_ready else "unavailable",
+                        "period": "1991-2020", "sigma_trigger": 2,
+                        "places": climate.get("places", {}) if climate_ready else {}},
         "status": "current" if latest_age is not None and latest_age < 12 else "stale",
         "screening_rules": {k: {"field": v[0], "threshold": v[1], "unit": v[3],
                                 "direction": v[2]} for k, v in THRESHOLDS.items()
@@ -615,6 +662,7 @@ def main():
             "Research screening signals, not official NWS alerts or calibrated probabilities.",
             "Support percent counts confirmed sources out of four. Zero requires four clear sources.",
             "Daily deterministic stitched forecasts; model initialization not identified.",
+            "Temperature anomaly modes compare daily highs/lows with nearest NOAA station normals, not hourly normals. Absolute extreme screens remain.",
             "Weather-code signals describe the most severe coded daily condition, not every hazard.",
             "Thunderstorm signals are not severe, tornado, hail, or damaging-wind probabilities; flooding requires dedicated hydrologic evidence.",
             "Forecast history is not ground truth; no model skill verdict without observations.",
