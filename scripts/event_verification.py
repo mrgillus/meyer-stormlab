@@ -134,6 +134,7 @@ def fetch_observations(start,end):
                 result=json.load(res)
             if not isinstance(result,dict) or "error" in result or not isinstance(result.get("data"),list):
                 raise ValueError("ACIS response error: "+str(result.get("error") if isinstance(result,dict) else "invalid structure")[:240])
+            print("ACIS sample payload (for integration diagnosis):",json.dumps(result["data"][:2],default=str)[:2100],flush=True)
             return result,SOURCE
         except urllib.error.HTTPError as exc:
             detail=exc.read(300).decode("utf-8",errors="replace")
