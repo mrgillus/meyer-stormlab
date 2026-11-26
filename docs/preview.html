@@ -8,6 +8,7 @@
 <title>StormLab — The Atmosphere Has a Story</title>
 <link rel="stylesheet" href="./preview.css?v=3">
 <script src="./changefeed.js?v=2" defer></script>
+<script src="./verification.js?v=1" defer></script>
 <script src="./event-watch.js?v=1" defer></script>
 <script src="./preview.js?v=3" defer></script>
 </head>
@@ -146,6 +147,14 @@
     <div class="case-picker" id="eventCaseList"><div class="blank-state">Loading the regional storm catalog…</div></div>
     <div id="eventCaseDetail" class="event-case-detail" aria-live="polite"></div>
   </section>
+  <section class="verification-section" aria-labelledby="verificationTitle">
+    <div class="story-heading"><div><span class="eyebrow">THE REAL-WORLD CHECK</span><h2 id="verificationTitle">What did stations report?</h2></div><span class="outline-tag" id="verificationBadge">Connecting observations</span></div>
+    <div id="verificationContent" class="verification-body" aria-live="polite">
+      <div class="blank-state">Reading independent snowfall and precipitation observations from regional reporting stations…</div>
+    </div>
+    <p class="fine-print">Reporting dates, measurement windows, and exact station locations matter. A daily station amount is not necessarily the snowfall total for a calendar-day model forecast or an entire storm.</p>
+  </section>
+
   <div class="story-heading" style="margin-top:40px"><div><span class="eyebrow">DETAILED STORM RECONSTRUCTION</span><h2>Thanksgiving 2026: model snapshots.</h2></div></div>
   <article class="glass-card file-card"><div class="card-top"><div><span class="kicker">CASE FILE 001</span><h2>Thanksgiving 2026 · Winter storm</h2></div><span class="status-pill amber" id="caseStatus">Verification pending</span></div>
     <p id="caseSummary">StormLab preserved the model forecasts for this event. Actual ground accumulation has not yet been verified in this dataset.</p>
