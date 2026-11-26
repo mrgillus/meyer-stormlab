@@ -78,3 +78,7 @@ The event index contains per-mode daily forecast-time series over the parent eve
 ### Visual event briefing
 
 Current events use a featured weather-family hero, a daily evidence ribbon, and color/icon-coded expandable mode modules. Future events default to a compact summary; all charts remain accessible. The ribbon indicates any threshold support, no support, or incomplete coverage per family/day and is not a probability. Peak support and quantity summaries derive from the underlying forecast series, not hard-coded values. Quantity and support charts retain separate axes and forecast-update histories. All weather icons are inline vector graphics; no external assets are required.
+
+### Temperature event policy
+
+Routine temperatures, including ordinary overnight freezing at 32°F or below, are contextual forecast data rather than named-event modes. Legacy freeze records remain in the raw catalog, but are excluded from grouping and the public event index so a routine freeze cannot join unrelated events or artificially lengthen an event window. Extreme temperature rules remain 10°F or below, 100°F or above, apparent temperature 0°F or below or 105°F or above. These are provisional StormLab screening levels, not official warning criteria. Freezing rain and freezing drizzle remain independent hazards.

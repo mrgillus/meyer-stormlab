@@ -73,7 +73,10 @@ CODE_HITS = {
 }
 VALID_CODES = {0, 1, 2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66,
                67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 97, 99}
-ROUTINE_KINDS = {"rain", "showers", "drizzle", "light_snow", "fog", "freeze"}
+ROUTINE_KINDS = {"rain", "showers", "drizzle", "light_snow", "fog"}
+# Keep the legacy freeze rule for archival compatibility, but do not flag
+# routine freezing temperatures or let them join/extend named events.
+CONTEXT_ONLY_KINDS = {"freeze"}
 UNIT_ALIASES = {
     "in": {"inch": 1., "in": 1., "cm": 1/2.54, "mm": 1/25.4},
     "mph": {"mp/h": 1., "mph": 1., "km/h": 1/1.609344, "m/s": 2.2369362921},
@@ -142,6 +145,8 @@ def captured_signals(snapshot):
                 if (day - today).days < 0 or (day - today).days > 16:
                     continue
                 for kind, (field, threshold, operation, target) in THRESHOLDS.items():
+                    if kind in CONTEXT_ONLY_KINDS:
+                        continue
                     series = daily.get(field) or []
                     raw = series[idx] if idx < len(series) else None
                     value = screen_value(kind, raw, units.get(field))
@@ -442,7 +447,8 @@ def group_events(summaries, previous=()):
     physical weather system.
     """
     components = []
-    for item in sorted(summaries, key=lambda x: (x["start_date"], x["end_date"], x["id"])):
+    for item in sorted((m for m in summaries if m["kind"] not in CONTEXT_ONLY_KINDS),
+                       key=lambda x: (x["start_date"], x["end_date"], x["id"])):
         if not components or item["start_date"] > components[-1]["end_date"]:
             components.append({"end_date": item["end_date"], "modes": []})
         comp = components[-1]
@@ -546,7 +552,7 @@ def main():
     today = now.astimezone(CT).date()
     summarized = []
     for event in events:
-        if not event.get("timeline"):
+        if not event.get("timeline") or event["kind"] in CONTEXT_ONLY_KINDS:
             continue
         seen_latest = event["last_seen"] == latest_stamp
         ended = dt.date.fromisoformat(event["end_date"]) < today
@@ -603,7 +609,8 @@ def main():
         "capture_count_processed": len(processed),
         "status": "current" if latest_age is not None and latest_age < 12 else "stale",
         "screening_rules": {k: {"field": v[0], "threshold": v[1], "unit": v[3],
-                                "direction": v[2]} for k, v in THRESHOLDS.items()},
+                                "direction": v[2]} for k, v in THRESHOLDS.items()
+                            if k not in CONTEXT_ONLY_KINDS},
         "limitations": [
             "Research screening signals, not official NWS alerts or calibrated probabilities.",
             "Support percent counts confirmed sources out of four. Zero requires four clear sources.",

@@ -212,6 +212,28 @@ class EventWatchTests(unittest.TestCase):
         self.assertEqual(points[day+"T13:00"]["support_pct"], 0)
         self.assertIsNone(points[day+"T14:00"]["support_pct"])
 
+    def test_routine_freeze_not_flagged_or_grouped(self):
+        stamp = dt.datetime.now(watch.UTC).isoformat()
+        s = snapshot(stamp, snow=0)
+        for sample in s["locations"]["Wentzville"].values():
+            sample["daily"]["temperature_2m_min"] = [25]
+        self.assertEqual(watch.captured_signals(s), [])
+        for sample in s["locations"]["Wentzville"].values():
+            sample["daily"]["temperature_2m_min"] = [5]
+        self.assertEqual({x["kind"] for x in watch.captured_signals(s)}, {"cold"})
+        def mode(id, kind, start, end):
+            return dict(id=id, name=id, kind=kind, start_date=start, end_date=end,
+                        first_seen=stamp, last_seen=stamp, priority="notable",
+                        status="in_latest_capture")
+        snow = mode("snow", "snow", "2026-11-26", "2026-11-26")
+        freeze = mode("freeze", "freeze", "2026-11-26", "2026-11-30")
+        rain = mode("rain", "rain", "2026-11-29", "2026-11-29")
+        groups = watch.group_events([snow, freeze, rain])
+        self.assertEqual(len(groups), 2)
+        self.assertEqual(groups[0]["end_date"], "2026-11-26")
+        self.assertEqual(groups[0]["mode_ids"], ["snow"])
+        self.assertEqual(groups[1]["mode_ids"], ["rain"])
+
     def test_temporary_missing_model_does_not_claim_corroboration(self):
         stamp = dt.datetime.now(watch.UTC).isoformat()
         out = watch.captured_signals(snapshot(stamp, models=("GFS",)))
