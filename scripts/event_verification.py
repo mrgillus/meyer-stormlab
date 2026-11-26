@@ -428,7 +428,7 @@ def main():
         "observed_station_count":len(station_data),
         "reported_station_days":len(obs),
         "cases_reviewed":len(summaries),
-        "cases_with_daily_reports":sum(x["daily_report_count"]>0 for x in summaries),
+        "cases_with_daily_reports":sum((x.get("daily_report_count") or 0)>0 for x in summaries),
         "cases_scored":0,
         "verification_policy":"fail_closed_until_observation_interval_and_station_location_are_aligned",
         "events":summaries,
