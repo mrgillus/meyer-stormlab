@@ -8,6 +8,11 @@ on:
     paths:
       - 'scripts/regional_live_v2.py'
       - '.github/workflows/regional-live-v2.yml'
+  # Commits pushed with GITHUB_TOKEN do not fire push workflows, so newly
+  # published training artifacts would otherwise wait up to six hours.
+  workflow_run:
+    workflows: ["Regional GEFS snowfall learning"]
+    types: [completed]
 permissions:
   contents: write
 concurrency:
@@ -15,6 +20,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   inference:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
@@ -27,7 +33,13 @@ jobs:
       - run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2 requests eccodes
       - run: |
           python -m py_compile scripts/regional_live_v2.py
-          python scripts/regional_live_v2.py
+          # After retraining, run only if the published shadow forecast predates
+          # the current artifacts (training may have skipped unchanged inputs).
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            python scripts/regional_live_v2.py --if-stale
+          else
+            python scripts/regional_live_v2.py
+          fi
       - name: Publish fine-grid diagnostic
         shell: bash
         run: |
