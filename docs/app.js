@@ -21,7 +21,7 @@ const q=id=>document.getElementById(id);
 const state={report:null,status:null,history:null,tab:"now",horizon:null,general:null,location:"Wentzville",archiveLoading:false};
 const num=x=>typeof x==="number" && Number.isFinite(x);
 const inches=x=>num(x)?x.toFixed(2)+'"':"—";
-const shortDate=d=>new Intl.DateTimeFormat("en-US",{timeZone:TZ,month:"short",day:"numeric"}).format(new Date(d));
+const shortDate=d=>new Intl.DateTimeFormat("en-US",{timeZone:TZ,month:"short",day:"numeric"}).format(new Date(typeof d==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(d)?d+"T12:00:00Z":d));
 const ct=d=>new Intl.DateTimeFormat("en-US",{timeZone:TZ,month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZoneName:"short"}).format(new Date(d));
 const hour=d=>new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",hour:"numeric"}).format(new Date(d));
 const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
