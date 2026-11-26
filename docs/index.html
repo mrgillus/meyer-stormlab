@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#081525">
 <meta name="description" content="Meyer StormLab — follow the atmosphere from early signals to the final storm verdict. An independent, data-driven weather observatory for Greater St. Louis.">
 <title>StormLab — The Atmosphere Has a Story</title>
-<link rel="stylesheet" href="./app.css?v=2">
+<link rel="stylesheet" href="./app.css?v=3">
 <script src="./changefeed.js?v=2" defer></script>
 <script src="./event-watch.js?v=1" defer></script>
 <script src="./app.js?v=3" defer></script>
@@ -129,6 +129,7 @@
     <p class="event-intro">Not just the newest model run. Every tracked signal retains its first detection and whether later forecast captures supported it—or let it fade.</p>
     <div id="eventWatchList" class="event-watch-list" aria-live="polite"><div class="blank-state">Reading the published regional event catalog…</div></div>
     <p class="fine-print" id="eventWatchSource">Preliminary signals based on archived daily model guidance. Not NWS warnings or calibrated probabilities.</p>
+    <p class="fine-print"><a href="https://github.com/mrgillus/meyer-stormlab/blob/main/EVENT_WATCH.md" target="_blank" rel="noopener noreferrer">How StormLab identifies and tracks weather signals ↗</a></p>
   </section>
   <div class="horizon-group"><div class="group-title"><span class="eyebrow">SIGNALS WORTH EXPLORING</span><span class="small-note" id="horizonWindow">Forecast availability varies by model</span></div>
     <div id="watchList" class="watch-list"><div class="blank-state">Select “Check the forecast horizon” to load real extended forecast data.</div></div>
