@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-26T17:17:19.771625+00:00",
+  "updated_at": "2026-11-26T19:15:57.609081+00:00",
   "processed_captures": [
     "2026-11-24T18:57:10.943633+00:00",
     "2026-11-24T22:29:47.747629+00:00",
@@ -440,7 +440,154 @@
           "median_triggering_value": 4.423,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
-      }
+      },
+      "name": "Drift",
+      "assessments": [
+        {
+          "captured_at": "2026-11-24T18:57:10.943633+00:00",
+          "start_date": "2026-11-25",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-24T22:29:47.747629+00:00",
+          "start_date": "2026-11-25",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "start_date": "2026-11-25",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T10:35:07.793524+00:00",
+          "start_date": "2026-11-25",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T16:39:42.471481+00:00",
+          "start_date": "2026-11-25",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T22:28:13.906033+00:00",
+          "start_date": "2026-11-25",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T04:40:09.413279+00:00",
+          "start_date": "2026-11-25",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T10:33:49.497972+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        }
+      ]
     },
     {
       "id": "precipitation-20261126",
@@ -799,7 +946,154 @@
           "median_triggering_value": null,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
-      }
+      },
+      "name": "Alder",
+      "assessments": [
+        {
+          "captured_at": "2026-11-24T18:57:10.943633+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 3,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-24T22:29:47.747629+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 3,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T10:35:07.793524+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T16:39:42.471481+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 2,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-25T22:28:13.906033+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-26T04:40:09.413279+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "clear"
+          },
+          "supporting_models": 3,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T10:33:49.497972+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        }
+      ]
     },
     {
       "id": "precipitation-20261201",
@@ -958,7 +1252,154 @@
           "median_triggering_value": 1.362,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
-      }
+      },
+      "name": "Birch",
+      "assessments": [
+        {
+          "captured_at": "2026-11-24T18:57:10.943633+00:00",
+          "start_date": "2026-12-01",
+          "end_date": "2026-12-01",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-24T22:29:47.747629+00:00",
+          "start_date": "2026-12-01",
+          "end_date": "2026-12-01",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "start_date": "2026-12-01",
+          "end_date": "2026-12-01",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-25T10:35:07.793524+00:00",
+          "start_date": "2026-12-01",
+          "end_date": "2026-12-01",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 0,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 0.0,
+          "possible_support_pct": 0.0
+        },
+        {
+          "captured_at": "2026-11-25T16:39:42.471481+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-25T22:28:13.906033+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 0,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 0.0,
+          "possible_support_pct": 0.0
+        },
+        {
+          "captured_at": "2026-11-26T04:40:09.413279+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-26T10:33:49.497972+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 0,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 0.0,
+          "possible_support_pct": 0.0
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 0,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 0.0,
+          "possible_support_pct": 0.0
+        }
+      ]
     },
     {
       "id": "precipitation-20261207",
@@ -1117,7 +1558,154 @@
           "median_triggering_value": 1.323,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
-      }
+      },
+      "name": "Cedar",
+      "assessments": [
+        {
+          "captured_at": "2026-11-24T18:57:10.943633+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-24T22:29:47.747629+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T10:35:07.793524+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T16:39:42.471481+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T22:28:13.906033+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T04:40:09.413279+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T10:33:49.497972+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        }
+      ]
     },
     {
       "id": "wind-20261207",
@@ -1222,7 +1810,122 @@
           "median_triggering_value": null,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
-      }
+      },
+      "name": "Ember",
+      "assessments": [
+        {
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T10:35:07.793524+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T16:39:42.471481+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T22:28:13.906033+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T04:40:09.413279+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T10:33:49.497972+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        }
+      ]
     },
     {
       "id": "precipitation-20261204",
@@ -1307,7 +2010,42 @@
           "median_triggering_value": 2.866,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
-      }
+      },
+      "name": "Flint",
+      "assessments": [
+        {
+          "captured_at": "2026-11-26T10:33:49.497972+00:00",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 25.0
+        }
+      ]
     },
     {
       "id": "wind-20261210",
@@ -1388,7 +2126,26 @@
           "median_triggering_value": 45.6,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
-      }
+      },
+      "name": "Gale",
+      "assessments": [
+        {
+          "captured_at": "2026-11-26T16:38:10.281935+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        }
+      ]
     }
   ]
 }
