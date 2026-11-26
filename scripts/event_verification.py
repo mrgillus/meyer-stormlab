@@ -282,7 +282,9 @@ def build_reports(cases,stations,observations,today):
         start=parseday(case["start_date"])
         end=parseday(case["end_date"])
         category={"snow":"snowfall_in","precipitation":"precipitation_in"}.get(case["kind"])
-        earliest=start-dt.timedelta(days=1)
+        # Pre-event station values remain in the raw archive, not in the
+        # event-evidence list; reported dates can still cover earlier hours.
+        earliest=start
         latest=end+dt.timedelta(days=2)
         suitable=[o for o in observations if
                   earliest<=parseday(o["reported_date"])<=latest and
