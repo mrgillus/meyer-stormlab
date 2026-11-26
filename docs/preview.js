@@ -246,7 +246,9 @@ function renderHorizon(){
   if(!feeds.length){
     q("watchList").innerHTML='<div class="blank-state"><span class="notice-error">The extended model feeds could not be reached.</span> There is no reliable 16-day outlook to display. Try again later. The Now view still works independently.</div>';return;
   }
-  const today=new Intl.DateTimeFormat("en-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
+  const parts=new Intl.DateTimeFormat("en-US",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+  const getPart=type=>parts.find(part=>part.type===type)?.value;
+  const today=getPart("year")+"-"+getPart("month")+"-"+getPart("day");
   const records=[];
   for(const f of feeds){
     for(let i=0;i<f.daily.time.length;i++){
