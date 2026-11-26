@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081525">
+<meta name="description" content="Meyer StormLab — follow the atmosphere from early signals to the final storm verdict. An independent, data-driven weather observatory for Greater St. Louis.">
+<title>StormLab — The Atmosphere Has a Story</title>
+<link rel="stylesheet" href="./preview.css?v=1">
+<script src="./preview.js?v=1" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div>
+<div class="shell">
+<header class="masthead">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"><span class="vortex"></span><span class="vortex-center"></span></div>
+    <div><span class="brand-small">MEYER</span><strong>STORMLAB<span class="brand-dot">.</span></strong></div>
+  </div>
+  <div class="head-actions">
+    <span class="preview-tag">NEW EXPERIENCE · PREVIEW</span>
+    <a class="classic-link" href="./index.html">Classic dashboard <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<div class="control-line">
+  <div class="control-location"><span class="tiny-label">YOUR OBSERVATORY</span>
+    <label class="select-wrap"><span class="sr-only">Choose forecast location</span>
+      <select id="location">
+        <option value="Wentzville">Wentzville, MO</option>
+        <option value="Lake St. Louis">Lake St. Louis, MO</option>
+        <option value="Florissant">Florissant, MO</option>
+        <option value="Troy">Troy, MO</option>
+        <option value="Hawk Point">Hawk Point, MO</option>
+      </select>
+    </label>
+  </div>
+  <div class="update-cluster"><span class="live-dot" id="healthDot" aria-hidden="true"></span><span id="lastUpdate" aria-live="polite">Connecting to StormLab…</span><button class="icon-button" id="refresh" type="button" aria-label="Refresh StormLab data" title="Refresh StormLab data">↻</button></div>
+</div>
+<nav class="main-nav" aria-label="Explore StormLab">
+  <button class="nav-item active" data-tab="now" aria-current="page" type="button"><span class="nav-symbol">◉</span> Now</button>
+  <button class="nav-item" data-tab="horizon" type="button"><span class="nav-symbol">◎</span> Horizon</button>
+  <button class="nav-item" data-tab="archive" type="button"><span class="nav-symbol">▤</span> Storm files</button>
+  <button class="nav-item" data-tab="lab" type="button"><span class="nav-symbol">⌁</span> The Lab</button>
+</nav>
+<main id="main">
+<section id="view-now" class="view active" aria-labelledby="now-title">
+  <div class="section-entrance"><span class="eyebrow"><i class="signal-line"></i> THE STORY RIGHT NOW</span><span class="small-note" id="sourceAge">Awaiting verified model feed</span></div>
+  <article class="feature">
+    <div class="feature-glow" aria-hidden="true"></div>
+    <svg class="feature-art" aria-hidden="true" viewBox="0 0 700 540" preserveAspectRatio="xMidYMid slice">
+      <defs><radialGradient id="stormcloud"><stop offset="0" stop-color="#b7e8f2" stop-opacity=".22"/><stop offset=".48" stop-color="#3688aa" stop-opacity=".14"/><stop offset="1" stop-color="#0b2540" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="384" cy="290" r="245" fill="url(#stormcloud)"/>
+      <g fill="none" stroke="#82cee9" stroke-width="1.5" opacity=".22">
+        <path d="M91 258C114 89 354-16 525 102s191 371-25 402S135 438 157 267c14-117 161-204 283-133 104 62 121 196 37 261-93 70-208 34-233-58-24-84 64-165 143-133 70 28 75 106 39 141"/>
+        <path d="M45 229C77 25 367-75 584 69s228 439-48 499S57 482 97 251"/>
+        <path d="M138 289C136 146 294 63 434 118c156 60 171 235 62 308S258 428 227 345c-30-81 22-155 91-163"/>
+        <path d="M188 271C214 164 344 127 436 186c76 50 82 168-15 205s-173-20-162-90"/>
+      </g>
+      <g fill="#bfeaff" opacity=".32"><circle cx="127" cy="170" r="2"/><circle cx="548" cy="144" r="2.5"/><circle cx="606" cy="353" r="1.5"/><circle cx="316" cy="106" r="2"/><circle cx="233" cy="433" r="2"/><circle cx="506" cy="448" r="2"/></g>
+    </svg>
+    <div class="feature-content">
+      <div class="feature-kicker"><span class="pill live-pill" id="stormMode">MONITORING</span><span id="eventDates">Live regional weather intelligence</span></div>
+      <h1 id="now-title"><span class="head-quiet">The atmosphere</span><br><em id="heroHeadline">has a story.</em></h1>
+      <p class="lead" id="heroNarrative">Connecting to our seven-model regional forecast so the story comes from real data, not a scripted weather report.</p>
+      <div class="feature-divider"></div>
+      <div class="hero-data">
+        <div class="hero-stat"><span class="stat-label" id="totalLabel">MODELED STORM WINDOW</span><span class="stat-big" id="bigSnow">—<small> in</small></span><span class="stat-sub" id="snowFootnote">Not measured ground accumulation</span></div>
+        <div class="hero-stat side"><span class="stat-label">INTENSITY PEAK</span><span class="stat-mid" id="peakTime">—</span><span class="stat-sub" id="peakValue">Checking hourly forecast</span></div>
+        <div class="hero-stat side"><span class="stat-label">ACTIVE MODEL SOURCES</span><span class="stat-mid" id="modelCount">—</span><span class="stat-sub">Global · Rapid · NBM</span></div>
+      </div>
+    </div>
+    <div class="art-credit">ATMOSPHERIC ART · NOT LIVE RADAR</div>
+  </article>
+  <div class="note-strip" role="status" id="modelNote">Live model details will appear when the feed is verified.</div>
+  <div class="story-heading"><div><span class="eyebrow">ACT I / THE EVOLUTION</span><h2>Follow the storm.</h2></div><span class="outline-tag">Forecast, not observation</span></div>
+  <div class="two-col">
+    <article class="glass-card timeline-panel">
+      <div class="card-top"><div><span class="kicker">THE NEXT HOURS</span><h3>Storm pulse</h3></div><div class="chart-key"><span class="key-square"></span> Hourly modeled snow</div></div>
+      <p class="card-help" id="chartHelp">Hourly forecast evolution appears here when a storm is active.</p>
+      <div class="pulse-chart" id="pulseChart" role="img" aria-label="Hourly modeled snowfall intensity"><div class="empty-pulse">Waiting for the storm timeline…</div></div>
+      <div class="axis-labels" id="pulseAxis"><span>Start</span><span>Time →</span><span>End</span></div>
+      <p class="fine-print" id="pulseProvenance">Published model hours only. Past forecast hours are not observations.</p>
+    </article>
+    <article class="glass-card insight-panel">
+      <div class="card-top"><div><span class="kicker">THE FIELD NOTES</span><h3>What stands out?</h3></div><span class="small-asterisk">✳</span></div>
+      <div id="insights" class="insight-list"><p class="muted">Comparing model spread, timing, and coverage…</p></div>
+      <div class="source-mini">Built from published model inputs. <button id="showEvidence" class="text-button" type="button">Inspect the evidence <span aria-hidden="true">↗</span></button></div>
+    </article>
+  </div>
+  <article class="glass-card model-panel" id="evidence">
+    <div class="card-top"><div><span class="kicker">UNDER THE SURFACE</span><h3>Seven different perspectives.</h3></div><span class="small-note">Tap a model to compare</span></div>
+    <p class="card-help" id="modelWindow">Each model's modeled accumulation is shown with its exact forecast-hour coverage.</p>
+    <div id="modelBars" class="model-bars"><p class="muted">Collecting model guidance…</p></div>
+    <p class="fine-print">NBM is itself a blend. Values are model snowfall forecasts, not measured snow depth; missing forecast hours are not zero.</p>
+  </article>
+  <div class="bottom-crosslink"><div><span class="eyebrow">KEEP EXPLORING</span><h3>What's brewing beyond this storm?</h3><p>Explore developing patterns without pretending a 16-day forecast is certainty.</p></div><button type="button" class="action-pill" data-go="horizon">Explore Horizon <span aria-hidden="true">↗</span></button></div>
+</section>
+<section id="view-horizon" class="view" aria-labelledby="horizon-title" hidden>
+  <div class="section-entrance"><span class="eyebrow">LOOKING BEYOND THE RADAR</span><span class="small-note">Up to 16 days · experimental</span></div>
+  <div class="page-intro horizon-intro">
+    <div class="orbit-art" aria-hidden="true"><span></span><span></span><span></span></div>
+    <span class="page-kicker">ACT II / THE POSSIBILITIES</span>
+    <h1 id="horizon-title">What's <em>brewing?</em></h1>
+    <p>Not a calendar full of little sunshine icons. A search for atmospheric signals that might develop into something meaningful.</p>
+  </div>
+  <article class="glass-card horizon-explainer"><div class="horizon-top"><span class="eyebrow">THE SIGNAL SCAN</span><span class="status-pill" id="horizonStatus">Awaiting fresh guidance</span></div>
+    <h2>The next two weeks, under a microscope.</h2>
+    <p>We scan available daily GFS, ECMWF, GEM, and ICON guidance for notable snowfall, heavy precipitation, wind gusts, and temperature extremes. Signals are <strong>not</strong> severe-weather or flood forecasts; we need ensemble and atmospheric diagnostics for that.</p>
+    <button id="horizonRefresh" class="outline-button" type="button">Check the forecast horizon ↻</button>
+  </article>
+  <div class="horizon-group"><div class="group-title"><span class="eyebrow">SIGNALS WORTH EXPLORING</span><span class="small-note" id="horizonWindow">Forecast availability varies by model</span></div>
+    <div id="watchList" class="watch-list"><div class="blank-state">Select “Check the forecast horizon” to load real extended forecast data.</div></div>
+  </div>
+  <div class="horizon-limit"><span class="limit-icon">∿</span><div><strong>Beyond day 16: the map fades, not the uncertainty.</strong><p>Our current browser-fed models do not support a credible 17–21-day local storm scan. Extended ensemble pattern guidance is a planned capability; StormLab won't invent a threat to fill the gap.</p></div></div>
+  <div class="bottom-crosslink"><div><span class="eyebrow">LOOKING BACK</span><h3>How did the last storm unfold?</h3><p>Every storm leaves a trail of forecasts. The next step is verifying those against observations.</p></div><button type="button" class="action-pill" data-go="archive">Open Storm Files <span aria-hidden="true">↗</span></button></div>
+</section>
+<section id="view-archive" class="view" aria-labelledby="archive-title" hidden>
+  <div class="section-entrance"><span class="eyebrow">THE ATMOSPHERE REMEMBERS</span><span class="small-note">Forecast history ≠ observed truth</span></div>
+  <div class="page-intro archive-intro"><span class="page-kicker">ACT III / THE VERDICT</span><h1 id="archive-title">After the <em>storm.</em></h1><p>What the models thought. How their forecasts evolved. And—once verified observations are connected—what really happened.</p></div>
+  <article class="glass-card file-card"><div class="card-top"><div><span class="kicker">CASE FILE 001</span><h2>Thanksgiving 2026 · Winter storm</h2></div><span class="status-pill amber" id="caseStatus">Verification pending</span></div>
+    <p id="caseSummary">StormLab preserved the model forecasts for this event. Actual ground accumulation has not yet been verified in this dataset.</p>
+    <div class="file-stats"><div><span class="kicker">LATEST MODELLED WINDOW</span><strong id="caseModel">—</strong></div><div><span class="kicker">SNAPSHOT ARCHIVE</span><strong id="caseCaptures">—</strong></div><div><span class="kicker">VERIFIED GROUND TRUTH</span><strong id="caseObserved">Not connected</strong></div></div>
+    <div class="file-actions"><button id="loadCase" type="button" class="outline-button">Explore forecast history ↻</button><a class="subtle-link" href="./index.html#trendTable">Open technical archive ↗</a></div>
+    <div id="caseTimeline" class="case-timeline"><p class="muted">Forecast snapshots are available from StormLab's model-history archive. Open them to inspect the changing predictions.</p></div>
+  </article>
+  <div class="quiet-card"><span class="eyebrow">THE HONEST VERDICT</span><h3>We don't grade forecasts against other forecasts.</h3><p>Until independent snow measurements, actual observation times, and locations are validated, StormLab will not publish a model “winner” or claim it got the storm right.</p></div>
+</section>
+<section id="view-lab" class="view" aria-labelledby="lab-title" hidden>
+  <div class="section-entrance"><span class="eyebrow">THE SCIENCE BEHIND THE STORY</span><span class="small-note">Research and raw data</span></div>
+  <div class="page-intro lab-intro"><span class="page-kicker">THE ENGINE ROOM</span><h1 id="lab-title">Show me <em>the evidence.</em></h1><p>Everything that makes StormLab tick is still here. We just moved the machinery out of the lobby.</p></div>
+  <div class="lab-columns">
+    <article class="glass-card lab-card"><span class="kicker">20 YEARS OF WEATHER</span><h3>Historical GEFS archive</h3><div class="archive-progress"><div class="progress-head"><span>Core forecast dates</span><strong id="archiveCoreLabel">Loading…</strong></div><div class="track"><div id="archiveCore" class="fill"></div></div></div><div class="archive-progress"><div class="progress-head"><span>48-hour archive</span><strong id="archive48Label">Loading…</strong></div><div class="track"><div id="archive48" class="fill secondary"></div></div></div><p class="fine-print" id="archiveUpdated">Reading the published archive checkpoints…</p></article>
+    <article class="glass-card lab-card"><span class="kicker">EXPERIMENTAL FORECASTS</span><h3>The learning engine</h3><span class="status-pill amber">Research-only</span><p>Historical experiments are running, but the statistical models have not passed independent event verification. The seven-model blend remains the public-facing forecast.</p><a href="./index.html#regionalLearning" class="outline-button">Open model research ↗</a></article>
+    <article class="glass-card lab-card"><span class="kicker">REPRODUCIBLE BY DESIGN</span><h3>Inspect the source</h3><p>All published storm-model totals and archive progress come from tracked files in our GitHub repository.</p><a class="outline-button" href="https://github.com/mrgillus/meyer-stormlab" target="_blank" rel="noopener noreferrer">View the code ↗</a></article>
+    <article class="glass-card lab-card"><span class="kicker">OPERATIONS</span><h3>Everything under one roof</h3><p>The original dashboard still has every model comparison, map, atmospheric analysis, and diagnostic table—unchanged.</p><a class="outline-button" href="./index.html">Open classic StormLab ↗</a></article>
+  </div>
+  <div class="quiet-card"><span class="eyebrow">PARKED FOR THE NEXT PHASE</span><h3>Radar and local observers.</h3><p>Live NOAA radar and trusted community observations could make the storm story even richer. Those features remain on our roadmap, not silently represented as working today.</p></div>
+</section>
+</main>
+<footer><span>STORMLAB / AN INDEPENDENT WEATHER EXPERIMENT</span><span>Data first. Curiosity always. <a href="./index.html">Classic view</a></span></footer>
+</div>
+</body>
+</html>
