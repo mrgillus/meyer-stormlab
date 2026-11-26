@@ -66,3 +66,7 @@ The persistent `event_groups` layer groups overlapping regional forecast date ra
 ### Event itinerary
 
 The compact event tile groups hazard modes by family, then by mode type; repeated episodes use separate date rows. Independent daily model support is derived from the latest actual capture, rather than spreading a whole-window threshold hit over every day. Adjacent days are combined only when model states and capture match. Missing coverage stays unknown. Historical or legacy windows without day-level evidence are labeled as window-level or past forecasts. Model histories and verification remain available per underlying mode. The source currently supplies daily guidance for this feature, not hour-level timing or calibrated probabilities.
+
+### Current versus upcoming events
+
+The Storms landing page splits named events using the Central Time calendar: start date through end date inclusive is the current event window; later start dates belong on the radar; passed windows remain in Storm Files. Current window is not an observation that all weather modes are occurring. Faded or incomplete evidence stays visible and labeled. The local forecast narrative remains a separate location-specific detail below the current named event.

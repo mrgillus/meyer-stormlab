@@ -6,10 +6,10 @@
 <meta name="theme-color" content="#081525">
 <meta name="description" content="Meyer StormLab — follow the atmosphere from early signals to the final storm verdict. An independent, data-driven weather observatory for Greater St. Louis.">
 <title>StormLab — The Atmosphere Has a Story</title>
-<link rel="stylesheet" href="./app.css?v=9">
+<link rel="stylesheet" href="./app.css?v=10">
 <script src="./changefeed.js?v=2" defer></script>
 <script src="./verification.js?v=1" defer></script>
-<script src="./event-watch.js?v=8" defer></script>
+<script src="./event-watch.js?v=9" defer></script>
 <script src="./app.js?v=4" defer></script>
 </head>
 <body>
@@ -48,6 +48,12 @@
 <main id="main">
 <section id="view-now" class="view active" aria-labelledby="now-title">
   <div class="section-entrance"><span class="eyebrow"><i class="signal-line"></i> THE STORY RIGHT NOW</span><span class="small-note" id="sourceAge">Awaiting verified model feed</span></div>
+  <section class="event-chronicle current-event-section" aria-labelledby="currentEventTitle">
+    <div class="story-heading"><div><span class="eyebrow">CURRENT EVENT WINDOW</span><h2 id="currentEventTitle">In progress.</h2></div><span class="outline-tag" id="currentEventStatus">Checking event catalog</span></div>
+    <div id="currentEventList" class="event-watch-list current-event-list" aria-live="polite"><div class="blank-state">Reading the current regional event window…</div></div>
+    <p class="fine-print" id="currentEventSource">A forecast window includes today; actual conditions require independent observations.</p>
+  </section>
+  <div class="section-entrance local-forecast-heading"><span class="eyebrow">LOCAL FORECAST DETAIL</span><span class="small-note">Selected location</span></div>
   <article class="feature">
     <div class="feature-glow" aria-hidden="true"></div>
     <svg class="feature-art" aria-hidden="true" viewBox="0 0 700 540" preserveAspectRatio="xMidYMid slice">
@@ -76,7 +82,7 @@
   </article>
   <section class="event-chronicle" aria-labelledby="eventWatchTitle">
     <div class="story-heading"><div><span class="eyebrow">THE HORIZON TRACKER</span><h2 id="eventWatchTitle">On our radar.</h2></div><span class="outline-tag" id="eventWatchStatus">Checking event archive</span></div>
-    <p class="event-intro">Regional named events for rain, winter weather, thunderstorms, temperature extremes and wind. Overlapping forecast dates share one event name, with separate weather modes and histories. Events remain here until their forecast window passes.</p>
+    <p class="event-intro">Upcoming regional named events for rain, winter weather, thunderstorms, temperature extremes and wind. When the forecast window begins, the event moves to the current-event section above. Faded signals remain tracked until their window passes.</p>
     <p class="fine-print">Severe weather and flood probabilities require dedicated official outlooks. Consult <a href="https://www.spc.noaa.gov/products/outlook/">NOAA SPC severe weather outlooks</a>, <a href="https://www.wpc.ncep.noaa.gov/#page=ero">WPC excessive rainfall outlooks</a> and <a href="https://www.weather.gov/lsx/">NWS St. Louis alerts</a> for authoritative hazard information.</p>
     <div id="eventWatchList" class="event-watch-list" aria-live="polite"><div class="blank-state">Reading the published regional event catalog…</div></div>
     <p class="fine-print" id="eventWatchSource">Preliminary signals based on archived daily model guidance. Not NWS warnings or calibrated probabilities.</p>

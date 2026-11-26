@@ -178,10 +178,11 @@
       return '<section class="event-itinerary-family"><h4><span aria-hidden="true">'+safe(f.icon)+'</span> '+safe(f.name)+'</h4>'+types+'</section>';
     }).join("");
   }
-  function groupCard(group){
+  function groupCard(group,isCurrent=false){
     const modes=modeItems(group),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
     const tone=marker(group.status),types=new Set(modes.map(m=>m.kind)).size;
-    return '<article class="event-signal '+safe(tone)+'"><div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+safe(kinds[primary?.kind]||"◎")+'</span><span class="event-flag">'+safe(describe(group.status))+'</span></div>'+
+    const flag=isCurrent?(group.status==="in_latest_capture"?"Current event window":"Current window · signal faded"):describe(group.status);
+    return '<article class="event-signal '+safe(tone)+'"><div class="event-signal-head"><span class="event-symbol" aria-hidden="true">'+safe(kinds[primary?.kind]||"◎")+'</span><span class="event-flag">'+safe(flag)+'</span></div>'+
       '<h3>Event '+safe(group.name)+'</h3><p class="event-dates">'+safe(dateRange(group))+' · '+types+' weather mode(s)</p>'+
       '<div class="event-itinerary-heading"><span>Weather mode / forecast dates</span><span>Model support</span></div>'+
       '<div class="event-itinerary">'+familyRows(modes)+'</div>'+
@@ -210,25 +211,41 @@
       '<button type="button" class="event-case-button" data-event-id="'+safe(item.id)+
       '">Explore the signal →</button></article>';
   }
+  function regionalToday(){
+    const parts=new Intl.DateTimeFormat("en-US",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+    const values=Object.fromEntries(parts.map(p=>[p.type,p.value]));
+    return values.year+"-"+values.month+"-"+values.day;
+  }
   function renderHorizon(){
     const index=state.index;
-    if(!index){set("eventWatchStatus","CATALOG UNAVAILABLE");
-      q("eventWatchList").innerHTML='<div class="blank-state">Pattern tracking is waiting for a valid archived event feed. Live model scanning remains available below.</div>';return}
-    const current=freshness(index);
-    set("eventWatchStatus",current?index.capture_count_processed+" captures tracked":"ARCHIVE UPDATES DELAYED");
-    const active=groups(index).filter(x=>x.status==="in_latest_capture");
-    const fading=groups(index).filter(x=>x.status==="not_in_latest_capture");
-    const today=new Intl.DateTimeFormat("en-CA",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
-    const display=[...active,...fading].filter(x=>x.end_date>=today).sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
-    if(display.length){
-      const notable=display.filter(x=>!routine(x)), everyday=display.filter(routine);
-      q("eventWatchList").innerHTML=(notable.length?notable.map(groupCard).join(""):"")+
-        (everyday.length?'<details class="routine-watches" open><summary>Routine weather events · '+everyday.length+'</summary><div class="event-watch-list">'+everyday.map(groupCard).join("")+'</div></details>':"");
+    if(!index){
+      set("currentEventStatus","CATALOG UNAVAILABLE");
+      set("eventWatchStatus","CATALOG UNAVAILABLE");
+      q("currentEventList").innerHTML='<div class="blank-state">Current named events cannot be verified until the archived catalog is available.</div>';
+      q("eventWatchList").innerHTML='<div class="blank-state">Upcoming event tracking is waiting for a valid archived event feed.</div>';
+      return;
+    }
+    const fresh=freshness(index),today=regionalToday();
+    const display=groups(index).filter(x=>x.end_date>=today&&x.status!=="forecast_window_passed")
+      .sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
+    const now=display.filter(x=>x.start_date<=today);
+    const upcoming=display.filter(x=>x.start_date>today);
+    set("currentEventStatus",fresh?now.length+" current event(s)":"CATALOG UPDATES DELAYED");
+    set("eventWatchStatus",fresh?upcoming.length+" upcoming event(s)":"CATALOG UPDATES DELAYED");
+    q("currentEventList").innerHTML=now.length?
+      now.map(g=>groupCard(g,true)).join(""):
+      '<div class="blank-state">'+(fresh?'No named event window includes today. See local forecast guidance below.':'No current event is listed in the last available catalog; updates are delayed.')+'</div>';
+    set("currentEventSource","Local calendar: Central Time · "+stamp(index.source_latest_capture)+
+      (fresh?"":" · STALE")+" · Current forecast window does not confirm that all forecast weather is occurring.");
+    if(upcoming.length){
+      const notable=upcoming.filter(x=>!routine(x)), everyday=upcoming.filter(routine);
+      q("eventWatchList").innerHTML=(notable.length?notable.map(g=>groupCard(g)).join(""):"")+
+        (everyday.length?'<details class="routine-watches" open><summary>Routine weather events · '+everyday.length+'</summary><div class="event-watch-list">'+everyday.map(g=>groupCard(g)).join("")+'</div></details>':"");
     }else{
-      q("eventWatchList").innerHTML='<div class="blank-state">No qualifying active or fading model signals in the published regional case catalog. The live model scan below can still be explored.</div>';
+      q("eventWatchList").innerHTML='<div class="blank-state">No upcoming event windows are listed in the published regional catalog.</div>';
     }
     set("eventWatchSource","Source snapshot: "+stamp(index.source_latest_capture)+
-      (current?"":" · STALE — waiting for scheduled collector")+
+      (fresh?"":" · STALE — waiting for scheduled collector")+
       " · Stitched deterministic daily forecasts only; these are not warnings, observations, or calibrated probabilities.");
   }
   function pickRow(item){
@@ -333,13 +350,15 @@
     return state.inFlight;
   }
   function init(){
-    q("eventWatchList")?.addEventListener("click",ev=>{
+    const openEvent=ev=>{
       const button=ev.target.closest("[data-event-id]");if(!button)return;
       state.selected=button.dataset.eventId;
       document.querySelector('[data-tab="archive"]')?.click();
       renderArchiveList();
       q("trackedCasesTitle")?.scrollIntoView({behavior:"smooth",block:"start"});
-    });
+    };
+    q("eventWatchList")?.addEventListener("click",openEvent);
+    q("currentEventList")?.addEventListener("click",openEvent);
     q("eventCaseDetail")?.addEventListener("click",ev=>{
       const button=ev.target.closest("[data-mode-id]");if(!button)return;
       state.selected=button.dataset.modeId;renderArchiveList();
