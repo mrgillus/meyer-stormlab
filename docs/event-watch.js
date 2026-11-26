@@ -122,7 +122,8 @@
   async function renderSelected(){
     const index=state.index;
     const summary=index?.events.find(x=>x.id===state.selected);
-    if(!summary){q("eventCaseDetail").innerHTML="";return}
+    if(!summary){q("eventCaseDetail").innerHTML="";window.StormLabVerification?.render(null);return}
+    window.StormLabVerification?.render(summary.id);
     const label=titles[summary.kind]||summary.title;
     const unit=summary.threshold?.unit||"";
     const trigger=summary.threshold?.direction==="lte"?"≤":"≥";
