@@ -29,7 +29,7 @@
       "start_date": "2026-11-26",
       "end_date": "2026-11-29",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "status": "in_latest_capture",
       "priority": "notable",
       "forecast_modes": {
@@ -40,7 +40,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -113,7 +113,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -183,7 +183,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-27T00:00",
@@ -555,7 +555,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -625,7 +625,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-27T00:00",
@@ -997,7 +997,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1005,7 +1005,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 0,
                 "supporting_models": 4,
-                "quantity": 1.545,
+                "quantity": 1.527,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1035,7 +1035,7 @@
                 "possible_support_pct": 0,
                 "unknown_models": 0,
                 "supporting_models": 0,
-                "quantity": 0.0,
+                "quantity": 0.004,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
@@ -1070,7 +1070,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1104,15 +1104,15 @@
               },
               {
                 "time": "2026-11-28",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
-                "quantity": 0.0,
+                "supporting_models": 1,
+                "quantity": 0.004,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
@@ -1143,7 +1143,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1216,7 +1216,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1286,7 +1286,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-11-26T00:00",
@@ -1399,7 +1399,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 0,
                 "supporting_models": 4,
-                "quantity": 0.483,
+                "quantity": 0.427,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1414,7 +1414,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 0,
                 "supporting_models": 4,
-                "quantity": 0.496,
+                "quantity": 0.441,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1429,7 +1429,7 @@
                 "possible_support_pct": 75,
                 "unknown_models": 0,
                 "supporting_models": 3,
-                "quantity": 0.441,
+                "quantity": 0.413,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1444,7 +1444,7 @@
                 "possible_support_pct": 75,
                 "unknown_models": 0,
                 "supporting_models": 3,
-                "quantity": 0.097,
+                "quantity": 0.069,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1459,7 +1459,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.069,
+                "quantity": 0.042,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1474,7 +1474,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.069,
+                "quantity": 0.042,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1534,7 +1534,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.042,
+                "quantity": 0.069,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1549,7 +1549,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.042,
+                "quantity": 0.083,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1579,7 +1579,7 @@
                 "possible_support_pct": 75,
                 "unknown_models": 0,
                 "supporting_models": 3,
-                "quantity": 0.042,
+                "quantity": 0.028,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1594,7 +1594,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.028,
+                "quantity": 0.014,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
@@ -1609,7 +1609,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.028,
+                "quantity": 0.014,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
@@ -1674,7 +1674,7 @@
       "start_date": "2026-12-03",
       "end_date": "2026-12-05",
       "first_seen": "2026-11-26T10:33:49.497972+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "status": "in_latest_capture",
       "priority": "notable",
       "forecast_modes": {
@@ -1685,34 +1685,34 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-03",
-                "support_pct": null,
-                "possible_support_pct": 25,
+                "support_pct": 25,
+                "possible_support_pct": 50,
                 "unknown_models": 1,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "unknown"
                 }
               },
               {
                 "time": "2026-12-04",
-                "support_pct": 50,
-                "possible_support_pct": 75,
+                "support_pct": 75,
+                "possible_support_pct": 100,
                 "unknown_models": 1,
-                "supporting_models": 2,
+                "supporting_models": 3,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "supports",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "supports",
                   "ICON": "unknown"
                 }
@@ -1743,7 +1743,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -1751,7 +1751,7 @@
                 "possible_support_pct": 25,
                 "unknown_models": 1,
                 "supporting_models": 0,
-                "quantity": 0.008,
+                "quantity": 0.681,
                 "quantity_models": 3,
                 "models": {
                   "GFS": "clear",
@@ -1766,7 +1766,7 @@
                 "possible_support_pct": 25,
                 "unknown_models": 1,
                 "supporting_models": 0,
-                "quantity": 0.488,
+                "quantity": 0.72,
                 "quantity_models": 3,
                 "models": {
                   "GFS": "clear",
@@ -1801,7 +1801,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -1809,7 +1809,7 @@
                 "possible_support_pct": 75,
                 "unknown_models": 1,
                 "supporting_models": 2,
-                "quantity": 0.016,
+                "quantity": 0.669,
                 "quantity_models": 3,
                 "models": {
                   "GFS": "clear",
@@ -1820,15 +1820,15 @@
               },
               {
                 "time": "2026-12-04",
-                "support_pct": 50,
-                "possible_support_pct": 75,
+                "support_pct": 75,
+                "possible_support_pct": 100,
                 "unknown_models": 1,
-                "supporting_models": 2,
-                "quantity": 0.441,
+                "supporting_models": 3,
+                "quantity": 0.638,
                 "quantity_models": 3,
                 "models": {
                   "GFS": "supports",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "supports",
                   "ICON": "unknown"
                 }
@@ -1859,7 +1859,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -1917,19 +1917,19 @@
             "direction": "gte",
             "unit": "sigma",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-03",
-                "support_pct": 50,
-                "possible_support_pct": 75,
+                "support_pct": 75,
+                "possible_support_pct": 100,
                 "unknown_models": 1,
-                "supporting_models": 2,
-                "quantity": 2.347,
+                "supporting_models": 3,
+                "quantity": 2.663,
                 "quantity_models": 3,
                 "models": {
                   "GFS": "supports",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "supports",
                   "ICON": "unknown"
                 }
@@ -1990,7 +1990,7 @@
       "start_date": "2026-12-07",
       "end_date": "2026-12-08",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "status": "in_latest_capture",
       "priority": "notable",
       "forecast_modes": {
@@ -2001,7 +2001,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-07",
@@ -2044,7 +2044,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-07",
@@ -2087,7 +2087,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-07",
@@ -2130,7 +2130,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-07",
@@ -2173,7 +2173,7 @@
             "direction": "gte",
             "unit": "mph",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-07",
@@ -2235,7 +2235,7 @@
             "direction": "gte",
             "unit": "mph",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T19:39:55.496208+00:00",
+            "captured_at": "2026-11-26T22:29:40.404500+00:00",
             "points": [
               {
                 "time": "2026-12-10",
@@ -2260,7 +2260,7 @@
     }
   ],
   "schema": 1,
-  "updated_at": "2026-11-26T20:03:58.264580+00:00",
+  "updated_at": "2026-11-26T23:05:36.870053+00:00",
   "processed_captures": [
     "2026-11-24T18:57:10.943633+00:00",
     "2026-11-24T22:29:47.747629+00:00",
@@ -2272,10 +2272,12 @@
     "2026-11-26T10:33:49.497972+00:00",
     "2026-11-26T16:38:10.281935+00:00",
     "2026-11-26T19:20:55.996274+00:00",
-    "2026-11-26T19:39:55.496208+00:00"
+    "2026-11-26T19:39:55.496208+00:00",
+    "2026-11-26T22:29:40.404500+00:00"
   ],
   "anomaly_processed_captures": [
-    "2026-11-26T19:39:55.496208+00:00"
+    "2026-11-26T19:39:55.496208+00:00",
+    "2026-11-26T22:29:40.404500+00:00"
   ],
   "events": [
     {
@@ -2283,7 +2285,7 @@
       "kind": "snow",
       "title": "Snowfall potential",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "timeline": [
@@ -2737,6 +2739,47 @@
             "median_triggering_value": 4.051,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS",
+            "ICON"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 4,
+          "peak": {
+            "date": "2026-11-26",
+            "place": "Wildwood",
+            "model": "ECMWF",
+            "value": 6.339
+          },
+          "wentzville": {
+            "models": [
+              "ECMWF",
+              "GEM",
+              "GFS",
+              "ICON"
+            ],
+            "triggering_samples": 4,
+            "min_triggering_value": 3.472,
+            "max_triggering_value": 5.098,
+            "median_triggering_value": 4.051,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -2767,7 +2810,7 @@
           "date": "2026-11-26",
           "place": "Wildwood",
           "model": "ECMWF",
-          "value": 6.807
+          "value": 6.339
         },
         "threshold": {
           "value": 2.0,
@@ -2783,7 +2826,7 @@
           ],
           "triggering_samples": 4,
           "min_triggering_value": 3.472,
-          "max_triggering_value": 5.264,
+          "max_triggering_value": 5.098,
           "median_triggering_value": 4.051,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
@@ -2965,6 +3008,22 @@
           "total_models": 4,
           "support_pct": 100.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -2973,7 +3032,7 @@
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "timeline": [
@@ -3350,6 +3409,40 @@
             "median_triggering_value": null,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS",
+            "ICON"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Wildwood"
+          ],
+          "same_place_day_support": 4,
+          "peak": {
+            "date": "2026-11-26",
+            "place": "Belleville",
+            "model": "GFS",
+            "value": 1.551
+          },
+          "wentzville": {
+            "models": [],
+            "triggering_samples": 0,
+            "min_triggering_value": null,
+            "max_triggering_value": null,
+            "median_triggering_value": null,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -3376,9 +3469,9 @@
         "same_place_day_support": 4,
         "peak": {
           "date": "2026-11-26",
-          "place": "Affton",
-          "model": "ECMWF",
-          "value": 1.567
+          "place": "Belleville",
+          "model": "GFS",
+          "value": 1.551
         },
         "threshold": {
           "value": 1.25,
@@ -3558,6 +3651,22 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-11-26",
           "end_date": "2026-11-26",
           "models": {
@@ -3909,6 +4018,22 @@
           "total_models": 4,
           "support_pct": 0.0,
           "possible_support_pct": 0.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 0,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 0.0,
+          "possible_support_pct": 0.0
         }
       ]
     },
@@ -4247,6 +4372,22 @@
           "total_models": 4,
           "support_pct": null,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
         }
       ]
     },
@@ -4255,7 +4396,7 @@
       "kind": "wind",
       "title": "Strong wind signal",
       "first_seen": "2026-11-25T04:42:00.447753+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-12-07",
       "end_date": "2026-12-07",
       "timeline": [
@@ -4350,6 +4491,35 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": [
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Louis"
+          ],
+          "same_place_day_support": 1,
+          "peak": {
+            "date": "2026-12-07",
+            "place": "Belleville",
+            "model": "GFS",
+            "value": 50.1
+          },
+          "wentzville": {
+            "models": [],
+            "triggering_samples": 0,
+            "min_triggering_value": null,
+            "max_triggering_value": null,
+            "median_triggering_value": null,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-12-07",
           "end_date": "2026-12-07",
           "models": [
@@ -4560,6 +4730,22 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -4712,6 +4898,22 @@
           "total_models": 4,
           "support_pct": null,
           "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 25.0
         }
       ]
     },
@@ -4831,6 +5033,22 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-12-10",
           "end_date": "2026-12-10",
           "models": {
@@ -4976,6 +5194,22 @@
           "total_models": 4,
           "support_pct": 75.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-30",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "clear"
+          },
+          "supporting_models": 3,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 75.0
         }
       ]
     },
@@ -4984,9 +5218,9 @@
       "kind": "rain",
       "title": "Rainfall",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-11-26",
-      "end_date": "2026-11-27",
+      "end_date": "2026-11-29",
       "timeline": [
         {
           "captured_at": "2026-11-26T19:20:55.996274+00:00",
@@ -5069,6 +5303,47 @@
             "median_triggering_value": 0.498,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-29",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS",
+            "ICON"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 4,
+          "peak": {
+            "date": "2026-11-26",
+            "place": "Belleville",
+            "model": "ICON",
+            "value": 1.193
+          },
+          "wentzville": {
+            "models": [
+              "ECMWF",
+              "GEM",
+              "GFS",
+              "ICON"
+            ],
+            "triggering_samples": 9,
+            "min_triggering_value": 0.028,
+            "max_triggering_value": 0.642,
+            "median_triggering_value": 0.449,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -5077,7 +5352,7 @@
         "kind": "rain",
         "title": "Rainfall",
         "start_date": "2026-11-26",
-        "end_date": "2026-11-27",
+        "end_date": "2026-11-29",
         "models": [
           "ECMWF",
           "GEM",
@@ -5113,10 +5388,10 @@
             "GFS",
             "ICON"
           ],
-          "triggering_samples": 4,
-          "min_triggering_value": 0.449,
+          "triggering_samples": 9,
+          "min_triggering_value": 0.028,
           "max_triggering_value": 0.642,
-          "median_triggering_value": 0.498,
+          "median_triggering_value": 0.449,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
       },
@@ -5153,6 +5428,22 @@
           "total_models": 4,
           "support_pct": 100.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -5161,7 +5452,7 @@
       "kind": "drizzle",
       "title": "Drizzle",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-11-27",
       "end_date": "2026-11-29",
       "timeline": [
@@ -5240,6 +5531,44 @@
             "median_triggering_value": 1.0,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-29",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 2,
+          "peak": {
+            "date": "2026-11-27",
+            "place": "Affton",
+            "model": "ECMWF",
+            "value": 1.0
+          },
+          "wentzville": {
+            "models": [
+              "ECMWF",
+              "GFS"
+            ],
+            "triggering_samples": 4,
+            "min_triggering_value": 1.0,
+            "max_triggering_value": 1.0,
+            "median_triggering_value": 1.0,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -5281,7 +5610,7 @@
             "ECMWF",
             "GFS"
           ],
-          "triggering_samples": 2,
+          "triggering_samples": 4,
           "min_triggering_value": 1.0,
           "max_triggering_value": 1.0,
           "median_triggering_value": 1.0,
@@ -5321,6 +5650,22 @@
           "total_models": 4,
           "support_pct": 75.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "clear"
+          },
+          "supporting_models": 3,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 75.0
         }
       ]
     },
@@ -5329,7 +5674,7 @@
       "kind": "fog",
       "title": "Fog signal",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-11-27",
       "end_date": "2026-11-27",
       "timeline": [
@@ -5367,6 +5712,38 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": [
+            "GFS"
+          ],
+          "locations": [
+            "Alton",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville"
+          ],
+          "same_place_day_support": 1,
+          "peak": {
+            "date": "2026-11-27",
+            "place": "Alton",
+            "model": "GFS",
+            "value": 1.0
+          },
+          "wentzville": {
+            "models": [
+              "GFS"
+            ],
+            "triggering_samples": 1,
+            "min_triggering_value": 1.0,
+            "max_triggering_value": 1.0,
+            "median_triggering_value": 1.0,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-11-27",
           "end_date": "2026-11-27",
           "models": [
@@ -5471,6 +5848,22 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
         }
       ]
     },
@@ -5479,7 +5872,7 @@
       "kind": "light_snow",
       "title": "Light snow / flurries",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-11-27",
       "end_date": "2026-11-27",
       "timeline": [
@@ -5511,6 +5904,32 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": [
+            "GEM"
+          ],
+          "locations": [
+            "Belleville"
+          ],
+          "same_place_day_support": 1,
+          "peak": {
+            "date": "2026-11-27",
+            "place": "Belleville",
+            "model": "GEM",
+            "value": 1.0
+          },
+          "wentzville": {
+            "models": [],
+            "triggering_samples": 0,
+            "min_triggering_value": null,
+            "max_triggering_value": null,
+            "median_triggering_value": null,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-11-27",
           "end_date": "2026-11-27",
           "models": [
@@ -5590,6 +6009,22 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-11-27",
           "end_date": "2026-11-27",
           "models": {
@@ -5780,6 +6215,22 @@
           "total_models": 4,
           "support_pct": 100.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -5788,7 +6239,7 @@
       "kind": "showers",
       "title": "Convective showers",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-11-29",
       "end_date": "2026-11-29",
       "timeline": [
@@ -5830,6 +6281,42 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": [
+            "GEM",
+            "ICON"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 2,
+          "peak": {
+            "date": "2026-11-29",
+            "place": "Alton",
+            "model": "ICON",
+            "value": 0.268
+          },
+          "wentzville": {
+            "models": [
+              "ICON"
+            ],
+            "triggering_samples": 1,
+            "min_triggering_value": 0.22,
+            "max_triggering_value": 0.22,
+            "median_triggering_value": 0.22,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-11-29",
           "end_date": "2026-11-29",
           "models": [
@@ -5942,6 +6429,22 @@
           "total_models": 4,
           "support_pct": 50.0,
           "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 2,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 50.0
         }
       ]
     },
@@ -5950,7 +6453,7 @@
       "kind": "rain",
       "title": "Rainfall",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-12-03",
       "end_date": "2026-12-05",
       "timeline": [
@@ -6029,6 +6532,45 @@
             "median_triggering_value": 0.523,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-05",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 3,
+          "peak": {
+            "date": "2026-12-03",
+            "place": "Belleville",
+            "model": "ECMWF",
+            "value": 1.134
+          },
+          "wentzville": {
+            "models": [
+              "ECMWF",
+              "GEM",
+              "GFS"
+            ],
+            "triggering_samples": 6,
+            "min_triggering_value": 0.016,
+            "max_triggering_value": 0.638,
+            "median_triggering_value": 0.523,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -6053,12 +6595,12 @@
           "Wentzville",
           "Wildwood"
         ],
-        "same_place_day_support": 2,
+        "same_place_day_support": 3,
         "peak": {
           "date": "2026-12-03",
-          "place": "Washington",
-          "model": "GEM",
-          "value": 0.669
+          "place": "Belleville",
+          "model": "ECMWF",
+          "value": 1.134
         },
         "threshold": {
           "value": 0.01,
@@ -6067,10 +6609,11 @@
         },
         "wentzville": {
           "models": [
+            "ECMWF",
             "GEM",
             "GFS"
           ],
-          "triggering_samples": 4,
+          "triggering_samples": 6,
           "min_triggering_value": 0.016,
           "max_triggering_value": 0.638,
           "median_triggering_value": 0.523,
@@ -6110,6 +6653,22 @@
           "total_models": 4,
           "support_pct": 75.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-05",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 3,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -6118,7 +6677,7 @@
       "kind": "showers",
       "title": "Convective showers",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-12-03",
       "end_date": "2026-12-05",
       "timeline": [
@@ -6161,6 +6720,43 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-05",
+          "models": [
+            "GEM",
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 2,
+          "peak": {
+            "date": "2026-12-04",
+            "place": "Affton",
+            "model": "GFS",
+            "value": 0.142
+          },
+          "wentzville": {
+            "models": [
+              "GEM",
+              "GFS"
+            ],
+            "triggering_samples": 3,
+            "min_triggering_value": 0.024,
+            "max_triggering_value": 0.059,
+            "median_triggering_value": 0.047,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-12-03",
           "end_date": "2026-12-05",
           "models": [
@@ -6275,6 +6871,22 @@
           "total_models": 4,
           "support_pct": 50.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-05",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 2,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 75.0
         }
       ]
     },
@@ -6283,8 +6895,8 @@
       "kind": "drizzle",
       "title": "Drizzle",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
-      "start_date": "2026-12-04",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
+      "start_date": "2026-12-03",
       "end_date": "2026-12-05",
       "timeline": [
         {
@@ -6356,6 +6968,43 @@
             "median_triggering_value": 1.0,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-05",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 2,
+          "peak": {
+            "date": "2026-12-03",
+            "place": "St. Louis",
+            "model": "ECMWF",
+            "value": 1.0
+          },
+          "wentzville": {
+            "models": [
+              "GEM"
+            ],
+            "triggering_samples": 1,
+            "min_triggering_value": 1.0,
+            "max_triggering_value": 1.0,
+            "median_triggering_value": 1.0,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -6363,9 +7012,10 @@
       "latest": {
         "kind": "drizzle",
         "title": "Drizzle",
-        "start_date": "2026-12-04",
+        "start_date": "2026-12-03",
         "end_date": "2026-12-05",
         "models": [
+          "ECMWF",
           "GEM",
           "GFS"
         ],
@@ -6373,6 +7023,7 @@
           "Affton",
           "Alton",
           "Belleville",
+          "St. Charles",
           "St. Louis",
           "Washington",
           "Wentzville",
@@ -6380,9 +7031,9 @@
         ],
         "same_place_day_support": 2,
         "peak": {
-          "date": "2026-12-04",
-          "place": "Alton",
-          "model": "GEM",
+          "date": "2026-12-03",
+          "place": "St. Louis",
+          "model": "ECMWF",
           "value": 1.0
         },
         "threshold": {
@@ -6434,6 +7085,22 @@
           "total_models": 4,
           "support_pct": 50.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-05",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 3,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -6558,6 +7225,22 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-05",
+          "end_date": "2026-12-05",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "supports",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 50.0
         }
       ]
     },
@@ -6566,7 +7249,7 @@
       "kind": "rain",
       "title": "Rainfall",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-12-07",
       "end_date": "2026-12-08",
       "timeline": [
@@ -6607,6 +7290,41 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-08",
+          "models": [
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 1,
+          "peak": {
+            "date": "2026-12-07",
+            "place": "Washington",
+            "model": "GFS",
+            "value": 0.886
+          },
+          "wentzville": {
+            "models": [
+              "GFS"
+            ],
+            "triggering_samples": 2,
+            "min_triggering_value": 0.067,
+            "max_triggering_value": 0.748,
+            "median_triggering_value": 0.407,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-12-07",
           "end_date": "2026-12-08",
           "models": [
@@ -6717,6 +7435,22 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-08",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -6725,7 +7459,7 @@
       "kind": "showers",
       "title": "Convective showers",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-12-07",
       "end_date": "2026-12-08",
       "timeline": [
@@ -6766,6 +7500,41 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-08",
+          "models": [
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 1,
+          "peak": {
+            "date": "2026-12-07",
+            "place": "Washington",
+            "model": "GFS",
+            "value": 0.138
+          },
+          "wentzville": {
+            "models": [
+              "GFS"
+            ],
+            "triggering_samples": 2,
+            "min_triggering_value": 0.031,
+            "max_triggering_value": 0.122,
+            "median_triggering_value": 0.076,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-12-07",
           "end_date": "2026-12-08",
           "models": [
@@ -6876,6 +7645,22 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-08",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -6884,7 +7669,7 @@
       "kind": "drizzle",
       "title": "Drizzle",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-12-08",
       "end_date": "2026-12-08",
       "timeline": [
@@ -6916,6 +7701,32 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-08",
+          "end_date": "2026-12-08",
+          "models": [
+            "GFS"
+          ],
+          "locations": [
+            "St. Charles"
+          ],
+          "same_place_day_support": 1,
+          "peak": {
+            "date": "2026-12-08",
+            "place": "St. Charles",
+            "model": "GFS",
+            "value": 1.0
+          },
+          "wentzville": {
+            "models": [],
+            "triggering_samples": 0,
+            "min_triggering_value": null,
+            "max_triggering_value": null,
+            "median_triggering_value": null,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-12-08",
           "end_date": "2026-12-08",
           "models": [
@@ -6995,6 +7806,22 @@
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-12-08",
+          "end_date": "2026-12-08",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
           "start_date": "2026-12-08",
           "end_date": "2026-12-08",
           "models": {
@@ -7114,6 +7941,22 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ]
     },
@@ -7122,7 +7965,7 @@
       "kind": "warm_night",
       "title": "Unusually warm overnight lows",
       "first_seen": "2026-11-26T19:39:55.496208+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
       "start_date": "2026-12-03",
       "end_date": "2026-12-04",
       "timeline": [
@@ -7162,6 +8005,45 @@
             "median_triggering_value": 2.488,
             "note": "Only threshold-triggering daily forecasts, not a storm total."
           }
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-04",
+          "models": [
+            "ECMWF",
+            "GEM",
+            "GFS"
+          ],
+          "locations": [
+            "Affton",
+            "Alton",
+            "Belleville",
+            "St. Charles",
+            "St. Louis",
+            "Washington",
+            "Wentzville",
+            "Wildwood"
+          ],
+          "same_place_day_support": 3,
+          "peak": {
+            "date": "2026-12-03",
+            "place": "Washington",
+            "model": "ECMWF",
+            "value": 3.2211
+          },
+          "wentzville": {
+            "models": [
+              "ECMWF",
+              "GEM",
+              "GFS"
+            ],
+            "triggering_samples": 5,
+            "min_triggering_value": 2.3368,
+            "max_triggering_value": 3.1789,
+            "median_triggering_value": 2.632,
+            "note": "Only threshold-triggering daily forecasts, not a storm total."
+          }
         }
       ],
       "observation_status": "not_connected",
@@ -7172,6 +8054,7 @@
         "start_date": "2026-12-03",
         "end_date": "2026-12-04",
         "models": [
+          "ECMWF",
           "GEM",
           "GFS"
         ],
@@ -7185,12 +8068,12 @@
           "Wentzville",
           "Wildwood"
         ],
-        "same_place_day_support": 2,
+        "same_place_day_support": 3,
         "peak": {
-          "date": "2026-12-04",
+          "date": "2026-12-03",
           "place": "Washington",
-          "model": "GFS",
-          "value": 2.9062
+          "model": "ECMWF",
+          "value": 3.2211
         },
         "threshold": {
           "value": 2.0,
@@ -7199,13 +8082,14 @@
         },
         "wentzville": {
           "models": [
+            "ECMWF",
             "GEM",
             "GFS"
           ],
-          "triggering_samples": 4,
+          "triggering_samples": 5,
           "min_triggering_value": 2.3368,
-          "max_triggering_value": 2.8854,
-          "median_triggering_value": 2.488,
+          "max_triggering_value": 3.1789,
+          "median_triggering_value": 2.632,
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
       },
@@ -7226,6 +8110,22 @@
           "total_models": 4,
           "support_pct": 50.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 3,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 100.0
         }
       ]
     }
