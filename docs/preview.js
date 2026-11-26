@@ -174,8 +174,23 @@ function renderModels(p,d){
   if(!active.length){q("modelBars").innerHTML='<p class="muted">No model data returned for this location.</p>';return}
   q("modelBars").innerHTML=active.map(m=>{
     const v=m.full_total_in??m.covered_total_in;
-    return '<div class="model-row" data-model="'+e(m.name)+'" title="'+e(m.name+": "+v.toFixed(2)+' inches, '+m.hours+" hours of future model coverage")+'"><span class="model-name">'+e(m.name)+'</span><div class="model-track"><div class="model-fill" style="width:'+Math.max(.5,100*v/max).toFixed(1)+'%"></div></div><span class="model-val">'+e(v.toFixed(2))+'"<small> '+e(m.hours)+"h</small></span></div>";
+    return '<button type="button" class="model-row" data-model="'+e(m.name)+'" title="'+e(m.name+": "+v.toFixed(2)+' inches, '+m.hours+" hours of future model coverage")+'"><span class="model-name">'+e(m.name)+'</span><div class="model-track"><div class="model-fill" style="width:'+Math.max(.5,100*v/max).toFixed(1)+'%"></div></div><span class="model-val">'+e(v.toFixed(2))+'"<small> '+e(m.hours)+"h</small></span></button>";
   }).join("");
+  q("modelBars").querySelectorAll(".model-row").forEach(b=>b.addEventListener("click",()=>selectModel(b.dataset.model)));
+  selectModel(active.some(x=>x.name==="HRRR")?"HRRR":active[0].name);
+}
+
+function selectModel(name){
+  const p=selected(),m=p?.models?.[name];if(!m)return;
+  const v=m.full_total_in??m.covered_total_in;if(!num(v))return;
+  q("modelBars").querySelectorAll(".model-row").forEach(b=>b.classList.toggle("is-selected",b.dataset.model===name));
+  const details=[];
+  if(num(m.peak_hour_in))details.push("Peak modeled hour: "+m.peak_hour_in.toFixed(2)+'"');
+  if(num(m.snow_hour_mean_temp_c))details.push("Mean snow-hour air temp: "+m.snow_hour_mean_temp_c.toFixed(1)+"°C");
+  if(num(m.snow_hour_mean_wetbulb_c))details.push("Mean snow-hour wet bulb: "+m.snow_hour_mean_wetbulb_c.toFixed(1)+"°C");
+  q("modelDetail").innerHTML='<strong>'+e(name)+' · '+e(v.toFixed(2))+'" modeled snow</strong>'+
+    '<span>'+e(m.hours+" forecast hours represented. "+(m.full_total_in===null?"Only future hours are available in the current capture.":"Full storm window represented.")+" The model initialization cycle is not recorded by this feed.")+'</span>'+
+    (details.length?'<div class="detail-metrics">'+details.map(v=>'<span>'+e(v)+'</span>').join("")+'</div>':"");
 }
 async function loadNow(silent=false){
   if(!silent)set("lastUpdate","Checking latest model capture…");
