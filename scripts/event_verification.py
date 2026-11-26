@@ -82,8 +82,6 @@ def decode_amount(raw):
         value = raw[0]
         clock = str(raw[1]).strip() if len(raw)>1 and raw[1] is not None else None
         flags = str(raw[2]).strip() if len(raw)>2 and raw[2] is not None else None
-    if flags and flags.upper() not in ("", "-"):
-        return (None, "flagged", clock, flags)
     if value is None or isinstance(value, bool):
         return (None, "missing", clock, flags)
     if isinstance(value, str):
@@ -94,6 +92,8 @@ def decode_amount(raw):
             return (None, "trace", clock, flags)
         if token.endswith("A"):
             return (None, "accumulated_interval_unknown", clock, flags)
+    if flags and flags.upper() not in ("", "-"):
+        return (None, "flagged", clock, flags)
     try:
         amount = float(value)
     except (ValueError, TypeError):
