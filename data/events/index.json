@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-26T03:07:40.724527+00:00",
+  "source_latest_capture": "2026-11-25T22:28:13.906033+00:00",
+  "capture_age_hours": 4.66,
+  "capture_count_processed": 6,
+  "status": "current",
+  "screening_rules": {
+    "snow": {
+      "field": "snowfall_sum",
+      "threshold": 2.0,
+      "unit": "in",
+      "direction": "gte"
+    },
+    "precipitation": {
+      "field": "precipitation_sum",
+      "threshold": 1.25,
+      "unit": "in",
+      "direction": "gte"
+    },
+    "wind": {
+      "field": "wind_gusts_10m_max",
+      "threshold": 45.0,
+      "unit": "mph",
+      "direction": "gte"
+    },
+    "cold": {
+      "field": "temperature_2m_min",
+      "threshold": 10.0,
+      "unit": "F",
+      "direction": "lte"
+    },
+    "heat": {
+      "field": "temperature_2m_max",
+      "threshold": 100.0,
+      "unit": "F",
+      "direction": "gte"
+    }
+  },
+  "limitations": [
+    "Research screening signals, not official NWS alerts or calibrated probabilities.",
+    "Daily deterministic stitched forecasts; model initialization not identified.",
+    "Signals cannot establish severe thunderstorms, tornadoes, flood risk, or snow depth.",
+    "Forecast history is not ground truth; no model skill verdict without observations.",
+    "15-day GFS is the longest available collector input. No 17–21 day detection."
+  ],
+  "events": [
+    {
+      "id": "snow-20261125",
+      "kind": "snow",
+      "title": "Snowfall potential",
+      "start_date": "2026-11-25",
+      "end_date": "2026-11-26",
+      "first_seen": "2026-11-24T18:57:10.943633+00:00",
+      "last_seen": "2026-11-25T22:28:13.906033+00:00",
+      "snapshots_seen": 6,
+      "status": "in_latest_capture",
+      "lead_days": 0,
+      "models": [
+        "ECMWF",
+        "GEM",
+        "GFS",
+        "ICON"
+      ],
+      "locations": [
+        "Affton",
+        "Alton",
+        "Belleville",
+        "St. Charles",
+        "St. Louis",
+        "Washington",
+        "Wentzville",
+        "Wildwood"
+      ],
+      "same_place_day_support": 4,
+      "peak": {
+        "date": "2026-11-26",
+        "place": "Belleville",
+        "model": "GEM",
+        "value": 7.193
+      },
+      "threshold": {
+        "value": 2.0,
+        "unit": "in",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [
+          "ECMWF",
+          "GEM",
+          "GFS",
+          "ICON"
+        ],
+        "triggering_samples": 7,
+        "min_triggering_value": 2.067,
+        "max_triggering_value": 5.429,
+        "median_triggering_value": 3.169,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "precipitation-20261126",
+      "kind": "precipitation",
+      "title": "Heavy precipitation signal",
+      "start_date": "2026-11-26",
+      "end_date": "2026-11-26",
+      "first_seen": "2026-11-24T18:57:10.943633+00:00",
+      "last_seen": "2026-11-25T22:28:13.906033+00:00",
+      "snapshots_seen": 6,
+      "status": "in_latest_capture",
+      "lead_days": 1,
+      "models": [
+        "GEM"
+      ],
+      "locations": [
+        "Belleville",
+        "St. Charles"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-11-26",
+        "place": "Belleville",
+        "model": "GEM",
+        "value": 1.26
+      },
+      "threshold": {
+        "value": 1.25,
+        "unit": "in",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [],
+        "triggering_samples": 0,
+        "min_triggering_value": null,
+        "max_triggering_value": null,
+        "median_triggering_value": null,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "precipitation-20261201",
+      "kind": "precipitation",
+      "title": "Heavy precipitation signal",
+      "start_date": "2026-11-29",
+      "end_date": "2026-11-29",
+      "first_seen": "2026-11-24T18:57:10.943633+00:00",
+      "last_seen": "2026-11-25T16:39:42.471481+00:00",
+      "snapshots_seen": 3,
+      "status": "not_in_latest_capture",
+      "lead_days": 4,
+      "models": [
+        "GFS"
+      ],
+      "locations": [
+        "Affton",
+        "Belleville",
+        "St. Louis",
+        "Washington",
+        "Wildwood"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-11-29",
+        "place": "St. Louis",
+        "model": "GFS",
+        "value": 1.535
+      },
+      "threshold": {
+        "value": 1.25,
+        "unit": "in",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [],
+        "triggering_samples": 0,
+        "min_triggering_value": null,
+        "max_triggering_value": null,
+        "median_triggering_value": null,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "precipitation-20261207",
+      "kind": "precipitation",
+      "title": "Heavy precipitation signal",
+      "start_date": "2026-12-07",
+      "end_date": "2026-12-07",
+      "first_seen": "2026-11-24T18:57:10.943633+00:00",
+      "last_seen": "2026-11-24T22:29:47.747629+00:00",
+      "snapshots_seen": 2,
+      "status": "not_in_latest_capture",
+      "lead_days": 12,
+      "models": [
+        "GFS"
+      ],
+      "locations": [
+        "Affton",
+        "Alton",
+        "Belleville",
+        "St. Charles",
+        "St. Louis",
+        "Washington",
+        "Wentzville",
+        "Wildwood"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-12-07",
+        "place": "Washington",
+        "model": "GFS",
+        "value": 1.689
+      },
+      "threshold": {
+        "value": 1.25,
+        "unit": "in",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [
+          "GFS"
+        ],
+        "triggering_samples": 1,
+        "min_triggering_value": 1.547,
+        "max_triggering_value": 1.547,
+        "median_triggering_value": 1.547,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "wind-20261207",
+      "kind": "wind",
+      "title": "Strong wind signal",
+      "start_date": "2026-12-07",
+      "end_date": "2026-12-07",
+      "first_seen": "2026-11-25T04:42:00.447753+00:00",
+      "last_seen": "2026-11-25T04:42:00.447753+00:00",
+      "snapshots_seen": 1,
+      "status": "not_in_latest_capture",
+      "lead_days": 12,
+      "models": [
+        "GFS"
+      ],
+      "locations": [
+        "Affton",
+        "Alton",
+        "Belleville",
+        "St. Charles",
+        "Washington",
+        "Wentzville",
+        "Wildwood"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-12-07",
+        "place": "Belleville",
+        "model": "GFS",
+        "value": 48.8
+      },
+      "threshold": {
+        "value": 45.0,
+        "unit": "mph",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [
+          "GFS"
+        ],
+        "triggering_samples": 1,
+        "min_triggering_value": 47.0,
+        "max_triggering_value": 47.0,
+        "median_triggering_value": 47.0,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    }
+  ]
+}
