@@ -332,12 +332,38 @@ def build_reports(cases,stations,observations,today):
         })
     return out
 
+def retain_recent_measurements(prior_stations, prior_records, fresh_stations,
+                               fresh_records, today):
+    """Refresh station values without losing earlier days, including corrections.
+
+    The raw regional cache is bounded. Long-lived event-specific evidence is
+    retained separately in report.json so completed case files persist.
+    """
+    cutoff=today-dt.timedelta(days=100)
+    stations={}
+    for station in prior_stations+fresh_stations:
+        identity=station.get("station_id")
+        if identity:stations[identity]=station
+    reports={}
+    for row in prior_records+fresh_records:
+        station=row.get("station_id")
+        date=row.get("reported_date")
+        if not station or station not in stations or not date:continue
+        try:
+            if parseday(date)<cutoff:continue
+        except (TypeError,ValueError):continue
+        reports[(station,date)]=row
+    selected=sorted(reports.values(),key=lambda r:(r["reported_date"],r["station_id"]))
+    relevant={r["station_id"] for r in selected}
+    return [stations[x] for x in sorted(relevant)],selected
+
 def main():
     now=dt.datetime.now(UTC)
     today=now.astimezone(TZ).date()
     catalog=load(EVENTS/"catalog.json",{})
     cases=eligible_cases(catalog,today)
     prior=load(OUT/"observations.json",{})
+    previous_cases=load(OUT/"report.json",{}).get("events",[])
     station_data=[]
     obs=[]
     provider_state="not_requested"
@@ -352,6 +378,8 @@ def main():
             station_data,obs=normalize_provider(provider,start,end)
             provider_state="retrieved"
             retrieval_time=now.isoformat()
+            for record in obs:
+                record["source_checked_at"]=retrieval_time
         except Exception as exc:
             provider_error=str(exc)[:300]
             provider_state="unavailable"
@@ -360,6 +388,14 @@ def main():
                 obs=prior.get("reports",[])
                 retrieval_time=prior.get("retrieved_at")
                 provider_state="cached_previous_capture"
+    if provider_state=="retrieved" and prior.get("schema")==1:
+        station_data,obs=retain_recent_measurements(
+            prior.get("stations",[]),prior.get("reports",[]),station_data,obs,today)
+    elif not cases and prior.get("schema")==1:
+        station_data,obs=retain_recent_measurements(
+            prior.get("stations",[]),prior.get("reports",[]),[],[],today)
+        retrieval_time=prior.get("retrieved_at")
+        provider_state="cached_previous_capture"
     payload={
         "schema":1,"generated_at":now.isoformat(),
         "retrieved_at":retrieval_time,"provider":"RCC-ACIS MultiStnData",
@@ -374,6 +410,14 @@ def main():
     }
     save(OUT/"observations.json",payload)
     summaries=build_reports(cases,station_data,obs,today)
+    by_event={e["event_id"]:e for e in previous_cases if isinstance(e,dict) and e.get("event_id")}
+    for event in summaries:
+        by_event[event["event_id"]]=event
+    # Do not delete completed case evidence when an event ages out of the
+    # short-term provider query. Event IDs remain the permanent join keys.
+    summaries=sorted(by_event.values(),
+         key=lambda e:(e.get("forecast_dates",{}).get("start",""),e["event_id"]),
+         reverse=True)
     report={
         "schema":1,"generated_at":now.isoformat(),
         "source_latest_observation_capture":retrieval_time,
