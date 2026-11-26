@@ -1,0 +1,315 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-26T20:20:23.470600+00:00",
+  "source": "https://data.rcc-acis.org/StnData",
+  "input_sha256": "2c6384dcee97c53cd9007817e111d51b84e6afdec7df6308af17f4fa1349498a",
+  "expected_observations": 40500,
+  "station_count": 29,
+  "stations_retrieved": 29,
+  "counts": {
+    "flagged": 4375,
+    "amount_agrees": 36125,
+    "clock_unknown": 36098,
+    "clock_candidate": 27
+  },
+  "stations": [
+    {
+      "station": "USC00110500",
+      "expected": 517,
+      "counts": {
+        "flagged": 213,
+        "amount_agrees": 304,
+        "clock_unknown": 304
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00112483",
+      "expected": 295,
+      "counts": {
+        "flagged": 75,
+        "amount_agrees": 220,
+        "clock_unknown": 220
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00113693",
+      "expected": 1118,
+      "counts": {
+        "amount_agrees": 1066,
+        "clock_unknown": 1066,
+        "flagged": 52
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00114108",
+      "expected": 1051,
+      "counts": {
+        "amount_agrees": 961,
+        "clock_unknown": 961,
+        "flagged": 90
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00114447",
+      "expected": 1773,
+      "counts": {
+        "flagged": 387,
+        "amount_agrees": 1386,
+        "clock_unknown": 1359,
+        "clock_candidate": 27
+      },
+      "clock_histogram": {
+        "0600": 22,
+        "0700": 5
+      }
+    },
+    {
+      "station": "USC00114489",
+      "expected": 2278,
+      "counts": {
+        "amount_agrees": 2138,
+        "clock_unknown": 2138,
+        "flagged": 140
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00114629",
+      "expected": 1990,
+      "counts": {
+        "flagged": 70,
+        "amount_agrees": 1920,
+        "clock_unknown": 1920
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00115917",
+      "expected": 689,
+      "counts": {
+        "flagged": 113,
+        "amount_agrees": 576,
+        "clock_unknown": 576
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00116011",
+      "expected": 2248,
+      "counts": {
+        "flagged": 74,
+        "amount_agrees": 2174,
+        "clock_unknown": 2174
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00116837",
+      "expected": 1568,
+      "counts": {
+        "amount_agrees": 1441,
+        "clock_unknown": 1441,
+        "flagged": 127
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00117157",
+      "expected": 867,
+      "counts": {
+        "amount_agrees": 735,
+        "clock_unknown": 735,
+        "flagged": 132
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00117636",
+      "expected": 1690,
+      "counts": {
+        "flagged": 252,
+        "amount_agrees": 1438,
+        "clock_unknown": 1438
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00118491",
+      "expected": 801,
+      "counts": {
+        "amount_agrees": 593,
+        "clock_unknown": 593,
+        "flagged": 208
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00230856",
+      "expected": 1207,
+      "counts": {
+        "amount_agrees": 1040,
+        "clock_unknown": 1040,
+        "flagged": 167
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00231101",
+      "expected": 137,
+      "counts": {
+        "amount_agrees": 136,
+        "clock_unknown": 136,
+        "flagged": 1
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00232220",
+      "expected": 911,
+      "counts": {
+        "amount_agrees": 831,
+        "clock_unknown": 831,
+        "flagged": 80
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00232591",
+      "expected": 1793,
+      "counts": {
+        "amount_agrees": 1720,
+        "clock_unknown": 1720,
+        "flagged": 73
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00232809",
+      "expected": 2361,
+      "counts": {
+        "amount_agrees": 2264,
+        "clock_unknown": 2264,
+        "flagged": 97
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00233043",
+      "expected": 865,
+      "counts": {
+        "amount_agrees": 705,
+        "clock_unknown": 705,
+        "flagged": 160
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00233079",
+      "expected": 793,
+      "counts": {
+        "flagged": 186,
+        "amount_agrees": 607,
+        "clock_unknown": 607
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00235541",
+      "expected": 285,
+      "counts": {
+        "amount_agrees": 204,
+        "clock_unknown": 204,
+        "flagged": 81
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00236826",
+      "expected": 1178,
+      "counts": {
+        "amount_agrees": 896,
+        "clock_unknown": 896,
+        "flagged": 282
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00237300",
+      "expected": 1112,
+      "counts": {
+        "flagged": 309,
+        "amount_agrees": 803,
+        "clock_unknown": 803
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00237397",
+      "expected": 1407,
+      "counts": {
+        "flagged": 84,
+        "amount_agrees": 1323,
+        "clock_unknown": 1323
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00237578",
+      "expected": 1686,
+      "counts": {
+        "amount_agrees": 1617,
+        "clock_unknown": 1617,
+        "flagged": 69
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USC00238725",
+      "expected": 1918,
+      "counts": {
+        "amount_agrees": 1846,
+        "clock_unknown": 1846,
+        "flagged": 72
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USW00013802",
+      "expected": 672,
+      "counts": {
+        "amount_agrees": 650,
+        "clock_unknown": 650,
+        "flagged": 22
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USW00013994",
+      "expected": 3645,
+      "counts": {
+        "amount_agrees": 3243,
+        "clock_unknown": 3243,
+        "flagged": 402
+      },
+      "clock_histogram": {}
+    },
+    {
+      "station": "USW00093822",
+      "expected": 3645,
+      "counts": {
+        "amount_agrees": 3288,
+        "clock_unknown": 3288,
+        "flagged": 357
+      },
+      "clock_histogram": {}
+    }
+  ],
+  "errors": [],
+  "verified_intervals": 0,
+  "training_labels_changed": false,
+  "note": "Explicit station identity and same-date snowfall agreement within rounding tolerance. Shared upstream sources possible. Clocks are candidates only; timezone, effective date, accumulation interval and historical location unverified."
+}
