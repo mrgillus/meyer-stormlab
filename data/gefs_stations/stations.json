@@ -1,0 +1,1278 @@
+{
+  "generated_at": "2026-11-27T14:54:01.743976+00:00",
+  "radius_mi": 75,
+  "min_usable_days": 400,
+  "candidates": 276,
+  "errors": [],
+  "stations": [
+    {
+      "id": "USW00013994",
+      "name": "ST LOUIS LAMBERT INTL AP",
+      "lat": 38.7525,
+      "lon": -90.3733,
+      "distance_miles": 0.2,
+      "usable_days": 3645,
+      "days_ge_1in": 96
+    },
+    {
+      "id": "USC00237452",
+      "name": "ST LOUIS SCI CTR",
+      "lat": 38.6308,
+      "lon": -90.2708,
+      "distance_miles": 9.8,
+      "usable_days": 2602,
+      "days_ge_1in": 38
+    },
+    {
+      "id": "USC00238805",
+      "name": "WELDON SPRING NWS",
+      "lat": 38.6989,
+      "lon": -90.6828,
+      "distance_miles": 17.2,
+      "usable_days": 2541,
+      "days_ge_1in": 89
+    },
+    {
+      "id": "USC00232850",
+      "name": "FESTUS",
+      "lat": 38.2325,
+      "lon": -90.3981,
+      "distance_miles": 35.8,
+      "usable_days": 2461,
+      "days_ge_1in": 48
+    },
+    {
+      "id": "USC00232809",
+      "name": "FARMINGTON",
+      "lat": 37.7919,
+      "lon": -90.4097,
+      "distance_miles": 66.2,
+      "usable_days": 2361,
+      "days_ge_1in": 51
+    },
+    {
+      "id": "USC00117126",
+      "name": "RAMSEY",
+      "lat": 39.1481,
+      "lon": -89.1022,
+      "distance_miles": 73.5,
+      "usable_days": 2343,
+      "days_ge_1in": 82
+    },
+    {
+      "id": "USC00114489",
+      "name": "JERSEYVILLE 2 SW",
+      "lat": 39.1025,
+      "lon": -90.3431,
+      "distance_miles": 24.4,
+      "usable_days": 2278,
+      "days_ge_1in": 55
+    },
+    {
+      "id": "USC00116011",
+      "name": "NASHVILLE 1 E",
+      "lat": 38.3419,
+      "lon": -89.3592,
+      "distance_miles": 61.5,
+      "usable_days": 2248,
+      "days_ge_1in": 64
+    },
+    {
+      "id": "USC00114442",
+      "name": "JACKSONVILLE 2E",
+      "lat": 39.7347,
+      "lon": -90.1978,
+      "distance_miles": 68.7,
+      "usable_days": 2240,
+      "days_ge_1in": 88
+    },
+    {
+      "id": "US1MOFSA163",
+      "name": "BOWLING GREEN 0.6 SE",
+      "lat": 39.3326,
+      "lon": -91.1884,
+      "distance_miles": 59.6,
+      "usable_days": 2119,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "US1MOFSA093",
+      "name": "IRONDALE 2 NW",
+      "lat": 37.8533,
+      "lon": -90.6989,
+      "distance_miles": 64.5,
+      "usable_days": 2007,
+      "days_ge_1in": 12
+    },
+    {
+      "id": "US1MOFSA219",
+      "name": "WARRENTON 1.1 WSW",
+      "lat": 38.8134,
+      "lon": -91.1588,
+      "distance_miles": 42.7,
+      "usable_days": 1994,
+      "days_ge_1in": 12
+    },
+    {
+      "id": "USC00114629",
+      "name": "KASKASKIA RVR NAVIGATION LOCK",
+      "lat": 37.9836,
+      "lon": -89.9469,
+      "distance_miles": 57.7,
+      "usable_days": 1990,
+      "days_ge_1in": 38
+    },
+    {
+      "id": "US1MOFSA221",
+      "name": "POTOSI 4 NW",
+      "lat": 37.9871,
+      "lon": -90.8354,
+      "distance_miles": 58.4,
+      "usable_days": 1988,
+      "days_ge_1in": 6
+    },
+    {
+      "id": "US1MOFSA187",
+      "name": "FARMINGTON 1.5 WSW",
+      "lat": 37.7693,
+      "lon": -90.4489,
+      "distance_miles": 67.9,
+      "usable_days": 1986,
+      "days_ge_1in": 17
+    },
+    {
+      "id": "US1MOFSA113",
+      "name": "TROY 1.2 NNE",
+      "lat": 38.992,
+      "lon": -90.9652,
+      "distance_miles": 36.1,
+      "usable_days": 1983,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "US1MOFSA183",
+      "name": "ST. PETERS 1.3 NNE",
+      "lat": 38.7956,
+      "lon": -90.5967,
+      "distance_miles": 12.6,
+      "usable_days": 1952,
+      "days_ge_1in": 34
+    },
+    {
+      "id": "US1MOFSA073",
+      "name": "OWENSVILLE 0.5 S",
+      "lat": 38.3407,
+      "lon": -91.4984,
+      "distance_miles": 67.2,
+      "usable_days": 1946,
+      "days_ge_1in": 2
+    },
+    {
+      "id": "US1MOFSA189",
+      "name": "EDMUNDSON 0.7 NNW",
+      "lat": 38.7425,
+      "lon": -90.3721,
+      "distance_miles": 0.5,
+      "usable_days": 1936,
+      "days_ge_1in": 34
+    },
+    {
+      "id": "US1MOFSA099",
+      "name": "HILLSBORO 0.5 SSW",
+      "lat": 38.2246,
+      "lon": -90.5689,
+      "distance_miles": 37.9,
+      "usable_days": 1918,
+      "days_ge_1in": 20
+    },
+    {
+      "id": "USC00238725",
+      "name": "WARRENTON 1 N",
+      "lat": 38.8347,
+      "lon": -91.1389,
+      "distance_miles": 41.8,
+      "usable_days": 1918,
+      "days_ge_1in": 56
+    },
+    {
+      "id": "US1MOFSA139",
+      "name": "MONTGOMERY CITY 0.8 SE",
+      "lat": 38.9658,
+      "lon": -91.4962,
+      "distance_miles": 62.4,
+      "usable_days": 1918,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "US1MOFSA071",
+      "name": "UNION 0.8 NE",
+      "lat": 38.4562,
+      "lon": -91.0013,
+      "distance_miles": 39.7,
+      "usable_days": 1851,
+      "days_ge_1in": 40
+    },
+    {
+      "id": "US1MOFSA186",
+      "name": "STE. GENEVIEVE 0.5 S",
+      "lat": 37.9672,
+      "lon": -90.0495,
+      "distance_miles": 56.8,
+      "usable_days": 1849,
+      "days_ge_1in": 11
+    },
+    {
+      "id": "USC00236641",
+      "name": "PERRYVILLE WTP",
+      "lat": 37.7342,
+      "lon": -89.92,
+      "distance_miles": 74.3,
+      "usable_days": 1830,
+      "days_ge_1in": 32
+    },
+    {
+      "id": "USC00232591",
+      "name": "ELSBERRY 1 S",
+      "lat": 39.1558,
+      "lon": -90.7831,
+      "distance_miles": 35.8,
+      "usable_days": 1793,
+      "days_ge_1in": 70
+    },
+    {
+      "id": "USC00114447",
+      "name": "JACKSONVILLE 2",
+      "lat": 39.7133,
+      "lon": -90.2286,
+      "distance_miles": 67.0,
+      "usable_days": 1773,
+      "days_ge_1in": 76
+    },
+    {
+      "id": "US1ILSC0003",
+      "name": "BELLEVILLE 2.2 SE",
+      "lat": 38.5096,
+      "lon": -89.9711,
+      "distance_miles": 27.2,
+      "usable_days": 1723,
+      "days_ge_1in": 54
+    },
+    {
+      "id": "US1MOSL0004",
+      "name": "KIRKWOOD 1.6 S",
+      "lat": 38.558,
+      "lon": -90.4248,
+      "distance_miles": 13.6,
+      "usable_days": 1716,
+      "days_ge_1in": 52
+    },
+    {
+      "id": "US1ILRH0007",
+      "name": "SPARTA 2.4 NW",
+      "lat": 38.1398,
+      "lon": -89.7393,
+      "distance_miles": 54.2,
+      "usable_days": 1698,
+      "days_ge_1in": 33
+    },
+    {
+      "id": "USC00111280",
+      "name": "CARLINVILLE",
+      "lat": 39.2881,
+      "lon": -89.8697,
+      "distance_miles": 45.9,
+      "usable_days": 1691,
+      "days_ge_1in": 34
+    },
+    {
+      "id": "US1ILSC0009",
+      "name": "BELLEVILLE 4.5 WNW",
+      "lat": 38.5524,
+      "lon": -90.0805,
+      "distance_miles": 20.7,
+      "usable_days": 1642,
+      "days_ge_1in": 49
+    },
+    {
+      "id": "USC00115539",
+      "name": "MEDORA 1 S",
+      "lat": 39.1561,
+      "lon": -90.1392,
+      "distance_miles": 30.7,
+      "usable_days": 1594,
+      "days_ge_1in": 88
+    },
+    {
+      "id": "US1MOFR0003",
+      "name": "UNION 1.6 N",
+      "lat": 38.4713,
+      "lon": -91.0167,
+      "distance_miles": 39.9,
+      "usable_days": 1593,
+      "days_ge_1in": 38
+    },
+    {
+      "id": "US1ILMY0001",
+      "name": "NOKOMIS 4.5 NW",
+      "lat": 39.347,
+      "lon": -89.3455,
+      "distance_miles": 68.7,
+      "usable_days": 1578,
+      "days_ge_1in": 47
+    },
+    {
+      "id": "USC00116837",
+      "name": "PITTSFIELD #2",
+      "lat": 39.6197,
+      "lon": -90.8033,
+      "distance_miles": 64.4,
+      "usable_days": 1568,
+      "days_ge_1in": 66
+    },
+    {
+      "id": "USC00238577",
+      "name": "VANDALIA",
+      "lat": 39.3075,
+      "lon": -91.4925,
+      "distance_miles": 71.5,
+      "usable_days": 1557,
+      "days_ge_1in": 77
+    },
+    {
+      "id": "US1ILMD0010",
+      "name": "GRANITE CITY 1.4 ENE",
+      "lat": 38.7245,
+      "lon": -90.1069,
+      "distance_miles": 14.3,
+      "usable_days": 1542,
+      "days_ge_1in": 34
+    },
+    {
+      "id": "US1ILMP0010",
+      "name": "MOUNT OLIVE 0.4 S",
+      "lat": 39.0664,
+      "lon": -89.7281,
+      "distance_miles": 40.9,
+      "usable_days": 1539,
+      "days_ge_1in": 37
+    },
+    {
+      "id": "USC00119241",
+      "name": "WHITE HALL 1 E",
+      "lat": 39.4408,
+      "lon": -90.3789,
+      "distance_miles": 47.7,
+      "usable_days": 1467,
+      "days_ge_1in": 81
+    },
+    {
+      "id": "USC00237475",
+      "name": "ST PETERS 2 SE",
+      "lat": 38.7678,
+      "lon": -90.5894,
+      "distance_miles": 11.9,
+      "usable_days": 1451,
+      "days_ge_1in": 72
+    },
+    {
+      "id": "USC00237397",
+      "name": "ST CHARLES ELM PT",
+      "lat": 38.8142,
+      "lon": -90.5139,
+      "distance_miles": 8.9,
+      "usable_days": 1407,
+      "days_ge_1in": 50
+    },
+    {
+      "id": "USC00113666",
+      "name": "GREENFIELD",
+      "lat": 39.3425,
+      "lon": -90.2061,
+      "distance_miles": 41.9,
+      "usable_days": 1389,
+      "days_ge_1in": 77
+    },
+    {
+      "id": "USC00116072",
+      "name": "NEW ATHENS",
+      "lat": 38.3219,
+      "lon": -89.8756,
+      "distance_miles": 39.9,
+      "usable_days": 1375,
+      "days_ge_1in": 45
+    },
+    {
+      "id": "US1ILSC0011",
+      "name": "CENTREVILLE 1.9 E",
+      "lat": 38.5735,
+      "lon": -90.066,
+      "distance_miles": 20.4,
+      "usable_days": 1358,
+      "days_ge_1in": 38
+    },
+    {
+      "id": "US1ILSC0016",
+      "name": "FAIRVIEW HEIGHTS 2.0 ENE",
+      "lat": 38.6049,
+      "lon": -89.9685,
+      "distance_miles": 23.9,
+      "usable_days": 1354,
+      "days_ge_1in": 33
+    },
+    {
+      "id": "USW00003960",
+      "name": "CAHOKIA ST LOUIS DWTN AP",
+      "lat": 38.5639,
+      "lon": -90.1486,
+      "distance_miles": 17.6,
+      "usable_days": 1303,
+      "days_ge_1in": 1
+    },
+    {
+      "id": "US1ILRH0005",
+      "name": "CHESTER 0.1 SSW",
+      "lat": 37.9188,
+      "lon": -89.8255,
+      "distance_miles": 64.6,
+      "usable_days": 1303,
+      "days_ge_1in": 25
+    },
+    {
+      "id": "USW00003966",
+      "name": "ST LOUIS SPIRIT OF ST LOUIS AP",
+      "lat": 38.6575,
+      "lon": -90.6558,
+      "distance_miles": 16.7,
+      "usable_days": 1301,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "USW00053904",
+      "name": "ST CHARLES CO AP",
+      "lat": 38.9306,
+      "lon": -90.4328,
+      "distance_miles": 12.9,
+      "usable_days": 1278,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "US1ILSG0011",
+      "name": "CHATHAM 1.4 ESE",
+      "lat": 39.6688,
+      "lon": -89.6711,
+      "distance_miles": 73.7,
+      "usable_days": 1264,
+      "days_ge_1in": 63
+    },
+    {
+      "id": "USC00231283",
+      "name": "CAP AU GRIS L&D 25",
+      "lat": 39.0028,
+      "lon": -90.6892,
+      "distance_miles": 24.5,
+      "usable_days": 1260,
+      "days_ge_1in": 21
+    },
+    {
+      "id": "US1MOSL0024",
+      "name": "FLORISSANT 2.9 W",
+      "lat": 38.7983,
+      "lon": -90.3779,
+      "distance_miles": 3.4,
+      "usable_days": 1249,
+      "days_ge_1in": 41
+    },
+    {
+      "id": "US1ILMP0004",
+      "name": "GIRARD 1.2 W",
+      "lat": 39.4469,
+      "lon": -89.8053,
+      "distance_miles": 56.9,
+      "usable_days": 1249,
+      "days_ge_1in": 26
+    },
+    {
+      "id": "US1MOFR0010",
+      "name": "WASHINGTON 2.7 ESE",
+      "lat": 38.5386,
+      "lon": -90.9669,
+      "distance_miles": 35.4,
+      "usable_days": 1239,
+      "days_ge_1in": 37
+    },
+    {
+      "id": "US1ILMP0007",
+      "name": "CARLINVILLE 3.4 SW",
+      "lat": 39.2445,
+      "lon": -89.9236,
+      "distance_miles": 41.7,
+      "usable_days": 1226,
+      "days_ge_1in": 35
+    },
+    {
+      "id": "US1ILMG0006",
+      "name": "MURRAYVILLE 0.4 NE",
+      "lat": 39.5866,
+      "lon": -90.2458,
+      "distance_miles": 58.2,
+      "usable_days": 1209,
+      "days_ge_1in": 17
+    },
+    {
+      "id": "USC00230856",
+      "name": "BOWLING GREEN 1 E",
+      "lat": 39.3444,
+      "lon": -91.1711,
+      "distance_miles": 59.5,
+      "usable_days": 1207,
+      "days_ge_1in": 65
+    },
+    {
+      "id": "USC00236826",
+      "name": "POTOSI 4 SW",
+      "lat": 37.8956,
+      "lon": -90.8414,
+      "distance_miles": 64.3,
+      "usable_days": 1178,
+      "days_ge_1in": 92
+    },
+    {
+      "id": "US1MOSL0018",
+      "name": "MANCHESTER 1.4 SE",
+      "lat": 38.5776,
+      "lon": -90.4984,
+      "distance_miles": 13.8,
+      "usable_days": 1172,
+      "days_ge_1in": 10
+    },
+    {
+      "id": "US1ILMD0028",
+      "name": "STAUNTON 4.3 SSW",
+      "lat": 38.954,
+      "lon": -89.8166,
+      "distance_miles": 32.9,
+      "usable_days": 1132,
+      "days_ge_1in": 19
+    },
+    {
+      "id": "USC00115841",
+      "name": "MORRISONVILLE",
+      "lat": 39.4158,
+      "lon": -89.4614,
+      "distance_miles": 67.0,
+      "usable_days": 1131,
+      "days_ge_1in": 49
+    },
+    {
+      "id": "USC00237398",
+      "name": "ST CHARLES 7 SSW",
+      "lat": 38.6853,
+      "lon": -90.5233,
+      "distance_miles": 9.4,
+      "usable_days": 1124,
+      "days_ge_1in": 44
+    },
+    {
+      "id": "USC00231640",
+      "name": "CLARKSVILLE L&D 24",
+      "lat": 39.3736,
+      "lon": -90.9061,
+      "distance_miles": 51.8,
+      "usable_days": 1118,
+      "days_ge_1in": 53
+    },
+    {
+      "id": "USC00113693",
+      "name": "GREENVILLE",
+      "lat": 38.865,
+      "lon": -89.4053,
+      "distance_miles": 52.5,
+      "usable_days": 1118,
+      "days_ge_1in": 57
+    },
+    {
+      "id": "US1MOGS0003",
+      "name": "HERMANN 3.0 S",
+      "lat": 38.6552,
+      "lon": -91.4331,
+      "distance_miles": 57.7,
+      "usable_days": 1113,
+      "days_ge_1in": 14
+    },
+    {
+      "id": "USC00237300",
+      "name": "ROSEBUD",
+      "lat": 38.4508,
+      "lon": -91.3753,
+      "distance_miles": 58.1,
+      "usable_days": 1112,
+      "days_ge_1in": 87
+    },
+    {
+      "id": "US1MOFR0017",
+      "name": "PACIFIC 2.4 WNW",
+      "lat": 38.4935,
+      "lon": -90.7942,
+      "distance_miles": 29.0,
+      "usable_days": 1067,
+      "days_ge_1in": 25
+    },
+    {
+      "id": "US1MOFR0015",
+      "name": "WASHINGTON 4.0 S",
+      "lat": 38.4956,
+      "lon": -90.9988,
+      "distance_miles": 38.2,
+      "usable_days": 1056,
+      "days_ge_1in": 22
+    },
+    {
+      "id": "USC00114108",
+      "name": "HILLSBORO",
+      "lat": 39.1611,
+      "lon": -89.4919,
+      "distance_miles": 55.1,
+      "usable_days": 1051,
+      "days_ge_1in": 49
+    },
+    {
+      "id": "US1MOSL0015",
+      "name": "EUREKA 1.6 NNE",
+      "lat": 38.5258,
+      "lon": -90.6357,
+      "distance_miles": 21.1,
+      "usable_days": 1000,
+      "days_ge_1in": 33
+    },
+    {
+      "id": "US1ILRH0008",
+      "name": "SPARTA 2.2 WNW",
+      "lat": 38.1325,
+      "lon": -89.7401,
+      "distance_miles": 54.6,
+      "usable_days": 993,
+      "days_ge_1in": 2
+    },
+    {
+      "id": "US1ILMP0012",
+      "name": "CARLINVILLE 1.1 E",
+      "lat": 39.28,
+      "lon": -89.8608,
+      "distance_miles": 45.7,
+      "usable_days": 972,
+      "days_ge_1in": 1
+    },
+    {
+      "id": "US1ILSC0001",
+      "name": "MASCOUTAH 0.5 WSW",
+      "lat": 38.5067,
+      "lon": -89.8148,
+      "distance_miles": 34.4,
+      "usable_days": 962,
+      "days_ge_1in": 15
+    },
+    {
+      "id": "US1MOJF0013",
+      "name": "DITTMER 2.1 WSW",
+      "lat": 38.3207,
+      "lon": -90.7217,
+      "distance_miles": 35.2,
+      "usable_days": 956,
+      "days_ge_1in": 28
+    },
+    {
+      "id": "USC00110137",
+      "name": "ALTON - MELVIN PRICE L&D",
+      "lat": 38.8669,
+      "lon": -90.1489,
+      "distance_miles": 14.4,
+      "usable_days": 945,
+      "days_ge_1in": 25
+    },
+    {
+      "id": "USC00111491",
+      "name": "CHESTER",
+      "lat": 37.9019,
+      "lon": -89.8308,
+      "distance_miles": 65.5,
+      "usable_days": 938,
+      "days_ge_1in": 57
+    },
+    {
+      "id": "USC00116642",
+      "name": "PATOKA",
+      "lat": 38.7653,
+      "lon": -89.0561,
+      "distance_miles": 70.8,
+      "usable_days": 932,
+      "days_ge_1in": 65
+    },
+    {
+      "id": "USC00112679",
+      "name": "EDWARDSVILLE 2 W",
+      "lat": 38.8094,
+      "lon": -90.0033,
+      "distance_miles": 20.2,
+      "usable_days": 923,
+      "days_ge_1in": 75
+    },
+    {
+      "id": "US1ILMD0020",
+      "name": "EDWARDSVILLE 0.9 WSW",
+      "lat": 38.8089,
+      "lon": -89.97,
+      "distance_miles": 21.9,
+      "usable_days": 912,
+      "days_ge_1in": 22
+    },
+    {
+      "id": "USC00232220",
+      "name": "DE SOTO",
+      "lat": 38.14,
+      "lon": -90.5064,
+      "distance_miles": 42.8,
+      "usable_days": 911,
+      "days_ge_1in": 48
+    },
+    {
+      "id": "US1MOFR0008",
+      "name": "WASHINGTON 1.6 SE",
+      "lat": 38.5361,
+      "lon": -90.9926,
+      "distance_miles": 36.7,
+      "usable_days": 896,
+      "days_ge_1in": 19
+    },
+    {
+      "id": "US1ILWS0003",
+      "name": "OKAWVILLE 2.3 SW",
+      "lat": 38.4085,
+      "lon": -89.5749,
+      "distance_miles": 49.0,
+      "usable_days": 892,
+      "days_ge_1in": 24
+    },
+    {
+      "id": "US1MOSL0002",
+      "name": "OAKVILLE 1.5 N",
+      "lat": 38.4651,
+      "lon": -90.3136,
+      "distance_miles": 19.9,
+      "usable_days": 882,
+      "days_ge_1in": 8
+    },
+    {
+      "id": "USC00235098",
+      "name": "LOUISIANA",
+      "lat": 39.4517,
+      "lon": -91.0464,
+      "distance_miles": 60.5,
+      "usable_days": 873,
+      "days_ge_1in": 56
+    },
+    {
+      "id": "USC00117157",
+      "name": "RED BUD 2 S",
+      "lat": 38.1783,
+      "lon": -89.9786,
+      "distance_miles": 44.8,
+      "usable_days": 867,
+      "days_ge_1in": 56
+    },
+    {
+      "id": "USC00233043",
+      "name": "FREEDOM",
+      "lat": 38.4583,
+      "lon": -91.7028,
+      "distance_miles": 74.7,
+      "usable_days": 865,
+      "days_ge_1in": 41
+    },
+    {
+      "id": "USC00118248",
+      "name": "STEELEVILLE",
+      "lat": 38.0031,
+      "lon": -89.6508,
+      "distance_miles": 64.7,
+      "usable_days": 856,
+      "days_ge_1in": 47
+    },
+    {
+      "id": "US1MOSLC007",
+      "name": "ST. LOUIS 5.7 SW",
+      "lat": 38.5805,
+      "lon": -90.2851,
+      "distance_miles": 12.6,
+      "usable_days": 839,
+      "days_ge_1in": 22
+    },
+    {
+      "id": "USC00111386",
+      "name": "CENTRALIA",
+      "lat": 38.5556,
+      "lon": -89.1297,
+      "distance_miles": 68.3,
+      "usable_days": 819,
+      "days_ge_1in": 44
+    },
+    {
+      "id": "US1MOSS0007",
+      "name": "O'FALLON 0.9 NNW",
+      "lat": 38.7967,
+      "lon": -90.7149,
+      "distance_miles": 18.9,
+      "usable_days": 808,
+      "days_ge_1in": 8
+    },
+    {
+      "id": "US1ILSC0023",
+      "name": "BELLEVILLE 2.7 SSE",
+      "lat": 38.4949,
+      "lon": -89.9811,
+      "distance_miles": 27.4,
+      "usable_days": 806,
+      "days_ge_1in": 15
+    },
+    {
+      "id": "US1MOCF0002",
+      "name": "STEELVILLE 7.4 ESE",
+      "lat": 37.9271,
+      "lon": -91.2307,
+      "distance_miles": 73.5,
+      "usable_days": 801,
+      "days_ge_1in": 15
+    },
+    {
+      "id": "US1MOSL0027",
+      "name": "BALLWIN 0.5 NNW",
+      "lat": 38.6008,
+      "lon": -90.5548,
+      "distance_miles": 14.3,
+      "usable_days": 765,
+      "days_ge_1in": 38
+    },
+    {
+      "id": "US1MOSF0007",
+      "name": "BISMARCK 1.3 S",
+      "lat": 37.7483,
+      "lon": -90.6253,
+      "distance_miles": 70.6,
+      "usable_days": 762,
+      "days_ge_1in": 12
+    },
+    {
+      "id": "USC00238746",
+      "name": "WASHINGTON",
+      "lat": 38.5417,
+      "lon": -90.975,
+      "distance_miles": 35.7,
+      "usable_days": 745,
+      "days_ge_1in": 63
+    },
+    {
+      "id": "US1ILMP0005",
+      "name": "GIRARD 8.8 W",
+      "lat": 39.4495,
+      "lon": -89.8992,
+      "distance_miles": 54.5,
+      "usable_days": 734,
+      "days_ge_1in": 2
+    },
+    {
+      "id": "USC00114089",
+      "name": "HIGHLAND",
+      "lat": 38.7308,
+      "lon": -89.6531,
+      "distance_miles": 38.7,
+      "usable_days": 732,
+      "days_ge_1in": 71
+    },
+    {
+      "id": "US1ILSC0006",
+      "name": "FREEBURG 2.0 SE",
+      "lat": 38.4085,
+      "lon": -89.8804,
+      "distance_miles": 35.4,
+      "usable_days": 729,
+      "days_ge_1in": 20
+    },
+    {
+      "id": "USC00111290",
+      "name": "CARLYLE RSVR",
+      "lat": 38.625,
+      "lon": -89.3631,
+      "distance_miles": 55.0,
+      "usable_days": 727,
+      "days_ge_1in": 45
+    },
+    {
+      "id": "US1MOSG0004",
+      "name": "STE. GENEVIEVE 12.5 WSW",
+      "lat": 37.8888,
+      "lon": -90.2521,
+      "distance_miles": 59.8,
+      "usable_days": 725,
+      "days_ge_1in": 9
+    },
+    {
+      "id": "US1ILMD0012",
+      "name": "GRANITE CITY 2.3 NE",
+      "lat": 38.7348,
+      "lon": -90.0962,
+      "distance_miles": 14.8,
+      "usable_days": 714,
+      "days_ge_1in": 10
+    },
+    {
+      "id": "USC00115917",
+      "name": "MT OLIVE 1 E",
+      "lat": 39.0728,
+      "lon": -89.7014,
+      "distance_miles": 42.3,
+      "usable_days": 689,
+      "days_ge_1in": 75
+    },
+    {
+      "id": "USC00114991",
+      "name": "LEBANON",
+      "lat": 38.6003,
+      "lon": -89.8178,
+      "distance_miles": 31.5,
+      "usable_days": 673,
+      "days_ge_1in": 57
+    },
+    {
+      "id": "USW00013802",
+      "name": "BELLEVILLE SIU RSCH",
+      "lat": 38.52,
+      "lon": -89.8467,
+      "distance_miles": 32.4,
+      "usable_days": 672,
+      "days_ge_1in": 60
+    },
+    {
+      "id": "USC00233793",
+      "name": "HERMANN",
+      "lat": 38.7014,
+      "lon": -91.4311,
+      "distance_miles": 57.3,
+      "usable_days": 667,
+      "days_ge_1in": 20
+    },
+    {
+      "id": "US1MOSS0013",
+      "name": "MARTHASVILLE 6.2 ENE",
+      "lat": 38.6759,
+      "lon": -90.9562,
+      "distance_miles": 32.0,
+      "usable_days": 664,
+      "days_ge_1in": 9
+    },
+    {
+      "id": "US1MOFR0018",
+      "name": "WASHINGTON 1.4 NW",
+      "lat": 38.5685,
+      "lon": -91.0281,
+      "distance_miles": 37.7,
+      "usable_days": 658,
+      "days_ge_1in": 16
+    },
+    {
+      "id": "US1MOSL0022",
+      "name": "MEHLVILLE 1.3 SSE",
+      "lat": 38.4825,
+      "lon": -90.3099,
+      "distance_miles": 18.8,
+      "usable_days": 655,
+      "days_ge_1in": 32
+    },
+    {
+      "id": "US1MOSL0049",
+      "name": "BALLWIN 1.6 E",
+      "lat": 38.5914,
+      "lon": -90.5235,
+      "distance_miles": 13.7,
+      "usable_days": 651,
+      "days_ge_1in": 9
+    },
+    {
+      "id": "USC00238171",
+      "name": "SULLIVAN",
+      "lat": 38.2386,
+      "lon": -91.1489,
+      "distance_miles": 55.0,
+      "usable_days": 642,
+      "days_ge_1in": 60
+    },
+    {
+      "id": "US1MOSS0012",
+      "name": "ST. PETERS 2.5 NW",
+      "lat": 38.8033,
+      "lon": -90.6389,
+      "distance_miles": 14.9,
+      "usable_days": 633,
+      "days_ge_1in": 10
+    },
+    {
+      "id": "US1ILMD0005",
+      "name": "ALTON 4.3 N",
+      "lat": 38.9664,
+      "lon": -90.1503,
+      "distance_miles": 19.1,
+      "usable_days": 631,
+      "days_ge_1in": 15
+    },
+    {
+      "id": "USC00113717",
+      "name": "GRIGGSVILLE",
+      "lat": 39.7378,
+      "lon": -90.7086,
+      "distance_miles": 70.6,
+      "usable_days": 628,
+      "days_ge_1in": 78
+    },
+    {
+      "id": "US1ILMD0034",
+      "name": "GODFREY 2.5 SSW",
+      "lat": 38.932,
+      "lon": -90.1985,
+      "distance_miles": 15.6,
+      "usable_days": 620,
+      "days_ge_1in": 11
+    },
+    {
+      "id": "US1ILMD0017",
+      "name": "TROY 1.4 SE",
+      "lat": 38.7145,
+      "lon": -89.878,
+      "distance_miles": 26.6,
+      "usable_days": 612,
+      "days_ge_1in": 2
+    },
+    {
+      "id": "USC00119331",
+      "name": "WINCHESTER",
+      "lat": 39.635,
+      "lon": -90.4528,
+      "distance_miles": 61.3,
+      "usable_days": 602,
+      "days_ge_1in": 70
+    },
+    {
+      "id": "US1MOSS0014",
+      "name": "O'FALLON 5.1 SW",
+      "lat": 38.7417,
+      "lon": -90.7846,
+      "distance_miles": 22.3,
+      "usable_days": 593,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "US1MOSL0050",
+      "name": "WEBSTER GROVES 1.6 NNE",
+      "lat": 38.6066,
+      "lon": -90.3406,
+      "distance_miles": 10.0,
+      "usable_days": 590,
+      "days_ge_1in": 9
+    },
+    {
+      "id": "US1ILMY0008",
+      "name": "LITCHFIELD 0.2 SE",
+      "lat": 39.1737,
+      "lon": -89.6541,
+      "distance_miles": 48.3,
+      "usable_days": 587,
+      "days_ge_1in": 10
+    },
+    {
+      "id": "US1MOSG0005",
+      "name": "STE. GENEVIEVE 11.1 SSW",
+      "lat": 37.8301,
+      "lon": -90.1383,
+      "distance_miles": 64.8,
+      "usable_days": 572,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "US1ILSC0018",
+      "name": "FAIRMONT CITY 0.9 ENE",
+      "lat": 38.6549,
+      "lon": -90.0863,
+      "distance_miles": 16.6,
+      "usable_days": 566,
+      "days_ge_1in": 16
+    },
+    {
+      "id": "US1ILRH0001",
+      "name": "RED BUD 0.5 S",
+      "lat": 38.2028,
+      "lon": -89.9963,
+      "distance_miles": 42.9,
+      "usable_days": 549,
+      "days_ge_1in": 13
+    },
+    {
+      "id": "US1MOSS0024",
+      "name": "WENTZVILLE 2.0 NNW",
+      "lat": 38.8379,
+      "lon": -90.8803,
+      "distance_miles": 28.1,
+      "usable_days": 544,
+      "days_ge_1in": 19
+    },
+    {
+      "id": "US1MOSL0020",
+      "name": "LADUE 1.6 N",
+      "lat": 38.6601,
+      "lon": -90.3816,
+      "distance_miles": 6.2,
+      "usable_days": 536,
+      "days_ge_1in": 4
+    },
+    {
+      "id": "US1MOCF0007",
+      "name": "CUBA 6.4 NNW",
+      "lat": 38.1479,
+      "lon": -91.4468,
+      "distance_miles": 71.6,
+      "usable_days": 531,
+      "days_ge_1in": 8
+    },
+    {
+      "id": "US1ILMD0016",
+      "name": "HIGHLAND 4.7 WSW",
+      "lat": 38.7251,
+      "lon": -89.7612,
+      "distance_miles": 32.9,
+      "usable_days": 522,
+      "days_ge_1in": 18
+    },
+    {
+      "id": "US1MOFR0012",
+      "name": "UNION 1.4 WSW",
+      "lat": 38.4431,
+      "lon": -91.0375,
+      "distance_miles": 41.8,
+      "usable_days": 509,
+      "days_ge_1in": 17
+    },
+    {
+      "id": "USC00111160",
+      "name": "CAHOKIA",
+      "lat": 38.5669,
+      "lon": -90.1942,
+      "distance_miles": 15.8,
+      "usable_days": 504,
+      "days_ge_1in": 38
+    },
+    {
+      "id": "US1MOJF0021",
+      "name": "CEDAR HILL 2.6 N",
+      "lat": 38.3931,
+      "lon": -90.6407,
+      "distance_miles": 28.7,
+      "usable_days": 502,
+      "days_ge_1in": 2
+    },
+    {
+      "id": "US1MOSG0002",
+      "name": "STE. GENEVIEVE 10.4 WSW",
+      "lat": 37.8983,
+      "lon": -90.2134,
+      "distance_miles": 59.5,
+      "usable_days": 494,
+      "days_ge_1in": 0
+    },
+    {
+      "id": "US1MOWS0002",
+      "name": "POTOSI 3.2 W",
+      "lat": 37.932,
+      "lon": -90.8408,
+      "distance_miles": 62.0,
+      "usable_days": 487,
+      "days_ge_1in": 8
+    },
+    {
+      "id": "US1MOSL0023",
+      "name": "FLORISSANT 4.4 ENE",
+      "lat": 38.8164,
+      "lon": -90.247,
+      "distance_miles": 8.1,
+      "usable_days": 472,
+      "days_ge_1in": 17
+    },
+    {
+      "id": "US1ILMO0004",
+      "name": "FULTS 3.7 ENE",
+      "lat": 38.1868,
+      "lon": -90.1507,
+      "distance_miles": 40.7,
+      "usable_days": 467,
+      "days_ge_1in": 18
+    },
+    {
+      "id": "US1MOSL0055",
+      "name": "FLORISSANT 2.5 NE",
+      "lat": 38.8263,
+      "lon": -90.2951,
+      "distance_miles": 6.6,
+      "usable_days": 466,
+      "days_ge_1in": 4
+    },
+    {
+      "id": "US1MOFR0022",
+      "name": "NEW HAVEN 8.3 SSE",
+      "lat": 38.5059,
+      "lon": -91.1376,
+      "distance_miles": 44.7,
+      "usable_days": 465,
+      "days_ge_1in": 14
+    },
+    {
+      "id": "US1ILWS0001",
+      "name": "ASHLEY 1.4 NNE",
+      "lat": 38.3471,
+      "lon": -89.1782,
+      "distance_miles": 70.2,
+      "usable_days": 464,
+      "days_ge_1in": 13
+    },
+    {
+      "id": "US1ILSC0007",
+      "name": "O'FALLON 2.5 NE",
+      "lat": 38.6197,
+      "lon": -89.8846,
+      "distance_miles": 27.7,
+      "usable_days": 443,
+      "days_ge_1in": 14
+    },
+    {
+      "id": "USC00237414",
+      "name": "STE GENEVIEVE",
+      "lat": 37.9547,
+      "lon": -90.0664,
+      "distance_miles": 57.4,
+      "usable_days": 435,
+      "days_ge_1in": 8
+    },
+    {
+      "id": "US1ILSC0026",
+      "name": "MASCOUTAH 1.5 SSE",
+      "lat": 38.488,
+      "lon": -89.796,
+      "distance_miles": 35.9,
+      "usable_days": 422,
+      "days_ge_1in": 9
+    },
+    {
+      "id": "US1MOSS0026",
+      "name": "O'FALLON 6.0 WSW",
+      "lat": 38.752,
+      "lon": -90.8113,
+      "distance_miles": 23.8,
+      "usable_days": 417,
+      "days_ge_1in": 10
+    }
+  ]
+}
