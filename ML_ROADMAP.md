@@ -18,3 +18,14 @@ Regional training runs daily and on relevant code updates. The fixed 48-hour res
 ## Continuous shadow inference
 
 Select a recent 00Z cycle with an eight-hour availability lag, evaluate unexpired lead-matched +24/+48/+72/+168h windows, and archive incomplete attempts as well as successful ones. Runs every six hours. Consult status.json for latest attempt and report.json for last complete run. Research only; no automatic promotion.
+
+Shadow inference also runs when "Regional GEFS snowfall learning" completes successfully, but only if the last published status predates the current training reports (`--if-stale`). Each mapping records the SHA-256 of the exact `.joblib` artifact it used. Every out-of-range flag carries the feature name, units, live value and training bounds (`outside_training_detail`, plus a per-mapping `out_of_range_summary`). The bounds are never widened by inference code.
+
+## Finding: +24h feature 103 out-of-range flag (2026-11-26)
+
+Feature 103 in feature_version 1 is the 5-member ensemble standard deviation of 500 mb height at synoptic_5 (38°N, 82°W). It is a shared synoptic feature, so one exceedance flags every location.
+
+- Training bounds at +24h: 0.51–20.05 gpm. Over all 3,915 complete archive initializations, +24h spread there has median 4.10, 99th percentile 12.79, maximum 21.0 gpm.
+- 2026-11-26 00Z operational +24h: 27.38 gpm, from a genuine 0.5° `HGT 500 mb` record (members 5465–5548 gpm, c00 5503). Units and decoding match the archive (gpm). An independent re-extraction reproduced the value.
+- Interpretation: a real, record-large short-range position uncertainty of the Thanksgiving trough over the Ohio Valley, not an extraction or unit error. The +24h shadow outputs for this cycle are correctly flagged as extrapolation.
+- Open question: operational GEFS uses 30 perturbed members, of which p01–p04 are taken, while the reforecast had only 4. Whether p01–p04 spread is statistically comparable between the two systems has not been tested. Compare operational and reforecast spread climatology over a full winter before treating spread features as compatible.

@@ -1,7 +1,10 @@
 """Higher-resolution 00Z live shadow inference, with no old-cycle substitution."""
 import datetime as dt
+import hashlib
 import json
 import math
+import sys
+import joblib
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor
 import regional_live as live
@@ -38,6 +41,86 @@ def hi_record(date,member,lead,var,level,step):
     raise ValueError(f"Missing {date} {member} {lead} {var} {level} {step}")
 live.record=hi_record
 
+# Raw archive units the trained models consume (no conversion is applied).
+FEATURE_UNITS={"t2m":"K","t850":"K","z500":"gpm","mslp":"Pa","pwat":"kg m**-2","precip24":"mm"}
+SYNOPTIC_POINTS=10
+
+def feature_names(points):
+    """Human-readable names for regional_learning feature_version 1, in model order.
+
+    Mirrors regional_learning.load()/regional_live.vector(): local ensemble mean and
+    spread, location/season terms, then field-major synoptic mean and spread.
+    """
+    if len(points)<SYNOPTIC_POINTS:raise ValueError("Synoptic points missing")
+    fields=learn.FIELDS
+    names=[(f"local_mean_{f}",FEATURE_UNITS[f]) for f in fields]
+    names+=[(f"local_sd_{f}",FEATURE_UNITS[f]) for f in fields]
+    names+=[("lat","deg"),("lon","deg"),("doy_sin","1"),("doy_cos","1"),
+            ("member_fraction_t2m_le_0C","1"),("member_fraction_t850_le_0C","1")]
+    syn=[(p["label"],p["lat"],p["lon"]) for p in points[:SYNOPTIC_POINTS]]
+    for stat in ("mean","sd"):
+        names+=[(f"synoptic_{stat}_{f}@{label}({lat:g},{lon:g})",FEATURE_UNITS[f]) for f in fields for label,lat,lon in syn]
+    return names
+
+def sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def annotate(window,data,points,train_dir):
+    """Attach artifact provenance and named, quantified out-of-range diagnostics.
+
+    Recomputes the exact feature vectors used by regional_live.infer and verifies the
+    flags agree, so a published flag always carries its feature, value and bounds.
+    The safeguard itself is unchanged: bounds are never widened here.
+    """
+    names=feature_names(points)
+    lead=window["lead_hours"]
+    ix=list(range(SYNOPTIC_POINTS,len(points)))
+    for mapping in window.get("mappings",[]):
+        path=train_dir/f"research_{lead}_{mapping['label_mapping']}.joblib"
+        model=joblib.load(path)
+        target=dt.date.fromisoformat(mapping["reported_date_proxy"])
+        X=np.stack([live.vector(data,points,i,target) for i in ix])
+        if X.shape[1]!=len(names):raise ValueError("Feature name schema mismatch")
+        lo=model["training_min"];hi=model["training_max"];tol=np.maximum(1e-6,(hi-lo)*.001)
+        exceed=(X<lo-tol)|(X>hi+tol)
+        summary={}
+        if len(mapping["points"])!=len(ix):raise ValueError("Point count mismatch")
+        for j,row in enumerate(mapping["points"]):
+            if row["label"]!=points[ix[j]]["label"]:raise ValueError("Point order mismatch")
+            flags=np.flatnonzero(exceed[j]).tolist()
+            if flags!=row["outside_training_features"]:raise ValueError("Range flag recomputation mismatch")
+            row["outside_training_detail"]=[dict(index=k,name=names[k][0],units=names[k][1],value=round(float(X[j,k]),4),
+                training_min=round(float(lo[k]),4),training_max=round(float(hi[k]),4),
+                direction="above" if X[j,k]>hi[k] else "below") for k in flags]
+            for d in row["outside_training_detail"]:
+                s=summary.setdefault(d["index"],dict(index=d["index"],name=d["name"],units=d["units"],
+                    shared_synoptic_feature=d["index"]>=18,training_min=d["training_min"],training_max=d["training_max"],
+                    points_flagged=0,live_min=d["value"],live_max=d["value"]))
+                s["points_flagged"]+=1;s["live_min"]=min(s["live_min"],d["value"]);s["live_max"]=max(s["live_max"],d["value"])
+        mapping["model_artifact"]=dict(path=path.relative_to(ROOT).as_posix(),sha256=sha256(path),
+            feature_version=model["feature_version"],train_seasons=model["train_seasons"])
+        mapping["out_of_range_summary"]=[summary[k] for k in sorted(summary)]
+    return window
+
+def training_reports():
+    out={}
+    for lead in (24,48,72,168):
+        path=ROOT/"data"/("regional_learning48" if lead==48 else "regional_learning")/"report.json"
+        if path.exists():out[lead]=json.loads(path.read_text())["generated_at"]
+    return out
+
+def artifacts_already_consumed(status_path=None):
+    """True when the last published status used the current training report for every
+    lead it ran, so a post-training trigger would only duplicate inference compute."""
+    status_path=status_path or OUT/"status.json"
+    if not status_path.exists():return False
+    try:status=json.loads(status_path.read_text())
+    except ValueError:return False
+    current=training_reports()
+    used=[w for w in status.get("windows",[]) if "training_generated_at" in w]
+    if not used:return False
+    return all(current.get(w["lead_hours"])==w["training_generated_at"] for w in used)
+
 def main():
     OUT.mkdir(parents=True,exist_ok=True)
     manifest=json.loads((live.ARCH/"manifest.json").read_text())
@@ -69,7 +152,7 @@ def main():
         if report["archive_fingerprint"]!=manifest["fingerprint"]:raise ValueError("Archive fingerprint mismatch")
         if not all(any(r["lead_hours"]==lead and r["label_mapping"]==m and r["status"]=="evaluated_research" for r in report["results"]) for m in learn.MAPPINGS):
             w["status"]="awaiting_sufficient_training_coverage";windows.append(w);continue
-        pred=live.infer(date,lead,data,points,report)
+        pred=annotate(live.infer(date,lead,data,points,report),data,points,live.TRAIN)
         w.update(pred,training_generated_at=report["generated_at"],training_archive_snapshot=report["archive_snapshot_sha256"])
         windows.append(w)
     payload=dict(schema=2,generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),archive_fingerprint=manifest["fingerprint"],historical_units=units,windows=windows,errors=errors,operational_ready=False,note="Latest eligible 00Z initialization, unexpired +24/+48/+72/+168h leads, preceding 24h precipitation per window. Precipitation strictly 0.25-degree; missing fine-grid atmospheric fields use explicitly recorded 0.5-degree products. Mixed-resolution inputs are research-only. Research only; reporting-time alignment and operational/reforecast differences unresolved. Not a validated 48h storm total.")
@@ -79,4 +162,7 @@ def main():
     if windows and all(w["status"]=="research_only" for w in windows):
         (OUT/"report.json").write_text(json.dumps(payload,indent=2,allow_nan=False)+"\n")
     print(json.dumps(payload,allow_nan=False),flush=True)
-if __name__=="__main__":main()
+if __name__=="__main__":
+    if "--if-stale" in sys.argv[1:] and artifacts_already_consumed():
+        print("Shadow inference already used the current training artifacts; skipping.",flush=True)
+    else:main()
