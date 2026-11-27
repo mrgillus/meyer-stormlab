@@ -1,108 +1,108 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T21:44:59.754555+00:00",
+  "generated_at": "2026-11-27T11:13:09.335955+00:00",
   "inputs": [
     {
       "path": "data/regional_learning/heldout_predictions.csv.gz",
-      "sha256": "4414c48997915b04d56c8b59e47988377004746a9132cefca27b869573ff38d3",
-      "training_generated_at": "2026-11-25T12:10:38.506615+00:00",
-      "complete_shards": 1926
+      "sha256": "571974bbe4311a704b726dcfc30386950f8d998bdef8ec1d6e971749fba48016",
+      "training_generated_at": "2026-11-26T21:50:42.222561+00:00",
+      "complete_shards": 3915
     },
     {
       "path": "data/regional_learning48/heldout_predictions.csv.gz",
-      "sha256": "43f31ac162c059cfcfeea838836683f1a52bbe0be3b93a25bb6f9c8145774ca4",
-      "training_generated_at": "2026-11-26T12:55:01.833767+00:00",
+      "sha256": "1d3fbf3b4ea08997c56d6ea35adf4fcb1dfbcbf3bc88e0bcf48e7723ad317bfa",
+      "training_generated_at": "2026-11-26T21:47:14.859730+00:00",
       "complete_shards": 3917
     }
   ],
   "results": [
     {
       "mapping": "utc_end_date",
-      "paired_station_windows": 5571,
-      "initializations": 271,
+      "paired_station_windows": 11091,
+      "initializations": 543,
       "stations": 26,
-      "snow_windows": 134,
+      "snow_windows": 280,
       "metrics": {
         "rf_in": {
-          "issue_weighted_mae": 0.2881845195910364,
-          "snow_case_mae": 2.270426316521557,
+          "issue_weighted_mae": 0.2788697757447723,
+          "snow_case_mae": 2.3423588664236026,
           "thresholds": {
             "1": {
-              "hits": 45,
-              "misses": 89,
-              "false_alarms": 400
+              "hits": 101,
+              "misses": 179,
+              "false_alarms": 687
             },
             "3": {
-              "hits": 11,
-              "misses": 32,
+              "hits": 2,
+              "misses": 86,
               "false_alarms": 0
             },
             "6": {
               "hits": 0,
-              "misses": 20,
+              "misses": 39,
               "false_alarms": 0
             }
           }
         },
         "boosted_in": {
-          "issue_weighted_mae": 0.15705570693768126,
-          "snow_case_mae": 2.736973661204286,
+          "issue_weighted_mae": 0.1568219450242428,
+          "snow_case_mae": 2.707679826154226,
           "thresholds": {
             "1": {
-              "hits": 27,
-              "misses": 107,
-              "false_alarms": 71
+              "hits": 44,
+              "misses": 236,
+              "false_alarms": 107
             },
             "3": {
               "hits": 0,
-              "misses": 43,
+              "misses": 88,
               "false_alarms": 0
             },
             "6": {
               "hits": 0,
-              "misses": 20,
+              "misses": 39,
               "false_alarms": 0
             }
           }
         },
         "cold_precip_in": {
-          "issue_weighted_mae": 0.2249305413892402,
-          "snow_case_mae": 1.9734272089628262,
+          "issue_weighted_mae": 0.26229397668483206,
+          "snow_case_mae": 2.491003375664368,
           "thresholds": {
             "1": {
-              "hits": 93,
-              "misses": 41,
-              "false_alarms": 253
+              "hits": 142,
+              "misses": 138,
+              "false_alarms": 516
             },
             "3": {
-              "hits": 22,
-              "misses": 21,
-              "false_alarms": 78
+              "hits": 27,
+              "misses": 61,
+              "false_alarms": 194
             },
             "6": {
-              "hits": 11,
-              "misses": 9,
-              "false_alarms": 51
+              "hits": 13,
+              "misses": 26,
+              "false_alarms": 116
             }
           }
         },
         "no_snow": {
-          "issue_weighted_mae": 0.10980608007548541,
-          "snow_case_mae": 3.198422305735525,
+          "issue_weighted_mae": 0.1128783622748049,
+          "snow_case_mae": 3.1264633823127967,
           "thresholds": {
             "1": {
               "hits": 0,
-              "misses": 134,
+              "misses": 280,
               "false_alarms": 0
             },
             "3": {
               "hits": 0,
-              "misses": 43,
+              "misses": 88,
               "false_alarms": 0
             },
             "6": {
               "hits": 0,
-              "misses": 20,
+              "misses": 39,
               "false_alarms": 0
             }
           }
@@ -111,91 +111,91 @@
     },
     {
       "mapping": "utc_end_previous_date",
-      "paired_station_windows": 5566,
-      "initializations": 272,
+      "paired_station_windows": 11091,
+      "initializations": 543,
       "stations": 26,
-      "snow_windows": 131,
+      "snow_windows": 280,
       "metrics": {
         "rf_in": {
-          "issue_weighted_mae": 0.22741176298860194,
-          "snow_case_mae": 1.806737122450427,
+          "issue_weighted_mae": 0.23681667070863524,
+          "snow_case_mae": 1.9908514787492844,
           "thresholds": {
             "1": {
-              "hits": 103,
-              "misses": 28,
-              "false_alarms": 317
+              "hits": 191,
+              "misses": 89,
+              "false_alarms": 624
             },
             "3": {
               "hits": 0,
-              "misses": 42,
-              "false_alarms": 2
+              "misses": 88,
+              "false_alarms": 1
             },
             "6": {
               "hits": 0,
-              "misses": 16,
+              "misses": 39,
               "false_alarms": 0
             }
           }
         },
         "boosted_in": {
-          "issue_weighted_mae": 0.1358701560770157,
-          "snow_case_mae": 2.5446793316513903,
+          "issue_weighted_mae": 0.14942943594081085,
+          "snow_case_mae": 2.5707286953285804,
           "thresholds": {
             "1": {
-              "hits": 27,
-              "misses": 104,
-              "false_alarms": 50
+              "hits": 78,
+              "misses": 202,
+              "false_alarms": 79
             },
             "3": {
-              "hits": 0,
-              "misses": 42,
-              "false_alarms": 2
+              "hits": 1,
+              "misses": 87,
+              "false_alarms": 31
             },
             "6": {
               "hits": 0,
-              "misses": 16,
+              "misses": 39,
               "false_alarms": 0
             }
           }
         },
         "cold_precip_in": {
-          "issue_weighted_mae": 0.2147563383110377,
-          "snow_case_mae": 1.8563329768584522,
+          "issue_weighted_mae": 0.2373109634591954,
+          "snow_case_mae": 1.9080239550994778,
           "thresholds": {
             "1": {
-              "hits": 86,
-              "misses": 45,
-              "false_alarms": 263
+              "hits": 163,
+              "misses": 117,
+              "false_alarms": 509
             },
             "3": {
-              "hits": 21,
-              "misses": 21,
-              "false_alarms": 83
+              "hits": 42,
+              "misses": 46,
+              "false_alarms": 184
             },
             "6": {
-              "hits": 10,
-              "misses": 6,
-              "false_alarms": 52
+              "hits": 24,
+              "misses": 15,
+              "false_alarms": 107
             }
           }
         },
         "no_snow": {
-          "issue_weighted_mae": 0.1020129930031377,
-          "snow_case_mae": 3.0739660421920734,
+          "issue_weighted_mae": 0.1128783622748049,
+          "snow_case_mae": 3.1264633823127967,
           "thresholds": {
             "1": {
               "hits": 0,
-              "misses": 131,
+              "misses": 280,
               "false_alarms": 0
             },
             "3": {
               "hits": 0,
-              "misses": 42,
+              "misses": 88,
               "false_alarms": 0
             },
             "6": {
               "hits": 0,
-              "misses": 16,
+              "misses": 39,
               "false_alarms": 0
             }
           }
