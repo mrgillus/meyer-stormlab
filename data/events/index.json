@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T23:05:36.870053+00:00",
+  "generated_at": "2026-11-27T01:24:18.494716+00:00",
   "source_latest_capture": "2026-11-26T22:29:40.404500+00:00",
-  "capture_age_hours": 0.6,
+  "capture_age_hours": 2.91,
   "capture_count_processed": 12,
   "climatology": {
     "status": "available",
