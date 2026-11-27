@@ -46,6 +46,9 @@ function statusMode(d){
 function goTab(tab,updateHash=true){
   const jumpToWatches=tab==="horizon";
   if(!["now","archive","lab"].includes(tab))tab="now";
+  // Events-only mode (body.events-only): pin to current/upcoming events; other views stay in the page, hidden.
+  const eventsOnly=document.body.classList.contains("events-only");
+  if(eventsOnly)tab="now";
   state.tab=tab;
   document.querySelectorAll(".nav-item").forEach(b=>{
     const on=b.dataset.tab===tab;b.classList.toggle("active",on);
@@ -57,7 +60,7 @@ function goTab(tab,updateHash=true){
   if(updateHash && window.location.hash!=="#"+tab)history.replaceState(null,"","#"+tab);
   if(tab==="lab")loadLab();
   if(tab==="archive")renderCase();
-  if(tab==="now"&&!state.horizon)loadHorizon();
+  if(tab==="now"&&!state.horizon&&!eventsOnly)loadHorizon();
   if(jumpToWatches)q("eventWatchTitle")?.scrollIntoView({block:"start"});
   else window.scrollTo({top:0,behavior:"instant"});
 }
