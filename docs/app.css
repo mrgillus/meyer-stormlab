@@ -174,8 +174,11 @@ body.events-only #view-now > :not(.section-entrance):not(.event-chronicle){displ
 .wx-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#e3eef5;padding:4px 9px 4px 6px;border-radius:8px;background:rgba(var(--wx-rgb),.12);border:1px solid rgba(var(--wx-rgb),.28)}
 .wx-chip .wx-icon{width:15px;height:15px;color:var(--wx)}
 .wx-chip b{font-weight:700;color:var(--wx)}
-.wx-chip.weak{background:transparent;border-style:dashed}
-.wx-chip.weak b{color:#9fb6c6;font-weight:600}
+.wx-chip.low{background:transparent;border-style:dashed}
+.wx-chip.low b{color:#b7c9d6}
+.wx-trend{font-style:normal;font-size:12px;font-weight:800;margin-left:1px}
+.wx-trend.up{color:#f1b97e}.wx-trend.down{color:#8fb4cb}.wx-trend.flat{color:#7e98aa}
+.wx-trend.new{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8fb4cb;border:1px solid #3d5c71;border-radius:5px;padding:0 4px}
 .wx-chip.more{color:#9fb6c6;background:transparent;border-color:#3d5c71}
 .wx-glance-note{margin:10px 0 0;font-size:12px;color:#a9bccb}
 .wx-event .wx-upcoming-detail>summary{padding:10px 16px;font-size:12px}
