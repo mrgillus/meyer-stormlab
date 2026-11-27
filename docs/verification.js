@@ -39,7 +39,7 @@ function show(eventId){
    '<p>'+safe(intro)+'</p></div></div>';
  body+='<div class="verification-summary"><div><span>INDEPENDENT STATIONS</span><strong>'+safe(event.station_count||0)+'</strong></div>'+
    '<div><span>MEASURED DAILY REPORTS</span><strong>'+safe(event.daily_report_count||0)+'</strong></div>'+
-   '<div><span>MODEL VERIFICATION</span><strong>Not scored</strong></div></div>';
+   '<div><span>MODEL VERIFICATION</span><strong>'+(event.event_total_verification?.status==="scored"?"Event total scored":"Not scored")+'</strong></div></div>';
  if(available){
   body+='<div class="capture-scroll"><table class="capture-table"><thead><tr><th>Reporting station</th>'+
     '<th>Reported date</th><th>Daily measurement</th><th>Near town</th></tr></thead><tbody>'+
@@ -48,6 +48,19 @@ function show(eventId){
       '<td>'+safe(r.near_town)+' ('+safe(r.distance_to_near_town_mi)+' mi)</td></tr>').join("")+
       '</tbody></table></div>';
   if(rows.length>24)body+='<p class="fine-print">Showing the first 24 of '+safe(rows.length)+' available daily station reports.</p>';
+ }
+ const tot=event.event_total_verification;
+ if(tot?.status==="scored"){
+   const w=tot.verification_window,unit=tot.variable==="snow"?"snowfall":"liquid precipitation";
+   body+='<div class="verification-forecast"><span class="kicker">EVENT-TOTAL VERIFICATION · '+safe(unit.toUpperCase())+'</span>'+
+     '<p>Forecast captured '+safe(fmtTime(tot.forecast_capture.captured_at))+' for '+safe(day(w.start))+'–'+safe(day(w.end))+
+     ', compared with station reports dated '+safe(day(w.observed_report_dates.start))+'–'+safe(day(w.observed_report_dates.end))+
+     '. That span covers the forecast window whatever time each station observes, so no observation clock is assumed. '+safe(tot.stations_scored)+' stations within 10 miles of a forecast town.</p>'+
+     '<div class="capture-scroll"><table class="capture-table"><thead><tr><th>Model</th><th>Stations</th><th>Mean abs. error</th><th>Bias</th></tr></thead><tbody>'+
+     Object.entries(tot.scores||{}).map(([m,v])=>'<tr><td>'+safe(m==="model_mean"?"4-model mean":m)+'</td><td>'+safe(v.n)+'</td><td>'+safe(money(v.mae_in))+'</td><td>'+safe((v.bias_in>0?"+":"")+money(v.bias_in))+'</td></tr>').join("")+
+     '</tbody></table></div><p class="fine-print">One event at correlated nearby stations: a record of this storm, not a skill estimate or calibrated probability. Positive bias means the forecast was too high.</p></div>';
+ }else if(tot?.reason){
+   body+='<p class="fine-print">Event-total verification not scored: '+safe(tot.reason.replace(/_/g," "))+'.</p>';
  }
  const ref=event.forecast_reference;
  if(ref?.status==="pre_event_capture" && Array.isArray(ref.daily_forecasts)){

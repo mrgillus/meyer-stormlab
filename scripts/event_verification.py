@@ -2,8 +2,10 @@
 
 RCC-ACIS snowfall/precipitation are STATION OBSERVATIONS, but their daily
 report dates are NOT necessarily midnight-to-midnight forecast windows.
-This pipeline deliberately does not compute model accuracy, verification
-scores, event storm totals or an observed total for a forecast town.
+Daily (single-day) forecast errors are therefore never computed. Snow and
+liquid-precipitation events are scored only as clock-independent event
+totals (scripts/event_totals.py), which bound the effect of any station
+observation clock instead of assuming one.
 """
 from __future__ import annotations
 import datetime as dt
@@ -15,6 +17,10 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
+try:
+    import event_totals
+except ImportError:  # imported as scripts.event_verification (tests)
+    from scripts import event_totals
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -210,12 +216,13 @@ def normalize_provider(raw,start,end):
         if len(observations)>=MAX_REPORTS:break
     return stations, observations
 
-def find_prior_capture(case):
-    """Find a frozen archived forecast capture made before event day 1.
+def find_prior_capture(case, start=None):
+    """Find a frozen archived forecast capture made before event day 1
+    (or before an explicitly widened verification start date).
 
     Preserves source issue/retrieval times; never uses after-the-fact guidance.
     """
-    day=parseday(case["start_date"])
+    day=start or parseday(case["start_date"])
     cutoff=dt.datetime.combine(day,dt.time.min,tzinfo=TZ).astimezone(UTC)
     candidates=[]
     for record in case.get("timeline",[]):
@@ -310,6 +317,12 @@ def build_reports(cases,stations,observations,today):
                 "measurement_interval_verified":False
             })
         ref=forecast_reference(case) if category else {"status":"unsupported_variable","daily_forecasts":[]}
+        totals=None
+        if category and end<today:
+            totals=event_totals.score_event(case,case["kind"],stations,observations,list(TOWNS),
+                                            find_prior_capture,lambda p:load(p,{}))
+            if totals.get("forecast_capture"):
+                totals["forecast_capture"]["snapshot_path"]=str(pathlib.Path(totals["forecast_capture"]["snapshot_path"]).relative_to(DATA.parent))
         reason=("Daily station observation windows have not been verified against model calendar-day windows."
                 if category and rows else
                 "No compatible measured daily station reports are available yet." if category else
@@ -322,8 +335,11 @@ def build_reports(cases,stations,observations,today):
             "event_id":case["id"],"kind":case["kind"],"title":case["title"],
             "forecast_dates":{"start":case["start_date"],"end":case["end_date"]},
             "observation_status":status,
-            "verification_status":"not_scored",
-            "verification_reason":reason if end<today else "Forecast window not yet over; "+reason,
+            "verification_status":"scored_event_total" if totals and totals["status"]=="scored" else "not_scored",
+            "verification_reason":(("Scored as a clock-independent event total; daily errors remain unscored." if totals and totals["status"]=="scored"
+                                    else reason+(" Event-total check: "+totals["reason"]+"." if totals else ""))
+                                   if end<today else "Forecast window not yet over; "+reason),
+            "event_total_verification":totals,
             "actual_observed_storm_total_in":None,
             "forecast_error_in":None,"model_skill":None,
             "station_daily_reports":rows,
@@ -373,8 +389,10 @@ def main():
     provider_error=None
     url=None
     if cases:
-        start=max(today-dt.timedelta(days=23), min(parseday(c["start_date"]) for c in cases)-dt.timedelta(days=2))
-        end=min(today, max(parseday(c["end_date"]) for c in cases)+dt.timedelta(days=2))
+        # Margin covers event-total windows widened by up to MAX_EXPAND days plus the E+1 report.
+        margin=event_totals.MAX_EXPAND+2
+        start=max(today-dt.timedelta(days=25), min(parseday(c["start_date"]) for c in cases)-dt.timedelta(days=margin))
+        end=min(today, max(parseday(c["end_date"]) for c in cases)+dt.timedelta(days=margin))
         try:
             provider,url=fetch_observations(start,end)
             station_data,obs=normalize_provider(provider,start,end)
@@ -429,13 +447,13 @@ def main():
         "reported_station_days":len(obs),
         "cases_reviewed":len(summaries),
         "cases_with_daily_reports":sum((x.get("daily_report_count") or 0)>0 for x in summaries),
-        "cases_scored":0,
-        "verification_policy":"fail_closed_until_observation_interval_and_station_location_are_aligned",
+        "cases_scored":sum(x.get("verification_status")=="scored_event_total" for x in summaries),
+        "verification_policy":"daily errors fail closed; snow/precipitation events scored only as clock-independent event totals (event_totals.py)",
         "events":summaries,
     }
     save(OUT/"report.json",report)
-    print("Verification: %s stations, %s station-days, %s cases, %s verified scores"
-          %(len(station_data),len(obs),len(summaries),0))
+    print("Verification: %s stations, %s station-days, %s cases, %s event-total scores"
+          %(len(station_data),len(obs),len(summaries),report["cases_scored"]))
 
 if __name__=="__main__":
     main()
