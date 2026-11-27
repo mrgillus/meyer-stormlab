@@ -23,7 +23,7 @@ SCHEMA = 1
 MODELS = ("GFS", "ECMWF", "GEM", "ICON")
 PLACES = ("Wentzville", "St. Louis", "St. Charles", "Affton", "Wildwood",
           "Washington", "Belleville", "Alton")
-WATCH_NAMES = ("Alder", "Birch", "Cedar", "Drift", "Ember", "Flint", "Gale",
+WATCH_NAMES = ("Alder", "Birch", "Cedar", "Dogwood", "Ember", "Flint", "Gale",
                "Hawthorn", "Indigo", "Juniper", "Kestrel", "Linden", "Maple",
                "North", "Onyx", "Pine", "Quartz", "Raven", "Sable", "Thorn",
                "Umber", "Vale", "Willow", "Xenia", "Yarrow", "Zephyr")

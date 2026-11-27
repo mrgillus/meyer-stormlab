@@ -144,13 +144,13 @@ class EventWatchTests(unittest.TestCase):
             return dict(id=id, name=name, kind=kind, start_date=start, end_date=end,
                         first_seen="2026-11-24T12:00:00Z", last_seen="2026-11-25T12:00:00Z",
                         priority="notable", status=status)
-        snow = mode("snow-1", "Drift", "snow", "2026-11-26", "2026-11-26")
+        snow = mode("snow-1", "Dogwood", "snow", "2026-11-26", "2026-11-26")
         rain = mode("rain-1", "Alder", "precipitation", "2026-11-26", "2026-11-26")
         wind = mode("wind-1", "Gale", "wind", "2026-12-01", "2026-12-01")
         groups = watch.group_events([snow,rain,wind])
         self.assertEqual(len(groups), 2)
         group = groups[0]
-        self.assertEqual(group["name"], "Drift")
+        self.assertEqual(group["name"], "Dogwood")
         self.assertEqual(group["mode_ids"], ["rain-1","snow-1"])
         self.assertEqual(group["aliases"], ["Alder"])
         rain["status"] = "not_in_latest_capture"
