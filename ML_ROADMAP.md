@@ -65,3 +65,14 @@ Validation + test seasons: 903 station-storms, 154 windows. For ≥4" storms (27
 - Both tree models over-forecast non-snow storms by 0.06–0.31".
 
 Implication: train and evaluate on storm totals, and favor physically anchored hybrids (phase × liquid × snow ratio) over pure tree regression for heavy events. Heavy-event conclusions remain tentative (6 windows).
+
+### Station-dense GEFS extension (in progress)
+
+`scripts/gefs_stations.py` and `.github/workflows/gefs-stations.yml` build a separate archive in `data/gefs_stations/`. Existing archives are untouched.
+
+- **Stations:** every GHCN snowfall station within 75 mi of St. Louis with at least 400 usable 2000–2019 cold-season reports, capped at 150. The list is ranked by report count, never by snowfall amounts.
+- **Fields:** 2 m and 850 mb temperature and 24 h precipitation (from exact 6 h blocks) at +24/+48/+72 h, 5 members, for every archive initialization.
+- **Points are frozen** by the manifest fingerprint after a one-time `select` step.
+- **Purpose:** raise the number of storms with complete station reports for clock-independent storm-total labels. Combine with leave-one-winter-out evaluation, since distinct storms, not stations, limit heavy-snow evaluation.
+- **Validated locally:** a real 2011-02-01 extraction reproduced the existing archive's Lambert values exactly. One initialization takes about 11 s for all members.
+- **Next, once complete:** extend `storm_total_labels.py` to read this archive, then train and evaluate storm-total models (physical baseline, hybrid, tree) with leave-one-winter-out splits.
