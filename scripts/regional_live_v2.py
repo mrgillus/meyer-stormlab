@@ -109,17 +109,23 @@ def training_reports():
         if path.exists():out[lead]=json.loads(path.read_text())["generated_at"]
     return out
 
-def artifacts_already_consumed(status_path=None):
-    """True when the last published status used the current training report for every
-    lead it ran, so a post-training trigger would only duplicate inference compute."""
+def artifacts_already_consumed(status_path=None, now=None):
+    """Skip only if every currently eligible window succeeded with current artifacts."""
     status_path=status_path or OUT/"status.json"
     if not status_path.exists():return False
     try:status=json.loads(status_path.read_text())
-    except ValueError:return False
+    except (OSError,ValueError):return False
     current=training_reports()
-    used=[w for w in status.get("windows",[]) if "training_generated_at" in w]
-    if not used:return False
-    return all(current.get(w["lead_hours"])==w["training_generated_at"] for w in used)
+    expected=forecast_windows(now or dt.datetime.now(dt.timezone.utc))
+    if not expected:return False
+    windows={(w.get("initialization_utc"),w.get("lead_hours")):w
+             for w in status.get("windows",[])}
+    for date,lead in expected:
+        w=windows.get((date+"T00Z",lead),{})
+        if (w.get("status")!="research_only" or not current.get(lead)
+                or w.get("training_generated_at")!=current[lead]):
+            return False
+    return True
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True)
