@@ -2,7 +2,7 @@
   "event_groups": [
     {
       "id": "event-snow-20261125",
-      "name": "Drift",
+      "name": "Dogwood",
       "primary_mode_id": "snow-20261125",
       "mode_ids": [
         "drizzle-20261127",
@@ -2831,7 +2831,7 @@
           "note": "Only threshold-triggering daily forecasts, not a storm total."
         }
       },
-      "name": "Drift",
+      "name": "Dogwood",
       "assessments": [
         {
           "captured_at": "2026-11-24T18:57:10.943633+00:00",

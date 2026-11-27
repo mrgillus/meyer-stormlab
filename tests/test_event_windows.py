@@ -57,7 +57,7 @@ class SelectTests(unittest.TestCase):
         self.assertEqual((w["start"],w["end"]),(first["start"],first["end"]))
 
     def test_ended_window_is_replaced(self):
-        old=dict(event_id="event-old",event_name="Drift",start="2026-11-25T00:00:00-06:00",end="2026-11-27T00:00:00-06:00",mode_ids=[],kinds=["snow"])
+        old=dict(event_id="event-old",event_name="Dogwood",start="2026-11-25T00:00:00-06:00",end="2026-11-27T00:00:00-06:00",mode_ids=[],kinds=["snow"])
         now=dt.datetime(2026,12,1,12,tzinfo=UTC)
         self.assertIsNone(ew.select(index([]),now,old))
         self.assertEqual(ew.select(index([("snow","2026-12-02","2026-12-02")]),now,old)["event_id"],"event-x")

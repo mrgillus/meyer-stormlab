@@ -167,7 +167,7 @@
   "event_groups": [
     {
       "id": "event-snow-20261125",
-      "name": "Drift",
+      "name": "Dogwood",
       "primary_mode_id": "snow-20261125",
       "mode_ids": [
         "drizzle-20261127",
@@ -2429,7 +2429,7 @@
       "id": "snow-20261125",
       "kind": "snow",
       "title": "Snowfall potential",
-      "name": "Drift",
+      "name": "Dogwood",
       "priority": "notable",
       "assessments": [
         {
