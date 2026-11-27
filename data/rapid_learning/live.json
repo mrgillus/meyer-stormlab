@@ -1,7 +1,13 @@
 {
-  "generated_at": "2026-11-27T00:45:09.055719+00:00",
-  "training_generated_at": "2026-11-25T02:26:05.183832+00:00",
+  "generated_at": "2026-11-27T01:04:47.678216+00:00",
+  "training_generated_at": "2026-11-27T01:04:47.569668+00:00",
   "station": "USW00013994",
+  "event_id": "event-snow-20261125",
+  "event_name": "Drift",
+  "event_days": [
+    "2026-11-25",
+    "2026-11-26"
+  ],
   "predictions": [
     {
       "date": "2026-11-25",
