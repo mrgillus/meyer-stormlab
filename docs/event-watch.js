@@ -412,7 +412,7 @@
     const shown=chips.slice(0,4),extra=chips.length-shown.length;
     const header='<div class="wx-event-hero wx-glance wx-'+pf.id+'">'+
       '<div class="wx-glance-top"><div class="wx-icon-box">'+weatherArt(pf.id)+'</div>'+
-      '<div class="wx-glance-name"><h3>'+safe(group.name)+'</h3><p>'+safe(longDate(group.start_date)+(group.start_date===group.end_date?"":" – "+longDate(group.end_date)))+'</p></div>'+
+      '<div class="wx-glance-name"><h3>'+safe(group.name)+'</h3><p>'+safe(longDate(group.start_date)+(group.start_date===group.end_date?"":" – "+longDate(group.end_date))+(isCurrent&&routine(group)?" · Routine weather":""))+'</p></div>'+
       '<span class="wx-when'+(isCurrent?" now":"")+'">'+safe(whenLabel(group))+'</span></div>'+
       (shown.length?'<div class="wx-chips">'+shown.map(c=>{
         const of=numeric(c.t.models)&&numeric(c.t.total)?c.t.models+" of "+c.t.total+" models":c.pct+"% of models";
@@ -424,12 +424,12 @@
         return '<span class="wx-chip wx-'+c.f.id+(c.pct<50?" low":"")+'" title="'+safe(tip)+'">'+weatherArt(c.f.id)+safe(c.name)+' <b>'+safe(c.t.upper?c.pct+"–"+c.t.upper:c.pct)+'%</b><i class="wx-trend '+c.trend.cls+'" aria-label="'+safe(c.trend.text)+'">'+safe(c.trend.sym)+'</i></span>';
       }).join("")+(extra>0?'<span class="wx-chip more">+'+extra+'</span>':"")+'</div>':
         '<p class="wx-glance-note">'+(faded?"Faded: no model shows it in the latest guidance.":"No model currently shows this weather.")+'</p>')+
-      (isCurrent?hourlyStrip(group,modes):"")+
+      (isCurrent?hourlyStrip(group,modes.filter(m=>m.status==="in_latest_capture")):"")+
       (faded&&shown.length?'<p class="wx-glance-note">'+safe(isCurrent?"Signal has faded in the latest guidance.":"Faded from the latest model guidance.")+'</p>':"")+
       '</div>';
     const contents=eventRibbon(group,modes,fs)+'<div class="wx-families">'+familyRows(modes,group,false)+'</div><p class="watch-muted wx-source">Regional forecast guidance. Model support is not a calibrated probability. Hourly and daily thresholds differ.</p>'+
       '<div class="wx-event-footer"><small>First seen '+safe(short(group.first_seen))+'</small><button type="button" class="event-case-button" data-event-id="'+safe(primary?.id||group.primary_mode_id)+'">Storm files →</button></div>';
-    return '<article class="event-signal wx-event '+(isCurrent?"wx-featured":"wx-upcoming")+' '+safe(tone)+'">'+header+
+    return '<article class="event-signal wx-event '+(isCurrent?"wx-featured":"wx-upcoming")+(isCurrent&&routine(group)?" wx-routine":"")+' '+safe(tone)+'">'+header+
       '<details class="wx-upcoming-detail"><summary>Forecast details <span aria-hidden="true">⌄</span></summary>'+contents+'</details></article>';
   }
   function modeScore(m){
@@ -458,6 +458,36 @@
     const values=Object.fromEntries(parts.map(p=>[p.type,p.value]));
     return values.year+"-"+values.month+"-"+values.day;
   }
+  // Lifecycle: an event is in progress only while the latest guidance still shows some of its weather ahead.
+  // Faded modes (not in the latest capture) no longer stretch the window.
+  function liveWindow(group){
+    const active=modeItems(group).filter(m=>m.status==="in_latest_capture");
+    if(!active.length)return null;
+    return {start:active.reduce((a,m)=>m.start_date<a?m.start_date:a,active[0].start_date),
+      end:active.reduce((a,m)=>m.end_date>a?m.end_date:a,active[0].end_date),modes:active};
+  }
+  function weatherAhead(group,modes){
+    const now=nowHourKey(),today=regionalToday();
+    const open=p=>{const v=numeric(p.possible_support_pct)?p.possible_support_pct:p.support_pct;return !numeric(v)||v>0};
+    return [...new Set(modes.map(m=>m.kind))].some(kind=>{
+      const fm=group.forecast_modes?.[kind];
+      if(!fm)return true; // no series to check: do not declare it over
+      let covered="";
+      for(const p of fm.hourly?.points||[]){
+        if(p.time>covered)covered=p.time;
+        if(p.time>=now&&open(p))return true;
+      }
+      // Days the hourly series does not reach through 11 PM fall back to the daily share.
+      return (fm.daily?.points||[]).some(p=>p.time>=today&&covered<p.time+"T23:00"&&open(p));
+    });
+  }
+  function calmState(next){
+    if(!next)return '<div class="wx-calm"><b>No weather event right now.</b><span>No upcoming events are being tracked in the current forecast range.</span></div>';
+    const c=glanceChips(next,modeItems(next))[0];
+    const share=c?" · "+c.name+" "+(c.t.upper?c.pct+"–"+c.t.upper:c.pct)+"%":"";
+    return '<div class="wx-calm"><b>No weather event right now.</b><span>Next up: <strong>'+safe(next.name)+'</strong> · '+
+      safe(longDate(next.start_date))+' · '+safe(whenLabel(next).toLowerCase())+safe(share)+'</span></div>';
+  }
   function renderHorizon(){
     const index=state.index;
     if(!index){
@@ -470,13 +500,22 @@
     const fresh=freshness(index),today=regionalToday();
     const display=groups(index).filter(x=>x.end_date>=today&&x.status!=="forecast_window_passed")
       .sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
-    const now=display.filter(x=>x.start_date<=today);
-    const upcoming=display.filter(x=>x.start_date>today);
-    set("currentEventStatus",fresh?now.length+" current event(s)":"CATALOG UPDATES DELAYED");
+    const now=[],upcoming=[];
+    display.forEach(g=>{
+      if(g.start_date>today){upcoming.push(g);return}
+      const lw=liveWindow(g);
+      if(!lw||lw.end<today)return; // only faded weather left: over
+      const trimmed={...g,start_date:lw.start,end_date:lw.end};
+      if(lw.start>today)upcoming.push(trimmed);
+      else if(weatherAhead(g,lw.modes))now.push(trimmed);
+      // else: no model shows any more of it, so it has ended
+    });
+    upcoming.sort((a,b)=>a.start_date.localeCompare(b.start_date)||a.id.localeCompare(b.id));
+    set("currentEventStatus",fresh?(now.length?now.length+" in progress":"No event now"):"CATALOG UPDATES DELAYED");
     set("eventWatchStatus",fresh?upcoming.length+" upcoming event(s)":"CATALOG UPDATES DELAYED");
     q("currentEventList").innerHTML=now.length?
       now.map(g=>groupCard(g,true)).join(""):
-      '<div class="blank-state">'+(fresh?'No named event window includes today. See local forecast guidance below.':'No current event is listed in the last available catalog; updates are delayed.')+'</div>';
+      (fresh?calmState(upcoming[0]):'<div class="blank-state">No current event is listed in the last available catalog; updates are delayed.</div>');
     set("currentEventSource","Local calendar: Central Time · "+stamp(index.source_latest_capture)+
       (fresh?"":" · STALE")+" · Current forecast window does not confirm that all forecast weather is occurring.");
     if(upcoming.length){

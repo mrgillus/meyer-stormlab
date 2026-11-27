@@ -203,3 +203,9 @@ body.events-only #view-now > :not(.section-entrance):not(.event-chronicle){displ
 .wx-hr-legend .wx-hr-cell{width:12px;height:10px;margin-left:6px}
 .wx-hr-quiet{margin:0 0 8px;font-size:12px;color:#c9dae5}
 .wx-trend.rest{font-size:10px;font-weight:600;color:#8fb4cb}
+
+/* Event lifecycle: calm state when nothing is in progress; quieter card for routine weather in progress. */
+.wx-calm{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid #2f4b60;border-radius:14px;background:#0f2130}
+.wx-calm b{font-size:15px;color:#e2edf5}.wx-calm span{font-size:13px;color:#a9bccb}.wx-calm strong{color:#e2edf5}
+.current-event-list>.wx-event.wx-routine{box-shadow:none;border-color:#365568}
+.wx-routine .wx-event-hero{padding:15px}.wx-routine .wx-glance-name h3{font-size:19px}
