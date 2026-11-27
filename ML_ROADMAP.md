@@ -41,3 +41,13 @@ The matched-hour storm blend (`storm_blend.py`, hourly) and rapid-refresh shadow
 - The Thanksgiving window was seeded into `window.json` so its final hours carry over unchanged.
 
 Thanksgiving-only case-study scripts still hold fixed dates by design: `regional_live.py`, `regional_precip_audit.py`, `atmospheric_profiles.py` (live mode) and `temporal_profiles.py`. They run only on manual dispatch or on edits to their own files. The duplicate live-inference step in `gefs48.yml` was removed. Live shadow inference is owned by `regional-live-v2.yml`.
+
+## Clock-independent historical storm-total labels (2026-11-27)
+
+`scripts/storm_total_labels.py` builds event-total snowfall labels from the 2000–2019 archive without assuming any station observation clock (`data/storm_total_labels/`).
+
+- **Selection.** Storms are runs of 1–3 UTC days where the 5-member GEFS +24h precipitation is ≥1 mm, with ≤0.25 mm on the two days before and after. Selection is forecast-only.
+- **Label.** The sum of station reports dated S-1..E+1. That covers the UTC window for any clock between 0 and 24h.
+- **Sample size (defaults).** Station-events by split (train / validation / test): 568 / 326 / 577. But only **41 / 13 / 9** distinct storm windows reached ≥1" at some station, and **16 / 4 / 2** reached ≥4". The held-out sample is too small to evaluate heavy-snow skill.
+- **Why it's small.** Most candidates fail for missing station reports (3,570 rejected vs 1,471 kept). Looser thresholds roughly double the counts at the cost of a larger clock-ambiguity bound; see `threshold_sensitivity`.
+- **Finding.** On storms with ≥1" observed, the legacy daily mappings undercount the storm total by an average of 1.38" (`utc_end_date`) and 0.88" (`utc_end_previous_date`). They miss more than half the total in 44% and 24% of those storms. Daily-label training and evaluation systematically understate multi-day storm totals. That likely contributes to the reported heavy-snow underprediction and should be considered before tuning models against daily labels.

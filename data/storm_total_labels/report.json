@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-27T13:14:33.581837+00:00",
+  "archive_fingerprint": "5d51379164e715ac06114cf1a82fd6633c647e87ad14ac6e4e3f2eff337ba89d",
+  "archive_snapshot_sha256": "3a42b6e77a052afa2da2381254a6aef3f63170145e677dedfbb36aa962549a90",
+  "archive48_snapshot_sha256": "20286312487d2a948ba5b9d3d5922c13c53df7b19dbb38597803d303615e129c",
+  "parameters": {
+    "wet_mm": 1.0,
+    "dry_mm": 0.25,
+    "max_days": 3,
+    "trace_upper_in": 0.05,
+    "selection_field": "5-member mean GEFS +24h precip24 (UTC day)",
+    "observed_reports": "local dates S-1..E+1"
+  },
+  "rejected": {
+    "outside_split_seasons": 237,
+    "incomplete_reports": 3570
+  },
+  "splits": {
+    "train": {
+      "station_events": 568,
+      "with_same_init_features": 568,
+      "by_observed": {
+        "0": 431,
+        "1-4in": 54,
+        "<1in": 57,
+        ">=6in": 10,
+        "4-6in": 16
+      },
+      "by_days": {
+        "2": 188,
+        "1": 303,
+        "3": 77
+      },
+      "distinct_snow_windows_ge1in": 41,
+      "distinct_snow_windows_ge4in": 16,
+      "stations": 23
+    },
+    "validation": {
+      "station_events": 326,
+      "with_same_init_features": 326,
+      "by_observed": {
+        "0": 241,
+        "4-6in": 10,
+        "1-4in": 29,
+        ">=6in": 10,
+        "<1in": 36
+      },
+      "by_days": {
+        "1": 191,
+        "2": 81,
+        "3": 54
+      },
+      "distinct_snow_windows_ge1in": 13,
+      "distinct_snow_windows_ge4in": 4,
+      "stations": 25
+    },
+    "test": {
+      "station_events": 577,
+      "with_same_init_features": 577,
+      "by_observed": {
+        "0": 509,
+        "<1in": 32,
+        "1-4in": 29,
+        ">=6in": 4,
+        "4-6in": 3
+      },
+      "by_days": {
+        "2": 165,
+        "1": 358,
+        "3": 54
+      },
+      "distinct_snow_windows_ge1in": 9,
+      "distinct_snow_windows_ge4in": 2,
+      "stations": 23
+    }
+  },
+  "legacy_mapping_comparison": {
+    "legacy_utc_end_date_in": {
+      "n_snow_events": 165,
+      "mean_diff_in": -1.377,
+      "mean_abs_diff_in": 1.377,
+      "share_missing_over_half": 0.442
+    },
+    "legacy_utc_end_previous_date_in": {
+      "n_snow_events": 165,
+      "mean_diff_in": -0.883,
+      "mean_abs_diff_in": 0.883,
+      "share_missing_over_half": 0.242
+    }
+  },
+  "threshold_sensitivity": [
+    {
+      "wet_mm": 1.0,
+      "dry_mm": 0.5,
+      "splits": {
+        "train": {
+          "station_events": 843,
+          "distinct_snow_windows_ge1in": 64,
+          "distinct_snow_windows_ge4in": 22
+        },
+        "validation": {
+          "station_events": 449,
+          "distinct_snow_windows_ge1in": 19,
+          "distinct_snow_windows_ge4in": 6
+        },
+        "test": {
+          "station_events": 782,
+          "distinct_snow_windows_ge1in": 15,
+          "distinct_snow_windows_ge4in": 5
+        }
+      }
+    },
+    {
+      "wet_mm": 2.0,
+      "dry_mm": 0.25,
+      "splits": {
+        "train": {
+          "station_events": 382,
+          "distinct_snow_windows_ge1in": 28,
+          "distinct_snow_windows_ge4in": 14
+        },
+        "validation": {
+          "station_events": 248,
+          "distinct_snow_windows_ge1in": 10,
+          "distinct_snow_windows_ge4in": 4
+        },
+        "test": {
+          "station_events": 408,
+          "distinct_snow_windows_ge1in": 8,
+          "distinct_snow_windows_ge4in": 2
+        }
+      }
+    },
+    {
+      "wet_mm": 1.0,
+      "dry_mm": 1.0,
+      "splits": {
+        "train": {
+          "station_events": 1249,
+          "distinct_snow_windows_ge1in": 89,
+          "distinct_snow_windows_ge4in": 29
+        },
+        "validation": {
+          "station_events": 624,
+          "distinct_snow_windows_ge1in": 28,
+          "distinct_snow_windows_ge4in": 7
+        },
+        "test": {
+          "station_events": 1140,
+          "distinct_snow_windows_ge1in": 20,
+          "distinct_snow_windows_ge4in": 6
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Selection uses forecast wetness; storms the +24h forecast missed are absent.",
+    "Residual clock ambiguity bounded by forecast precip on the 4 dry days (<= 4 x 0.25 mm liquid).",
+    "Station events in the same storm are correlated; distinct windows are the effective sample.",
+    "GHCN snowfall only; no snow-water-equivalent or phase observations."
+  ]
+}
