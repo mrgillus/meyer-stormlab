@@ -24,6 +24,7 @@ import json
 import math
 import os
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -40,7 +41,7 @@ EXPECTED = {(m, l, f) for m in MEMBERS for l in LEADS for f in FIELDS}
 RADIUS_MI = 75
 MAX_STATIONS = 150
 MIN_USABLE_DAYS = 400
-CAP = 12
+CAP = 40
 WORKERS = 8
 MAX_ATTEMPTS = 3
 DECIMALS = 2
@@ -182,8 +183,45 @@ def plan():
     print("Planned", len(queue), "dates;", sum(s["core_complete"] for s in old.values()), "complete of", len(dates), flush=True)
 
 
+_GRID_INDEX = {}
+_GRID_LOCK = threading.Lock()
+GRID_KEYS = ("gridType", "Ni", "Nj", "numberOfDataPoints", "latitudeOfFirstGridPointInDegrees",
+             "longitudeOfFirstGridPointInDegrees", "latitudeOfLastGridPointInDegrees",
+             "longitudeOfLastGridPointInDegrees", "iDirectionIncrementInDegrees", "jDirectionIncrementInDegrees")
+
+
+def decode(url, rec, points):
+    """Same contract as regional_archive.decode, but nearest-gridpoint indices are
+    computed once per grid geometry and reused (identical values, ~250x faster
+    with many points)."""
+    from eccodes import codes_new_from_message, codes_grib_find_nearest, codes_get, codes_get_values, codes_release
+    start, end, _ = rec
+    response = src.fetch(url, {"Range": f"bytes={start}-{'' if end is None else end}"})
+    if response.status_code != 206 or not response.headers.get("Content-Range", "").startswith(f"bytes {start}-"):
+        raise ValueError("Server did not honor GRIB byte range")
+    raw = response.content
+    if not raw.startswith(b"GRIB") or not raw.endswith(b"7777"):
+        raise ValueError("Invalid GRIB message framing")
+    gid = codes_new_from_message(raw)
+    try:
+        key = (tuple(str(codes_get(gid, k)) for k in GRID_KEYS), tuple(points))
+        with _GRID_LOCK:
+            idx = _GRID_INDEX.get(key)
+            if idx is None:
+                idx = [int(codes_grib_find_nearest(gid, lat, lon % 360)[0]["index"]) for lat, lon in points]
+                _GRID_INDEX[key] = idx
+        values = codes_get_values(gid)
+        data = [float(values[i]) for i in idx]
+        if not all(math.isfinite(v) and abs(v) <= 1e15 for v in data):
+            raise ValueError("Missing grid value")
+        return {"values": data, "units": codes_get(gid, "units"), "data_date": int(codes_get(gid, "dataDate")),
+                "data_time": int(codes_get(gid, "dataTime")), "end_step": int(codes_get(gid, "endStep"))}
+    finally:
+        codes_release(gid)
+
+
 def checked(date, url, rec, points, end):
-    d = src.decode(url, rec, points)
+    d = decode(url, rec, points)
     if d["data_date"] != int(date) or d["data_time"] != 0 or d["end_step"] != end:
         raise ValueError("GRIB initialization/lead mismatch")
     return d
