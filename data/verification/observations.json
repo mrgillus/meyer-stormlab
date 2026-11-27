@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-26T18:08:45.764908+00:00",
-  "retrieved_at": "2026-11-26T18:08:45.764908+00:00",
+  "generated_at": "2026-11-27T00:13:20.782358+00:00",
+  "retrieved_at": "2026-11-27T00:13:20.782358+00:00",
   "provider": "RCC-ACIS MultiStnData",
   "provider_endpoint": "https://data.rcc-acis.org/MultiStnData",
   "provider_status": "retrieved",
@@ -766,6 +766,20 @@
       "source": "RCC-ACIS daily station data",
       "nearest_town": "Affton",
       "nearest_town_distance_mi": 4.8
+    },
+    {
+      "station_id": "ACIS:54822",
+      "name": "MANCHESTER 1.4 SE",
+      "state": "MO",
+      "lat": 38.57762,
+      "lon": -90.49835,
+      "source_ids": [
+        "US1MOSL0018 6",
+        "MOSL0018 10"
+      ],
+      "source": "RCC-ACIS daily station data",
+      "nearest_town": "Wildwood",
+      "nearest_town_distance_mi": 3.4
     },
     {
       "station_id": "ACIS:54826",
@@ -2369,7 +2383,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:101405",
@@ -2385,7 +2399,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:101974",
@@ -2401,7 +2415,7 @@
       "precip_flag": "A",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:102357",
@@ -2417,7 +2431,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:103813",
@@ -2433,7 +2447,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:109288",
@@ -2449,7 +2463,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:110526",
@@ -2465,7 +2479,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:110795",
@@ -2481,7 +2495,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:111417",
@@ -2497,7 +2511,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:112323",
@@ -2513,7 +2527,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:113501",
@@ -2529,7 +2543,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:113662",
@@ -2545,7 +2559,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11369",
@@ -2561,7 +2575,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11384",
@@ -2577,7 +2591,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11385",
@@ -2593,7 +2607,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11391",
@@ -2609,7 +2623,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11398",
@@ -2625,7 +2639,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11400",
@@ -2641,7 +2655,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:114063",
@@ -2657,7 +2671,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11439",
@@ -2673,7 +2687,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:114867",
@@ -2689,7 +2703,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:114951",
@@ -2705,7 +2719,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:115193",
@@ -2721,7 +2735,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:115570",
@@ -2737,7 +2751,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11593",
@@ -2753,7 +2767,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:117319",
@@ -2769,7 +2783,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:117679",
@@ -2785,7 +2799,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:118191",
@@ -2801,7 +2815,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:118225",
@@ -2817,7 +2831,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:118430",
@@ -2833,7 +2847,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:29373",
@@ -2849,7 +2863,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:31769",
@@ -2865,7 +2879,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:34085",
@@ -2881,7 +2895,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:34380",
@@ -2897,7 +2911,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:47",
@@ -2913,7 +2927,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:51821",
@@ -2929,7 +2943,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:51822",
@@ -2945,7 +2959,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:51826",
@@ -2961,7 +2975,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:54553",
@@ -2977,7 +2991,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:54819",
@@ -2993,7 +3007,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:54827",
@@ -3009,7 +3023,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5762",
@@ -3025,7 +3039,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5766",
@@ -3041,7 +3055,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5779",
@@ -3057,7 +3071,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5781",
@@ -3073,7 +3087,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:64075",
@@ -3089,7 +3103,23 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:75090",
+      "reported_date": "2026-11-24",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": null,
+      "snow_quality": "missing",
+      "precipitation_in": 0.03,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "-1",
+      "precip_observation_clock_raw": "7",
+      "snow_flag": "M",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:75569",
@@ -3105,7 +3135,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:76988",
@@ -3121,7 +3151,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:78304",
@@ -3137,7 +3167,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:81985",
@@ -3153,7 +3183,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:83337",
@@ -3169,7 +3199,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:85549",
@@ -3185,7 +3215,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:92946",
@@ -3201,7 +3231,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:95209",
@@ -3217,7 +3247,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:95210",
@@ -3233,7 +3263,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:96180",
@@ -3249,7 +3279,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:96928",
@@ -3265,7 +3295,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:97399",
@@ -3281,7 +3311,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:97417",
@@ -3297,7 +3327,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:97773",
@@ -3313,7 +3343,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:98378",
@@ -3329,7 +3359,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:99360",
@@ -3345,7 +3375,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:100694",
@@ -3361,7 +3391,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:101974",
@@ -3377,7 +3407,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:102357",
@@ -3393,7 +3423,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:103813",
@@ -3409,7 +3439,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:109288",
@@ -3425,7 +3455,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:110526",
@@ -3441,7 +3471,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:110795",
@@ -3457,7 +3487,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:111417",
@@ -3473,7 +3503,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:112991",
@@ -3489,7 +3519,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:113662",
@@ -3505,7 +3535,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11369",
@@ -3521,7 +3551,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11384",
@@ -3537,7 +3567,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11385",
@@ -3553,7 +3583,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11391",
@@ -3569,7 +3599,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11398",
@@ -3585,7 +3615,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11400",
@@ -3601,7 +3631,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:114063",
@@ -3617,7 +3647,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:114951",
@@ -3633,7 +3663,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:115193",
@@ -3649,7 +3679,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:115570",
@@ -3665,7 +3695,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11593",
@@ -3681,7 +3711,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:116537",
@@ -3697,7 +3727,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:117679",
@@ -3713,7 +3743,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:117784",
@@ -3729,7 +3759,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:118191",
@@ -3745,7 +3775,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:118225",
@@ -3761,7 +3791,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:118430",
@@ -3777,7 +3807,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:29373",
@@ -3793,7 +3823,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:31769",
@@ -3809,7 +3839,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:34085",
@@ -3825,7 +3855,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:34380",
@@ -3841,7 +3871,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:47",
@@ -3857,7 +3887,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:51821",
@@ -3873,7 +3903,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:51822",
@@ -3889,7 +3919,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:51826",
@@ -3905,7 +3935,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:54553",
@@ -3921,7 +3951,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:54819",
@@ -3937,7 +3967,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:54827",
@@ -3953,7 +3983,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5762",
@@ -3969,7 +3999,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5779",
@@ -3985,7 +4015,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5781",
@@ -4001,7 +4031,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:64075",
@@ -4017,7 +4047,23 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:75090",
+      "reported_date": "2026-11-25",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 0.0,
+      "snow_quality": "measured",
+      "precipitation_in": 0.0,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "7",
+      "precip_observation_clock_raw": "7",
+      "snow_flag": "",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:76988",
@@ -4033,7 +4079,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:78304",
@@ -4049,7 +4095,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:81985",
@@ -4065,7 +4111,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:85549",
@@ -4081,7 +4127,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:92946",
@@ -4097,7 +4143,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:95209",
@@ -4113,7 +4159,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:95210",
@@ -4129,7 +4175,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:96180",
@@ -4145,7 +4191,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:96928",
@@ -4161,7 +4207,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:97399",
@@ -4177,7 +4223,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:97417",
@@ -4193,7 +4239,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:97773",
@@ -4209,7 +4255,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:98378",
@@ -4225,7 +4271,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:99360",
@@ -4241,7 +4287,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:100694",
@@ -4257,7 +4303,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:102357",
@@ -4273,7 +4319,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:103045",
@@ -4289,7 +4335,7 @@
       "precip_flag": "M",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:103813",
@@ -4305,7 +4351,23 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:109288",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 10.0,
+      "snow_quality": "measured",
+      "precipitation_in": 0.6,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "9",
+      "precip_observation_clock_raw": "9",
+      "snow_flag": "",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:110526",
@@ -4321,7 +4383,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:113662",
@@ -4337,7 +4399,23 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:11384",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 3.5,
+      "snow_quality": "measured",
+      "precipitation_in": 0.94,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "7",
+      "precip_observation_clock_raw": "7",
+      "snow_flag": "",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11391",
@@ -4353,7 +4431,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11400",
@@ -4369,7 +4447,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:114063",
@@ -4385,7 +4463,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:114951",
@@ -4401,7 +4479,7 @@
       "precip_flag": "M",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:115570",
@@ -4417,7 +4495,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:11593",
@@ -4433,7 +4511,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:117213",
@@ -4449,7 +4527,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:117577",
@@ -4465,7 +4543,7 @@
       "precip_flag": "M",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:118225",
@@ -4481,7 +4559,23 @@
       "precip_flag": "M",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:31769",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": null,
+      "snow_quality": "missing",
+      "precipitation_in": 0.88,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "-1",
+      "precip_observation_clock_raw": "5",
+      "snow_flag": "M",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:34380",
@@ -4497,7 +4591,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:51821",
@@ -4513,7 +4607,23 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:51826",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 4.0,
+      "snow_quality": "measured",
+      "precipitation_in": 1.37,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "8",
+      "precip_observation_clock_raw": "8",
+      "snow_flag": "",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:54819",
@@ -4521,7 +4631,7 @@
       "date_mapping": "requested_range_index",
       "snowfall_in": 9.0,
       "snow_quality": "measured",
-      "precipitation_in": 0.32,
+      "precipitation_in": 0.68,
       "precip_quality": "measured",
       "snow_observation_clock_raw": "7",
       "precip_observation_clock_raw": "7",
@@ -4529,7 +4639,23 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:54822",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": null,
+      "snow_quality": "missing",
+      "precipitation_in": 1.55,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "-1",
+      "precip_observation_clock_raw": "7",
+      "snow_flag": "M",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5762",
@@ -4545,7 +4671,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5766",
@@ -4561,7 +4687,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:5781",
@@ -4577,7 +4703,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:64075",
@@ -4593,7 +4719,23 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:75090",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 3.5,
+      "snow_quality": "measured",
+      "precipitation_in": 0.43,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "7",
+      "precip_observation_clock_raw": "7",
+      "snow_flag": "",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:76988",
@@ -4609,7 +4751,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:81985",
@@ -4625,7 +4767,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:83337",
@@ -4641,7 +4783,39 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:85549",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 6.0,
+      "snow_quality": "measured",
+      "precipitation_in": null,
+      "precip_quality": "missing",
+      "snow_observation_clock_raw": "7",
+      "precip_observation_clock_raw": "-1",
+      "snow_flag": "",
+      "precip_flag": "M",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:95209",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 5.1,
+      "snow_quality": "measured",
+      "precipitation_in": 0.92,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "6",
+      "precip_observation_clock_raw": "6",
+      "snow_flag": "",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:95210",
@@ -4657,7 +4831,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:96000",
@@ -4673,7 +4847,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:96180",
@@ -4689,7 +4863,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:96928",
@@ -4705,7 +4879,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:97399",
@@ -4721,7 +4895,39 @@
       "precip_flag": "M",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:97417",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": 4.5,
+      "snow_quality": "measured",
+      "precipitation_in": 1.59,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "9",
+      "precip_observation_clock_raw": "9",
+      "snow_flag": "",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
+    },
+    {
+      "station_id": "ACIS:97773",
+      "reported_date": "2026-11-26",
+      "date_mapping": "requested_range_index",
+      "snowfall_in": null,
+      "snow_quality": "missing",
+      "precipitation_in": 1.2,
+      "precip_quality": "measured",
+      "snow_observation_clock_raw": "-1",
+      "precip_observation_clock_raw": "5",
+      "snow_flag": "M",
+      "precip_flag": "",
+      "observation_interval_verified": false,
+      "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:98378",
@@ -4737,7 +4943,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     },
     {
       "station_id": "ACIS:99360",
@@ -4753,7 +4959,7 @@
       "precip_flag": "",
       "observation_interval_verified": false,
       "note": "ACIS reported date is not verified as a local midnight-to-midnight interval.",
-      "source_checked_at": "2026-11-26T18:08:45.764908+00:00"
+      "source_checked_at": "2026-11-27T00:13:20.782358+00:00"
     }
   ],
   "limitations": [
