@@ -47,7 +47,8 @@ jobs:
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
-            if [ -f data/gefs_stations/manifest.json ]; then echo "Manifest already published; keeping it."; exit 0; fi
+            # Ask git, not the working tree: the freshly selected files are untracked and survive reset.
+            if git cat-file -e origin/main:data/gefs_stations/manifest.json 2>/dev/null; then echo "Manifest already published; keeping it."; exit 0; fi
             mkdir -p data/gefs_stations
             cp -a "$stage/." data/gefs_stations/
             git add data/gefs_stations/
