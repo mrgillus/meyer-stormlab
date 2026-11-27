@@ -11,13 +11,13 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import hindcast as h
+import event_windows
 
 OUT=h.ROOT/"data"/"rapid_learning"
 MODELS={**h.MODELS,"HRRR":"ncep_hrrr_conus","RRFS":"ncep_rrfs_conus","NBM":"ncep_nbm_conus"}
 NEW=("HRRR","RRFS","NBM")
 LEADS=(1,2)
 TEST=h.TEST_START
-STORM=("2026-11-25","2026-11-26")
 
 def fetch(model,start,end):
     a=(dt.date.fromisoformat(start)-dt.timedelta(days=1)).isoformat()
@@ -125,14 +125,16 @@ def train():
 def live():
     report=json.loads((OUT/"report.json").read_text())
     now=dt.datetime.now(dt.timezone.utc)
-    if now>=dt.datetime(2026,11,27,0,tzinfo=h.TZ).astimezone(dt.timezone.utc):
-        print("Storm window ended; preserving prior inference");return
-    values,errors=gather([(STORM[0],STORM[-1])])
+    window=event_windows.current(now)
+    if window is None:
+        print("No active named winter event window; preserving prior inference");return
+    days=event_windows.local_days(window)
+    values,errors=gather([(days[0],days[-1])])
     predictions=[]
     for r in report["results"]:
         if r["status"]!="evaluated":continue
         l=r["lead"];names=r["models"]
-        for day in STORM:
+        for day in days:
             end=dt.datetime.combine(dt.date.fromisoformat(day)+dt.timedelta(days=1),dt.time(),h.TZ).astimezone(dt.timezone.utc)
             item=dict(date=day,lead=l,label=r["label"],models=names)
             if end-dt.timedelta(days=l)>now:
@@ -146,6 +148,7 @@ def live():
                 raw=raw,exceeds_training_range=outside,learned_inches=None if outside else round(p,3),
                 equal_inches=round(st.mean(raw.values()),3)))
     payload=dict(generated_at=now.isoformat(),training_generated_at=report["generated_at"],station=h.STATION,
+        event_id=window["event_id"],event_name=window["event_name"],event_days=days,
         predictions=predictions,errors=errors,note="Fixed-offset shadow inference at Lambert only. No newest-run substitution. Out-of-training-range learned outputs withheld; no operational promotion.")
     (OUT/"live.json").write_text(json.dumps(payload,indent=2,allow_nan=False)+"\n")
     print(json.dumps(payload,indent=2),flush=True)

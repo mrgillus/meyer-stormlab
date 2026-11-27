@@ -210,29 +210,5 @@ jobs:
             sleep $((attempt * 5))
           done
           exit 1
-      - name: Evaluate current storm if both lead-matched experiments trained
-        shell: bash
-        run: |
-          set -euo pipefail
-          if ! python -c 'import json,datetime as d; r=json.load(open("data/regional_learning48/report.json")); assert len(r["results"])==2 and all(x["status"]=="evaluated_research" for x in r["results"]); assert d.datetime.now(d.timezone.utc)<d.datetime(2026,11,27,tzinfo=d.timezone.utc)'; then
-            echo "No eligible storm inference yet."
-            exit 0
-          fi
-          python scripts/regional_live_v2.py
-          stage=$(mktemp -d)
-          trap 'rm -rf "$stage"' EXIT
-          cp -a data/regional_live_v2/. "$stage/"
-          base=$(git rev-parse HEAD)
-          for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            git reset --hard origin/main
-            if ! git diff --quiet "$base" HEAD -- scripts/regional_live_v2.py scripts/regional_live.py scripts/regional_learning.py data/regional_learning/ data/regional_learning48/; then exit 1; fi
-            mkdir -p data/regional_live_v2
-            cp -a "$stage/." data/regional_live_v2/
-            git add data/regional_live_v2/
-            if git diff --cached --quiet; then exit 0; fi
-            git commit -m "Publish lead-matched fine-grid regional storm inference"
-            if git push origin HEAD:main; then exit 0; fi
-            sleep $((attempt * 5))
-          done
-          exit 1
+      # Live shadow inference is owned by regional-live-v2.yml (six-hourly and
+      # after retraining, with its own concurrency group). It is not duplicated here.
