@@ -1,0 +1,157 @@
+name: Station-dense GEFS extension
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '13,33,53 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/gefs_stations.py'
+      - '.github/workflows/gefs-stations.yml'
+permissions:
+  contents: read
+concurrency:
+  group: stormlab-gefs-stations
+  cancel-in-progress: false
+jobs:
+  select:
+    # One-time station selection; the manifest freezes the points afterwards.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - id: check
+        run: |
+          if [ -f data/gefs_stations/manifest.json ]; then echo "needed=false" >> "$GITHUB_OUTPUT"; else echo "needed=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.needed == 'true'
+        with:
+          python-version: '3.12'
+      - if: steps.check.outputs.needed == 'true'
+        run: pip install requests
+      - name: Select GHCN snowfall stations and freeze manifest
+        if: steps.check.outputs.needed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/gefs_stations.py select
+          stage=$(mktemp -d)
+          trap 'rm -rf "$stage"' EXIT
+          cp -a data/gefs_stations/. "$stage/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if [ -f data/gefs_stations/manifest.json ]; then echo "Manifest already published; keeping it."; exit 0; fi
+            mkdir -p data/gefs_stations
+            cp -a "$stage/." data/gefs_stations/
+            git add data/gefs_stations/
+            git commit -m "Select stations for station-dense GEFS extension"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
+  plan:
+    needs: select
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+      base: ${{ steps.base.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - id: plan
+        run: |
+          python -m py_compile scripts/gefs_stations.py
+          python scripts/gefs_stations.py plan
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gefs-stations-plan-${{ github.run_id }}-${{ github.run_attempt }}
+          path: gefs-stations-plan.json
+          retention-days: 2
+  extract:
+    needs: plan
+    if: needs.plan.outputs.has_work == 'true'
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.base }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'eccodes>=2.40,<3' requests
+      - name: Extract station-dense checkpoints
+        env:
+          BATCH_DATES: ${{ matrix.dates }}
+        run: python scripts/gefs_stations.py worker
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gefs-stations-worker-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.worker }}
+          path: gefs-stations-output/
+          retention-days: 2
+          if-no-files-found: warn
+  publish:
+    needs: [plan, extract]
+    if: always() && !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.has_work == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - uses: actions/download-artifact@v4
+        with:
+          name: gefs-stations-plan-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: gefs-stations-worker-${{ github.run_id }}-${{ github.run_attempt }}-*
+          path: gefs-stations-artifacts
+      - name: Validate and publish checkpoints
+        env:
+          BATCH_BASE: ${{ needs.plan.outputs.base }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git diff --quiet "$BATCH_BASE" HEAD -- scripts/gefs_stations.py scripts/regional_archive.py scripts/gefs_batch.py data/gefs_stations/manifest.json; then exit 1; fi
+            python scripts/gefs_stations.py publish
+            git add data/gefs_stations/
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Checkpoint station-dense GEFS extension"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
