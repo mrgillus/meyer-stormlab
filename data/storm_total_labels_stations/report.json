@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-27T20:04:01.187374+00:00",
+  "archive": "data/gefs_stations",
+  "archive_fingerprint": "9c642ad6ef2a92f8365b370a43f670fcdb4c147ba3ce64ef5dd657b51607b7ca",
+  "archive_snapshot_sha256": "9a0054b326a05d6e2f06de3907935944a936bd1b975e3ffda72f48471310bd07",
+  "complete_initializations": 3922,
+  "stations": 141,
+  "parameters": {
+    "wet_mm": 1.0,
+    "dry_mm": 0.25,
+    "max_days": 3,
+    "trace_upper_in": 0.05
+  },
+  "rejected": {
+    "outside_split_seasons": 1160,
+    "incomplete_reports": 20391
+  },
+  "splits": {
+    "train": {
+      "station_events": 1901,
+      "with_same_init_features": 1901,
+      "by_observed": {
+        "0": 1467,
+        "1-4in": 183,
+        "<1in": 190,
+        ">=6in": 19,
+        "4-6in": 42
+      },
+      "by_days": {
+        "2": 628,
+        "1": 1039,
+        "3": 234
+      },
+      "distinct_snow_windows_ge1in": 46,
+      "distinct_snow_windows_ge4in": 20,
+      "stations": 113
+    },
+    "validation": {
+      "station_events": 1032,
+      "with_same_init_features": 1032,
+      "by_observed": {
+        "0": 697,
+        "4-6in": 32,
+        "1-4in": 126,
+        ">=6in": 60,
+        "<1in": 117
+      },
+      "by_days": {
+        "1": 664,
+        "2": 247,
+        "3": 121
+      },
+      "distinct_snow_windows_ge1in": 20,
+      "distinct_snow_windows_ge4in": 4,
+      "stations": 118
+    },
+    "test": {
+      "station_events": 1498,
+      "with_same_init_features": 1498,
+      "by_observed": {
+        "0": 1298,
+        "<1in": 114,
+        "1-4in": 73,
+        ">=6in": 9,
+        "4-6in": 4
+      },
+      "by_days": {
+        "2": 375,
+        "1": 1001,
+        "3": 122
+      },
+      "distinct_snow_windows_ge1in": 11,
+      "distinct_snow_windows_ge4in": 3,
+      "stations": 107
+    }
+  },
+  "legacy_mapping_comparison": {
+    "legacy_utc_end_date_in": {
+      "n_snow_events": 548,
+      "mean_diff_in": -1.121,
+      "mean_abs_diff_in": 1.121,
+      "share_missing_over_half": 0.343
+    },
+    "legacy_utc_end_previous_date_in": {
+      "n_snow_events": 548,
+      "mean_diff_in": -1.374,
+      "mean_abs_diff_in": 1.374,
+      "share_missing_over_half": 0.318
+    }
+  },
+  "distinct_windows_all_seasons": {
+    "ge1in": 77,
+    "ge4in": 27,
+    "ge6in": 9
+  }
+}
