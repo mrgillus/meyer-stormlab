@@ -1,17 +1,41 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-27T06:21:37.691928+00:00",
-  "source_latest_observation_capture": "2026-11-27T06:21:37.691928+00:00",
+  "generated_at": "2026-11-27T12:17:24.028720+00:00",
+  "source_latest_observation_capture": "2026-11-27T12:17:24.028720+00:00",
   "provider_status": "retrieved",
   "provider_error": null,
   "source": "RCC-ACIS daily station reports (snowfall and liquid precipitation)",
   "observed_station_count": 82,
-  "reported_station_days": 313,
+  "reported_station_days": 317,
   "cases_reviewed": 7,
   "cases_with_daily_reports": 2,
   "cases_scored": 0,
   "verification_policy": "daily errors fail closed; snow/precipitation events scored only as clock-independent event totals (event_totals.py)",
   "events": [
+    {
+      "event_id": "rain-20261126",
+      "kind": "rain",
+      "title": "Rainfall",
+      "forecast_dates": {
+        "start": "2026-11-27",
+        "end": "2026-11-29"
+      },
+      "observation_status": "measurement_type_not_connected",
+      "verification_status": "not_scored",
+      "verification_reason": "Forecast window not yet over; No supported daily station measurement for this signal type.",
+      "event_total_verification": null,
+      "actual_observed_storm_total_in": null,
+      "forecast_error_in": null,
+      "model_skill": null,
+      "station_daily_reports": [],
+      "station_count": 0,
+      "daily_report_count": 0,
+      "forecast_reference": {
+        "status": "unsupported_variable",
+        "daily_forecasts": []
+      },
+      "safety_note": "Stations report daily measurements, NOT an observed 48-hour storm total. Dates and locations may not align with model forecasts."
+    },
     {
       "event_id": "light_snow-20261127",
       "kind": "light_snow",
@@ -66,7 +90,7 @@
       "title": "Drizzle",
       "forecast_dates": {
         "start": "2026-11-27",
-        "end": "2026-11-29"
+        "end": "2026-11-28"
       },
       "observation_status": "measurement_type_not_connected",
       "verification_status": "not_scored",
@@ -181,7 +205,7 @@
           },
           {
             "station_id": "ACIS:11398",
-            "reason": "missing_report_2026-11-26"
+            "reason": "missing_2026-11-26"
           },
           {
             "station_id": "ACIS:11400",
@@ -945,30 +969,6 @@
       "safety_note": "Stations report daily measurements, NOT an observed 48-hour storm total. Dates and locations may not align with model forecasts."
     },
     {
-      "event_id": "rain-20261126",
-      "kind": "rain",
-      "title": "Rainfall",
-      "forecast_dates": {
-        "start": "2026-11-26",
-        "end": "2026-11-27"
-      },
-      "observation_status": "measurement_type_not_connected",
-      "verification_status": "not_scored",
-      "verification_reason": "Forecast window not yet over; No supported daily station measurement for this signal type.",
-      "event_total_verification": null,
-      "actual_observed_storm_total_in": null,
-      "forecast_error_in": null,
-      "model_skill": null,
-      "station_daily_reports": [],
-      "station_count": 0,
-      "daily_report_count": 0,
-      "forecast_reference": {
-        "status": "unsupported_variable",
-        "daily_forecasts": []
-      },
-      "safety_note": "Stations report daily measurements, NOT an observed 48-hour storm total. Dates and locations may not align with model forecasts."
-    },
-    {
       "event_id": "precipitation-20261126",
       "kind": "precipitation",
       "title": "Heavy precipitation signal",
@@ -1057,7 +1057,7 @@
           },
           {
             "station_id": "ACIS:11385",
-            "reason": "missing_report_2026-11-26"
+            "reason": "missing_report_2026-11-27"
           },
           {
             "station_id": "ACIS:11391",
@@ -1065,7 +1065,7 @@
           },
           {
             "station_id": "ACIS:11398",
-            "reason": "missing_report_2026-11-26"
+            "reason": "missing_report_2026-11-27"
           },
           {
             "station_id": "ACIS:11400",
@@ -1141,7 +1141,7 @@
           },
           {
             "station_id": "ACIS:47",
-            "reason": "missing_report_2026-11-26"
+            "reason": "missing_report_2026-11-27"
           },
           {
             "station_id": "ACIS:51821",
@@ -1404,6 +1404,17 @@
           "measurement_interval_verified": false
         },
         {
+          "station_id": "ACIS:47",
+          "station_name": "CAHOKIA ST LOUIS DOWNTOWN AP",
+          "near_town": "St. Louis",
+          "distance_to_near_town_mi": 5.1,
+          "reported_date": "2026-11-26",
+          "value_in": 1.22,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "24",
+          "measurement_interval_verified": false
+        },
+        {
           "station_id": "ACIS:96000",
           "station_name": "MARYLAND HEIGHTS 1.2 ESE",
           "near_town": "St. Charles",
@@ -1445,6 +1456,28 @@
           "value_in": 1.59,
           "quantity": "daily liquid precipitation",
           "raw_observation_clock": "9",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:11385",
+          "station_name": "ST LOUIS SPIRIT OF ST LOUIS AP",
+          "near_town": "Wildwood",
+          "distance_to_near_town_mi": 6.9,
+          "reported_date": "2026-11-26",
+          "value_in": 1.64,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "24",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:11398",
+          "station_name": "ST LOUIS LAMBERT INTL AIRPORT",
+          "near_town": "St. Charles",
+          "distance_to_near_town_mi": 7.1,
+          "reported_date": "2026-11-26",
+          "value_in": 1.44,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "24",
           "measurement_interval_verified": false
         },
         {
@@ -1500,6 +1533,17 @@
           "value_in": 0.94,
           "quantity": "daily liquid precipitation",
           "raw_observation_clock": "6",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:29373",
+          "station_name": "ST CHARLES COUNTY AP",
+          "near_town": "St. Charles",
+          "distance_to_near_town_mi": 10.4,
+          "reported_date": "2026-11-26",
+          "value_in": 1.32,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "24",
           "measurement_interval_verified": false
         },
         {
@@ -1657,8 +1701,8 @@
           "measurement_interval_verified": false
         }
       ],
-      "station_count": 37,
-      "daily_report_count": 37,
+      "station_count": 41,
+      "daily_report_count": 41,
       "forecast_reference": {
         "status": "pre_event_capture",
         "captured_at": "2026-11-26T04:40:09.413279+00:00",
