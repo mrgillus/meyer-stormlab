@@ -183,3 +183,23 @@ body.events-only #view-now > :not(.section-entrance):not(.event-chronicle){displ
 .wx-glance-note{margin:10px 0 0;font-size:12px;color:#a9bccb}
 .wx-event .wx-upcoming-detail>summary{padding:10px 16px;font-size:12px}
 @media(max-width:740px){.wx-glance-name h3{font-size:20px}.wx-when{font-size:10px;padding:3px 8px}}
+
+/* Hour-by-hour strip on the event in progress. */
+.wx-hourly{margin-top:14px;padding:12px;border-radius:12px;background:#0d1e2b;border:1px solid #2f4b60}
+.wx-hourly-title{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.wx-hourly-title b{font-size:12px;color:#e2edf5}.wx-hourly-title span{font-size:10px;color:#8fa8ba}
+.wx-hr-scroll{overflow-x:auto}
+.wx-hr-grid{display:grid;gap:3px;min-width:calc(26px + var(--hours)*11px)}
+.wx-hr-row{display:grid;grid-template-columns:22px repeat(var(--hours),minmax(8px,1fr));gap:2px;align-items:center}
+.wx-hr-head span{font-size:9px;color:#9eb3c3;white-space:nowrap;overflow:visible}
+.wx-hr-head span:nth-child(2){color:#fff;font-weight:700}
+.wx-hr-name{color:var(--wx);display:flex}.wx-hr-name .wx-icon{width:16px;height:16px}
+.wx-hr-cell{height:16px;border-radius:3px;background:#172b39}
+.wx-hr-cell.l1{background:rgba(var(--wx-rgb,126,224,221),.42)}.wx-hr-cell.l2{background:rgba(var(--wx-rgb,126,224,221),.62)}
+.wx-hr-cell.l3{background:rgba(var(--wx-rgb,126,224,221),.82)}.wx-hr-cell.l4{background:var(--wx,#7ee0dd)}
+.wx-hr-cell.unk,.wx-hr-cell.partial{background-image:repeating-linear-gradient(135deg,transparent 0 3px,rgba(255,255,255,.12) 3px 5px)}
+.wx-hr-cell.none{background:transparent;border:1px dashed #2b4456}
+.wx-hr-legend{display:flex;align-items:center;gap:5px;margin-top:8px;font-size:9px;color:#8fa8ba}
+.wx-hr-legend .wx-hr-cell{width:12px;height:10px;margin-left:6px}
+.wx-hr-quiet{margin:0 0 8px;font-size:12px;color:#c9dae5}
+.wx-trend.rest{font-size:10px;font-weight:600;color:#8fb4cb}

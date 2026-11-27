@@ -325,7 +325,17 @@
     if(d<=-25)return {cls:"down",sym:"↓",text:"Falling"+since};
     return {cls:"flat",sym:"→",text:"Steady"+since};
   }
-  function glanceChips(group,modes){
+  // Highest hourly model share over the rest of the event for one family (null if no hourly coverage ahead).
+  function remainingShare(group,f,modes){
+    const now=nowHourKey();let best=null;
+    [...new Set(modes.filter(m=>f.kinds.includes(m.kind)).map(m=>m.kind))].forEach(kind=>{
+      (group.forecast_modes?.[kind]?.hourly?.points||[]).forEach(p=>{
+        if(p.time>=now&&numeric(p.support_pct))best=Math.max(best??0,p.support_pct);
+      });
+    });
+    return best;
+  }
+  function glanceChips(group,modes,isCurrent=false){
     return activeFamilies(modes).map(f=>{
       let best=null;
       modes.filter(m=>f.kinds.includes(m.kind)).forEach(m=>{
@@ -334,7 +344,8 @@
       });
       if(!best||(best.t.pct<=0&&!(best.t.prior>0)))return null;
       const name=["snow","temperature"].includes(f.id)?(chipNames[best.kind]||modeLabel(best.m)):(chipNames[f.id]||f.name);
-      return {f,name,pct:best.t.pct,t:best.t,trend:trendMark(best.t)};
+      const rest=isCurrent?remainingShare(group,f,modes):null;
+      return {f,name,pct:rest??best.t.pct,t:best.t,trend:trendMark(best.t),rest};
     }).filter(Boolean).sort((a,b)=>b.pct-a.pct);
   }
   const weekday=d=>new Intl.DateTimeFormat("en-US",{timeZone:CT,weekday:"short"}).format(new Date(d+"T12:00:00Z"));
@@ -345,9 +356,57 @@
     const days=Math.round((Date.parse(group.start_date+"T12:00:00Z")-Date.parse(today+"T12:00:00Z"))/86400000);
     return days===1?"Tomorrow":"In "+days+" days";
   }
+  // Hour-by-hour strip for an event in progress: share of models per hour, per weather family (Central time).
+  function nowHourKey(){
+    const v=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:CT,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",hourCycle:"h23"}).formatToParts(new Date()).map(p=>[p.type,p.value]));
+    return v.year+"-"+v.month+"-"+v.day+"T"+v.hour+":00";
+  }
+  const hourLabel=t=>{const h=Number(t.slice(11,13));return (h%12||12)+(h<12?"a":"p")};
+  function hourlyStrip(group,modes,limit=24){
+    const now=nowHourKey(),rows=[];
+    activeFamilies(modes).forEach(f=>{
+      const byTime=new Map();let unit=null;
+      [...new Set(modes.filter(m=>f.kinds.includes(m.kind)).map(m=>m.kind))].forEach(kind=>{
+        const h=group.forecast_modes?.[kind]?.hourly;if(!h)return;
+        if(h.unit==="in")unit="in";
+        h.points.forEach(p=>{
+          if(p.time<now)return;
+          const c=byTime.get(p.time)||{pct:null,unknown:false,qty:null};
+          if(numeric(p.support_pct))c.pct=Math.max(c.pct??0,p.support_pct);
+          if(!numeric(p.support_pct)||p.unknown_models)c.unknown=true;
+          if(h.unit==="in"&&numeric(p.quantity))c.qty=Math.max(c.qty??0,p.quantity);
+          byTime.set(p.time,c);
+        });
+      });
+      if(byTime.size)rows.push({f,byTime,unit});
+    });
+    const hours=[...new Set(rows.flatMap(r=>[...r.byTime.keys()]))].sort().slice(0,limit);
+    if(!rows.length||!hours.length)return "";
+    const day=t=>weekday(t.slice(0,10));
+    const head='<div class="wx-hr-row wx-hr-head"><span></span>'+hours.map((t,i)=>{
+      const h=Number(t.slice(11,13)),show=i===0||h%3===0;
+      return '<span>'+(i===0?"Now":show?(h===0?day(t):hourLabel(t)):"")+'</span>';
+    }).join("")+'</div>';
+    const body=rows.map(r=>{
+      const name=chipNames[r.f.id]||r.f.name;
+      return '<div class="wx-hr-row wx-'+r.f.id+'"><span class="wx-hr-name" title="'+safe(r.f.name)+'">'+weatherArt(r.f.id)+'</span>'+hours.map(t=>{
+        const c=r.byTime.get(t);
+        if(!c)return '<span class="wx-hr-cell none" title="'+safe(day(t)+" "+hourLabel(t)+" · "+name+": no hourly forecast")+'"></span>';
+        const lvl=c.pct===null?"unk":"l"+Math.min(4,Math.round(c.pct/25));
+        const amt=r.unit==="in"&&numeric(c.qty)&&c.qty>0?" · up to "+c.qty.toFixed(2)+" in/hr (regional)":"";
+        return '<span class="wx-hr-cell '+lvl+(c.unknown&&c.pct!==null?" partial":"")+'" title="'+safe(day(t)+" "+hourLabel(t)+" · "+name+": "+(c.pct===null?"no model data":c.pct+"% of models")+amt)+'"></span>';
+      }).join("")+'</div>';
+    }).join("");
+    const quiet=rows.every(r=>hours.every(t=>{const c=r.byTime.get(t);return !c||(c.pct===0&&!c.unknown)}));
+    const last=hours.at(-1);
+    return '<div class="wx-hourly"><div class="wx-hourly-title"><b>Hour by hour</b><span>Share of models showing it each hour · Central time</span></div>'+
+      (quiet?'<p class="wx-hr-quiet">No model shows more of this weather from now through '+safe(day(last)+" "+hourLabel(last))+'.</p>':"")+
+      '<div class="wx-hr-scroll"><div class="wx-hr-grid" style="--hours:'+hours.length+'">'+head+body+'</div></div>'+
+      '<div class="wx-hr-legend"><span class="wx-hr-cell l1"></span>25%<span class="wx-hr-cell l2"></span>50%<span class="wx-hr-cell l3"></span>75%<span class="wx-hr-cell l4"></span>100%</div></div>';
+  }
   function groupCard(group,isCurrent=false){
     const modes=modeItems(group),fs=activeFamilies(modes),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
-    const chips=glanceChips(group,modes);
+    const chips=glanceChips(group,modes,isCurrent);
     const pf=chips.find(c=>c.pct>0)?.f||fs.find(f=>f.kinds.includes(primary?.kind))||{id:"other"};
     const tone=marker(group.status),faded=group.status!=="in_latest_capture";
     const shown=chips.slice(0,4),extra=chips.length-shown.length;
@@ -358,9 +417,14 @@
       (shown.length?'<div class="wx-chips">'+shown.map(c=>{
         const of=numeric(c.t.models)&&numeric(c.t.total)?c.t.models+" of "+c.t.total+" models":c.pct+"% of models";
         const tip=c.name+": "+(c.t.faded?"no models show it now":of+" show it")+(c.t.unknown?"; "+c.t.unknown+" had no data for these dates, so the share could be up to "+(c.t.upper??c.pct)+"%":"")+". "+c.trend.text+". Share of models, not a calibrated probability.";
+        if(c.rest!==null&&c.rest!==undefined){
+          const restTip=c.name+": "+(c.rest===0?"no model shows more after now (earlier in this event up to "+c.t.pct+"%)":"up to "+c.rest+"% of models in the remaining hours")+". Share of models, not a calibrated probability.";
+          return '<span class="wx-chip wx-'+c.f.id+(c.rest<50?" low":"")+'" title="'+safe(restTip)+'">'+weatherArt(c.f.id)+safe(c.name)+' <b>'+(c.rest===0?"done":safe(c.rest)+'%')+'</b>'+(c.rest===0?"":'<i class="wx-trend rest">rest of event</i>')+'</span>';
+        }
         return '<span class="wx-chip wx-'+c.f.id+(c.pct<50?" low":"")+'" title="'+safe(tip)+'">'+weatherArt(c.f.id)+safe(c.name)+' <b>'+safe(c.t.upper?c.pct+"–"+c.t.upper:c.pct)+'%</b><i class="wx-trend '+c.trend.cls+'" aria-label="'+safe(c.trend.text)+'">'+safe(c.trend.sym)+'</i></span>';
       }).join("")+(extra>0?'<span class="wx-chip more">+'+extra+'</span>':"")+'</div>':
         '<p class="wx-glance-note">'+(faded?"Faded: no model shows it in the latest guidance.":"No model currently shows this weather.")+'</p>')+
+      (isCurrent?hourlyStrip(group,modes):"")+
       (faded&&shown.length?'<p class="wx-glance-note">'+safe(isCurrent?"Signal has faded in the latest guidance.":"Faded from the latest model guidance.")+'</p>':"")+
       '</div>';
     const contents=eventRibbon(group,modes,fs)+'<div class="wx-families">'+familyRows(modes,group,false)+'</div><p class="watch-muted wx-source">Regional forecast guidance. Model support is not a calibrated probability. Hourly and daily thresholds differ.</p>'+
