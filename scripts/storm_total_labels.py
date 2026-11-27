@@ -170,6 +170,68 @@ def build():
     return manifest, rows, rejected, digest, digest48
 
 
+STATIONS = ROOT / "data/gefs_stations"
+STATION_FIELDS = ("t2m", "t850", "precip24")
+
+
+def load_station_archive():
+    """{init: {lead: array(3 fields, members, points)}} from the station-dense extension."""
+    manifest = json.loads((STATIONS / "manifest.json").read_text())
+    if tuple(manifest["fields"]) != STATION_FIELDS or tuple(manifest["members"]) != MEMBERS:
+        raise ValueError("Unexpected station archive schema")
+    out, digest = {}, hashlib.sha256()
+    for path in sorted((STATIONS / "shards").glob("*/*.json.gz")):
+        with gzip.open(path, "rt") as f:
+            s = json.load(f)
+        if s.get("fingerprint") != manifest["fingerprint"] or not s.get("core_complete"):
+            continue
+        digest.update(path.read_bytes())
+        look = {(r["member"], r["lead_hours"], r["field"]): r["values"] for r in s["rows"]}
+        init = dt.datetime.strptime(s["date"], "%Y%m%d").date()
+        for lead in manifest["lead_hours"]:
+            a = np.array([[look[(m, lead, f)] for m in MEMBERS] for f in STATION_FIELDS], float)
+            if np.isfinite(a).all() and (a[2] > -0.001).all():
+                out.setdefault(init, {})[lead] = a
+    return manifest, out, digest.hexdigest()
+
+
+def load_obs_from(path):
+    global OBS
+    saved, OBS = OBS, path
+    try:
+        return load_obs()
+    finally:
+        OBS = saved
+
+
+def build_stations():
+    """Same selection and labels as build(), over all station-dense archive points."""
+    manifest, arch, digest = load_station_archive()
+    obs = load_obs_from(STATIONS / "observations.csv.gz")
+    rows, rejected = [], Counter()
+    for i, p in enumerate(manifest["points"]):
+        station = p["label"]
+        P = {d: float(v[24][2, :, i].mean()) for d, v in arch.items() if 24 in v}
+        for s, e, ring in find_events(P):
+            g = split(s)
+            if g is None or split(e) != g:
+                rejected["outside_split_seasons"] += 1
+                continue
+            lab = label(obs, station, s, e)
+            if lab is None:
+                rejected["incomplete_reports"] += 1
+                continue
+            n = (e - s).days + 1
+            rows.append(dict(station=station, point_index=i, start_utc=s.isoformat(), end_utc=e.isoformat(), days=n,
+                             split=g, observed_in=lab[0], trace_days=lab[1],
+                             observed_upper_in=round(lab[0] + lab[1] * TRACE_UPPER_IN, 3),
+                             dry_ring_forecast_mm=ring, window_forecast_mm=round(sum(P[s + dt.timedelta(days=k)] for k in range(n)), 3),
+                             same_init_features=all(l in arch.get(s, {}) for l in (24, 48, 72)[:n]),
+                             legacy_utc_end_date_in=mapping_label(obs, station, s, e, 1),
+                             legacy_utc_end_previous_date_in=mapping_label(obs, station, s, e, 0)))
+    return manifest, rows, rejected, digest, len(arch)
+
+
 def summarize(rows):
     def cls(v):
         return "0" if v == 0 else "<1in" if v < 1 else "1-4in" if v < 4 else "4-6in" if v < 6 else ">=6in"
@@ -241,5 +303,27 @@ def main():
     print(json.dumps({k: report[k] for k in ("rejected", "splits", "legacy_mapping_comparison")}, indent=2))
 
 
+def main_stations():
+    out = ROOT / "data/storm_total_labels_stations"
+    out.mkdir(parents=True, exist_ok=True)
+    manifest, rows, rejected, digest, inits = build_stations()
+    with gzip.open(out / "labels.csv.gz", "wt", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(rows)
+    report = dict(schema=1, generated_at=dt.datetime.now(dt.timezone.utc).isoformat(),
+                  archive="data/gefs_stations", archive_fingerprint=manifest["fingerprint"], archive_snapshot_sha256=digest,
+                  complete_initializations=inits, stations=len(manifest["points"]),
+                  parameters=dict(wet_mm=WET_MM, dry_mm=DRY_MM, max_days=MAX_DAYS, trace_upper_in=TRACE_UPPER_IN),
+                  rejected=dict(rejected), splits=summarize(rows), legacy_mapping_comparison=legacy_comparison(rows),
+                  distinct_windows_all_seasons=dict(
+                      ge1in=len({(r["start_utc"], r["end_utc"]) for r in rows if r["observed_in"] >= 1}),
+                      ge4in=len({(r["start_utc"], r["end_utc"]) for r in rows if r["observed_in"] >= 4}),
+                      ge6in=len({(r["start_utc"], r["end_utc"]) for r in rows if r["observed_in"] >= 6})))
+    (out / "report.json").write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    print(json.dumps({k: report[k] for k in ("complete_initializations", "rejected", "splits", "distinct_windows_all_seasons", "legacy_mapping_comparison")}, indent=1))
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    main_stations() if sys.argv[1:] == ["stations"] else main()
