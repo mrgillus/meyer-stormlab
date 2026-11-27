@@ -27,12 +27,13 @@ jobs:
         with:
           ref: main
       - id: active
-        name: Check experiment window
+        name: Check named winter event window
         env:
           EVENT: ${{ github.event_name }}
+        # Scheduled runs only work while a named winter event window is active.
         run: |
-          if [ "$EVENT" = schedule ] && [ "$(date -u +%s)" -ge "$(date -u -d '2026-11-27 06:00:00 UTC' +%s)" ]; then
-            echo 'run=false' >> "$GITHUB_OUTPUT"
+          if [ "$EVENT" = schedule ]; then
+            python3 scripts/event_windows.py --active >> "$GITHUB_OUTPUT"
           else
             echo 'run=true' >> "$GITHUB_OUTPUT"
           fi

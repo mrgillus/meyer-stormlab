@@ -1,4 +1,4 @@
-name: Thanksgiving storm high-resolution blend
+name: Active winter event high-resolution blend
 on:
   workflow_dispatch:
   schedule:
@@ -24,13 +24,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Retrieve and blend storm-specific guidance
+      - name: Retrieve and blend guidance for the active named winter event
         run: python scripts/storm_blend.py
       - name: Publish validated capture
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- data/storm/report.json && [ -z "$(git ls-files --others --exclude-standard data/storm)" ]; then exit 0; fi
+          if git diff --quiet -- data/storm/report.json data/storm/window.json && [ -z "$(git ls-files --others --exclude-standard data/storm)" ]; then exit 0; fi
           stage=$(mktemp -d)
           trap 'rm -rf "$stage"' EXIT
           cp -a data/storm/. "$stage/"

@@ -29,3 +29,15 @@ Feature 103 in feature_version 1 is the 5-member ensemble standard deviation of 
 - 2026-11-26 00Z operational +24h: 27.38 gpm, from a genuine 0.5° `HGT 500 mb` record (members 5465–5548 gpm, c00 5503). Units and decoding match the archive (gpm). An independent re-extraction reproduced the value.
 - Interpretation: a real, record-large short-range position uncertainty of the Thanksgiving trough over the Ohio Valley, not an extraction or unit error. The +24h shadow outputs for this cycle are correctly flagged as extrapolation.
 - Open question: operational GEFS uses 30 perturbed members, of which p01–p04 are taken, while the reforecast had only 4. Whether p01–p04 spread is statistically comparable between the two systems has not been tested. Compare operational and reforecast spread climatology over a full winter before treating spread features as compatible.
+
+## Event-driven storm pipelines
+
+The matched-hour storm blend (`storm_blend.py`, hourly) and rapid-refresh shadow inference (`rapid_learning.py live`, hourly) take their window from the named-event catalog via `scripts/event_windows.py`. They no longer use hardcoded dates.
+
+- Only non-routine winter modes (`snow`, `ice`) in the latest capture open a window, and only within 5 days. Flurries (`light_snow`), rain and freezing temperatures alone do not.
+- A new window needs a fresh catalog (`status: current`). A window never starts in the past: if the event is already underway when first seen, it starts at the current hour.
+- The selected window is pinned in `data/storm/window.json`. Its start never moves. Its end extends only when the same named event lengthens, capped at 120 hours. This keeps frozen elapsed-hour forecasts valid.
+- With no active window, the scheduled jobs exit without touching published reports.
+- The Thanksgiving window was seeded into `window.json` so its final hours carry over unchanged.
+
+Thanksgiving-only case-study scripts still hold fixed dates by design: `regional_live.py`, `regional_precip_audit.py`, `atmospheric_profiles.py` (live mode) and `temporal_profiles.py`. They run only on manual dispatch or on edits to their own files. The duplicate live-inference step in `gefs48.yml` was removed. Live shadow inference is owned by `regional-live-v2.yml`.

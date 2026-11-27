@@ -1,5 +1,7 @@
-"""Thanksgiving storm: matched valid-hour, multi-family experimental guidance.
-No learned weights, no ground snow-depth or calibrated probability claims.
+"""Active winter event: matched valid-hour, multi-family experimental guidance.
+The window comes from the named-event catalog (scripts/event_windows.py), not
+hardcoded dates. No learned weights, no ground snow-depth or calibrated
+probability claims.
 """
 import datetime as dt
 import json
@@ -12,13 +14,24 @@ import urllib.error
 import time
 from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor
+import event_windows
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/"data"/"storm"
 TZ=ZoneInfo("America/Chicago")
-START=dt.datetime(2026,11,25,0,tzinfo=TZ)
-END=dt.datetime(2026,11,27,0,tzinfo=TZ)
-HOURS=[int((START+dt.timedelta(hours=i)).timestamp()) for i in range(1,49)]
+# Set per run from the active event window (see configure()).
+START=END=None
+HOURS=[]
+WINDOW=None
+def configure(window):
+    """Point the module at one event window. Hour stamps mark hour ends."""
+    global START,END,HOURS,WINDOW
+    START=dt.datetime.fromisoformat(window["start"]).astimezone(TZ)
+    END=dt.datetime.fromisoformat(window["end"]).astimezone(TZ)
+    n=int((END-START).total_seconds()//3600)
+    if n<1:raise ValueError("Empty event window")
+    HOURS=[int((START+dt.timedelta(hours=i)).timestamp()) for i in range(1,n+1)]
+    WINDOW=window
 MODELS={"GFS":("ncep_gfs_global","global"),"ECMWF":("ecmwf_ifs025","global"),
 "GEM":("cmc_gem_gdps","global"),"ICON":("icon_global","global"),
 "HRRR":("ncep_hrrr_conus","rapid"),"RRFS":("ncep_rrfs_conus","rapid"),
@@ -121,12 +134,17 @@ def summarize(p,series,now,prior):
         full_model_max_in=max(full) if full else None,hourly=hourly)
 def main():
     now=dt.datetime.now(dt.timezone.utc)
-    if now>=END.astimezone(dt.timezone.utc):
-        print("Storm window ended; no forecast overwritten.");return
+    window=event_windows.current(now,persist=True)
+    if window is None:
+        print("No active named winter event window; no forecast overwritten.");return
+    configure(window)
+    print("Event window",window["event_name"],window["event_id"],START.isoformat(),"to",END.isoformat(),len(HOURS),"hours",flush=True)
     data={};errors=[];prior={}
     try:
         old=json.loads((OUT/"report.json").read_text())
-        if old.get("window_start")==START.isoformat() and old.get("window_end")==END.isoformat():
+        # Start is pinned for a window; the end may extend. Frozen hours are keyed by timestamp.
+        # Schema-2 reports predate event ids; their pinned start still identifies the window.
+        if old.get("window_start")==START.isoformat() and old.get("event_id",window["event_id"])==window["event_id"]:
             prior={p["name"]:dict(p,_capture=old["retrieved_at"]) for p in old["points"]}
     except (OSError,ValueError,KeyError,TypeError):pass
     with ThreadPoolExecutor(max_workers=2) as ex:
@@ -144,12 +162,14 @@ def main():
         old=prior.get(p["name"])
         if old and (old.get("lat")!=p["lat"] or old.get("lon")!=p["lon"]):old=None
         points.append(summarize(p,series,now,old))
-    result=dict(schema=2,retrieved_at=now.isoformat(),window_start=START.isoformat(),window_end=END.isoformat(),
+    result=dict(schema=3,retrieved_at=now.isoformat(),window_start=START.isoformat(),window_end=END.isoformat(),
+        event_id=window["event_id"],event_name=window["event_name"],event_kinds=window["kinds"],event_mode_ids=window["mode_ids"],
         hours=len(HOURS),weights=BASE_WEIGHTS,points=points,errors=errors,
         note="Experimental snowfall guidance, not observed snowfall or ground depth. Elapsed hours are frozen prior forecasts, not measurements; per-model totals cover future hours only and are partial after storm start. Storm total combines frozen prior estimates and current future guidance. Missing future hours are not filled with zeros or stale estimates. Family weights are heuristic, NBM overlaps other models, provider may stitch cycles.")
     OUT.mkdir(parents=True,exist_ok=True)
     complete=sum(p["blend_in"] is not None for p in points)
-    status=dict(retrieved_at=now.isoformat(),status="published" if complete==len(POINTS) else "incomplete_retained_previous",
+    status=dict(retrieved_at=now.isoformat(),event_id=window["event_id"],event_name=window["event_name"],
+        window_start=START.isoformat(),window_end=END.isoformat(),status="published" if complete==len(POINTS) else "incomplete_retained_previous",
         complete_points=complete,total_points=len(POINTS),errors=errors,
         points=[{k:p[k] for k in ("name","blend_hours","future_hours","future_expected_hours","elapsed_forecast_hours","remaining_forecast_in")} for p in points])
     (OUT/"status.json").write_text(json.dumps(status,indent=2,allow_nan=False)+"\n")

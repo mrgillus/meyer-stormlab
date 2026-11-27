@@ -1,0 +1,17 @@
+{
+  "event_id": "event-snow-20261125",
+  "event_name": "Drift",
+  "mode_ids": [
+    "snow-20261125"
+  ],
+  "kinds": [
+    "snow"
+  ],
+  "start_date": "2026-11-25",
+  "end_date": "2026-11-26",
+  "start": "2026-11-25T00:00:00-06:00",
+  "end": "2026-11-27T00:00:00-06:00",
+  "selected_at": "2026-11-27T00:35:26.536145+00:00",
+  "catalog_generated_at": "2026-11-26T23:05:36.870053+00:00",
+  "note": "Seeded from the pre-existing hardcoded Thanksgiving window so its frozen elapsed-hour forecasts carry over."
+}
