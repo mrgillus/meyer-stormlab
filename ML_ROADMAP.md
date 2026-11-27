@@ -51,3 +51,17 @@ Thanksgiving-only case-study scripts still hold fixed dates by design: `regional
 - **Sample size (defaults).** Station-events by split (train / validation / test): 568 / 326 / 577. But only **41 / 13 / 9** distinct storm windows reached ≥1" at some station, and **16 / 4 / 2** reached ≥4". The held-out sample is too small to evaluate heavy-snow skill.
 - **Why it's small.** Most candidates fail for missing station reports (3,570 rejected vs 1,471 kept). Looser thresholds roughly double the counts at the cost of a larger clock-ambiguity bound; see `threshold_sensitivity`.
 - **Finding.** On storms with ≥1" observed, the legacy daily mappings undercount the storm total by an average of 1.38" (`utc_end_date`) and 0.88" (`utc_end_previous_date`). They miss more than half the total in 44% and 24% of those storms. Daily-label training and evaluation systematically understate multi-day storm totals. That likely contributes to the reported heavy-snow underprediction and should be considered before tuning models against daily labels.
+
+### Re-scoring existing models against storm totals
+
+`scripts/storm_total_rescore.py` sums the existing daily RF/boosted predictions over each held-out storm, from one init. It compares them with the clock-independent total and with the legacy daily label each model was trained on. No model is refit (`data/storm_total_rescore/`).
+
+Validation + test seasons: 903 station-storms, 154 windows. For ≥4" storms (27 station-storms, only 6 windows):
+
+- The true storm total averages 7.44". Legacy daily labels capture only 4.40" (`utc_end_date`) or 5.11" (`utc_end_previous_date`).
+- RF predicts 1.39" / 2.09" (19% / 28% of the true total). Boosted predicts 0.58" / 0.93". The physical 10:1 cold-precipitation reference predicts 5.19" (70%).
+- So roughly half of the heavy-snow underprediction is label misalignment (2.3–3.0"). The rest (~3.0") is model shortfall even against the models' own labels, consistent with tree models not extrapolating.
+- For 1–4" storms, most of the apparent error is label misalignment.
+- Both tree models over-forecast non-snow storms by 0.06–0.31".
+
+Implication: train and evaluate on storm totals, and favor physically anchored hybrids (phase × liquid × snow ratio) over pure tree regression for heavy events. Heavy-event conclusions remain tentative (6 windows).

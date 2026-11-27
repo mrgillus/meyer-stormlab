@@ -1,0 +1,411 @@
+{
+  "schema": 1,
+  "generated_at": "2026-11-27T14:22:54.012954+00:00",
+  "labels_report_generated_at": "2026-11-27T13:14:33.581837+00:00",
+  "model_artifacts": {
+    "24_utc_end_date": "data/regional_learning/research_24_utc_end_date.joblib",
+    "24_utc_end_previous_date": "data/regional_learning/research_24_utc_end_previous_date.joblib",
+    "48_utc_end_date": "data/regional_learning48/research_48_utc_end_date.joblib",
+    "48_utc_end_previous_date": "data/regional_learning48/research_48_utc_end_previous_date.joblib",
+    "72_utc_end_date": "data/regional_learning/research_72_utc_end_date.joblib",
+    "72_utc_end_previous_date": "data/regional_learning/research_72_utc_end_previous_date.joblib"
+  },
+  "events": 903,
+  "distinct_windows": 154,
+  "results": {
+    "utc_end_date": {
+      "rf": {
+        "vs_storm_total": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": -0.051,
+            "mae_in": 0.525,
+            "mean_truth_in": 0.41,
+            "ratio_pred_to_truth": 0.876
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.238,
+            "mae_in": 0.28,
+            "mean_truth_in": 0.053,
+            "ratio_pred_to_truth": 5.479
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": -1.331,
+            "mae_in": 1.406,
+            "mean_truth_in": 2.163,
+            "ratio_pred_to_truth": 0.385
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -6.049,
+            "mae_in": 6.049,
+            "mean_truth_in": 7.444,
+            "ratio_pred_to_truth": 0.187
+          }
+        },
+        "vs_legacy_daily_label": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": 0.132,
+            "mae_in": 0.4,
+            "mean_truth_in": 0.227,
+            "ratio_pred_to_truth": 1.579
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.266,
+            "mae_in": 0.277,
+            "mean_truth_in": 0.025,
+            "ratio_pred_to_truth": 11.534
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": -0.298,
+            "mae_in": 0.721,
+            "mean_truth_in": 1.13,
+            "ratio_pred_to_truth": 0.736
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -3.008,
+            "mae_in": 3.454,
+            "mean_truth_in": 4.402,
+            "ratio_pred_to_truth": 0.317
+          }
+        }
+      },
+      "boosted": {
+        "vs_storm_total": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": -0.265,
+            "mae_in": 0.432,
+            "mean_truth_in": 0.41,
+            "ratio_pred_to_truth": 0.353
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.062,
+            "mae_in": 0.122,
+            "mean_truth_in": 0.053,
+            "ratio_pred_to_truth": 2.173
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": -1.812,
+            "mae_in": 1.812,
+            "mean_truth_in": 2.163,
+            "ratio_pred_to_truth": 0.162
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -6.861,
+            "mae_in": 6.861,
+            "mean_truth_in": 7.444,
+            "ratio_pred_to_truth": 0.078
+          }
+        },
+        "vs_legacy_daily_label": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": -0.083,
+            "mae_in": 0.28,
+            "mean_truth_in": 0.227,
+            "ratio_pred_to_truth": 0.636
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.09,
+            "mae_in": 0.113,
+            "mean_truth_in": 0.025,
+            "ratio_pred_to_truth": 4.574
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": -0.779,
+            "mae_in": 0.948,
+            "mean_truth_in": 1.13,
+            "ratio_pred_to_truth": 0.311
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -3.819,
+            "mae_in": 3.929,
+            "mean_truth_in": 4.402,
+            "ratio_pred_to_truth": 0.132
+          }
+        }
+      },
+      "legacy_label_vs_storm_total": {
+        "all": {
+          "n": 903,
+          "windows": 154,
+          "bias_in": -0.183,
+          "mae_in": 0.183,
+          "mean_truth_in": 0.41,
+          "ratio_pred_to_truth": 0.554
+        },
+        "observed_lt_1in": {
+          "n": 818,
+          "windows": 147,
+          "bias_in": -0.028,
+          "mae_in": 0.028,
+          "mean_truth_in": 0.053,
+          "ratio_pred_to_truth": 0.475
+        },
+        "observed_1_4in": {
+          "n": 58,
+          "windows": 20,
+          "bias_in": -1.033,
+          "mae_in": 1.033,
+          "mean_truth_in": 2.163,
+          "ratio_pred_to_truth": 0.522
+        },
+        "observed_ge_4in": {
+          "n": 27,
+          "windows": 6,
+          "bias_in": -3.042,
+          "mae_in": 3.042,
+          "mean_truth_in": 7.444,
+          "ratio_pred_to_truth": 0.591
+        }
+      },
+      "ood_share": 0.107
+    },
+    "utc_end_previous_date": {
+      "rf": {
+        "vs_storm_total": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": 0.091,
+            "mae_in": 0.509,
+            "mean_truth_in": 0.41,
+            "ratio_pred_to_truth": 1.221
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.307,
+            "mae_in": 0.321,
+            "mean_truth_in": 0.053,
+            "ratio_pred_to_truth": 6.782
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": -0.427,
+            "mae_in": 0.913,
+            "mean_truth_in": 2.163,
+            "ratio_pred_to_truth": 0.803
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -5.355,
+            "mae_in": 5.355,
+            "mean_truth_in": 7.444,
+            "ratio_pred_to_truth": 0.281
+          }
+        },
+        "vs_legacy_daily_label": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": 0.221,
+            "mae_in": 0.466,
+            "mean_truth_in": 0.279,
+            "ratio_pred_to_truth": 1.794
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.316,
+            "mae_in": 0.324,
+            "mean_truth_in": 0.044,
+            "ratio_pred_to_truth": 8.158
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": 0.398,
+            "mae_in": 1.042,
+            "mean_truth_in": 1.339,
+            "ratio_pred_to_truth": 1.297
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -3.021,
+            "mae_in": 3.542,
+            "mean_truth_in": 5.109,
+            "ratio_pred_to_truth": 0.409
+          }
+        }
+      },
+      "boosted": {
+        "vs_storm_total": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": -0.151,
+            "mae_in": 0.419,
+            "mean_truth_in": 0.41,
+            "ratio_pred_to_truth": 0.63
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.113,
+            "mae_in": 0.15,
+            "mean_truth_in": 0.053,
+            "ratio_pred_to_truth": 3.123
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": -0.913,
+            "mae_in": 1.379,
+            "mean_truth_in": 2.163,
+            "ratio_pred_to_truth": 0.578
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -6.517,
+            "mae_in": 6.517,
+            "mean_truth_in": 7.444,
+            "ratio_pred_to_truth": 0.125
+          }
+        },
+        "vs_legacy_daily_label": {
+          "all": {
+            "n": 903,
+            "windows": 154,
+            "bias_in": -0.02,
+            "mae_in": 0.336,
+            "mean_truth_in": 0.279,
+            "ratio_pred_to_truth": 0.926
+          },
+          "observed_lt_1in": {
+            "n": 818,
+            "windows": 147,
+            "bias_in": 0.122,
+            "mae_in": 0.149,
+            "mean_truth_in": 0.044,
+            "ratio_pred_to_truth": 3.757
+          },
+          "observed_1_4in": {
+            "n": 58,
+            "windows": 20,
+            "bias_in": -0.088,
+            "mae_in": 1.153,
+            "mean_truth_in": 1.339,
+            "ratio_pred_to_truth": 0.934
+          },
+          "observed_ge_4in": {
+            "n": 27,
+            "windows": 6,
+            "bias_in": -4.183,
+            "mae_in": 4.257,
+            "mean_truth_in": 5.109,
+            "ratio_pred_to_truth": 0.181
+          }
+        }
+      },
+      "legacy_label_vs_storm_total": {
+        "all": {
+          "n": 903,
+          "windows": 154,
+          "bias_in": -0.131,
+          "mae_in": 0.131,
+          "mean_truth_in": 0.41,
+          "ratio_pred_to_truth": 0.68
+        },
+        "observed_lt_1in": {
+          "n": 818,
+          "windows": 147,
+          "bias_in": -0.009,
+          "mae_in": 0.009,
+          "mean_truth_in": 0.053,
+          "ratio_pred_to_truth": 0.831
+        },
+        "observed_1_4in": {
+          "n": 58,
+          "windows": 20,
+          "bias_in": -0.825,
+          "mae_in": 0.825,
+          "mean_truth_in": 2.163,
+          "ratio_pred_to_truth": 0.619
+        },
+        "observed_ge_4in": {
+          "n": 27,
+          "windows": 6,
+          "bias_in": -2.334,
+          "mae_in": 2.334,
+          "mean_truth_in": 7.444,
+          "ratio_pred_to_truth": 0.686
+        }
+      },
+      "ood_share": 0.109
+    },
+    "cold_precip_10to1": {
+      "vs_storm_total": {
+        "all": {
+          "n": 903,
+          "windows": 154,
+          "bias_in": 0.336,
+          "mae_in": 0.555,
+          "mean_truth_in": 0.41,
+          "ratio_pred_to_truth": 1.819
+        },
+        "observed_lt_1in": {
+          "n": 818,
+          "windows": 147,
+          "bias_in": 0.42,
+          "mae_in": 0.437,
+          "mean_truth_in": 0.053,
+          "ratio_pred_to_truth": 8.915
+        },
+        "observed_1_4in": {
+          "n": 58,
+          "windows": 20,
+          "bias_in": 0.348,
+          "mae_in": 1.101,
+          "mean_truth_in": 2.163,
+          "ratio_pred_to_truth": 1.161
+        },
+        "observed_ge_4in": {
+          "n": 27,
+          "windows": 6,
+          "bias_in": -2.258,
+          "mae_in": 2.978,
+          "mean_truth_in": 7.444,
+          "ratio_pred_to_truth": 0.697
+        }
+      }
+    }
+  },
+  "interpretation_notes": [
+    "Positive bias = prediction too high. Storm totals are clock-independent; legacy labels are the daily mapping each model was trained on.",
+    "Validation seasons were inspected during earlier research; test seasons are held out. Small heavy-snow samples: read n and windows before conclusions."
+  ]
+}
