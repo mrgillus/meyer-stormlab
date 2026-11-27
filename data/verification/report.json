@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-27T01:22:24.084715+00:00",
-  "source_latest_observation_capture": "2026-11-27T01:22:24.084715+00:00",
+  "generated_at": "2026-11-27T06:21:37.691928+00:00",
+  "source_latest_observation_capture": "2026-11-27T06:21:37.691928+00:00",
   "provider_status": "retrieved",
   "provider_error": null,
   "source": "RCC-ACIS daily station reports (snowfall and liquid precipitation)",
@@ -42,7 +42,7 @@
       "title": "Fog signal",
       "forecast_dates": {
         "start": "2026-11-27",
-        "end": "2026-11-27"
+        "end": "2026-11-28"
       },
       "observation_status": "measurement_type_not_connected",
       "verification_status": "not_scored",
@@ -92,10 +92,275 @@
         "start": "2026-11-26",
         "end": "2026-11-26"
       },
-      "observation_status": "event_window_not_complete",
+      "observation_status": "observations_available_timing_review_required",
       "verification_status": "not_scored",
-      "verification_reason": "Forecast window not yet over; Daily station observation windows have not been verified against model calendar-day windows.",
-      "event_total_verification": null,
+      "verification_reason": "Daily station observation windows have not been verified against model calendar-day windows. Event-total check: no_complete_station_reports_within_10_mi.",
+      "event_total_verification": {
+        "method": "clock_independent_event_total",
+        "method_version": 1,
+        "variable": "snow",
+        "catalog_dates": {
+          "start": "2026-11-26",
+          "end": "2026-11-26"
+        },
+        "verification_window": {
+          "start": "2026-11-25",
+          "end": "2026-11-26",
+          "observed_report_dates": {
+            "start": "2026-11-25",
+            "end": "2026-11-27"
+          }
+        },
+        "forecast_capture": {
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "snapshot_path": "data/snapshots/2026-11/20261125T044200Z.json"
+        },
+        "status": "not_scored",
+        "reason": "no_complete_station_reports_within_10_mi",
+        "stations_scored": 0,
+        "stations_excluded": [
+          {
+            "station_id": "ACIS:101974",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:102012",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:102357",
+            "reason": "missing_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:103045",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:110526",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:110795",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:111417",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:112991",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:113501",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:113541",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:11369",
+            "reason": "missing_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:11375",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:11384",
+            "reason": "missing_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:11385",
+            "reason": "missing_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:11391",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:11398",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:11400",
+            "reason": "missing_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:114063",
+            "reason": "missing_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:114951",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:115193",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:11593",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:116537",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:116860",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117213",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117454",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117577",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117679",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:117784",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:118191",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:118225",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:118430",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:31769",
+            "reason": "missing_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:34085",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:34380",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:47",
+            "reason": "missing_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:51821",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:51822",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:54553",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:54650",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:54819",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:54822",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:54826",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:54827",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:5766",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:64075",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:75090",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:75569",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:75995",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:78304",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:83337",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:85549",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:95209",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:96000",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:96384",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:96928",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:97399",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:97417",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:98525",
+            "reason": "missing_report_2026-11-25"
+          }
+        ],
+        "scores": {},
+        "threshold_contingency": {},
+        "station_pairs": [],
+        "caveats": [
+          "Station point reports compared with the forecast for the nearest town (<= 10 mi); not an area average.",
+          "Clock independence relies on near-zero forecast on the adjacent days; residual bound is reported per pair.",
+          "Single event, correlated stations: not a skill estimate or calibration result."
+        ]
+      },
       "actual_observed_storm_total_in": null,
       "forecast_error_in": null,
       "model_skill": null,
@@ -685,7 +950,7 @@
       "title": "Rainfall",
       "forecast_dates": {
         "start": "2026-11-26",
-        "end": "2026-11-29"
+        "end": "2026-11-27"
       },
       "observation_status": "measurement_type_not_connected",
       "verification_status": "not_scored",
@@ -711,10 +976,275 @@
         "start": "2026-11-26",
         "end": "2026-11-26"
       },
-      "observation_status": "event_window_not_complete",
+      "observation_status": "observations_available_timing_review_required",
       "verification_status": "not_scored",
-      "verification_reason": "Forecast window not yet over; Daily station observation windows have not been verified against model calendar-day windows.",
-      "event_total_verification": null,
+      "verification_reason": "Daily station observation windows have not been verified against model calendar-day windows. Event-total check: no_complete_station_reports_within_10_mi.",
+      "event_total_verification": {
+        "method": "clock_independent_event_total",
+        "method_version": 1,
+        "variable": "precipitation",
+        "catalog_dates": {
+          "start": "2026-11-26",
+          "end": "2026-11-26"
+        },
+        "verification_window": {
+          "start": "2026-11-25",
+          "end": "2026-11-27",
+          "observed_report_dates": {
+            "start": "2026-11-25",
+            "end": "2026-11-28"
+          }
+        },
+        "forecast_capture": {
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "snapshot_path": "data/snapshots/2026-11/20261125T044200Z.json"
+        },
+        "status": "not_scored",
+        "reason": "no_complete_station_reports_within_10_mi",
+        "stations_scored": 0,
+        "stations_excluded": [
+          {
+            "station_id": "ACIS:101974",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:102012",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:102357",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:103045",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:110526",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:110795",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:111417",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:112991",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:113501",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:113541",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:11369",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:11375",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:11384",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:11385",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:11391",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:11398",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:11400",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:114063",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:114951",
+            "reason": "missing_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:115193",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:11593",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:116537",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:116860",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117213",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117454",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117577",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:117679",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:117784",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:118191",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:118225",
+            "reason": "missing_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:118430",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:31769",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:34085",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:34380",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:47",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:51821",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:51822",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:54553",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:54650",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:54819",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:54822",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:54826",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:54827",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:5766",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:64075",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:75090",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:75569",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:75995",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:78304",
+            "reason": "missing_report_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:83337",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:85549",
+            "reason": "missing_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:95209",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:96000",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:96384",
+            "reason": "missing_report_2026-11-25"
+          },
+          {
+            "station_id": "ACIS:96928",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:97399",
+            "reason": "missing_2026-11-26"
+          },
+          {
+            "station_id": "ACIS:97417",
+            "reason": "missing_report_2026-11-27"
+          },
+          {
+            "station_id": "ACIS:98525",
+            "reason": "missing_report_2026-11-25"
+          }
+        ],
+        "scores": {},
+        "threshold_contingency": {},
+        "station_pairs": [],
+        "caveats": [
+          "Station point reports compared with the forecast for the nearest town (<= 10 mi); not an area average.",
+          "Clock independence relies on near-zero forecast on the adjacent days; residual bound is reported per pair.",
+          "Single event, correlated stations: not a skill estimate or calibration result."
+        ]
+      },
       "actual_observed_storm_total_in": null,
       "forecast_error_in": null,
       "model_skill": null,
@@ -814,6 +1344,17 @@
           "distance_to_near_town_mi": 3.2,
           "reported_date": "2026-11-26",
           "value_in": 1.4,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:103045",
+          "station_name": "WASHINGTON 3.3 ESE",
+          "near_town": "Washington",
+          "distance_to_near_town_mi": 3.4,
+          "reported_date": "2026-11-26",
+          "value_in": 0.86,
           "quantity": "daily liquid precipitation",
           "raw_observation_clock": "7",
           "measurement_interval_verified": false
@@ -1116,8 +1657,8 @@
           "measurement_interval_verified": false
         }
       ],
-      "station_count": 36,
-      "daily_report_count": 36,
+      "station_count": 37,
+      "daily_report_count": 37,
       "forecast_reference": {
         "status": "pre_event_capture",
         "captured_at": "2026-11-26T04:40:09.413279+00:00",
