@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-27T20:03:30.350388+00:00",
+  "generated_at": "2026-11-27T20:43:24.653149+00:00",
   "fingerprint": "9c642ad6ef2a92f8365b370a43f670fcdb4c147ba3ce64ef5dd657b51607b7ca",
   "stations": 141,
   "complete": 3922,
   "attempted": 3925,
-  "received_this_run": 695,
+  "received_this_run": 3,
   "total_initializations": 3925,
-  "exhausted": 0,
+  "exhausted": 2,
   "note": "Station-dense +24/+48/+72h t2m, t850, precip24 extension; existing archives untouched."
 }
