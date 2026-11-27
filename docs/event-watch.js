@@ -301,25 +301,40 @@
   // Glance layer: one chip per weather family, labelled by peak model agreement.
   const chipNames={snow:"Snow",light_snow:"Flurries",ice:"Ice",rain:"Rain",severe:"Storms",wind:"Wind",fog:"Fog",flood:"Flooding",
     warm_day:"Warm day",cold_day:"Cold day",warm_night:"Warm night",cold_night:"Cold night",cold:"Cold",cold_stress:"Cold",heat:"Heat",heat_stress:"Heat"};
-  function peakSupport(group,kind,records){
-    const f=seriesFor(group,kind,records);
-    const pts=[...(f.hourly?.points||[]),...(f.daily?.points||[])].filter(p=>numeric(p.support_pct));
-    return pts.length?Math.max(...pts.map(p=>p.support_pct)):null;
+  // Share of models supporting a mode in a capture (not a calibrated probability), and its 24h trend.
+  const supportOf=a=>a&&numeric(a.support_pct)?a.support_pct:null;
+  const when=s=>new Intl.DateTimeFormat("en-US",{timeZone:CT,weekday:"short",hour:"numeric"}).format(new Date(s));
+  function supportTrend(m){
+    const hist=(m.assessments||[]).filter(a=>supportOf(a)!==null&&a.captured_at);
+    const last=hist.at(-1);
+    if(!last)return null;
+    // Faded: not in the latest capture, so current support is zero; compare with its last value.
+    if(m.status!=="in_latest_capture")return {pct:0,prior:last.support_pct,priorAt:last.captured_at,models:0,total:last.total_models,unknown:0,faded:true};
+    const t=Date.parse(last.captured_at);
+    const older=hist.filter(a=>Date.parse(a.captured_at)<=t-6*3600000);
+    const prior=older.reduce((b,a)=>!b||Math.abs(Date.parse(a.captured_at)-(t-864e5))<Math.abs(Date.parse(b.captured_at)-(t-864e5))?a:b,null);
+    const upper=numeric(last.possible_support_pct)&&last.possible_support_pct>last.support_pct?last.possible_support_pct:null;
+    return {pct:last.support_pct,upper,prior:prior?prior.support_pct:null,priorAt:prior?.captured_at||null,
+      models:last.supporting_models,total:last.total_models,unknown:last.unknown_models||0};
   }
-  function agreement(pct){
-    return pct>=75?{key:"strong",word:"strong"}:pct>=50?{key:"some",word:"some"}:{key:"weak",word:"weak"};
+  function trendMark(t){
+    if(t.prior===null)return {cls:"new",sym:"new",text:"No earlier forecast to compare yet"};
+    const d=t.pct-t.prior,since=" ("+t.prior+"% on "+when(t.priorAt)+")";
+    if(t.faded)return {cls:"down",sym:"↓",text:"Dropped out of the latest forecasts"+since};
+    if(d>=25)return {cls:"up",sym:"↑",text:"Rising"+since};
+    if(d<=-25)return {cls:"down",sym:"↓",text:"Falling"+since};
+    return {cls:"flat",sym:"→",text:"Steady"+since};
   }
   function glanceChips(group,modes){
     return activeFamilies(modes).map(f=>{
-      const members=modes.filter(m=>f.kinds.includes(m.kind));
       let best=null;
-      [...new Set(members.map(m=>m.kind))].forEach(kind=>{
-        const pct=peakSupport(group,kind,members.filter(m=>m.kind===kind));
-        if(numeric(pct)&&(!best||pct>best.pct||(pct===best.pct&&kind==="snow")))best={kind,pct};
+      modes.filter(m=>f.kinds.includes(m.kind)).forEach(m=>{
+        const t=supportTrend(m);
+        if(t&&(!best||t.pct>best.t.pct||(t.pct===best.t.pct&&m.kind==="snow")))best={kind:m.kind,m,t};
       });
-      if(!best||best.pct<=0)return null;
-      const name=["snow","temperature"].includes(f.id)?(chipNames[best.kind]||modeLabel(members.find(m=>m.kind===best.kind))):(chipNames[f.id]||f.name);
-      return {f,name,pct:best.pct,...agreement(best.pct)};
+      if(!best||(best.t.pct<=0&&!(best.t.prior>0)))return null;
+      const name=["snow","temperature"].includes(f.id)?(chipNames[best.kind]||modeLabel(best.m)):(chipNames[f.id]||f.name);
+      return {f,name,pct:best.t.pct,t:best.t,trend:trendMark(best.t)};
     }).filter(Boolean).sort((a,b)=>b.pct-a.pct);
   }
   const weekday=d=>new Intl.DateTimeFormat("en-US",{timeZone:CT,weekday:"short"}).format(new Date(d+"T12:00:00Z"));
@@ -333,14 +348,18 @@
   function groupCard(group,isCurrent=false){
     const modes=modeItems(group),fs=activeFamilies(modes),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
     const chips=glanceChips(group,modes);
-    const pf=chips[0]?.f||fs.find(f=>f.kinds.includes(primary?.kind))||{id:"other"};
+    const pf=chips.find(c=>c.pct>0)?.f||fs.find(f=>f.kinds.includes(primary?.kind))||{id:"other"};
     const tone=marker(group.status),faded=group.status!=="in_latest_capture";
     const shown=chips.slice(0,4),extra=chips.length-shown.length;
     const header='<div class="wx-event-hero wx-glance wx-'+pf.id+'">'+
       '<div class="wx-glance-top"><div class="wx-icon-box">'+weatherArt(pf.id)+'</div>'+
       '<div class="wx-glance-name"><h3>'+safe(group.name)+'</h3><p>'+safe(longDate(group.start_date)+(group.start_date===group.end_date?"":" – "+longDate(group.end_date)))+'</p></div>'+
       '<span class="wx-when'+(isCurrent?" now":"")+'">'+safe(whenLabel(group))+'</span></div>'+
-      (shown.length?'<div class="wx-chips">'+shown.map(c=>'<span class="wx-chip wx-'+c.f.id+' '+c.key+'" title="'+safe(c.name+": "+c.pct+"% of forecast models show it at peak. Not a probability.")+'">'+weatherArt(c.f.id)+safe(c.name)+' <b>'+safe(c.word)+'</b></span>').join("")+(extra>0?'<span class="wx-chip more">+'+extra+'</span>':"")+'</div>':
+      (shown.length?'<div class="wx-chips">'+shown.map(c=>{
+        const of=numeric(c.t.models)&&numeric(c.t.total)?c.t.models+" of "+c.t.total+" models":c.pct+"% of models";
+        const tip=c.name+": "+(c.t.faded?"no models show it now":of+" show it")+(c.t.unknown?"; "+c.t.unknown+" had no data for these dates, so the share could be up to "+(c.t.upper??c.pct)+"%":"")+". "+c.trend.text+". Share of models, not a calibrated probability.";
+        return '<span class="wx-chip wx-'+c.f.id+(c.pct<50?" low":"")+'" title="'+safe(tip)+'">'+weatherArt(c.f.id)+safe(c.name)+' <b>'+safe(c.t.upper?c.pct+"–"+c.t.upper:c.pct)+'%</b><i class="wx-trend '+c.trend.cls+'" aria-label="'+safe(c.trend.text)+'">'+safe(c.trend.sym)+'</i></span>';
+      }).join("")+(extra>0?'<span class="wx-chip more">+'+extra+'</span>':"")+'</div>':
         '<p class="wx-glance-note">'+(faded?"Faded: no model shows it in the latest guidance.":"No model currently shows this weather.")+'</p>')+
       (faded&&shown.length?'<p class="wx-glance-note">'+safe(isCurrent?"Signal has faded in the latest guidance.":"Faded from the latest model guidance.")+'</p>':"")+
       '</div>';
