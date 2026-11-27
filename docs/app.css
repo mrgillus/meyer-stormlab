@@ -159,3 +159,24 @@ body.events-only #view-archive,
 body.events-only #view-lab,
 body.events-only .event-case-button,
 body.events-only #view-now > :not(.section-entrance):not(.event-chronicle){display:none!important}
+
+/* Event cards: glance layer (name, when, dates, family chips); everything else in "Forecast details". */
+.wx-glance{padding:16px 16px 14px}
+.wx-glance-top{display:flex;align-items:center;gap:12px}
+.wx-glance-top .wx-icon-box{width:40px;height:40px;border-radius:11px}
+.wx-glance-top .wx-icon{width:24px;height:24px}
+.wx-glance-name{flex:1;min-width:0}
+.wx-glance-name h3{margin:0;font-size:22px;font-weight:800;letter-spacing:-.03em}
+.wx-glance-name p{margin:2px 0 0;font-size:12px;color:#bdd0df}
+.wx-when{flex:none;font-size:11px;font-weight:700;color:#cfe2ee;border:1px solid #3d5c71;border-radius:99px;padding:4px 9px;white-space:nowrap}
+.wx-when.now{color:#0b1b2b;background:var(--wx);border-color:var(--wx)}
+.wx-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.wx-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#e3eef5;padding:4px 9px 4px 6px;border-radius:8px;background:rgba(var(--wx-rgb),.12);border:1px solid rgba(var(--wx-rgb),.28)}
+.wx-chip .wx-icon{width:15px;height:15px;color:var(--wx)}
+.wx-chip b{font-weight:700;color:var(--wx)}
+.wx-chip.weak{background:transparent;border-style:dashed}
+.wx-chip.weak b{color:#9fb6c6;font-weight:600}
+.wx-chip.more{color:#9fb6c6;background:transparent;border-color:#3d5c71}
+.wx-glance-note{margin:10px 0 0;font-size:12px;color:#a9bccb}
+.wx-event .wx-upcoming-detail>summary{padding:10px 16px;font-size:12px}
+@media(max-width:740px){.wx-glance-name h3{font-size:20px}.wx-when{font-size:10px;padding:3px 8px}}

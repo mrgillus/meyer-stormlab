@@ -298,16 +298,56 @@
       return '<section class="wx-family wx-'+f.id+'"><div class="wx-family-head">'+weatherArt(f.id,"wx-watermark")+'<div class="wx-icon-box">'+weatherArt(f.id)+'</div><div><h4>'+safe(f.name)+'</h4><small>'+kindsIn.length+' weather mode'+(kindsIn.length===1?"":"s")+'</small></div></div><div class="wx-family-modes">'+rows+'</div></section>';
     }).join("");
   }
+  // Glance layer: one chip per weather family, labelled by peak model agreement.
+  const chipNames={snow:"Snow",light_snow:"Flurries",ice:"Ice",rain:"Rain",severe:"Storms",wind:"Wind",fog:"Fog",flood:"Flooding",
+    warm_day:"Warm day",cold_day:"Cold day",warm_night:"Warm night",cold_night:"Cold night",cold:"Cold",cold_stress:"Cold",heat:"Heat",heat_stress:"Heat"};
+  function peakSupport(group,kind,records){
+    const f=seriesFor(group,kind,records);
+    const pts=[...(f.hourly?.points||[]),...(f.daily?.points||[])].filter(p=>numeric(p.support_pct));
+    return pts.length?Math.max(...pts.map(p=>p.support_pct)):null;
+  }
+  function agreement(pct){
+    return pct>=75?{key:"strong",word:"strong"}:pct>=50?{key:"some",word:"some"}:{key:"weak",word:"weak"};
+  }
+  function glanceChips(group,modes){
+    return activeFamilies(modes).map(f=>{
+      const members=modes.filter(m=>f.kinds.includes(m.kind));
+      let best=null;
+      [...new Set(members.map(m=>m.kind))].forEach(kind=>{
+        const pct=peakSupport(group,kind,members.filter(m=>m.kind===kind));
+        if(numeric(pct)&&(!best||pct>best.pct||(pct===best.pct&&kind==="snow")))best={kind,pct};
+      });
+      if(!best||best.pct<=0)return null;
+      const name=["snow","temperature"].includes(f.id)?(chipNames[best.kind]||modeLabel(members.find(m=>m.kind===best.kind))):(chipNames[f.id]||f.name);
+      return {f,name,pct:best.pct,...agreement(best.pct)};
+    }).filter(Boolean).sort((a,b)=>b.pct-a.pct);
+  }
+  const weekday=d=>new Intl.DateTimeFormat("en-US",{timeZone:CT,weekday:"short"}).format(new Date(d+"T12:00:00Z"));
+  const longDate=d=>weekday(d)+" "+short(d);
+  function whenLabel(group){
+    const today=regionalToday();
+    if(group.start_date<=today)return group.end_date===today?"Now · ends today":"Now · through "+weekday(group.end_date);
+    const days=Math.round((Date.parse(group.start_date+"T12:00:00Z")-Date.parse(today+"T12:00:00Z"))/86400000);
+    return days===1?"Tomorrow":"In "+days+" days";
+  }
   function groupCard(group,isCurrent=false){
     const modes=modeItems(group),fs=activeFamilies(modes),primary=modes.find(m=>m.id===group.primary_mode_id)||modes[0];
-    const pf=fs.find(f=>f.kinds.includes(primary?.kind))||{id:"other"};
-    const tone=marker(group.status),types=new Set(modes.map(m=>m.kind)).size;
-    const flag=isCurrent?(group.status==="in_latest_capture"?"Current event window":"Current window · signal faded"):describe(group.status);
-    const header='<div class="wx-event-hero wx-'+pf.id+'">'+weatherArt(pf.id,"wx-event-art")+'<div class="wx-event-kicker"><span>'+safe(isCurrent?"FEATURED EVENT":"UPCOMING EVENT")+'</span><span class="event-flag">'+safe(flag)+'</span></div><div class="wx-event-title"><div class="wx-icon-box">'+weatherArt(pf.id)+'</div><div><h3>Event '+safe(group.name)+'</h3><p>'+safe(dateRange(group))+' · '+types+' weather modes</p></div></div><div class="wx-family-tags">'+fs.map(f=>'<span class="wx-'+f.id+'">'+weatherArt(f.id)+safe(f.name)+'</span>').join("")+'</div></div>';
-    const contents=eventRibbon(group,modes,fs)+'<div class="wx-families">'+familyRows(modes,group,isCurrent)+'</div><p class="watch-muted wx-source">Regional forecast guidance. Model support is not a calibrated probability. Hourly and daily thresholds differ.</p>';
+    const chips=glanceChips(group,modes);
+    const pf=chips[0]?.f||fs.find(f=>f.kinds.includes(primary?.kind))||{id:"other"};
+    const tone=marker(group.status),faded=group.status!=="in_latest_capture";
+    const shown=chips.slice(0,4),extra=chips.length-shown.length;
+    const header='<div class="wx-event-hero wx-glance wx-'+pf.id+'">'+
+      '<div class="wx-glance-top"><div class="wx-icon-box">'+weatherArt(pf.id)+'</div>'+
+      '<div class="wx-glance-name"><h3>'+safe(group.name)+'</h3><p>'+safe(longDate(group.start_date)+(group.start_date===group.end_date?"":" – "+longDate(group.end_date)))+'</p></div>'+
+      '<span class="wx-when'+(isCurrent?" now":"")+'">'+safe(whenLabel(group))+'</span></div>'+
+      (shown.length?'<div class="wx-chips">'+shown.map(c=>'<span class="wx-chip wx-'+c.f.id+' '+c.key+'" title="'+safe(c.name+": "+c.pct+"% of forecast models show it at peak. Not a probability.")+'">'+weatherArt(c.f.id)+safe(c.name)+' <b>'+safe(c.word)+'</b></span>').join("")+(extra>0?'<span class="wx-chip more">+'+extra+'</span>':"")+'</div>':
+        '<p class="wx-glance-note">'+(faded?"Faded: no model shows it in the latest guidance.":"No model currently shows this weather.")+'</p>')+
+      (faded&&shown.length?'<p class="wx-glance-note">'+safe(isCurrent?"Signal has faded in the latest guidance.":"Faded from the latest model guidance.")+'</p>':"")+
+      '</div>';
+    const contents=eventRibbon(group,modes,fs)+'<div class="wx-families">'+familyRows(modes,group,false)+'</div><p class="watch-muted wx-source">Regional forecast guidance. Model support is not a calibrated probability. Hourly and daily thresholds differ.</p>'+
+      '<div class="wx-event-footer"><small>First seen '+safe(short(group.first_seen))+'</small><button type="button" class="event-case-button" data-event-id="'+safe(primary?.id||group.primary_mode_id)+'">Storm files →</button></div>';
     return '<article class="event-signal wx-event '+(isCurrent?"wx-featured":"wx-upcoming")+' '+safe(tone)+'">'+header+
-      (isCurrent?contents:'<details class="wx-upcoming-detail"><summary>Explore weather modes <span aria-hidden="true">⌄</span></summary>'+contents+'</details>')+
-      '<div class="wx-event-footer"><small>First seen '+safe(short(group.first_seen))+'</small><button type="button" class="event-case-button" data-event-id="'+safe(primary?.id||group.primary_mode_id)+'">Storm files →</button></div></article>';
+      '<details class="wx-upcoming-detail"><summary>Forecast details <span aria-hidden="true">⌄</span></summary>'+contents+'</details></article>';
   }
   function modeScore(m){
     const p=m.assessments?.at(-1);
