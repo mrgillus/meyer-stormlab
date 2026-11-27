@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-27T01:24:18.494716+00:00",
-  "source_latest_capture": "2026-11-26T22:29:40.404500+00:00",
-  "capture_age_hours": 2.91,
-  "capture_count_processed": 12,
+  "generated_at": "2026-11-27T05:20:00.457557+00:00",
+  "source_latest_capture": "2026-11-27T04:38:26.433990+00:00",
+  "capture_age_hours": 0.69,
+  "capture_count_processed": 13,
   "climatology": {
     "status": "available",
     "period": "1991-2020",
@@ -194,7 +194,7 @@
       "start_date": "2026-11-26",
       "end_date": "2026-11-29",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
       "status": "in_latest_capture",
       "priority": "notable",
       "forecast_modes": {
@@ -205,7 +205,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -239,21 +239,6 @@
               },
               {
                 "time": "2026-11-28",
-                "support_pct": 50,
-                "possible_support_pct": 50,
-                "unknown_models": 0,
-                "supporting_models": 2,
-                "quantity": null,
-                "quantity_models": 0,
-                "models": {
-                  "GFS": "supports",
-                  "ECMWF": "supports",
-                  "GEM": "clear",
-                  "ICON": "clear"
-                }
-              },
-              {
-                "time": "2026-11-29",
                 "support_pct": 25,
                 "possible_support_pct": 25,
                 "unknown_models": 0,
@@ -262,6 +247,21 @@
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
+                  "ECMWF": "supports",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-29",
+                "support_pct": 50,
+                "possible_support_pct": 50,
+                "unknown_models": 0,
+                "supporting_models": 2,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
                   "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
@@ -278,7 +278,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -312,14 +312,14 @@
               },
               {
                 "time": "2026-11-28",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
-                  "GFS": "clear",
+                  "GFS": "supports",
                   "ECMWF": "clear",
                   "GEM": "clear",
                   "ICON": "clear"
@@ -348,7 +348,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-27T00:00",
@@ -517,14 +517,14 @@
               },
               {
                 "time": "2026-11-27T11:00",
-                "support_pct": 25,
-                "possible_support_pct": 25,
+                "support_pct": 0,
+                "possible_support_pct": 0,
                 "unknown_models": 0,
-                "supporting_models": 1,
+                "supporting_models": 0,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
-                  "GFS": "supports",
+                  "GFS": "clear",
                   "ECMWF": "clear",
                   "GEM": "clear",
                   "ICON": "clear"
@@ -709,6 +709,366 @@
                   "GEM": "clear",
                   "ICON": "clear"
                 }
+              },
+              {
+                "time": "2026-11-28T00:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T01:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T02:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T03:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T04:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T05:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T06:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T07:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T08:00",
+                "support_pct": 0,
+                "possible_support_pct": 0,
+                "unknown_models": 0,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T09:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T10:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T11:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T12:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T13:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T14:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T15:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T16:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T17:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T18:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T19:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T20:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T21:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T22:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
+              },
+              {
+                "time": "2026-11-28T23:00",
+                "support_pct": 25,
+                "possible_support_pct": 25,
+                "unknown_models": 0,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "clear"
+                }
               }
             ]
           }
@@ -720,7 +1080,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -739,15 +1099,15 @@
               },
               {
                 "time": "2026-11-27",
-                "support_pct": 25,
-                "possible_support_pct": 25,
+                "support_pct": 50,
+                "possible_support_pct": 50,
                 "unknown_models": 0,
-                "supporting_models": 1,
+                "supporting_models": 2,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "supports",
                   "ICON": "clear"
                 }
@@ -790,7 +1150,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-27T00:00",
@@ -854,90 +1214,90 @@
               },
               {
                 "time": "2026-11-27T04:00",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
               },
               {
                 "time": "2026-11-27T05:00",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
               },
               {
                 "time": "2026-11-27T06:00",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
               },
               {
                 "time": "2026-11-27T07:00",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
               },
               {
                 "time": "2026-11-27T08:00",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
               },
               {
                 "time": "2026-11-27T09:00",
-                "support_pct": 0,
-                "possible_support_pct": 0,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 0,
+                "supporting_models": 1,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "clear",
+                  "ECMWF": "supports",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
@@ -1162,7 +1522,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1170,7 +1530,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 0,
                 "supporting_models": 4,
-                "quantity": 1.527,
+                "quantity": 1.496,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1185,7 +1545,7 @@
                 "possible_support_pct": 0,
                 "unknown_models": 0,
                 "supporting_models": 0,
-                "quantity": 0.027,
+                "quantity": 0.047,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
@@ -1200,7 +1560,7 @@
                 "possible_support_pct": 0,
                 "unknown_models": 0,
                 "supporting_models": 0,
-                "quantity": 0.004,
+                "quantity": 0.0,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
@@ -1215,7 +1575,7 @@
                 "possible_support_pct": 0,
                 "unknown_models": 0,
                 "supporting_models": 0,
-                "quantity": 0.724,
+                "quantity": 0.579,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
@@ -1235,7 +1595,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1254,14 +1614,14 @@
               },
               {
                 "time": "2026-11-27",
-                "support_pct": 75,
-                "possible_support_pct": 75,
+                "support_pct": 100,
+                "possible_support_pct": 100,
                 "unknown_models": 0,
-                "supporting_models": 3,
-                "quantity": 0.026,
+                "supporting_models": 4,
+                "quantity": 0.045,
                 "quantity_models": 4,
                 "models": {
-                  "GFS": "clear",
+                  "GFS": "supports",
                   "ECMWF": "supports",
                   "GEM": "supports",
                   "ICON": "supports"
@@ -1269,15 +1629,15 @@
               },
               {
                 "time": "2026-11-28",
-                "support_pct": 25,
-                "possible_support_pct": 25,
+                "support_pct": 0,
+                "possible_support_pct": 0,
                 "unknown_models": 0,
-                "supporting_models": 1,
-                "quantity": 0.004,
+                "supporting_models": 0,
+                "quantity": 0.0,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "supports",
+                  "ECMWF": "clear",
                   "GEM": "clear",
                   "ICON": "clear"
                 }
@@ -1288,7 +1648,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 0,
                 "supporting_models": 4,
-                "quantity": 0.628,
+                "quantity": 0.561,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1308,7 +1668,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1361,7 +1721,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.012,
+                "quantity": 0.01,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
@@ -1381,7 +1741,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26",
@@ -1389,7 +1749,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 0,
                 "supporting_models": 4,
-                "quantity": 5.526,
+                "quantity": 5.457,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1451,7 +1811,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-11-26T00:00",
@@ -1699,7 +2059,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.069,
+                "quantity": 0.042,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1714,7 +2074,7 @@
                 "possible_support_pct": 50,
                 "unknown_models": 0,
                 "supporting_models": 2,
-                "quantity": 0.083,
+                "quantity": 0.042,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
@@ -1740,15 +2100,15 @@
               },
               {
                 "time": "2026-11-26T19:00",
-                "support_pct": 75,
-                "possible_support_pct": 75,
+                "support_pct": 50,
+                "possible_support_pct": 50,
                 "unknown_models": 0,
-                "supporting_models": 3,
+                "supporting_models": 2,
                 "quantity": 0.028,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "supports",
-                  "ECMWF": "supports",
+                  "ECMWF": "clear",
                   "GEM": "supports",
                   "ICON": "clear"
                 }
@@ -1762,23 +2122,23 @@
                 "quantity": 0.014,
                 "quantity_models": 4,
                 "models": {
-                  "GFS": "clear",
-                  "ECMWF": "supports",
+                  "GFS": "supports",
+                  "ECMWF": "clear",
                   "GEM": "supports",
                   "ICON": "clear"
                 }
               },
               {
                 "time": "2026-11-26T21:00",
-                "support_pct": 50,
-                "possible_support_pct": 50,
+                "support_pct": 25,
+                "possible_support_pct": 25,
                 "unknown_models": 0,
-                "supporting_models": 2,
-                "quantity": 0.014,
+                "supporting_models": 1,
+                "quantity": 0.0,
                 "quantity_models": 4,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "supports",
+                  "ECMWF": "clear",
                   "GEM": "supports",
                   "ICON": "clear"
                 }
@@ -1819,27 +2179,36 @@
       }
     },
     {
-      "id": "event-precipitation-20261204",
-      "name": "Flint",
-      "primary_mode_id": "precipitation-20261204",
+      "id": "event-precipitation-20261207",
+      "name": "Cedar",
+      "primary_mode_id": "precipitation-20261207",
       "mode_ids": [
         "drizzle-20261204",
+        "light_snow-20261207",
         "precipitation-20261204",
+        "precipitation-20261207",
         "rain-20261203",
         "showers-20261203",
-        "warm_night-20261203"
+        "warm_night-20261203",
+        "wind-20261207"
       ],
       "aliases": [
+        "Ember",
+        "Flint",
         "Indigo",
+        "Juniper",
         "Maple",
         "Raven",
+        "Sable",
         "Umber",
-        "Willow"
+        "Vale",
+        "Willow",
+        "Xenia"
       ],
       "start_date": "2026-12-03",
-      "end_date": "2026-12-05",
-      "first_seen": "2026-11-26T10:33:49.497972+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
+      "end_date": "2026-12-07",
+      "first_seen": "2026-11-24T18:57:10.943633+00:00",
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
       "status": "in_latest_capture",
       "priority": "notable",
       "forecast_modes": {
@@ -1850,7 +2219,7 @@
             "direction": "gte",
             "unit": "signal",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -1869,14 +2238,14 @@
               },
               {
                 "time": "2026-12-04",
-                "support_pct": 75,
-                "possible_support_pct": 100,
+                "support_pct": 50,
+                "possible_support_pct": 75,
                 "unknown_models": 1,
-                "supporting_models": 3,
+                "supporting_models": 2,
                 "quantity": null,
                 "quantity_models": 0,
                 "models": {
-                  "GFS": "supports",
+                  "GFS": "clear",
                   "ECMWF": "supports",
                   "GEM": "supports",
                   "ICON": "unknown"
@@ -1896,6 +2265,124 @@
                   "GEM": "supports",
                   "ICON": "unknown"
                 }
+              },
+              {
+                "time": "2026-12-06",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-07",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "light_snow": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1,
+            "direction": "gte",
+            "unit": "signal",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
+            "points": [
+              {
+                "time": "2026-12-03",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-06",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-07",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
               }
             ]
           },
@@ -1908,7 +2395,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -1927,14 +2414,14 @@
               },
               {
                 "time": "2026-12-04",
-                "support_pct": null,
-                "possible_support_pct": 25,
+                "support_pct": 25,
+                "possible_support_pct": 50,
                 "unknown_models": 1,
-                "supporting_models": 0,
-                "quantity": 0.72,
+                "supporting_models": 1,
+                "quantity": 0.799,
                 "quantity_models": 3,
                 "models": {
-                  "GFS": "clear",
+                  "GFS": "supports",
                   "ECMWF": "clear",
                   "GEM": "clear",
                   "ICON": "unknown"
@@ -1954,6 +2441,36 @@
                   "GEM": "clear",
                   "ICON": "unknown"
                 }
+              },
+              {
+                "time": "2026-12-06",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 0.016,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-07",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 0.559,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
               }
             ]
           },
@@ -1966,7 +2483,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -1989,7 +2506,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 1,
                 "supporting_models": 3,
-                "quantity": 0.638,
+                "quantity": 0.799,
                 "quantity_models": 3,
                 "models": {
                   "GFS": "supports",
@@ -2012,6 +2529,36 @@
                   "GEM": "supports",
                   "ICON": "unknown"
                 }
+              },
+              {
+                "time": "2026-12-06",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.016,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-07",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.559,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
               }
             ]
           },
@@ -2024,7 +2571,7 @@
             "direction": "gte",
             "unit": "in",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -2070,6 +2617,36 @@
                   "GEM": "clear",
                   "ICON": "unknown"
                 }
+              },
+              {
+                "time": "2026-12-06",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-07",
+                "support_pct": null,
+                "possible_support_pct": 75,
+                "unknown_models": 3,
+                "supporting_models": 0,
+                "quantity": 0.0,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
               }
             ]
           },
@@ -2082,7 +2659,7 @@
             "direction": "gte",
             "unit": "sigma",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-12-03",
@@ -2090,7 +2667,7 @@
                 "possible_support_pct": 100,
                 "unknown_models": 1,
                 "supporting_models": 3,
-                "quantity": 2.663,
+                "quantity": 2.347,
                 "quantity_models": 3,
                 "models": {
                   "GFS": "supports",
@@ -2128,96 +2705,14 @@
                   "GEM": "clear",
                   "ICON": "unknown"
                 }
-              }
-            ]
-          },
-          "hourly": null
-        }
-      }
-    },
-    {
-      "id": "event-precipitation-20261207",
-      "name": "Cedar",
-      "primary_mode_id": "precipitation-20261207",
-      "mode_ids": [
-        "drizzle-20261208",
-        "precipitation-20261207",
-        "rain-20261207",
-        "showers-20261207",
-        "wind-20261207"
-      ],
-      "aliases": [
-        "Ember",
-        "Juniper",
-        "Sable",
-        "Vale"
-      ],
-      "start_date": "2026-12-07",
-      "end_date": "2026-12-08",
-      "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "status": "in_latest_capture",
-      "priority": "notable",
-      "forecast_modes": {
-        "drizzle": {
-          "daily": {
-            "resolution": "daily",
-            "threshold": 1,
-            "direction": "gte",
-            "unit": "signal",
-            "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
-            "points": [
-              {
-                "time": "2026-12-07",
-                "support_pct": null,
-                "possible_support_pct": 75,
-                "unknown_models": 3,
-                "supporting_models": 0,
-                "quantity": null,
-                "quantity_models": 0,
-                "models": {
-                  "GFS": "clear",
-                  "ECMWF": "unknown",
-                  "GEM": "unknown",
-                  "ICON": "unknown"
-                }
               },
               {
-                "time": "2026-12-08",
-                "support_pct": 25,
-                "possible_support_pct": 100,
-                "unknown_models": 3,
-                "supporting_models": 1,
-                "quantity": null,
-                "quantity_models": 0,
-                "models": {
-                  "GFS": "supports",
-                  "ECMWF": "unknown",
-                  "GEM": "unknown",
-                  "ICON": "unknown"
-                }
-              }
-            ]
-          },
-          "hourly": null
-        },
-        "precipitation": {
-          "daily": {
-            "resolution": "daily",
-            "threshold": 1.25,
-            "direction": "gte",
-            "unit": "in",
-            "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
-            "points": [
-              {
-                "time": "2026-12-07",
+                "time": "2026-12-06",
                 "support_pct": null,
                 "possible_support_pct": 75,
                 "unknown_models": 3,
                 "supporting_models": 0,
-                "quantity": 1.024,
+                "quantity": 1.298,
                 "quantity_models": 1,
                 "models": {
                   "GFS": "clear",
@@ -2227,101 +2722,15 @@
                 }
               },
               {
-                "time": "2026-12-08",
+                "time": "2026-12-07",
                 "support_pct": null,
                 "possible_support_pct": 75,
                 "unknown_models": 3,
                 "supporting_models": 0,
-                "quantity": 0.154,
+                "quantity": 1.096,
                 "quantity_models": 1,
                 "models": {
                   "GFS": "clear",
-                  "ECMWF": "unknown",
-                  "GEM": "unknown",
-                  "ICON": "unknown"
-                }
-              }
-            ]
-          },
-          "hourly": null
-        },
-        "rain": {
-          "daily": {
-            "resolution": "daily",
-            "threshold": 0.01,
-            "direction": "gte",
-            "unit": "in",
-            "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
-            "points": [
-              {
-                "time": "2026-12-07",
-                "support_pct": 25,
-                "possible_support_pct": 100,
-                "unknown_models": 3,
-                "supporting_models": 1,
-                "quantity": 0.886,
-                "quantity_models": 1,
-                "models": {
-                  "GFS": "supports",
-                  "ECMWF": "unknown",
-                  "GEM": "unknown",
-                  "ICON": "unknown"
-                }
-              },
-              {
-                "time": "2026-12-08",
-                "support_pct": 25,
-                "possible_support_pct": 100,
-                "unknown_models": 3,
-                "supporting_models": 1,
-                "quantity": 0.11,
-                "quantity_models": 1,
-                "models": {
-                  "GFS": "supports",
-                  "ECMWF": "unknown",
-                  "GEM": "unknown",
-                  "ICON": "unknown"
-                }
-              }
-            ]
-          },
-          "hourly": null
-        },
-        "showers": {
-          "daily": {
-            "resolution": "daily",
-            "threshold": 0.01,
-            "direction": "gte",
-            "unit": "in",
-            "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
-            "points": [
-              {
-                "time": "2026-12-07",
-                "support_pct": 25,
-                "possible_support_pct": 100,
-                "unknown_models": 3,
-                "supporting_models": 1,
-                "quantity": 0.138,
-                "quantity_models": 1,
-                "models": {
-                  "GFS": "supports",
-                  "ECMWF": "unknown",
-                  "GEM": "unknown",
-                  "ICON": "unknown"
-                }
-              },
-              {
-                "time": "2026-12-08",
-                "support_pct": 25,
-                "possible_support_pct": 100,
-                "unknown_models": 3,
-                "supporting_models": 1,
-                "quantity": 0.051,
-                "quantity_models": 1,
-                "models": {
-                  "GFS": "supports",
                   "ECMWF": "unknown",
                   "GEM": "unknown",
                   "ICON": "unknown"
@@ -2338,30 +2747,75 @@
             "direction": "gte",
             "unit": "mph",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
-                "time": "2026-12-07",
-                "support_pct": 25,
-                "possible_support_pct": 100,
+                "time": "2026-12-03",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 25.5,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-04",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 34.4,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-05",
+                "support_pct": null,
+                "possible_support_pct": 25,
+                "unknown_models": 1,
+                "supporting_models": 0,
+                "quantity": 24.8,
+                "quantity_models": 3,
+                "models": {
+                  "GFS": "clear",
+                  "ECMWF": "clear",
+                  "GEM": "clear",
+                  "ICON": "unknown"
+                }
+              },
+              {
+                "time": "2026-12-06",
+                "support_pct": null,
+                "possible_support_pct": 75,
                 "unknown_models": 3,
-                "supporting_models": 1,
-                "quantity": 50.1,
+                "supporting_models": 0,
+                "quantity": 16.8,
                 "quantity_models": 1,
                 "models": {
-                  "GFS": "supports",
+                  "GFS": "clear",
                   "ECMWF": "unknown",
                   "GEM": "unknown",
                   "ICON": "unknown"
                 }
               },
               {
-                "time": "2026-12-08",
+                "time": "2026-12-07",
                 "support_pct": null,
                 "possible_support_pct": 75,
                 "unknown_models": 3,
                 "supporting_models": 0,
-                "quantity": 40.9,
+                "quantity": 28.0,
                 "quantity_models": 1,
                 "models": {
                   "GFS": "clear",
@@ -2381,18 +2835,108 @@
       "name": "Gale",
       "primary_mode_id": "wind-20261210",
       "mode_ids": [
+        "drizzle-20261208",
+        "rain-20261207",
+        "showers-20261207",
         "wind-20261210"
       ],
       "aliases": [
-        "North"
+        "Juniper",
+        "North",
+        "Sable",
+        "Vale"
       ],
       "start_date": "2026-12-10",
       "end_date": "2026-12-10",
       "first_seen": "2026-11-26T16:38:10.281935+00:00",
-      "last_seen": "2026-11-26T16:38:10.281935+00:00",
-      "status": "not_in_latest_capture",
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "status": "in_latest_capture",
       "priority": "notable",
       "forecast_modes": {
+        "drizzle": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 1,
+            "direction": "gte",
+            "unit": "signal",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
+            "points": [
+              {
+                "time": "2026-12-10",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": null,
+                "quantity_models": 0,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "rain": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
+            "points": [
+              {
+                "time": "2026-12-10",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.106,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
+        "showers": {
+          "daily": {
+            "resolution": "daily",
+            "threshold": 0.01,
+            "direction": "gte",
+            "unit": "in",
+            "quantity_stat": "regional model-extrema median",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
+            "points": [
+              {
+                "time": "2026-12-10",
+                "support_pct": 25,
+                "possible_support_pct": 100,
+                "unknown_models": 3,
+                "supporting_models": 1,
+                "quantity": 0.012,
+                "quantity_models": 1,
+                "models": {
+                  "GFS": "supports",
+                  "ECMWF": "unknown",
+                  "GEM": "unknown",
+                  "ICON": "unknown"
+                }
+              }
+            ]
+          },
+          "hourly": null
+        },
         "wind": {
           "daily": {
             "resolution": "daily",
@@ -2400,7 +2944,7 @@
             "direction": "gte",
             "unit": "mph",
             "quantity_stat": "regional model-extrema median",
-            "captured_at": "2026-11-26T22:29:40.404500+00:00",
+            "captured_at": "2026-11-27T04:38:26.433990+00:00",
             "points": [
               {
                 "time": "2026-12-10",
@@ -2408,7 +2952,7 @@
                 "possible_support_pct": 75,
                 "unknown_models": 3,
                 "supporting_models": 0,
-                "quantity": 13.9,
+                "quantity": 33.8,
                 "quantity_models": 1,
                 "models": {
                   "GFS": "clear",
@@ -2623,11 +3167,27 @@
           "total_models": 4,
           "support_pct": 100.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-26",
           "end_date": "2026-11-26",
           "models": {
@@ -2646,8 +3206,8 @@
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 12,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 13,
       "status": "in_latest_capture",
       "lead_days": 0,
       "models": [
@@ -2671,7 +3231,7 @@
         "date": "2026-11-26",
         "place": "Wildwood",
         "model": "ECMWF",
-        "value": 6.339
+        "value": 6.035
       },
       "threshold": {
         "value": 2.0,
@@ -2687,8 +3247,8 @@
         ],
         "triggering_samples": 4,
         "min_triggering_value": 3.472,
-        "max_triggering_value": 5.098,
-        "median_triggering_value": 4.051,
+        "max_triggering_value": 5.071,
+        "median_triggering_value": 4.01,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -2893,11 +3453,27 @@
           "total_models": 4,
           "support_pct": 100.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-26",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-26",
           "end_date": "2026-11-26",
           "models": {
@@ -2916,8 +3492,8 @@
       "start_date": "2026-11-26",
       "end_date": "2026-11-26",
       "first_seen": "2026-11-24T18:57:10.943633+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 12,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 13,
       "status": "in_latest_capture",
       "lead_days": 0,
       "models": [
@@ -2932,14 +3508,16 @@
         "Belleville",
         "St. Charles",
         "St. Louis",
+        "Washington",
+        "Wentzville",
         "Wildwood"
       ],
       "same_place_day_support": 4,
       "peak": {
         "date": "2026-11-26",
         "place": "Belleville",
-        "model": "GFS",
-        "value": 1.551
+        "model": "GEM",
+        "value": 1.539
       },
       "threshold": {
         "value": 1.25,
@@ -2947,11 +3525,13 @@
         "test": "gte"
       },
       "wentzville": {
-        "models": [],
-        "triggering_samples": 0,
-        "min_triggering_value": null,
-        "max_triggering_value": null,
-        "median_triggering_value": null,
+        "models": [
+          "ECMWF"
+        ],
+        "triggering_samples": 1,
+        "min_triggering_value": 1.378,
+        "max_triggering_value": 1.378,
+        "median_triggering_value": 1.378,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -3012,11 +3592,27 @@
           "total_models": 4,
           "support_pct": 100.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-26",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-26",
           "end_date": "2026-11-26",
           "models": {
@@ -3032,41 +3628,9 @@
           "possible_support_pct": 100.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-27",
           "end_date": "2026-11-27",
-          "models": {
-            "GFS": "clear",
-            "ECMWF": "supports",
-            "GEM": "supports",
-            "ICON": "supports"
-          },
-          "supporting_models": 3,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 75.0,
-          "possible_support_pct": 75.0
-        },
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-11-28",
-          "end_date": "2026-11-28",
-          "models": {
-            "GFS": "clear",
-            "ECMWF": "supports",
-            "GEM": "clear",
-            "ICON": "clear"
-          },
-          "supporting_models": 1,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 25.0
-        },
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-11-29",
-          "end_date": "2026-11-29",
           "models": {
             "GFS": "supports",
             "ECMWF": "supports",
@@ -3081,10 +3645,10 @@
         }
       ],
       "start_date": "2026-11-26",
-      "end_date": "2026-11-29",
+      "end_date": "2026-11-27",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
       "lead_days": 0,
       "models": [
@@ -3108,7 +3672,7 @@
         "date": "2026-11-26",
         "place": "Belleville",
         "model": "ICON",
-        "value": 1.193
+        "value": 1.201
       },
       "threshold": {
         "value": 0.01,
@@ -3122,10 +3686,10 @@
           "GFS",
           "ICON"
         ],
-        "triggering_samples": 9,
-        "min_triggering_value": 0.028,
-        "max_triggering_value": 0.642,
-        "median_triggering_value": 0.449,
+        "triggering_samples": 5,
+        "min_triggering_value": 0.016,
+        "max_triggering_value": 0.665,
+        "median_triggering_value": 0.52,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -3186,11 +3750,27 @@
           "total_models": 4,
           "support_pct": 75.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "clear"
+          },
+          "supporting_models": 3,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 75.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-27",
           "end_date": "2026-11-27",
           "models": {
@@ -3206,25 +3786,9 @@
           "possible_support_pct": 75.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-28",
           "end_date": "2026-11-28",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "supports",
-            "GEM": "clear",
-            "ICON": "clear"
-          },
-          "supporting_models": 2,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 50.0,
-          "possible_support_pct": 50.0
-        },
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-11-29",
-          "end_date": "2026-11-29",
           "models": {
             "GFS": "clear",
             "ECMWF": "supports",
@@ -3236,13 +3800,29 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 2,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 50.0
         }
       ],
       "start_date": "2026-11-27",
       "end_date": "2026-11-29",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
       "lead_days": 1,
       "models": [
@@ -3260,7 +3840,7 @@
         "Wentzville",
         "Wildwood"
       ],
-      "same_place_day_support": 2,
+      "same_place_day_support": 3,
       "peak": {
         "date": "2026-11-27",
         "place": "Affton",
@@ -3274,125 +3854,7 @@
       },
       "wentzville": {
         "models": [
-          "ECMWF",
-          "GFS"
-        ],
-        "triggering_samples": 4,
-        "min_triggering_value": 1.0,
-        "max_triggering_value": 1.0,
-        "median_triggering_value": 1.0,
-        "note": "Only threshold-triggering daily forecasts, not a storm total."
-      },
-      "observation_status": "not_connected",
-      "verification_status": "not_verified",
-      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
-    },
-    {
-      "id": "fog-20261127",
-      "kind": "fog",
-      "title": "Fog signal",
-      "name": "Kestrel",
-      "priority": "routine",
-      "assessments": [
-        {
-          "captured_at": "2026-11-26T19:20:55.996274+00:00",
-          "start_date": "2026-11-27",
-          "end_date": "2026-11-27",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "clear",
-            "GEM": "clear",
-            "ICON": "clear"
-          },
-          "supporting_models": 1,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 25.0
-        },
-        {
-          "captured_at": "2026-11-26T19:39:55.496208+00:00",
-          "start_date": "2026-11-27",
-          "end_date": "2026-11-27",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "clear",
-            "GEM": "clear",
-            "ICON": "clear"
-          },
-          "supporting_models": 1,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 25.0
-        },
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-11-27",
-          "end_date": "2026-11-27",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "clear",
-            "GEM": "clear",
-            "ICON": "clear"
-          },
-          "supporting_models": 1,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 25.0
-        }
-      ],
-      "daily_assessments": [
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-11-27",
-          "end_date": "2026-11-27",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "clear",
-            "GEM": "clear",
-            "ICON": "clear"
-          },
-          "supporting_models": 1,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 25.0
-        }
-      ],
-      "start_date": "2026-11-27",
-      "end_date": "2026-11-27",
-      "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
-      "status": "in_latest_capture",
-      "lead_days": 1,
-      "models": [
-        "GFS"
-      ],
-      "locations": [
-        "Alton",
-        "St. Charles",
-        "St. Louis",
-        "Washington",
-        "Wentzville"
-      ],
-      "same_place_day_support": 1,
-      "peak": {
-        "date": "2026-11-27",
-        "place": "Alton",
-        "model": "GFS",
-        "value": 1.0
-      },
-      "threshold": {
-        "value": 1,
-        "unit": "signal",
-        "test": "gte"
-      },
-      "wentzville": {
-        "models": [
-          "GFS"
+          "ECMWF"
         ],
         "triggering_samples": 1,
         "min_triggering_value": 1.0,
@@ -3458,44 +3920,64 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 25.0
-        }
-      ],
-      "daily_assessments": [
+        },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-27",
           "end_date": "2026-11-27",
           "models": {
             "GFS": "clear",
-            "ECMWF": "clear",
+            "ECMWF": "supports",
             "GEM": "supports",
             "ICON": "clear"
           },
-          "supporting_models": 1,
+          "supporting_models": 2,
           "unknown_models": 0,
           "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 25.0
+          "support_pct": 50.0,
+          "possible_support_pct": 50.0
+        }
+      ],
+      "daily_assessments": [
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "clear"
+          },
+          "supporting_models": 2,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 50.0
         }
       ],
       "start_date": "2026-11-27",
       "end_date": "2026-11-27",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
       "lead_days": 1,
       "models": [
+        "ECMWF",
         "GEM"
       ],
       "locations": [
-        "Belleville"
+        "Alton",
+        "Belleville",
+        "St. Louis",
+        "Wildwood"
       ],
-      "same_place_day_support": 1,
+      "same_place_day_support": 2,
       "peak": {
         "date": "2026-11-27",
-        "place": "Belleville",
-        "model": "GEM",
+        "place": "Alton",
+        "model": "ECMWF",
         "value": 1.0
       },
       "threshold": {
@@ -3509,6 +3991,297 @@
         "min_triggering_value": null,
         "max_triggering_value": null,
         "median_triggering_value": null,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "fog-20261127",
+      "kind": "fog",
+      "title": "Fog signal",
+      "name": "Kestrel",
+      "priority": "routine",
+      "assessments": [
+        {
+          "captured_at": "2026-11-26T19:20:55.996274+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-28",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        }
+      ],
+      "daily_assessments": [
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-27",
+          "end_date": "2026-11-27",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-28",
+          "end_date": "2026-11-28",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 1,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 25.0
+        }
+      ],
+      "start_date": "2026-11-27",
+      "end_date": "2026-11-28",
+      "first_seen": "2026-11-26T19:20:55.996274+00:00",
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
+      "status": "in_latest_capture",
+      "lead_days": 1,
+      "models": [
+        "GFS"
+      ],
+      "locations": [
+        "Affton",
+        "Belleville",
+        "Washington",
+        "Wentzville",
+        "Wildwood"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-11-27",
+        "place": "Washington",
+        "model": "GFS",
+        "value": 1.0
+      },
+      "threshold": {
+        "value": 1,
+        "unit": "signal",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [
+          "GFS"
+        ],
+        "triggering_samples": 2,
+        "min_triggering_value": 1.0,
+        "max_triggering_value": 1.0,
+        "median_triggering_value": 1.0,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "rain-20261129",
+      "kind": "rain",
+      "title": "Rainfall",
+      "name": "Quartz",
+      "priority": "routine",
+      "assessments": [
+        {
+          "captured_at": "2026-11-26T19:20:55.996274+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T19:39:55.496208+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        }
+      ],
+      "daily_assessments": [
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 4,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 100.0,
+          "possible_support_pct": 100.0
+        }
+      ],
+      "start_date": "2026-11-29",
+      "end_date": "2026-11-29",
+      "first_seen": "2026-11-26T19:20:55.996274+00:00",
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 3,
+      "status": "in_latest_capture",
+      "lead_days": 3,
+      "models": [
+        "ECMWF",
+        "GEM",
+        "GFS",
+        "ICON"
+      ],
+      "locations": [
+        "Affton",
+        "Alton",
+        "Belleville",
+        "St. Charles",
+        "St. Louis",
+        "Washington",
+        "Wentzville",
+        "Wildwood"
+      ],
+      "same_place_day_support": 4,
+      "peak": {
+        "date": "2026-11-29",
+        "place": "Belleville",
+        "model": "ECMWF",
+        "value": 0.669
+      },
+      "threshold": {
+        "value": 0.01,
+        "unit": "in",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [
+          "ECMWF",
+          "GEM",
+          "GFS",
+          "ICON"
+        ],
+        "triggering_samples": 4,
+        "min_triggering_value": 0.181,
+        "max_triggering_value": 0.429,
+        "median_triggering_value": 0.339,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -3569,11 +4342,27 @@
           "total_models": 4,
           "support_pct": 50.0,
           "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "supports"
+          },
+          "supporting_models": 2,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 50.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-29",
           "end_date": "2026-11-29",
           "models": {
@@ -3592,8 +4381,8 @@
       "start_date": "2026-11-29",
       "end_date": "2026-11-29",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
       "lead_days": 3,
       "models": [
@@ -3613,9 +4402,9 @@
       "same_place_day_support": 2,
       "peak": {
         "date": "2026-11-29",
-        "place": "Alton",
+        "place": "Belleville",
         "model": "ICON",
-        "value": 0.268
+        "value": 0.067
       },
       "threshold": {
         "value": 0.01,
@@ -3627,9 +4416,9 @@
           "ICON"
         ],
         "triggering_samples": 1,
-        "min_triggering_value": 0.22,
-        "max_triggering_value": 0.22,
-        "median_triggering_value": 0.22,
+        "min_triggering_value": 0.016,
+        "max_triggering_value": 0.016,
+        "median_triggering_value": 0.016,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -3690,11 +4479,27 @@
           "total_models": 4,
           "support_pct": 75.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 3,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-03",
           "end_date": "2026-12-03",
           "models": {
@@ -3710,7 +4515,7 @@
           "possible_support_pct": 75.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-04",
           "end_date": "2026-12-04",
           "models": {
@@ -3726,7 +4531,7 @@
           "possible_support_pct": 100.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-05",
           "end_date": "2026-12-05",
           "models": {
@@ -3740,13 +4545,45 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 50.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-06",
+          "end_date": "2026-12-06",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ],
       "start_date": "2026-12-03",
-      "end_date": "2026-12-05",
+      "end_date": "2026-12-07",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
       "lead_days": 7,
       "models": [
@@ -3766,10 +4603,10 @@
       ],
       "same_place_day_support": 3,
       "peak": {
-        "date": "2026-12-03",
-        "place": "Belleville",
-        "model": "ECMWF",
-        "value": 1.134
+        "date": "2026-12-04",
+        "place": "Wildwood",
+        "model": "GFS",
+        "value": 1.37
       },
       "threshold": {
         "value": 0.01,
@@ -3782,10 +4619,10 @@
           "GEM",
           "GFS"
         ],
-        "triggering_samples": 6,
+        "triggering_samples": 8,
         "min_triggering_value": 0.016,
-        "max_triggering_value": 0.638,
-        "median_triggering_value": 0.523,
+        "max_triggering_value": 1.028,
+        "median_triggering_value": 0.455,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -3830,11 +4667,27 @@
           "total_models": 4,
           "support_pct": 75.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 3,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-03",
           "end_date": "2026-12-03",
           "models": {
@@ -3850,7 +4703,7 @@
           "possible_support_pct": 100.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-04",
           "end_date": "2026-12-04",
           "models": {
@@ -3869,8 +4722,8 @@
       "start_date": "2026-12-03",
       "end_date": "2026-12-04",
       "first_seen": "2026-11-26T19:39:55.496208+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 2,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 3,
       "status": "in_latest_capture",
       "lead_days": 7,
       "models": [
@@ -3907,9 +4760,9 @@
           "GFS"
         ],
         "triggering_samples": 5,
-        "min_triggering_value": 2.3368,
+        "min_triggering_value": 2.2632,
         "max_triggering_value": 3.1789,
-        "median_triggering_value": 2.632,
+        "median_triggering_value": 2.344,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -3970,11 +4823,27 @@
           "total_models": 4,
           "support_pct": 50.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-05",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 2,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 50.0,
+          "possible_support_pct": 75.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-03",
           "end_date": "2026-12-03",
           "models": {
@@ -3990,7 +4859,7 @@
           "possible_support_pct": 50.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-04",
           "end_date": "2026-12-04",
           "models": {
@@ -4006,7 +4875,7 @@
           "possible_support_pct": 75.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-05",
           "end_date": "2026-12-05",
           "models": {
@@ -4025,8 +4894,8 @@
       "start_date": "2026-12-03",
       "end_date": "2026-12-05",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
       "lead_days": 7,
       "models": [
@@ -4046,9 +4915,9 @@
       "same_place_day_support": 2,
       "peak": {
         "date": "2026-12-04",
-        "place": "Affton",
+        "place": "Wentzville",
         "model": "GFS",
-        "value": 0.142
+        "value": 0.083
       },
       "threshold": {
         "value": 0.01,
@@ -4062,7 +4931,7 @@
         ],
         "triggering_samples": 3,
         "min_triggering_value": 0.024,
-        "max_triggering_value": 0.059,
+        "max_triggering_value": 0.083,
         "median_triggering_value": 0.047,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
@@ -4124,11 +4993,27 @@
           "total_models": 4,
           "support_pct": 75.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-03",
+          "end_date": "2026-12-06",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "supports",
+            "GEM": "supports",
+            "ICON": "unknown"
+          },
+          "supporting_models": 3,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 75.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-03",
           "end_date": "2026-12-03",
           "models": {
@@ -4144,23 +5029,23 @@
           "possible_support_pct": 50.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-04",
           "end_date": "2026-12-04",
           "models": {
-            "GFS": "supports",
+            "GFS": "clear",
             "ECMWF": "supports",
             "GEM": "supports",
             "ICON": "unknown"
           },
-          "supporting_models": 3,
+          "supporting_models": 2,
           "unknown_models": 1,
           "total_models": 4,
-          "support_pct": 75.0,
-          "possible_support_pct": 100.0
+          "support_pct": 50.0,
+          "possible_support_pct": 75.0
         },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-05",
           "end_date": "2026-12-05",
           "models": {
@@ -4174,13 +5059,29 @@
           "total_models": 4,
           "support_pct": 50.0,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-06",
+          "end_date": "2026-12-06",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ],
       "start_date": "2026-12-03",
-      "end_date": "2026-12-05",
+      "end_date": "2026-12-06",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
       "lead_days": 7,
       "models": [
@@ -4212,9 +5113,10 @@
       },
       "wentzville": {
         "models": [
-          "GEM"
+          "GEM",
+          "GFS"
         ],
-        "triggering_samples": 1,
+        "triggering_samples": 2,
         "min_triggering_value": 1.0,
         "max_triggering_value": 1.0,
         "median_triggering_value": 1.0,
@@ -4225,158 +5127,174 @@
       "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
     },
     {
-      "id": "wind-20261207",
-      "kind": "wind",
-      "title": "Strong wind signal",
-      "name": "Ember",
+      "id": "precipitation-20261204",
+      "kind": "precipitation",
+      "title": "Heavy precipitation signal",
+      "name": "Flint",
       "priority": "notable",
       "assessments": [
         {
-          "captured_at": "2026-11-25T04:42:00.447753+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
-            "ICON": "unknown"
-          },
-          "supporting_models": 1,
-          "unknown_models": 3,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 100.0
-        },
-        {
-          "captured_at": "2026-11-25T10:35:07.793524+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
-          "models": {
-            "GFS": "clear",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
-            "ICON": "unknown"
-          },
-          "supporting_models": 0,
-          "unknown_models": 3,
-          "total_models": 4,
-          "support_pct": null,
-          "possible_support_pct": 75.0
-        },
-        {
-          "captured_at": "2026-11-25T16:39:42.471481+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
-          "models": {
-            "GFS": "clear",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
-            "ICON": "unknown"
-          },
-          "supporting_models": 0,
-          "unknown_models": 3,
-          "total_models": 4,
-          "support_pct": null,
-          "possible_support_pct": 75.0
-        },
-        {
-          "captured_at": "2026-11-25T22:28:13.906033+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
-          "models": {
-            "GFS": "clear",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
-            "ICON": "unknown"
-          },
-          "supporting_models": 0,
-          "unknown_models": 3,
-          "total_models": 4,
-          "support_pct": null,
-          "possible_support_pct": 75.0
-        },
-        {
-          "captured_at": "2026-11-26T04:40:09.413279+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
-          "models": {
-            "GFS": "clear",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
-            "ICON": "unknown"
-          },
-          "supporting_models": 0,
-          "unknown_models": 3,
-          "total_models": 4,
-          "support_pct": null,
-          "possible_support_pct": 75.0
-        },
-        {
           "captured_at": "2026-11-26T10:33:49.497972+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
           "models": {
             "GFS": "supports",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
+            "ECMWF": "clear",
+            "GEM": "clear",
             "ICON": "unknown"
           },
           "supporting_models": 1,
-          "unknown_models": 3,
+          "unknown_models": 1,
           "total_models": 4,
           "support_pct": 25.0,
-          "possible_support_pct": 100.0
+          "possible_support_pct": 50.0
         },
         {
           "captured_at": "2026-11-26T16:38:10.281935+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
           "models": {
             "GFS": "clear",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
+            "ECMWF": "clear",
+            "GEM": "clear",
             "ICON": "unknown"
           },
           "supporting_models": 0,
-          "unknown_models": 3,
+          "unknown_models": 1,
           "total_models": 4,
           "support_pct": null,
-          "possible_support_pct": 75.0
+          "possible_support_pct": 25.0
         },
         {
           "captured_at": "2026-11-26T19:20:55.996274+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
           "models": {
-            "GFS": "supports",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
             "ICON": "unknown"
           },
-          "supporting_models": 1,
-          "unknown_models": 3,
+          "supporting_models": 0,
+          "unknown_models": 1,
           "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 100.0
+          "support_pct": null,
+          "possible_support_pct": 25.0
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
           "models": {
-            "GFS": "supports",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
             "ICON": "unknown"
           },
-          "supporting_models": 1,
-          "unknown_models": 3,
+          "supporting_models": 0,
+          "unknown_models": 1,
           "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 100.0
+          "support_pct": null,
+          "possible_support_pct": 25.0
         },
         {
           "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 25.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 50.0
+        }
+      ],
+      "daily_assessments": [
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-04",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 1,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 50.0
+        }
+      ],
+      "start_date": "2026-12-04",
+      "end_date": "2026-12-04",
+      "first_seen": "2026-11-26T10:33:49.497972+00:00",
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 2,
+      "status": "in_latest_capture",
+      "lead_days": 8,
+      "models": [
+        "GFS"
+      ],
+      "locations": [
+        "Affton",
+        "Wildwood"
+      ],
+      "same_place_day_support": 1,
+      "peak": {
+        "date": "2026-12-04",
+        "place": "Wildwood",
+        "model": "GFS",
+        "value": 1.429
+      },
+      "threshold": {
+        "value": 1.25,
+        "unit": "in",
+        "test": "gte"
+      },
+      "wentzville": {
+        "models": [],
+        "triggering_samples": 0,
+        "min_triggering_value": null,
+        "max_triggering_value": null,
+        "median_triggering_value": null,
+        "note": "Only threshold-triggering daily forecasts, not a storm total."
+      },
+      "observation_status": "not_connected",
+      "verification_status": "not_verified",
+      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
+    },
+    {
+      "id": "light_snow-20261207",
+      "kind": "light_snow",
+      "title": "Light snow / flurries",
+      "name": "Xenia",
+      "priority": "routine",
+      "assessments": [
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-07",
           "end_date": "2026-12-07",
           "models": {
@@ -4394,7 +5312,7 @@
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-07",
           "end_date": "2026-12-07",
           "models": {
@@ -4412,9 +5330,9 @@
       ],
       "start_date": "2026-12-07",
       "end_date": "2026-12-07",
-      "first_seen": "2026-11-25T04:42:00.447753+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 5,
+      "first_seen": "2026-11-27T04:38:26.433990+00:00",
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 1,
       "status": "in_latest_capture",
       "lead_days": 11,
       "models": [
@@ -4422,20 +5340,18 @@
       ],
       "locations": [
         "Affton",
-        "Alton",
-        "Belleville",
-        "St. Louis"
+        "Wildwood"
       ],
       "same_place_day_support": 1,
       "peak": {
         "date": "2026-12-07",
-        "place": "Belleville",
+        "place": "Affton",
         "model": "GFS",
-        "value": 50.1
+        "value": 1.0
       },
       "threshold": {
-        "value": 45.0,
-        "unit": "mph",
+        "value": 1,
+        "unit": "signal",
         "test": "gte"
       },
       "wentzville": {
@@ -4504,29 +5420,29 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
-            "ICON": "unknown"
-          },
-          "supporting_models": 1,
-          "unknown_models": 3,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 100.0
-        },
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-12-08",
-          "end_date": "2026-12-08",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
           "models": {
             "GFS": "supports",
             "ECMWF": "unknown",
@@ -4540,13 +5456,13 @@
           "possible_support_pct": 100.0
         }
       ],
-      "start_date": "2026-12-07",
-      "end_date": "2026-12-08",
+      "start_date": "2026-12-10",
+      "end_date": "2026-12-10",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
-      "lead_days": 11,
+      "lead_days": 14,
       "models": [
         "GFS"
       ],
@@ -4562,10 +5478,10 @@
       ],
       "same_place_day_support": 1,
       "peak": {
-        "date": "2026-12-07",
-        "place": "Washington",
+        "date": "2026-12-10",
+        "place": "St. Louis",
         "model": "GFS",
-        "value": 0.886
+        "value": 0.106
       },
       "threshold": {
         "value": 0.01,
@@ -4576,10 +5492,10 @@
         "models": [
           "GFS"
         ],
-        "triggering_samples": 2,
-        "min_triggering_value": 0.067,
-        "max_triggering_value": 0.748,
-        "median_triggering_value": 0.407,
+        "triggering_samples": 1,
+        "min_triggering_value": 0.047,
+        "max_triggering_value": 0.047,
+        "median_triggering_value": 0.047,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -4640,29 +5556,29 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-12-07",
-          "end_date": "2026-12-07",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "unknown",
-            "GEM": "unknown",
-            "ICON": "unknown"
-          },
-          "supporting_models": 1,
-          "unknown_models": 3,
-          "total_models": 4,
-          "support_pct": 25.0,
-          "possible_support_pct": 100.0
-        },
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-12-08",
-          "end_date": "2026-12-08",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
           "models": {
             "GFS": "supports",
             "ECMWF": "unknown",
@@ -4676,32 +5592,25 @@
           "possible_support_pct": 100.0
         }
       ],
-      "start_date": "2026-12-07",
-      "end_date": "2026-12-08",
+      "start_date": "2026-12-10",
+      "end_date": "2026-12-10",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
       "status": "in_latest_capture",
-      "lead_days": 11,
+      "lead_days": 14,
       "models": [
         "GFS"
       ],
       "locations": [
-        "Affton",
-        "Alton",
-        "Belleville",
-        "St. Charles",
-        "St. Louis",
-        "Washington",
-        "Wentzville",
-        "Wildwood"
+        "St. Charles"
       ],
       "same_place_day_support": 1,
       "peak": {
-        "date": "2026-12-07",
-        "place": "Washington",
+        "date": "2026-12-10",
+        "place": "St. Charles",
         "model": "GFS",
-        "value": 0.138
+        "value": 0.012
       },
       "threshold": {
         "value": 0.01,
@@ -4709,13 +5618,11 @@
         "test": "gte"
       },
       "wentzville": {
-        "models": [
-          "GFS"
-        ],
-        "triggering_samples": 2,
-        "min_triggering_value": 0.031,
-        "max_triggering_value": 0.122,
-        "median_triggering_value": 0.076,
+        "models": [],
+        "triggering_samples": 0,
+        "min_triggering_value": null,
+        "max_triggering_value": null,
+        "median_triggering_value": null,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -4776,13 +5683,11 @@
           "total_models": 4,
           "support_pct": 25.0,
           "possible_support_pct": 100.0
-        }
-      ],
-      "daily_assessments": [
+        },
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-12-08",
-          "end_date": "2026-12-08",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
           "models": {
             "GFS": "supports",
             "ECMWF": "unknown",
@@ -4796,129 +5701,33 @@
           "possible_support_pct": 100.0
         }
       ],
-      "start_date": "2026-12-08",
-      "end_date": "2026-12-08",
-      "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T22:29:40.404500+00:00",
-      "snapshots_seen": 3,
-      "status": "in_latest_capture",
-      "lead_days": 12,
-      "models": [
-        "GFS"
-      ],
-      "locations": [
-        "St. Charles"
-      ],
-      "same_place_day_support": 1,
-      "peak": {
-        "date": "2026-12-08",
-        "place": "St. Charles",
-        "model": "GFS",
-        "value": 1.0
-      },
-      "threshold": {
-        "value": 1,
-        "unit": "signal",
-        "test": "gte"
-      },
-      "wentzville": {
-        "models": [],
-        "triggering_samples": 0,
-        "min_triggering_value": null,
-        "max_triggering_value": null,
-        "median_triggering_value": null,
-        "note": "Only threshold-triggering daily forecasts, not a storm total."
-      },
-      "observation_status": "not_connected",
-      "verification_status": "not_verified",
-      "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
-    },
-    {
-      "id": "rain-20261129",
-      "kind": "rain",
-      "title": "Rainfall",
-      "name": "Quartz",
-      "priority": "routine",
-      "assessments": [
-        {
-          "captured_at": "2026-11-26T19:20:55.996274+00:00",
-          "start_date": "2026-11-29",
-          "end_date": "2026-11-29",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "supports",
-            "GEM": "supports",
-            "ICON": "supports"
-          },
-          "supporting_models": 4,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 100.0,
-          "possible_support_pct": 100.0
-        },
-        {
-          "captured_at": "2026-11-26T19:39:55.496208+00:00",
-          "start_date": "2026-11-29",
-          "end_date": "2026-11-29",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "supports",
-            "GEM": "supports",
-            "ICON": "supports"
-          },
-          "supporting_models": 4,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 100.0,
-          "possible_support_pct": 100.0
-        },
-        {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-11-29",
-          "end_date": "2026-11-29",
-          "models": {
-            "GFS": "supports",
-            "ECMWF": "supports",
-            "GEM": "supports",
-            "ICON": "supports"
-          },
-          "supporting_models": 4,
-          "unknown_models": 0,
-          "total_models": 4,
-          "support_pct": 100.0,
-          "possible_support_pct": 100.0
-        }
-      ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-11-29",
-          "end_date": "2026-11-29",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
           "models": {
             "GFS": "supports",
-            "ECMWF": "supports",
-            "GEM": "supports",
-            "ICON": "supports"
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
           },
-          "supporting_models": 4,
-          "unknown_models": 0,
+          "supporting_models": 1,
+          "unknown_models": 3,
           "total_models": 4,
-          "support_pct": 100.0,
+          "support_pct": 25.0,
           "possible_support_pct": 100.0
         }
       ],
-      "start_date": "2026-11-29",
-      "end_date": "2026-11-29",
+      "start_date": "2026-12-10",
+      "end_date": "2026-12-10",
       "first_seen": "2026-11-26T19:20:55.996274+00:00",
-      "last_seen": "2026-11-26T19:39:55.496208+00:00",
-      "snapshots_seen": 2,
-      "status": "not_in_latest_capture",
-      "lead_days": 3,
+      "last_seen": "2026-11-27T04:38:26.433990+00:00",
+      "snapshots_seen": 4,
+      "status": "in_latest_capture",
+      "lead_days": 14,
       "models": [
-        "ECMWF",
-        "GEM",
-        "GFS",
-        "ICON"
+        "GFS"
       ],
       "locations": [
         "Affton",
@@ -4930,29 +5739,26 @@
         "Wentzville",
         "Wildwood"
       ],
-      "same_place_day_support": 4,
+      "same_place_day_support": 1,
       "peak": {
-        "date": "2026-11-29",
+        "date": "2026-12-10",
         "place": "Affton",
         "model": "GFS",
-        "value": 0.787
+        "value": 1.0
       },
       "threshold": {
-        "value": 0.01,
-        "unit": "in",
+        "value": 1,
+        "unit": "signal",
         "test": "gte"
       },
       "wentzville": {
         "models": [
-          "ECMWF",
-          "GEM",
-          "GFS",
-          "ICON"
+          "GFS"
         ],
-        "triggering_samples": 4,
-        "min_triggering_value": 0.264,
-        "max_triggering_value": 0.591,
-        "median_triggering_value": 0.376,
+        "triggering_samples": 1,
+        "min_triggering_value": 1.0,
+        "max_triggering_value": 1.0,
+        "median_triggering_value": 1.0,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -5157,11 +5963,27 @@
           "total_models": 4,
           "support_pct": 0.0,
           "possible_support_pct": 0.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-11-29",
+          "end_date": "2026-11-29",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "clear",
+            "GEM": "clear",
+            "ICON": "clear"
+          },
+          "supporting_models": 0,
+          "unknown_models": 0,
+          "total_models": 4,
+          "support_pct": 0.0,
+          "possible_support_pct": 0.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-11-29",
           "end_date": "2026-11-29",
           "models": {
@@ -5218,149 +6040,241 @@
       "source": "Open-Meteo stitched daily guidance, not model-cycle provenance"
     },
     {
-      "id": "precipitation-20261204",
-      "kind": "precipitation",
-      "title": "Heavy precipitation signal",
-      "name": "Flint",
+      "id": "wind-20261207",
+      "kind": "wind",
+      "title": "Strong wind signal",
+      "name": "Ember",
       "priority": "notable",
       "assessments": [
         {
-          "captured_at": "2026-11-26T10:33:49.497972+00:00",
-          "start_date": "2026-12-04",
-          "end_date": "2026-12-04",
+          "captured_at": "2026-11-25T04:42:00.447753+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
           "models": {
             "GFS": "supports",
-            "ECMWF": "clear",
-            "GEM": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
             "ICON": "unknown"
           },
           "supporting_models": 1,
-          "unknown_models": 1,
+          "unknown_models": 3,
           "total_models": 4,
           "support_pct": 25.0,
-          "possible_support_pct": 50.0
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-25T10:35:07.793524+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T16:39:42.471481+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-25T22:28:13.906033+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T04:40:09.413279+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-26T10:33:49.497972+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         },
         {
           "captured_at": "2026-11-26T16:38:10.281935+00:00",
-          "start_date": "2026-12-04",
-          "end_date": "2026-12-04",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
           "models": {
             "GFS": "clear",
-            "ECMWF": "clear",
-            "GEM": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
             "ICON": "unknown"
           },
           "supporting_models": 0,
-          "unknown_models": 1,
+          "unknown_models": 3,
           "total_models": 4,
           "support_pct": null,
-          "possible_support_pct": 25.0
+          "possible_support_pct": 75.0
         },
         {
           "captured_at": "2026-11-26T19:20:55.996274+00:00",
-          "start_date": "2026-12-04",
-          "end_date": "2026-12-04",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
           "models": {
-            "GFS": "clear",
-            "ECMWF": "clear",
-            "GEM": "clear",
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
             "ICON": "unknown"
           },
-          "supporting_models": 0,
-          "unknown_models": 1,
+          "supporting_models": 1,
+          "unknown_models": 3,
           "total_models": 4,
-          "support_pct": null,
-          "possible_support_pct": 25.0
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         },
         {
           "captured_at": "2026-11-26T19:39:55.496208+00:00",
-          "start_date": "2026-12-04",
-          "end_date": "2026-12-04",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
           "models": {
-            "GFS": "clear",
-            "ECMWF": "clear",
-            "GEM": "clear",
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
             "ICON": "unknown"
           },
-          "supporting_models": 0,
-          "unknown_models": 1,
+          "supporting_models": 1,
+          "unknown_models": 3,
           "total_models": 4,
-          "support_pct": null,
-          "possible_support_pct": 25.0
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
         },
         {
           "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-12-04",
-          "end_date": "2026-12-04",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "supports",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 1,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": 25.0,
+          "possible_support_pct": 100.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
           "models": {
             "GFS": "clear",
-            "ECMWF": "clear",
-            "GEM": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
             "ICON": "unknown"
           },
           "supporting_models": 0,
-          "unknown_models": 1,
+          "unknown_models": 3,
           "total_models": 4,
           "support_pct": null,
-          "possible_support_pct": 25.0
+          "possible_support_pct": 75.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
-          "start_date": "2026-12-04",
-          "end_date": "2026-12-04",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
           "models": {
             "GFS": "clear",
-            "ECMWF": "clear",
-            "GEM": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
             "ICON": "unknown"
           },
           "supporting_models": 0,
-          "unknown_models": 1,
+          "unknown_models": 3,
           "total_models": 4,
           "support_pct": null,
-          "possible_support_pct": 25.0
+          "possible_support_pct": 75.0
         }
       ],
-      "start_date": "2026-12-04",
-      "end_date": "2026-12-04",
-      "first_seen": "2026-11-26T10:33:49.497972+00:00",
-      "last_seen": "2026-11-26T10:33:49.497972+00:00",
-      "snapshots_seen": 1,
+      "start_date": "2026-12-07",
+      "end_date": "2026-12-07",
+      "first_seen": "2026-11-25T04:42:00.447753+00:00",
+      "last_seen": "2026-11-26T22:29:40.404500+00:00",
+      "snapshots_seen": 5,
       "status": "not_in_latest_capture",
-      "lead_days": 8,
+      "lead_days": 11,
       "models": [
         "GFS"
       ],
       "locations": [
+        "Affton",
         "Alton",
-        "St. Charles",
-        "St. Louis",
-        "Washington",
-        "Wentzville",
-        "Wildwood"
+        "Belleville",
+        "St. Louis"
       ],
       "same_place_day_support": 1,
       "peak": {
-        "date": "2026-12-04",
-        "place": "Wentzville",
+        "date": "2026-12-07",
+        "place": "Belleville",
         "model": "GFS",
-        "value": 2.866
+        "value": 50.1
       },
       "threshold": {
-        "value": 1.25,
-        "unit": "in",
+        "value": 45.0,
+        "unit": "mph",
         "test": "gte"
       },
       "wentzville": {
-        "models": [
-          "GFS"
-        ],
-        "triggering_samples": 1,
-        "min_triggering_value": 2.866,
-        "max_triggering_value": 2.866,
-        "median_triggering_value": 2.866,
+        "models": [],
+        "triggering_samples": 0,
+        "min_triggering_value": null,
+        "max_triggering_value": null,
+        "median_triggering_value": null,
         "note": "Only threshold-triggering daily forecasts, not a storm total."
       },
       "observation_status": "not_connected",
@@ -5565,11 +6479,27 @@
           "total_models": 4,
           "support_pct": null,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-07",
+          "end_date": "2026-12-07",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-07",
           "end_date": "2026-12-07",
           "models": {
@@ -5701,11 +6631,27 @@
           "total_models": 4,
           "support_pct": null,
           "possible_support_pct": 75.0
+        },
+        {
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
+          "start_date": "2026-12-10",
+          "end_date": "2026-12-10",
+          "models": {
+            "GFS": "clear",
+            "ECMWF": "unknown",
+            "GEM": "unknown",
+            "ICON": "unknown"
+          },
+          "supporting_models": 0,
+          "unknown_models": 3,
+          "total_models": 4,
+          "support_pct": null,
+          "possible_support_pct": 75.0
         }
       ],
       "daily_assessments": [
         {
-          "captured_at": "2026-11-26T22:29:40.404500+00:00",
+          "captured_at": "2026-11-27T04:38:26.433990+00:00",
           "start_date": "2026-12-10",
           "end_date": "2026-12-10",
           "models": {
