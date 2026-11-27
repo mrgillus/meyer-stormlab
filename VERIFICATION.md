@@ -40,30 +40,45 @@ An accumulated/multi-day value marked \`A\` cannot be assigned to a single
 calendar day. Flagged, negative, or unrecognized data are excluded from
 numeric evidence. A reported \`0.00\` with no adverse flags is a measured zero.
 
-## Why scores must remain null for now
+## Daily scores stay null; event totals are scored without assuming a clock
 
-The archived model daily values represent forecast calendar days.
-Climate stations often observe on a different 24-hour window, such as 7 AM
-to 7 AM. Their reported date may refer to a period ending then, not a local
-midnight-to-midnight model interval. Even when a \`t\` code is present, the
-source's timezone and effective daily window must be established before a
-forecast-observation join.
+Single-day forecast errors remain null. Climate stations often observe on a
+different 24-hour window (such as 7 AM to 7 AM), and that window has not been
+independently verified for these stations.
 
-The system therefore exposes:
-- actual station reports and their reported observation dates,
-- the earliest usable archived **pre-event model capture**, and
-- a verification-status reason.
+Snow and liquid-precipitation events are instead scored as **clock-independent
+event totals** (`scripts/event_totals.py`, method version 1):
 
-It **does not** compute actual storm-total snowfall, forecast error,
-model winner, or calibrated accuracy without verified interval alignment.
-In published JSON, \`forecast_error_in\`, \`actual_observed_storm_total_in\`
-and \`model_skill\` deliberately remain \`null\`.
+- A report dated D covers (D-1 at clock c, D at clock c]. So reports dated
+  S..E+1 always cover the local forecast window [S 00:00, E+1 00:00), for any
+  clock 0 < c <= 24h. The overhang is exactly 24 hours, split before S and
+  after E+1, and lies inside forecast days S-1 and E+1.
+- The window starts from the catalog event days. It widens (up to 2 days per
+  side) while the 4-model mean forecast at any town exceeds 0.1" snow
+  (0.01" liquid) on an adjacent day. Widening uses only the frozen pre-event
+  capture, re-selected so it precedes the widened start. It never looks at
+  observations. Events that cannot be bracketed are not scored.
+- Each station-model pair records `clock_ambiguity_in` = forecast on S-1 plus
+  E+1. It counts toward scores only if that is <= max(0.1", 10% of the
+  forecast total) for snow, or max(0.01", 10%) for liquid.
+- A station is scored only if every report S..E+1 is measured or trace (trace
+  = 0 with a +0.05" upper bound per day). Missing, flagged, accumulated or
+  out-of-range reports, or a reported clock of 0, disqualify it. It must lie
+  within 10 miles of a forecast town, and it is compared with that town's
+  forecast.
+- Output per event: `event_total_verification`, with per-pair observed and
+  forecast totals, per-model MAE/bias/RMSE, and 1"/4" (snow) or 0.25"/1"
+  (liquid) contingency counts. `cases_scored` counts events with such a record.
 
-The historical GHCN station clock audit from
-\`data/observation_clocks/report.json\` already documents incomplete clocks.
-This new station feed is additive; it does not rewrite or relabel older training.
+Limits: one event at correlated, nearby point stations is a record of that
+storm, not a skill estimate or calibrated probability. Station points are not
+area averages. The legacy fields `forecast_error_in`,
+`actual_observed_storm_total_in` and `model_skill` remain null.
 
-## Additional requirements before automatic scoring
+## Requirements before daily (sub-event) scoring
+
+Event totals above sidestep requirements 1–2 by construction. Daily or hourly
+scores still need all of these:
 
 1. Confirm the exact reporting time, timezone, and covered interval at
    each source station, on each relevant date.
