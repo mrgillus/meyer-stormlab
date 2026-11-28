@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-27T18:07:53.557222+00:00",
-  "source_latest_observation_capture": "2026-11-27T18:07:53.557222+00:00",
+  "generated_at": "2026-11-28T00:06:13.499224+00:00",
+  "source_latest_observation_capture": "2026-11-28T00:06:13.499224+00:00",
   "provider_status": "retrieved",
   "provider_error": null,
   "source": "RCC-ACIS daily station reports (snowfall and liquid precipitation)",
   "observed_station_count": 82,
-  "reported_station_days": 365,
+  "reported_station_days": 372,
   "cases_reviewed": 7,
   "cases_with_daily_reports": 2,
   "cases_scored": 1,
@@ -90,7 +90,7 @@
       "title": "Drizzle",
       "forecast_dates": {
         "start": "2026-11-27",
-        "end": "2026-11-27"
+        "end": "2026-11-28"
       },
       "observation_status": "measurement_type_not_connected",
       "verification_status": "not_scored",
@@ -201,7 +201,7 @@
           },
           {
             "station_id": "ACIS:11391",
-            "reason": "missing_report_2026-11-27"
+            "reason": "flagged_2026-11-27"
           },
           {
             "station_id": "ACIS:11398",
@@ -834,6 +834,28 @@
           "measurement_interval_verified": false
         },
         {
+          "station_id": "ACIS:11369",
+          "station_name": "WASHINGTON",
+          "near_town": "Washington",
+          "distance_to_near_town_mi": 2.3,
+          "reported_date": "2026-11-26",
+          "value_in": 6.0,
+          "quantity": "daily snowfall",
+          "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:11369",
+          "station_name": "WASHINGTON",
+          "near_town": "Washington",
+          "distance_to_near_town_mi": 2.3,
+          "reported_date": "2026-11-27",
+          "value_in": 0.0,
+          "quantity": "daily snowfall",
+          "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
           "station_id": "ACIS:110526",
           "station_name": "BELLEVILLE 1.9 WNW",
           "near_town": "Belleville",
@@ -875,6 +897,17 @@
           "value_in": 6.0,
           "quantity": "daily snowfall",
           "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:98525",
+          "station_name": "GLENDALE 0.6 WSW",
+          "near_town": "Affton",
+          "distance_to_near_town_mi": 3.6,
+          "reported_date": "2026-11-26",
+          "value_in": 8.0,
+          "quantity": "daily snowfall",
+          "raw_observation_clock": "9",
           "measurement_interval_verified": false
         },
         {
@@ -1195,43 +1228,10 @@
           "quantity": "daily snowfall",
           "raw_observation_clock": "8",
           "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:92946",
-          "station_name": "COLUMBIA 4.7 S",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 13.5,
-          "reported_date": "2026-11-26",
-          "value_in": 9.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "8",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:98378",
-          "station_name": "TROY 1.9 S",
-          "near_town": "Belleville",
-          "distance_to_near_town_mi": 13.5,
-          "reported_date": "2026-11-26",
-          "value_in": 4.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:109288",
-          "station_name": "ST CLAIR 3W",
-          "near_town": "Washington",
-          "distance_to_near_town_mi": 14.3,
-          "reported_date": "2026-11-26",
-          "value_in": 10.0,
-          "quantity": "daily snowfall",
-          "raw_observation_clock": "9",
-          "measurement_interval_verified": false
         }
       ],
-      "station_count": 41,
-      "daily_report_count": 52,
+      "station_count": 43,
+      "daily_report_count": 55,
       "forecast_reference": {
         "status": "pre_event_capture",
         "captured_at": "2026-11-26T04:40:09.413279+00:00",
@@ -1511,7 +1511,7 @@
           },
           {
             "station_id": "ACIS:11369",
-            "reason": "missing_report_2026-11-26"
+            "reason": "missing_report_2026-11-28"
           },
           {
             "station_id": "ACIS:11375",
@@ -1527,7 +1527,7 @@
           },
           {
             "station_id": "ACIS:11391",
-            "reason": "missing_report_2026-11-27"
+            "reason": "missing_report_2026-11-28"
           },
           {
             "station_id": "ACIS:11398",
@@ -1870,6 +1870,28 @@
           "measurement_interval_verified": false
         },
         {
+          "station_id": "ACIS:11369",
+          "station_name": "WASHINGTON",
+          "near_town": "Washington",
+          "distance_to_near_town_mi": 2.3,
+          "reported_date": "2026-11-26",
+          "value_in": 0.86,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:11369",
+          "station_name": "WASHINGTON",
+          "near_town": "Washington",
+          "distance_to_near_town_mi": 2.3,
+          "reported_date": "2026-11-27",
+          "value_in": 0.32,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
           "station_id": "ACIS:5766",
           "station_name": "ALTON - MELVIN PRICE L&D",
           "near_town": "Alton",
@@ -1955,6 +1977,28 @@
           "value_in": 1.55,
           "quantity": "daily liquid precipitation",
           "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:103045",
+          "station_name": "WASHINGTON 3.3 ESE",
+          "near_town": "Washington",
+          "distance_to_near_town_mi": 3.4,
+          "reported_date": "2026-11-27",
+          "value_in": 0.5,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "7",
+          "measurement_interval_verified": false
+        },
+        {
+          "station_id": "ACIS:98525",
+          "station_name": "GLENDALE 0.6 WSW",
+          "near_town": "Affton",
+          "distance_to_near_town_mi": 3.6,
+          "reported_date": "2026-11-26",
+          "value_in": 2.1,
+          "quantity": "daily liquid precipitation",
+          "raw_observation_clock": "9",
           "measurement_interval_verified": false
         },
         {
@@ -2165,54 +2209,10 @@
           "quantity": "daily liquid precipitation",
           "raw_observation_clock": "7",
           "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:51821",
-          "station_name": "GRANITE CITY 1.4 ENE",
-          "near_town": "St. Louis",
-          "distance_to_near_town_mi": 8.4,
-          "reported_date": "2026-11-26",
-          "value_in": 1.62,
-          "quantity": "daily liquid precipitation",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:51821",
-          "station_name": "GRANITE CITY 1.4 ENE",
-          "near_town": "St. Louis",
-          "distance_to_near_town_mi": 8.4,
-          "reported_date": "2026-11-27",
-          "value_in": 0.84,
-          "quantity": "daily liquid precipitation",
-          "raw_observation_clock": "5",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:97399",
-          "station_name": "FENTON 4.1 S",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 8.4,
-          "reported_date": "2026-11-27",
-          "value_in": 0.75,
-          "quantity": "daily liquid precipitation",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
-        },
-        {
-          "station_id": "ACIS:110795",
-          "station_name": "ARNOLD 0.3 E",
-          "near_town": "Affton",
-          "distance_to_near_town_mi": 9.1,
-          "reported_date": "2026-11-26",
-          "value_in": 1.45,
-          "quantity": "daily liquid precipitation",
-          "raw_observation_clock": "7",
-          "measurement_interval_verified": false
         }
       ],
-      "station_count": 50,
-      "daily_report_count": 80,
+      "station_count": 52,
+      "daily_report_count": 86,
       "forecast_reference": {
         "status": "pre_event_capture",
         "captured_at": "2026-11-26T04:40:09.413279+00:00",
