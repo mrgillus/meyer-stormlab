@@ -1,0 +1,20 @@
+name: Shadow archive provenance audit
+on:
+  pull_request:
+    paths:
+      - 'scripts/shadow_archive_audit.py'
+      - 'tests/test_shadow_archive_audit.py'
+      - '.github/workflows/shadow-archive-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p test_shadow_archive_audit.py -v
+      - run: python scripts/shadow_archive_audit.py
