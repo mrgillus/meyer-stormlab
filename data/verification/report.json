@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-28T06:18:21.121711+00:00",
-  "source_latest_observation_capture": "2026-11-28T06:18:21.121711+00:00",
+  "generated_at": "2026-11-28T12:05:21.965686+00:00",
+  "source_latest_observation_capture": "2026-11-28T12:05:21.965686+00:00",
   "provider_status": "retrieved",
   "provider_error": null,
   "source": "RCC-ACIS daily station reports (snowfall and liquid precipitation)",
   "observed_station_count": 82,
-  "reported_station_days": 378,
+  "reported_station_days": 382,
   "cases_reviewed": 10,
   "cases_with_daily_reports": 2,
   "cases_scored": 1,
@@ -16,30 +16,6 @@
       "event_id": "showers-20261129",
       "kind": "showers",
       "title": "Convective showers",
-      "forecast_dates": {
-        "start": "2026-11-29",
-        "end": "2026-11-29"
-      },
-      "observation_status": "measurement_type_not_connected",
-      "verification_status": "not_scored",
-      "verification_reason": "Forecast window not yet over; No supported daily station measurement for this signal type.",
-      "event_total_verification": null,
-      "actual_observed_storm_total_in": null,
-      "forecast_error_in": null,
-      "model_skill": null,
-      "station_daily_reports": [],
-      "station_count": 0,
-      "daily_report_count": 0,
-      "forecast_reference": {
-        "status": "unsupported_variable",
-        "daily_forecasts": []
-      },
-      "safety_note": "Stations report daily measurements, NOT an observed 48-hour storm total. Dates and locations may not align with model forecasts."
-    },
-    {
-      "event_id": "rain-20261129",
-      "kind": "rain",
-      "title": "Rainfall",
       "forecast_dates": {
         "start": "2026-11-29",
         "end": "2026-11-29"
@@ -80,8 +56,8 @@
       "daily_report_count": 0,
       "forecast_reference": {
         "status": "pre_event_capture",
-        "captured_at": "2026-11-28T04:35:25.253081+00:00",
-        "snapshot_path": "data/snapshots/2026-11/20261128T043525Z.json",
+        "captured_at": "2026-11-28T10:26:50.169334+00:00",
+        "snapshot_path": "data/snapshots/2026-11/20261128T102650Z.json",
         "daily_forecasts": [
           {
             "town": "Wentzville",
@@ -305,6 +281,30 @@
       "safety_note": "Stations report daily measurements, NOT an observed 48-hour storm total. Dates and locations may not align with model forecasts."
     },
     {
+      "event_id": "rain-20261129",
+      "kind": "rain",
+      "title": "Rainfall",
+      "forecast_dates": {
+        "start": "2026-11-28",
+        "end": "2026-11-29"
+      },
+      "observation_status": "measurement_type_not_connected",
+      "verification_status": "not_scored",
+      "verification_reason": "Forecast window not yet over; No supported daily station measurement for this signal type.",
+      "event_total_verification": null,
+      "actual_observed_storm_total_in": null,
+      "forecast_error_in": null,
+      "model_skill": null,
+      "station_daily_reports": [],
+      "station_count": 0,
+      "daily_report_count": 0,
+      "forecast_reference": {
+        "status": "unsupported_variable",
+        "daily_forecasts": []
+      },
+      "safety_note": "Stations report daily measurements, NOT an observed 48-hour storm total. Dates and locations may not align with model forecasts."
+    },
+    {
       "event_id": "rain-20261126",
       "kind": "rain",
       "title": "Rainfall",
@@ -473,7 +473,7 @@
           },
           {
             "station_id": "ACIS:11398",
-            "reason": "missing_report_2026-11-27"
+            "reason": "missing_2026-11-27"
           },
           {
             "station_id": "ACIS:11400",
@@ -1833,7 +1833,7 @@
           },
           {
             "station_id": "ACIS:11385",
-            "reason": "missing_report_2026-11-27"
+            "reason": "missing_report_2026-11-28"
           },
           {
             "station_id": "ACIS:11391",
@@ -1841,7 +1841,7 @@
           },
           {
             "station_id": "ACIS:11398",
-            "reason": "missing_report_2026-11-27"
+            "reason": "flagged_2026-11-27"
           },
           {
             "station_id": "ACIS:11400",
@@ -1917,7 +1917,7 @@
           },
           {
             "station_id": "ACIS:47",
-            "reason": "missing_report_2026-11-27"
+            "reason": "flagged_2026-11-27"
           },
           {
             "station_id": "ACIS:51821",
@@ -2522,7 +2522,7 @@
         }
       ],
       "station_count": 53,
-      "daily_report_count": 90,
+      "daily_report_count": 92,
       "forecast_reference": {
         "status": "pre_event_capture",
         "captured_at": "2026-11-26T04:40:09.413279+00:00",
