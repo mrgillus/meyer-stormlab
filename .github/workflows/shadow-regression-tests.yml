@@ -1,0 +1,20 @@
+name: Shadow inference regression tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/regional_live_v2.py'
+      - 'tests/test_shadow_staleness.py'
+      - '.github/workflows/shadow-regression-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.2.6 scikit-learn==1.6.1 joblib==1.4.2 requests eccodes
+      - run: python -m unittest discover -s tests -p test_shadow_staleness.py -v
